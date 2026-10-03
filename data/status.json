@@ -1,10 +1,23 @@
 {
  "d": "2026-10-03",
- "at": "2026-10-03T22:05:16.448Z",
+ "at": "2026-10-03T22:06:00.033Z",
  "status": {
-  "Czech": "ERR 403 www.hokej.cz [server nginx] <html> <head><title>403 Forbidden</title></head> <body> <center><h1>403 Forbidden</h1></center> <hr><center>nginx</center> </body> </html> <!-- a padding to dis"
+  "AHL": "ok",
+  "ECHL": "no games yet",
+  "OHL": "ok",
+  "WHL": "ok",
+  "QMJHL": "ok",
+  "USHL": "ok",
+  "Liiga": "ok",
+  "KHL": "ok",
+  "VHL": "ok",
+  "MHL": "ok",
+  "SHL": "ok",
+  "Allsvenskan": "ok",
+  "J20": "ok",
+  "NCAA": "ok",
+  "Czech": "ERR 403 www.hokej.cz [server nginx] <html> <head><title>403 Forbidden</title></head> <body> <center><h1>403 Forbidden</h1></center> <hr><center>nginx</center> </body> </html> <!-- a padding to dis",
+  "NHL": "ok"
  },
- "subset": [
-  "Czech"
- ]
+ "subset": []
 }
