@@ -26,7 +26,7 @@ globalThis.localStorage = localStorage;
 globalThis.DOMParser = DOMParser;
 window.name = '';
 
-export const UA = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36', 'Accept-Language': 'en-US,en;q=0.9' };
+export const UA = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36', 'Accept-Language': 'en-US,en;q=0.9', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,application/json;q=0.8,*/*;q=0.7', 'Sec-Fetch-Mode': 'navigate', 'Upgrade-Insecure-Requests': '1' };
 const realFetch = globalThis.fetch;
 // every request gets a browser user agent and a timeout; KHL /rest/ calls are routed by khl.js
 globalThis.fetch = (u, o = {}) => realFetch(u, { ...o, headers: { ...UA, ...(o.headers || {}) }, signal: o.signal || AbortSignal.timeout(60000) });

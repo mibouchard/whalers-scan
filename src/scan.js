@@ -60,8 +60,9 @@ for (const [lg, fn, opts] of jobs) {
     else { res.cov[lg] = 'no games yet'; res.status[lg] = 'no games yet'; }
     console.log(`${lg}: ${r.nSk} skaters, ${r.nG} goalies, ${r.matched} matched, ${r.owned.length} owned (${((Date.now() - t0) / 1000).toFixed(0)}s)`);
   } catch (e) {
-    res.cov[lg] = 'ERR ' + e.message; res.status[lg] = 'ERR ' + e.message;
-    console.log(`${lg}: FAILED ${e.message}`);
+    const why = e.message + (e.cause ? ' (' + (e.cause.code || e.cause.message || e.cause) + ')' : '');
+    res.cov[lg] = 'ERR ' + why; res.status[lg] = 'ERR ' + why;
+    console.log(`${lg}: FAILED ${why}`);
   }
 }
 
