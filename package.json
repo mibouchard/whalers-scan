@@ -1,0 +1,13 @@
+{
+  "name": "whalers-scan",
+  "private": true,
+  "type": "module",
+  "description": "Daily minors scan for the Hartford Whalers (Fantrax league The Hockey Life): 16 leagues matched to Fantrax, written to data/.",
+  "scripts": {
+    "scan": "node src/scan.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "linkedom": "^0.18.13"
+  }
+}
