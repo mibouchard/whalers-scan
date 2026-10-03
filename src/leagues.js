@@ -2,7 +2,7 @@
 // skater {sid, first, last, pos, team, gp, g, a, pts, ppp, dob?, age?, prev?, toi?}; goalie {goalie: 1, sid, first, last, pos: 'G', team, gp, svp, gaa, w, min, dob?, age?}.
 // Season ids that change yearly are constants at the top.
 import vm from 'node:vm';
-import { realFetch, UA, sleep, parseHTML } from './env.js';
+import { realFetch, UA, sleep, parseHTML, cookieHeader } from './env.js';
 
 export const SEASON = {
   KHL: { season: 's19', tour: '1436' },          // en.khl.ru/stat/players/1436/
@@ -25,14 +25,13 @@ export async function khl(WS) {
   const html = await page.text();
   const sess = (html.match(/bitrix_sessid['"]\s*:\s*['"]([0-9a-f]+)['"]/) || [])[1];
   if (!sess) throw new Error('KHL: no session token on the stats page');
-  const cookie = (page.headers.getSetCookie?.() || []).map(c => c.split(';')[0]).join('; ');
   globalThis.BX = { bitrix_sessid: () => sess };
   const prev = globalThis.fetch; let q = Promise.resolve();
   globalThis.fetch = (u, o = {}) => {
     if (typeof u !== 'string' || !u.startsWith('/rest/')) return prev(u, o);
     const p = q.then(async () => {
       for (let t = 0; t < 6; t++) {
-        const r = await realFetch('https://en.khl.ru' + u, { ...o, headers: { ...UA, ...(o.headers || {}), Cookie: cookie, 'X-Requested-With': 'XMLHttpRequest', Referer: `https://en.khl.ru/stat/players/${SEASON.KHL.tour}/` }, signal: AbortSignal.timeout(60000) });
+        const r = await realFetch('https://en.khl.ru' + u, { ...o, headers: { ...UA, ...(o.headers || {}), Cookie: cookieHeader('https://en.khl.ru/'), 'X-Requested-With': 'XMLHttpRequest', Referer: `https://en.khl.ru/stat/players/${SEASON.KHL.tour}/` }, signal: AbortSignal.timeout(60000) });
         const txt = await r.text();
         if (txt.trim().startsWith('{')) { await sleep(150); return new Response(txt, { status: 200, headers: { 'Content-Type': 'application/json' } }); }
         await sleep(1500 * (t + 1));
@@ -148,6 +147,7 @@ export async function ncaa(ls) {
 // Czech Extraliga (hokej.cz). Age bands from the site's U20/U24 filters: 19 / 22 / 25 (= 24+).
 export async function czech() {
   const { season, comp } = SEASON.CZ;
+  await fetch('https://www.hokej.cz/', { headers: { 'Accept-Language': 'cs-CZ,cs;q=0.9,en;q=0.8' } }).catch(() => { }); // pick up the site's cookies first
   const base = `https://www.hokej.cz/tipsport-extraliga/player-stats/detailni?stats-filter-season=${season}&stats-filter-competition=${comp}`;
   const trs = async u => { const d = parseHTML(await text(u)); const t = [...d.querySelectorAll('table')].pop(); return [...t.querySelectorAll('tbody tr')].map(trr => { const a = trr.querySelector('a[href*="/hrac/"]'); return { c: [...trr.children].map(x => x.textContent.trim()), id: a ? (a.getAttribute('href').match(/\/hrac\/[^/]+\/(\d+)/) || [])[1] : null }; }).filter(r => r.id); };
   const ids = async age => new Set((await trs(base + `&stats-playerFilter-age=${age}&do=stats-view-pager-all`)).map(r => r.id));
