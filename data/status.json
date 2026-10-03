@@ -1,9 +1,9 @@
 {
  "d": "2026-10-03",
- "at": "2026-10-03T21:57:16.972Z",
+ "at": "2026-10-03T21:58:18.841Z",
  "status": {
-  "KHL": "ERR fetch failed (redirect count exceeded)",
-  "MHL": "ERR fetch failed (redirect count exceeded)",
+  "KHL": "ok",
+  "MHL": "ok",
   "Czech": "ERR 403 https://www.hokej.cz/tipsport-extraliga/player-stats/detailni?stats-filter-season=2026&stats-filter-competition=7562&do=stats-view-pager-all"
  },
  "subset": [
