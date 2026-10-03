@@ -12,7 +12,7 @@ export const SEASON = {
 };
 
 const num = x => { const v = parseFloat(String(x ?? '').replace(',', '.')); return isNaN(v) ? 0 : v; };
-const text = async (u, o) => { const r = await fetch(u, o); if (!r.ok) throw new Error(`${r.status} ${u}`); return r.text(); };
+const text = async (u, o) => { const r = await fetch(u, o); if (!r.ok) { const b = (await r.text().catch(() => '')).replace(/\s+/g, ' ').slice(0, 160); throw new Error(`${r.status} ${new URL(u).host} [server ${r.headers.get('server') || '?'}] ${b}`); } return r.text(); };
 const json = async (u, o) => JSON.parse(await text(u, o));
 const splitFirst = s => { s = s.replace(/ /g, ' ').trim(); const i = s.indexOf(' '); return i < 0 ? ['', s] : [s.slice(0, i), s.slice(i + 1)]; };
 
