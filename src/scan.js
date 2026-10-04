@@ -24,12 +24,18 @@ const res = { d: today, at: new Date().toISOString(), src: 'github-actions',
     Russia: 'VHL and MHL names are transliterated from Russian and matched to Fantrax by name only (no birthdates), so common names can collide: verify before acting on a VHL/MHL match.',
     Ages: 'Allsvenskan, VHL and MHL rows have no ages; NCAA ages are estimated from class year; Czech ages are bands (19 = U20, 22 = U24, 25 = 24+).',
     Claims: 'Ownership comes from the next scoring period, so claims made this week already count.',
+    FreeAgents: 'avail, und and risers list only players Fantrax shows as free agents (FA) or on waivers (WW), counted from their first game.',
   } };
 
+// Fantrax's own status per player in our league (FA, WW = waivers, T = on a team): the free-agent lists keep only FA/WW,
+// so this week's claims and drops are reflected even before the next roster period.
+const pinfo = await fetch('https://www.fantrax.com/fxea/general/getLeagueInfo?leagueId=fs61ldkdmow7aw2h').then(r => r.json()).then(j => j.playerInfo || {}).catch(() => null);
+const free = s => { if (!pinfo) return true; const id = s.split('|')[0]; return !id || ['FA', 'WW'].includes(pinfo[id]?.status); };
 const add = (lg, r) => {
   res.cov[lg] = [r.nSk, r.nG, r.matched, r.owned.length, r.nDays];
-  r.owned.forEach(x => res.owned.push(lg + '|' + x)); r.avail.slice(0, 8).forEach(x => res.avail.push(lg + '|' + x));
-  r.undrafted.slice(0, 4).forEach(x => res.und.push(lg + '|' + x)); r.risers.forEach(x => res.risers.push(lg + '|' + x)); r.goalies.forEach(x => res.goalies.push(lg + '|' + x));
+  r.owned.forEach(x => res.owned.push(lg + '|' + x)); r.avail.filter(free).slice(0, 12).forEach(x => res.avail.push(lg + '|' + x));
+  r.undrafted.filter(free).slice(0, 6).forEach(x => res.und.push(lg + '|' + x)); r.risers.filter(free).forEach(x => res.risers.push(lg + '|' + x));
+  r.goalies.filter(g => g.split('|')[1] || free(g)).forEach(x => res.goalies.push(lg + '|' + x));
 };
 
 // Russian rows carry spelling variants: keep the one Fantrax uses
@@ -37,16 +43,16 @@ let fx0 = null;
 const pickName = async rows => { fx0 = fx0 || await WS.fantrax(); for (const r of rows) { if (!r.alts) continue; for (const [f, l] of r.alts) { const c = fx0.pool[WS.key(f, l)]; if (c && c.some(x => /G/.test(x[2]) === !!r.goalie)) { r.first = f; r.last = l; break; } } delete r.alts; } return rows; };
 
 const jobs = [
-  ...['AHL', 'ECHL', 'OHL', 'WHL', 'QMJHL', 'USHL'].map(lg => [lg, () => WS.hockeytech(lg)(), {}]),
-  ['Liiga', () => WS.liiga()(), {}],
-  ['KHL', () => L.khl(WS), { maxAge: 24, nAvail: 12 }],
-  ['VHL', async () => pickName(await L.vhl()), { maxAge: 24, nAvail: 12 }],
-  ['MHL', async () => pickName(await L.mhl()), { maxAge: 24, nAvail: 12 }],
-  ['SHL', () => L.shl(), { maxAge: 24, nAvail: 12 }],
-  ['Allsvenskan', () => L.swe('Allsvenskan'), { maxAge: 24, nAvail: 12 }],
-  ['J20', () => L.swe('J20'), { maxAge: 24, nAvail: 12 }],
-  ['NCAA', () => L.ncaa(WS.ls), { maxAge: 24, nAvail: 12 }],
-  ['Czech', () => L.czech(), { maxAge: 24, nAvail: 12 }],
+  ...['AHL', 'ECHL', 'OHL', 'WHL', 'QMJHL', 'USHL'].map(lg => [lg, () => WS.hockeytech(lg)(), { minGP: 1, nAvail: 40, nUnd: 20 }]),
+  ['Liiga', () => WS.liiga()(), { minGP: 1, nAvail: 40, nUnd: 20 }],
+  ['KHL', () => L.khl(WS), { maxAge: 24, minGP: 1, nAvail: 40, nUnd: 20 }],
+  ['VHL', async () => pickName(await L.vhl()), { maxAge: 24, minGP: 1, nAvail: 40, nUnd: 20 }],
+  ['MHL', async () => pickName(await L.mhl()), { maxAge: 24, minGP: 1, nAvail: 40, nUnd: 20 }],
+  ['SHL', () => L.shl(), { maxAge: 24, minGP: 1, nAvail: 40, nUnd: 20 }],
+  ['Allsvenskan', () => L.swe('Allsvenskan'), { maxAge: 24, minGP: 1, nAvail: 40, nUnd: 20 }],
+  ['J20', () => L.swe('J20'), { maxAge: 24, minGP: 1, nAvail: 40, nUnd: 20 }],
+  ['NCAA', () => L.ncaa(WS.ls), { maxAge: 24, minGP: 1, nAvail: 40, nUnd: 20 }],
+  ['Czech', () => L.czech(), { maxAge: 24, minGP: 1, nAvail: 40, nUnd: 20 }],
   ['NHL', () => WS.nhl()(), { ownedSt: ['MINORS'], maxAge: 23, minGP: 1 }],
 ];
 
