@@ -1,0 +1,1787 @@
+{
+ "at": "2026-10-04T01:02:40.375Z",
+ "period": 2,
+ "weeks": [
+  [
+   "2026-10-05",
+   "2026-10-11"
+  ],
+  [
+   "2026-10-12",
+   "2026-10-18"
+  ]
+ ],
+ "cap": {
+  "cap": 114.4,
+  "dead": 0.59,
+  "used": 95.367,
+  "room": 18.443
+ },
+ "counts": {
+  "MINORS": 24,
+  "ACTIVE": 14,
+  "RESERVE": 4,
+  "INJURED_RESERVE": 3
+ },
+ "roster": [
+  {
+   "id": "070ft",
+   "name": "Wassilyn, Braidy",
+   "team": "MTL",
+   "pos": "LW,RW,C",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06sqo",
+   "name": "Wang, Haoxi",
+   "team": "SJS",
+   "pos": "D",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "05rfa",
+   "name": "Howard, Isaac",
+   "team": "EDM",
+   "pos": "LW",
+   "status": "MINORS",
+   "salary": 0.9725
+  },
+  {
+   "id": "05rjd",
+   "name": "Gauthier, Cutter",
+   "team": "ANA",
+   "pos": "LW,RW",
+   "status": "ACTIVE",
+   "salary": 13.5
+  },
+  {
+   "id": "05kuc",
+   "name": "Kleven, Tyler",
+   "team": "OTT",
+   "pos": "D",
+   "status": "RESERVE",
+   "salary": 1.6
+  },
+  {
+   "id": "05ubc",
+   "name": "Marjala, Viljami",
+   "team": "EDM",
+   "pos": "LW",
+   "status": "MINORS",
+   "salary": 0.9475
+  },
+  {
+   "id": "0322w",
+   "name": "Sorokin, Ilya",
+   "team": "NYI",
+   "pos": "G",
+   "status": "ACTIVE",
+   "salary": 8.25
+  },
+  {
+   "id": "0644c",
+   "name": "But, Daniil",
+   "team": "UTA",
+   "pos": "LW",
+   "status": "MINORS",
+   "salary": 0.9725
+  },
+  {
+   "id": "05ymj",
+   "name": "Snuggerud, Jimmy",
+   "team": "STL",
+   "pos": "RW",
+   "status": "ACTIVE",
+   "salary": 0.95
+  },
+  {
+   "id": "05xct",
+   "name": "Greaves, Jet",
+   "team": "CBJ",
+   "pos": "G",
+   "status": "MINORS",
+   "salary": 5
+  },
+  {
+   "id": "076q8",
+   "name": "Klimpke, Brayden",
+   "team": "MTL",
+   "pos": "D",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06lkx",
+   "name": "Parascak, Terik",
+   "team": "WSH",
+   "pos": "RW",
+   "status": "MINORS",
+   "salary": 0.941667
+  },
+  {
+   "id": "067xd",
+   "name": "Hughes, T.J.",
+   "team": "COL",
+   "pos": "RW",
+   "status": "MINORS",
+   "salary": 0.9525
+  },
+  {
+   "id": "05r2j",
+   "name": "Chibrikov, Nikita",
+   "team": "WPG",
+   "pos": "LW",
+   "status": "MINORS",
+   "salary": 0.875
+  },
+  {
+   "id": "04zp2",
+   "name": "Helleson, Drew",
+   "team": "ANA",
+   "pos": "D",
+   "status": "INJURED_RESERVE",
+   "salary": 1.1
+  },
+  {
+   "id": "03rfo",
+   "name": "Vladar, Daniel",
+   "team": "PHI",
+   "pos": "G",
+   "status": "RESERVE",
+   "salary": 3.35
+  },
+  {
+   "id": "05rj3",
+   "name": "Luneau, Tristan",
+   "team": "ANA",
+   "pos": "D",
+   "status": "MINORS",
+   "salary": 0.865
+  },
+  {
+   "id": "07693",
+   "name": "Kotkov, Matvei",
+   "team": "BOS",
+   "pos": "RW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06ay2",
+   "name": "Cagnoni, Luca",
+   "team": "SJS",
+   "pos": "D",
+   "status": "ACTIVE",
+   "salary": 0.92
+  },
+  {
+   "id": "04mtp",
+   "name": "Cozens, Dylan",
+   "team": "OTT",
+   "pos": "C",
+   "status": "ACTIVE",
+   "salary": 7.1
+  },
+  {
+   "id": "05ltt",
+   "name": "Laferriere, Alex",
+   "team": "LAK",
+   "pos": "LW,RW,C",
+   "status": "RESERVE",
+   "salary": 4.1
+  },
+  {
+   "id": "04qve",
+   "name": "Miller, KAndre",
+   "team": "CAR",
+   "pos": "D",
+   "status": "ACTIVE",
+   "salary": 7.5
+  },
+  {
+   "id": "06ydv",
+   "name": "Vanhanen, Matias",
+   "team": "NJD",
+   "pos": "LW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "03yh8",
+   "name": "Tippett, Owen",
+   "team": "PHI",
+   "pos": "LW,RW",
+   "status": "ACTIVE",
+   "salary": 6.2
+  },
+  {
+   "id": "0618l",
+   "name": "Sidorov, Yegor",
+   "team": "ANA",
+   "pos": "RW",
+   "status": "MINORS",
+   "salary": 0.94
+  },
+  {
+   "id": "06mcs",
+   "name": "Korotky, Matvei",
+   "team": "STL",
+   "pos": "C",
+   "status": "RESERVE",
+   "salary": 0
+  },
+  {
+   "id": "06ba8",
+   "name": "Akey, Beau",
+   "team": "EDM",
+   "pos": "D",
+   "status": "MINORS",
+   "salary": 0.894166
+  },
+  {
+   "id": "01f6d",
+   "name": "OReilly, Ryan",
+   "team": "NSH",
+   "pos": "C",
+   "status": "ACTIVE",
+   "salary": 4.5
+  },
+  {
+   "id": "051xf",
+   "name": "Chinakhov, Egor",
+   "team": "PIT",
+   "pos": "LW,RW",
+   "status": "ACTIVE",
+   "salary": 6.25
+  },
+  {
+   "id": "06pz0",
+   "name": "Vansaghi, Shane",
+   "team": "PHI",
+   "pos": "RW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "0644e",
+   "name": "Moore, Oliver",
+   "team": "CHI",
+   "pos": "LW,C",
+   "status": "MINORS",
+   "salary": 0.941667
+  },
+  {
+   "id": "02un7",
+   "name": "Barkov, Aleksander",
+   "team": "FLA",
+   "pos": "C",
+   "status": "INJURED_RESERVE",
+   "salary": 10
+  },
+  {
+   "id": "04kyh",
+   "name": "Tkachuk, Brady",
+   "team": "FLA",
+   "pos": "LW",
+   "status": "ACTIVE",
+   "salary": 8.205714
+  },
+  {
+   "id": "062pr",
+   "name": "Jonsson, Samuel",
+   "team": "EDM",
+   "pos": "G",
+   "status": "MINORS",
+   "salary": 0.855
+  },
+  {
+   "id": "061im",
+   "name": "Misa, Michael",
+   "team": "SJS",
+   "pos": "C",
+   "status": "MINORS",
+   "salary": 0.98625
+  },
+  {
+   "id": "01ztp",
+   "name": "Hyman, Zach",
+   "team": "EDM",
+   "pos": "RW",
+   "status": "INJURED_RESERVE",
+   "salary": 5.5
+  },
+  {
+   "id": "066q1",
+   "name": "Boisvert, Sacha",
+   "team": "CHI",
+   "pos": "C",
+   "status": "MINORS",
+   "salary": 0.977917
+  },
+  {
+   "id": "02ybn",
+   "name": "Morrissey, Josh",
+   "team": "WPG",
+   "pos": "D",
+   "status": "ACTIVE",
+   "salary": 6.25
+  },
+  {
+   "id": "06kr3",
+   "name": "OReilly, Sam",
+   "team": "TBL",
+   "pos": "RW,C",
+   "status": "MINORS",
+   "salary": 0.936056
+  },
+  {
+   "id": "064r2",
+   "name": "Demidov, Ivan",
+   "team": "MTL",
+   "pos": "RW",
+   "status": "ACTIVE",
+   "salary": 0.940833
+  },
+  {
+   "id": "06pyw",
+   "name": "Eklund, Victor",
+   "team": "NYI",
+   "pos": "LW",
+   "status": "MINORS",
+   "salary": 0.974167
+  },
+  {
+   "id": "042vx",
+   "name": "Hronek, Filip",
+   "team": "VAN",
+   "pos": "D",
+   "status": "ACTIVE",
+   "salary": 7.25
+  },
+  {
+   "id": "03167",
+   "name": "Horvat, Bo",
+   "team": "NYI",
+   "pos": "C",
+   "status": "ACTIVE",
+   "salary": 8.5
+  },
+  {
+   "id": "05ui5",
+   "name": "Musty, Quentin",
+   "team": "SJS",
+   "pos": "LW",
+   "status": "MINORS",
+   "salary": 0.909166
+  },
+  {
+   "id": "06ims",
+   "name": "Gamzin, Dmitri",
+   "team": "NYI",
+   "pos": "G",
+   "status": "MINORS",
+   "salary": 0
+  }
+ ],
+ "myCentres": [
+  {
+   "id": "070ft",
+   "name": "Wassilyn, Braidy",
+   "team": "MTL",
+   "pos": "LW,RW,C",
+   "status": "MINORS",
+   "salary": 0,
+   "nhl": null,
+   "fpg": null,
+   "toi": null,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "04mtp",
+   "name": "Cozens, Dylan",
+   "team": "OTT",
+   "pos": "C",
+   "status": "ACTIVE",
+   "salary": 7.1,
+   "nhl": null,
+   "fpg": null,
+   "toi": null,
+   "games": [
+    4,
+    4
+   ]
+  },
+  {
+   "id": "05ltt",
+   "name": "Laferriere, Alex",
+   "team": "LAK",
+   "pos": "LW,RW,C",
+   "status": "RESERVE",
+   "salary": 4.1,
+   "nhl": {
+    "team": "LAK",
+    "gp": 1,
+    "g": 0,
+    "a": 2,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 1,
+    "pim": 0,
+    "sog": 2,
+    "toi": 931
+   },
+   "fpg": 4.7,
+   "toi": 15.5,
+   "games": [
+    2,
+    2
+   ]
+  },
+  {
+   "id": "06mcs",
+   "name": "Korotky, Matvei",
+   "team": "STL",
+   "pos": "C",
+   "status": "RESERVE",
+   "salary": 0,
+   "nhl": null,
+   "fpg": null,
+   "toi": null,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "01f6d",
+   "name": "OReilly, Ryan",
+   "team": "NSH",
+   "pos": "C",
+   "status": "ACTIVE",
+   "salary": 4.5,
+   "nhl": null,
+   "fpg": null,
+   "toi": null,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "0644e",
+   "name": "Moore, Oliver",
+   "team": "CHI",
+   "pos": "LW,C",
+   "status": "MINORS",
+   "salary": 0.941667,
+   "nhl": {
+    "team": "CHI",
+    "gp": 2,
+    "g": 0,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": -1,
+    "pim": 2,
+    "sog": 4,
+    "toi": 761
+   },
+   "fpg": 0.2,
+   "toi": 12.7,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "02un7",
+   "name": "Barkov, Aleksander",
+   "team": "FLA",
+   "pos": "C",
+   "status": "INJURED_RESERVE",
+   "salary": 10,
+   "nhl": {
+    "team": "FLA",
+    "gp": 2,
+    "g": 0,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 0,
+    "pim": 0,
+    "sog": 2,
+    "toi": 893.5
+   },
+   "fpg": 0.1,
+   "toi": 14.9,
+   "games": [
+    2,
+    4
+   ]
+  },
+  {
+   "id": "061im",
+   "name": "Misa, Michael",
+   "team": "SJS",
+   "pos": "C",
+   "status": "MINORS",
+   "salary": 0.98625,
+   "nhl": {
+    "team": "SJS",
+    "gp": 1,
+    "g": 0,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": -1,
+    "pim": 0,
+    "sog": 4,
+    "toi": 694
+   },
+   "fpg": -0.1,
+   "toi": 11.6,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "066q1",
+   "name": "Boisvert, Sacha",
+   "team": "CHI",
+   "pos": "C",
+   "status": "MINORS",
+   "salary": 0.977917,
+   "nhl": null,
+   "fpg": null,
+   "toi": null,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "06kr3",
+   "name": "OReilly, Sam",
+   "team": "TBL",
+   "pos": "RW,C",
+   "status": "MINORS",
+   "salary": 0.936056,
+   "nhl": null,
+   "fpg": null,
+   "toi": null,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "03167",
+   "name": "Horvat, Bo",
+   "team": "NYI",
+   "pos": "C",
+   "status": "ACTIVE",
+   "salary": 8.5,
+   "nhl": {
+    "team": "NYI",
+    "gp": 1,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 1,
+    "pim": 0,
+    "sog": 4,
+    "toi": 1351
+   },
+   "fpg": 2.9,
+   "toi": 22.5,
+   "games": [
+    3,
+    3
+   ]
+  }
+ ],
+ "faCentres": [
+  {
+   "id": "01zto",
+   "name": "Coyle, Charlie",
+   "team": "CBJ",
+   "pos": "RW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "CBJ",
+    "gp": 1,
+    "g": 0,
+    "a": 3,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 2,
+    "pim": 0,
+    "sog": 0,
+    "toi": 1144
+   },
+   "fpg": 7,
+   "toi": 19.1,
+   "games": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "03ofm",
+   "name": "Suter, Pius",
+   "team": "STL",
+   "pos": "LW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "STL",
+    "gp": 1,
+    "g": 1,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 2,
+    "pim": 0,
+    "sog": 4,
+    "toi": 865
+   },
+   "fpg": 6.4,
+   "toi": 14.4,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "05gd7",
+   "name": "Sillinger, Cole",
+   "team": "CBJ",
+   "pos": "LW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "CBJ",
+    "gp": 1,
+    "g": 1,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 2,
+    "pim": 4,
+    "sog": 3,
+    "toi": 921
+   },
+   "fpg": 5.3,
+   "toi": 15.3,
+   "games": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "03c9z",
+   "name": "Roy, Nicolas",
+   "team": "COL",
+   "pos": "RW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "COL",
+    "gp": 1,
+    "g": 1,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 1,
+    "pm": 1,
+    "pim": 0,
+    "sog": 2,
+    "toi": 732
+   },
+   "fpg": 4.7,
+   "toi": 12.2,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "01f3e",
+   "name": "Kadri, Nazem",
+   "team": "COL",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "COL",
+    "gp": 1,
+    "g": 0,
+    "a": 2,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 1,
+    "pim": 0,
+    "sog": 2,
+    "toi": 1077
+   },
+   "fpg": 4.7,
+   "toi": 17.9,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "02fro",
+   "name": "Lowry, Adam",
+   "team": "WPG",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "WPG",
+    "gp": 1,
+    "g": 0,
+    "a": 2,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 0,
+    "pim": 0,
+    "sog": 2,
+    "toi": 967
+   },
+   "fpg": 4.2,
+   "toi": 16.1,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "02un6",
+   "name": "Monahan, Sean",
+   "team": "CBJ",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "CBJ",
+    "gp": 1,
+    "g": 1,
+    "a": 0,
+    "ppg": 1,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 0,
+    "pim": 0,
+    "sog": 1,
+    "toi": 931
+   },
+   "fpg": 4.1,
+   "toi": 15.5,
+   "games": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "02nq2",
+   "name": "Stephenson, Chandler",
+   "team": "SEA",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "SEA",
+    "gp": 1,
+    "g": 1,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 1,
+    "pim": 0,
+    "sog": 2,
+    "toi": 1019
+   },
+   "fpg": 3.7,
+   "toi": 17,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "04f0t",
+   "name": "Luostarinen, Eetu",
+   "team": "FLA",
+   "pos": "LW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "FLA",
+    "gp": 2,
+    "g": 2,
+    "a": 0,
+    "ppg": 1,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 0,
+    "pim": 0,
+    "sog": 4,
+    "toi": 913
+   },
+   "fpg": 3.7,
+   "toi": 15.2,
+   "games": [
+    2,
+    4
+   ]
+  },
+  {
+   "id": "02wy3",
+   "name": "Lindholm, Elias",
+   "team": "BOS",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "BOS",
+    "gp": 2,
+    "g": 1,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 1,
+    "pim": 2,
+    "sog": 5,
+    "toi": 956
+   },
+   "fpg": 3.25,
+   "toi": 15.9,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "04f80",
+   "name": "Barron, Morgan",
+   "team": "WPG",
+   "pos": "LW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "WPG",
+    "gp": 1,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 1,
+    "pim": 2,
+    "sog": 2,
+    "toi": 953
+   },
+   "fpg": 3.2,
+   "toi": 15.9,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "03kng",
+   "name": "Gaudreau, Frederick",
+   "team": "SEA",
+   "pos": "RW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "SEA",
+    "gp": 1,
+    "g": 1,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 0,
+    "pim": 0,
+    "sog": 2,
+    "toi": 838
+   },
+   "fpg": 3.2,
+   "toi": 14,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "04ln1",
+   "name": "Turcotte, Alex",
+   "team": "LAK",
+   "pos": "LW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "LAK",
+    "gp": 1,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 1,
+    "pim": 2,
+    "sog": 1,
+    "toi": 935
+   },
+   "fpg": 3.1,
+   "toi": 15.6,
+   "games": [
+    2,
+    2
+   ]
+  },
+  {
+   "id": "03rfa",
+   "name": "Stenlund, Kevin",
+   "team": "UTA",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "UTA",
+    "gp": 1,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 2,
+    "pim": 0,
+    "sog": 0,
+    "toi": 778
+   },
+   "fpg": 3,
+   "toi": 13,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "02aza",
+   "name": "Strome, Ryan",
+   "team": "CGY",
+   "pos": "RW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "CGY",
+    "gp": 1,
+    "g": 1,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": -1,
+    "pim": 0,
+    "sog": 4,
+    "toi": 961
+   },
+   "fpg": 2.9,
+   "toi": 16,
+   "games": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "031nw",
+   "name": "McCarron, Michael",
+   "team": "MIN",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "MIN",
+    "gp": 1,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 1,
+    "pim": 0,
+    "sog": 4,
+    "toi": 804
+   },
+   "fpg": 2.9,
+   "toi": 13.4,
+   "games": [
+    3,
+    4
+   ]
+  },
+  {
+   "id": "05tuj",
+   "name": "Winterton, Ryan",
+   "team": "SEA",
+   "pos": "RW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "SEA",
+    "gp": 1,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 1,
+    "pim": 0,
+    "sog": 3,
+    "toi": 977
+   },
+   "fpg": 2.8,
+   "toi": 16.3,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "067y0",
+   "name": "Sasson, Max",
+   "team": "VAN",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "VAN",
+    "gp": 2,
+    "g": 1,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": -1,
+    "pim": 2,
+    "sog": 2,
+    "toi": 906.5
+   },
+   "fpg": 2.6,
+   "toi": 15.1,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "06sds",
+   "name": "Washe, Tim",
+   "team": "ANA",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "ANA",
+    "gp": 1,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 1,
+    "pim": 0,
+    "sog": 1,
+    "toi": 963
+   },
+   "fpg": 2.6,
+   "toi": 16.1,
+   "games": [
+    3,
+    2
+   ]
+  },
+  {
+   "id": "03rfx",
+   "name": "Novak, Tommy",
+   "team": "PIT",
+   "pos": "LW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "PIT",
+    "gp": 1,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 0,
+    "pim": 0,
+    "sog": 0,
+    "toi": 964
+   },
+   "fpg": 2,
+   "toi": 16.1,
+   "games": [
+    4,
+    3
+   ]
+  },
+  {
+   "id": "03w5s",
+   "name": "McLeod, Ryan",
+   "team": "BUF",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "BUF",
+    "gp": 1,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 0,
+    "pim": 0,
+    "sog": 0,
+    "toi": 1001
+   },
+   "fpg": 2,
+   "toi": 16.7,
+   "games": [
+    3,
+    4
+   ]
+  },
+  {
+   "id": "02npb",
+   "name": "Sissons, Colton",
+   "team": "TOR",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "TOR",
+    "gp": 2,
+    "g": 1,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 1,
+    "pim": 0,
+    "sog": 2,
+    "toi": 790
+   },
+   "fpg": 1.85,
+   "toi": 13.2,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "01gjn",
+   "name": "Haula, Erik",
+   "team": "LAK",
+   "pos": "LW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "LAK",
+    "gp": 1,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": -1,
+    "pim": 0,
+    "sog": 3,
+    "toi": 926
+   },
+   "fpg": 1.8,
+   "toi": 15.4,
+   "games": [
+    2,
+    2
+   ]
+  },
+  {
+   "id": "059e4",
+   "name": "Zary, Connor",
+   "team": "CGY",
+   "pos": "LW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "CGY",
+    "gp": 1,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": -1,
+    "pim": 0,
+    "sog": 1,
+    "toi": 799
+   },
+   "fpg": 1.6,
+   "toi": 13.3,
+   "games": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "04mkd",
+   "name": "Sharangovich, Yegor",
+   "team": "CGY",
+   "pos": "LW,RW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "CGY",
+    "gp": 1,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": -1,
+    "pim": 0,
+    "sog": 1,
+    "toi": 1034
+   },
+   "fpg": 1.6,
+   "toi": 17.2,
+   "games": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "031pn",
+   "name": "Paul, Nick",
+   "team": "TOR",
+   "pos": "RW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "TOR",
+    "gp": 2,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 0,
+    "pim": 4,
+    "sog": 1,
+    "toi": 937.5
+   },
+   "fpg": 1.55,
+   "toi": 15.6,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "03wpn",
+   "name": "Howden, Brett",
+   "team": "VGK",
+   "pos": "LW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "VGK",
+    "gp": 2,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 1,
+    "pim": 0,
+    "sog": 6,
+    "toi": 967
+   },
+   "fpg": 1.55,
+   "toi": 16.1,
+   "games": [
+    3,
+    4
+   ]
+  },
+  {
+   "id": "01z7v",
+   "name": "Couturier, Sean",
+   "team": "PHI",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "PHI",
+    "gp": 2,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 0,
+    "pim": 2,
+    "sog": 2,
+    "toi": 963
+   },
+   "fpg": 1.35,
+   "toi": 16.1,
+   "games": [
+    4,
+    3
+   ]
+  },
+  {
+   "id": "03rag",
+   "name": "Roslovic, Jack",
+   "team": "TOR",
+   "pos": "RW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "TOR",
+    "gp": 2,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 0,
+    "pim": 0,
+    "sog": 4,
+    "toi": 993.5
+   },
+   "fpg": 1.2,
+   "toi": 16.6,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "005ho",
+   "name": "Eller, Lars",
+   "team": "FLA",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "FLA",
+    "gp": 2,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 0,
+    "pim": 0,
+    "sog": 3,
+    "toi": 795.5
+   },
+   "fpg": 1.15,
+   "toi": 13.3,
+   "games": [
+    2,
+    4
+   ]
+  },
+  {
+   "id": "02wy7",
+   "name": "Buchnevich, Pavel",
+   "team": "STL",
+   "pos": "LW,RW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "STL",
+    "gp": 1,
+    "g": 0,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 2,
+    "pim": 0,
+    "sog": 0,
+    "toi": 1031
+   },
+   "fpg": 1,
+   "toi": 17.2,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "01sif",
+   "name": "Seguin, Tyler",
+   "team": "DAL",
+   "pos": "RW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "DAL",
+    "gp": 1,
+    "g": 0,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": -2,
+    "pim": 6,
+    "sog": 4,
+    "toi": 895
+   },
+   "fpg": 0.9,
+   "toi": 14.9,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "04osu",
+   "name": "Hayton, Barrett",
+   "team": "UTA",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "UTA",
+    "gp": 1,
+    "g": 0,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 0,
+    "pim": 2,
+    "sog": 4,
+    "toi": 829
+   },
+   "fpg": 0.9,
+   "toi": 13.8,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "06kkx",
+   "name": "Hyry, Arttu",
+   "team": "DAL",
+   "pos": "RW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "DAL",
+    "gp": 1,
+    "g": 0,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": -1,
+    "pim": 5,
+    "sog": 1,
+    "toi": 787
+   },
+   "fpg": 0.85,
+   "toi": 13.1,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "03169",
+   "name": "Wennberg, Alexander",
+   "team": "SJS",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "SJS",
+    "gp": 1,
+    "g": 0,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 1,
+    "pim": 0,
+    "sog": 3,
+    "toi": 1304
+   },
+   "fpg": 0.8,
+   "toi": 21.7,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "025e1",
+   "name": "Dowd, Nic",
+   "team": "VGK",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "VGK",
+    "gp": 2,
+    "g": 0,
+    "a": 1,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": -1,
+    "pim": 0,
+    "sog": 1,
+    "toi": 630.5
+   },
+   "fpg": 0.8,
+   "toi": 10.5,
+   "games": [
+    3,
+    4
+   ]
+  },
+  {
+   "id": "04qza",
+   "name": "Pospisil, Martin",
+   "team": "CGY",
+   "pos": "RW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "CGY",
+    "gp": 1,
+    "g": 0,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 0,
+    "pim": 2,
+    "sog": 2,
+    "toi": 760
+   },
+   "fpg": 0.7,
+   "toi": 12.7,
+   "games": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "04dwk",
+   "name": "Norris, Josh",
+   "team": "BUF",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "BUF",
+    "gp": 1,
+    "g": 0,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 1,
+    "pim": 0,
+    "sog": 1,
+    "toi": 979
+   },
+   "fpg": 0.6,
+   "toi": 16.3,
+   "games": [
+    3,
+    4
+   ]
+  },
+  {
+   "id": "03eeo",
+   "name": "Evans, Jake",
+   "team": "MTL",
+   "pos": "C",
+   "status": "FA",
+   "nhl": {
+    "team": "MTL",
+    "gp": 1,
+    "g": 0,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 1,
+    "pim": 0,
+    "sog": 1,
+    "toi": 890
+   },
+   "fpg": 0.6,
+   "toi": 14.8,
+   "games": [
+    3,
+    3
+   ]
+  },
+  {
+   "id": "01c32",
+   "name": "Schenn, Brayden",
+   "team": "NYI",
+   "pos": "LW,C",
+   "status": "FA",
+   "nhl": {
+    "team": "NYI",
+    "gp": 1,
+    "g": 0,
+    "a": 0,
+    "ppg": 0,
+    "shg": 0,
+    "gwg": 0,
+    "pm": 0,
+    "pim": 2,
+    "sog": 1,
+    "toi": 867
+   },
+   "fpg": 0.6,
+   "toi": 14.4,
+   "games": [
+    3,
+    3
+   ]
+  }
+ ],
+ "games": {
+  "BUF": [
+   3,
+   4
+  ],
+  "BOS": [
+   3,
+   3
+  ],
+  "CGY": [
+   2,
+   3
+  ],
+  "ANA": [
+   3,
+   2
+  ],
+  "CHI": [
+   3,
+   3
+  ],
+  "CAR": [
+   4,
+   3
+  ],
+  "CBJ": [
+   2,
+   3
+  ],
+  "COL": [
+   3,
+   3
+  ],
+  "DAL": [
+   3,
+   3
+  ],
+  "EDM": [
+   2,
+   3
+  ],
+  "DET": [
+   3,
+   3
+  ],
+  "FLA": [
+   2,
+   4
+  ],
+  "MTL": [
+   3,
+   3
+  ],
+  "NSH": [
+   3,
+   3
+  ],
+  "MIN": [
+   3,
+   4
+  ],
+  "LAK": [
+   2,
+   2
+  ],
+  "OTT": [
+   4,
+   4
+  ],
+  "NYI": [
+   3,
+   3
+  ],
+  "NJD": [
+   2,
+   4
+  ],
+  "NYR": [
+   3,
+   3
+  ],
+  "PHI": [
+   4,
+   3
+  ],
+  "PIT": [
+   4,
+   3
+  ],
+  "SJS": [
+   3,
+   3
+  ],
+  "SEA": [
+   3,
+   3
+  ],
+  "TOR": [
+   3,
+   3
+  ],
+  "TBL": [
+   3,
+   3
+  ],
+  "UTA": [
+   3,
+   3
+  ],
+  "STL": [
+   3,
+   3
+  ],
+  "WSH": [
+   3,
+   3
+  ],
+  "VGK": [
+   3,
+   4
+  ],
+  "VAN": [
+   3,
+   3
+  ],
+  "WPG": [
+   3,
+   3
+  ]
+ }
+}
