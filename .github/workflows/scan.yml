@@ -2,7 +2,11 @@ name: Daily minors scan
 
 on:
   schedule:
-    - cron: '17 9 * * *'   # 09:17 UTC = 5:17 AM Toronto (EDT), 4:17 AM in winter; ready before the 6:54 morning report
+    # GitHub sometimes skips scheduled runs, so there are two backups. Whichever fires first scans; the others see
+    # today's results already saved and stop. All three finish before the 6:54 AM morning report (Toronto).
+    - cron: '17 9 * * *'   # 5:17 AM Toronto (EDT), 4:17 AM in winter
+    - cron: '47 9 * * *'   # backup, 5:47 AM
+    - cron: '23 10 * * *'  # backup, 6:23 AM
   workflow_dispatch:
     inputs:
       leagues:
@@ -23,14 +27,24 @@ jobs:
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
+      - name: Skip if today's scan already ran (scheduled runs only)
+        id: done
+        if: github.event_name == 'schedule'
+        run: |
+          node -e "const s=require('./data/status.json');process.exit(s.d===new Date().toISOString().slice(0,10)&&!(s.subset||[]).length?0:1)" \
+            && echo "skip=true" >> "$GITHUB_OUTPUT" && echo "Already scanned today" || true
       - uses: actions/setup-node@v4
+        if: steps.done.outputs.skip != 'true'
         with:
           node-version: 22
           cache: npm
-      - run: npm ci || npm install
+      - if: steps.done.outputs.skip != 'true'
+        run: npm ci || npm install
       - name: Run scan
+        if: steps.done.outputs.skip != 'true'
         run: node src/scan.js ${{ github.event.inputs.leagues }}
       - name: Save results
+        if: steps.done.outputs.skip != 'true'
         run: |
           git config user.name "whalers-scan"
           git config user.email "whalers-scan@users.noreply.github.com"
