@@ -1,6 +1,6 @@
 {
  "d": "2026-10-04",
- "at": "2026-10-04T11:45:17.302Z",
+ "at": "2026-10-04T12:04:11.448Z",
  "status": {
   "AHL": "ok",
   "ECHL": "no games yet",
@@ -9,7 +9,7 @@
   "QMJHL": "ok",
   "USHL": "ok",
   "Liiga": "ok",
-  "KHL": "ERR too many redirects: https://en.khl.ru/rest/stat/players/",
+  "KHL": "ok",
   "VHL": "ok",
   "MHL": "ok",
   "SHL": "ok",
