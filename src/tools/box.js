@@ -23,8 +23,11 @@ const cur = await j(`https://www.fantrax.com/fxea/general/getTeamRosters?leagueI
 const nxt = await j(`https://www.fantrax.com/fxea/general/getTeamRosters?leagueId=${L}&period=${cur.period + 1}`).catch(() => cur);
 const own = (ro) => { const m = {}; for (const [tid, t] of Object.entries(ro.rosters)) for (const i of t.rosterItems) m[i.id] = { team: TEAMS[tid] || tid, st: i.status, sal: +(i.salary / 1e6).toFixed(3) }; return m; };
 const ownCur = own(cur), ownNxt = own(nxt);
-const pool = {}; // name key -> [{id, team, pos}]
-for (const [id, p] of Object.entries(ids)) { const [l, f] = (p.name || '').split(', '); (pool[key(f, l)] ||= []).push({ id, team: p.team, pos: p.position }); }
+// League player info: per-player status in our league (FA, WW = waivers, T = on a team)
+const li = await j(`https://www.fantrax.com/fxea/general/getLeagueInfo?leagueId=${L}`).catch(() => ({}));
+const pinfo = li.playerInfo || {};
+const pool = {}, byLast = {}; // name key -> [{id, team, pos}]; last name + NHL team -> [...] (fallback for Tommy/Thomas, Dmitry/Dmitri)
+for (const [id, p] of Object.entries(ids)) { const [l, f] = (p.name || '').split(', '); const c = { id, team: p.team, pos: p.position }; (pool[key(f, l)] ||= []).push(c); (byLast[norm(l) + '|' + p.team] ||= []).push(c); }
 
 const rows = [];
 for (const g of games) {
@@ -61,15 +64,24 @@ for (const g of games) {
         fp = 3 * G + 2 * A + e.ppp + 2 * e.shg + e.gwg + 0.5 * (p.plusMinus || 0) + 0.2 * (p.blockedShots || 0) + 0.2 * (p.hits || 0) + 0.25 * (p.pim || 0) + 0.1 * (p.sog || 0);
         line = { g: G, a: A, ppp: e.ppp, shg: e.shg, gwg: e.gwg, pm: p.plusMinus || 0, sog: p.sog || 0, hit: p.hits || 0, blk: p.blockedShots || 0, pim: p.pim || 0, toi: p.toi };
       }
-      const cands = (pool[key(nm[0], nm[1])] || []).filter(c => /G/.test(c.pos) === isG);
-      const c = cands.find(c => c.team === t) || (cands.length === 1 ? cands[0] : cands.find(c => !c.team || c.team === '(N/A)') || cands[0]);
+      let cands = (pool[key(nm[0], nm[1])] || []).filter(c => /G/.test(c.pos) === isG);
+      if (!cands.length) cands = (byLast[norm(nm[1]) + '|' + t] || []).filter(c => /G/.test(c.pos) === isG);
+      // same-name players (two Elias Petterssons on VAN): break the tie on position
+      const pc = isG ? 'G' : p.position === 'D' ? 'D' : null;
+      const c = (cands.length > 1 && cands.filter(c => c.team === t).length > 1 ? cands.find(c => c.team === t && (pc ? c.pos.includes(pc) : !/D/.test(c.pos) && c.pos.includes(p.position))) : null)
+        || cands.find(c => c.team === t) || (cands.length === 1 ? cands[0] : cands.find(c => !c.team || c.team === '(N/A)') || cands[0]);
       const fx = c?.id || null;
-      rows.push({ name: (nm[0] ? nm[0] + ' ' : '') + nm[1], team: t, opp, pos: isG ? 'G' : p.position, fp: +fp.toFixed(2), ...line, fx, own: fx && ownCur[fx] ? ownCur[fx].team : null, st: fx && ownCur[fx] ? ownCur[fx].st : null, ownNext: fx && ownNxt[fx] ? ownNxt[fx].team + ':' + ownNxt[fx].st : null, sal: fx && (ownNxt[fx] || ownCur[fx]) ? (ownNxt[fx] || ownCur[fx]).sal : null });
+      const fxs = fx ? (pinfo[fx]?.status || null) : null;
+      rows.push({ fxStatus: fxs, name: (nm[0] ? nm[0] + ' ' : '') + nm[1], team: t, opp, pos: isG ? 'G' : p.position, fp: +fp.toFixed(2), ...line, fx, own: fx && ownCur[fx] ? ownCur[fx].team : null, st: fx && ownCur[fx] ? ownCur[fx].st : null, ownNext: fx && ownNxt[fx] ? ownNxt[fx].team + ':' + ownNxt[fx].st : null, sal: fx && (ownNxt[fx] || ownCur[fx]) ? (ownNxt[fx] || ownCur[fx]).sal : null });
     }
   }
 }
 rows.sort((x, y) => y.fp - x.fp);
-const out = { d: day, at: new Date().toISOString(), period: cur.period, games: games.map(g => `${g.awayTeam.abbrev} ${g.awayTeam.score}-${g.homeTeam.score} ${g.homeTeam.abbrev}${g.gameOutcome?.lastPeriodType && g.gameOutcome.lastPeriodType !== 'REG' ? ' ' + g.gameOutcome.lastPeriodType : ''}`), gameType: [...new Set(games.map(g => g.gameType))], rows };
+// free agents and waiver players by Fantrax's own status, with salary, for the cap check
+const fa = rows.filter(r => r.fxStatus && r.fxStatus !== 'T').map(r => ({ name: r.name, team: r.team, pos: r.pos, fp: r.fp, fx: r.fx, ...pinfo[r.fx] }));
+const capRoom = (() => { const t = nxt.rosters['m1hfr04lmow7aw2v']; if (!t) return null; const used = t.rosterItems.filter(i => i.status === 'ACTIVE' || i.status === 'RESERVE').reduce((s, i) => s + i.salary / 1e6, 0); return +(114.4 - used).toFixed(2); })();
+const infoSample = Object.entries(pinfo).slice(0, 2);
+const out = { d: day, at: new Date().toISOString(), period: cur.period, games: games.map(g => `${g.awayTeam.abbrev} ${g.awayTeam.score}-${g.homeTeam.score} ${g.homeTeam.abbrev}${g.gameOutcome?.lastPeriodType && g.gameOutcome.lastPeriodType !== 'REG' ? ' ' + g.gameOutcome.lastPeriodType : ''}`), gameType: [...new Set(games.map(g => g.gameType))], hfdCapRoomNext: capRoom, nPlayerInfo: Object.keys(pinfo).length, infoSample, fa, unmatched: rows.filter(r => !r.fx).map(r => r.name + ' ' + r.team), rows };
 const dir = path.join(ROOT, 'data', 'adhoc'); fs.mkdirSync(dir, { recursive: true });
 fs.writeFileSync(path.join(dir, 'box.json'), JSON.stringify(out));
 fs.writeFileSync(path.join(dir, `box-${day}.json`), JSON.stringify(out));
