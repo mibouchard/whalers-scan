@@ -1,0 +1,680 @@
+{
+ "03rin": {
+  "statsIncId": 6894,
+  "name": "Estephan, Giorgio",
+  "fantraxId": "03rin",
+  "team": "TOR",
+  "position": "C",
+  "eligiblePos": "C",
+  "status": "FA"
+ },
+ "03xms": {
+  "statsIncId": 7801,
+  "name": "Kelleher, Tyler",
+  "fantraxId": "03xms",
+  "team": "DAL",
+  "position": "RW",
+  "eligiblePos": "RW",
+  "status": "FA"
+ },
+ "05gd7": {
+  "rotowireId": 6466,
+  "sportRadarId": "d777ba16-c656-4331-acef-924af921cd60",
+  "name": "Sillinger, Cole",
+  "fantraxId": "05gd7",
+  "team": "CBJ",
+  "position": "C",
+  "eligiblePos": "LW,C",
+  "status": "FA"
+ },
+ "05k9a": {
+  "rotowireId": 6288,
+  "sportRadarId": "e0232922-ead9-4db5-87c3-def29f27d83d",
+  "name": "Andrae, Emil",
+  "fantraxId": "05k9a",
+  "team": "CBJ",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "05kj8": {
+  "rotowireId": 6290,
+  "sportRadarId": "5d579d91-5ba7-4bd7-ae71-edd864ce6895",
+  "name": "Kuznetsov, Yan",
+  "fantraxId": "05kj8",
+  "team": "CGY",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "05l28": {
+  "rotowireId": 6287,
+  "sportRadarId": "92cd9ce4-e714-4058-a90a-12a8d01f1c6a",
+  "name": "Hunt, Daemon",
+  "fantraxId": "05l28",
+  "team": "MIN",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "05lu9": {
+  "rotowireId": 6347,
+  "sportRadarId": "68df7ddb-ec5a-4918-9006-16e40c0c047b",
+  "name": "Kaiser, Wyatt",
+  "fantraxId": "05lu9",
+  "team": "CHI",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "05nzx": {
+  "rotowireId": 6499,
+  "sportRadarId": "8d7825a1-b403-49f7-9ecc-6210d4e23535",
+  "name": "Poltapov, Prokhor",
+  "fantraxId": "05nzx",
+  "team": "BUF",
+  "position": "RW",
+  "eligiblePos": "RW",
+  "status": "FA"
+ },
+ "05oy0": {
+  "rotowireId": 6672,
+  "sportRadarId": "560708f2-6834-4d10-89ec-f720f89ddd1b",
+  "name": "Bauer, Tyrel",
+  "fantraxId": "05oy0",
+  "team": "WPG",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "05oy1": {
+  "rotowireId": 6593,
+  "sportRadarId": "3020acdd-c5a6-49b6-8993-40bf368fb977",
+  "name": "Rempe, Matt",
+  "fantraxId": "05oy1",
+  "team": "NYR",
+  "position": "RW",
+  "eligiblePos": "RW",
+  "status": "FA"
+ },
+ "05r2l": {
+  "rotowireId": 6482,
+  "sportRadarId": "565f4561-8cd7-46f8-9cf1-6bcc1102f53b",
+  "name": "Dean, Zach",
+  "fantraxId": "05r2l",
+  "team": "STL",
+  "position": "C",
+  "eligiblePos": "C",
+  "status": "FA"
+ },
+ "05rc6": {
+  "rotowireId": 6511,
+  "sportRadarId": "61e33ee1-4ac9-4ccb-8814-2cbda8859e2d",
+  "name": "Helenius, Samuel",
+  "fantraxId": "05rc6",
+  "team": "LAK",
+  "position": "C",
+  "eligiblePos": "C",
+  "status": "FA"
+ },
+ "05riz": {
+  "rotowireId": 6678,
+  "sportRadarId": "6ebf9cef-4252-424e-94b3-c47a418320a0",
+  "name": "Jiricek, David",
+  "fantraxId": "05riz",
+  "team": "PHI",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "05rj4": {
+  "rotowireId": 6465,
+  "sportRadarId": "d44918e6-f2ee-4e27-ac1b-061b7a687aa5",
+  "name": "Svechkov, Fedor",
+  "fantraxId": "05rj4",
+  "team": "COL",
+  "position": "C",
+  "eligiblePos": "C",
+  "status": "FA"
+ },
+ "05td3": {
+  "rotowireId": 6535,
+  "sportRadarId": "f6f3d847-fcdc-4e29-aa91-21a64905ef90",
+  "name": "Dach, Colton",
+  "fantraxId": "05td3",
+  "team": "EDM",
+  "position": "LW",
+  "eligiblePos": "LW,C",
+  "status": "FA"
+ },
+ "05tuj": {
+  "rotowireId": 6560,
+  "sportRadarId": "6eed64e5-bd17-4174-8e49-cd9832aae5a5",
+  "name": "Winterton, Ryan",
+  "fantraxId": "05tuj",
+  "team": "SEA",
+  "position": "C",
+  "eligiblePos": "RW,C",
+  "status": "FA"
+ },
+ "05u0t": {
+  "rotowireId": 6537,
+  "sportRadarId": "43a1c669-b65b-4d0a-bce4-9b57b9d17642",
+  "name": "Del Mastro, Ethan",
+  "fantraxId": "05u0t",
+  "team": "CHI",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "05u12": {
+  "rotowireId": 6555,
+  "sportRadarId": "f8eb10fd-709e-4a3e-bb48-626415554374",
+  "name": "Ostapchuk, Zack",
+  "fantraxId": "05u12",
+  "team": "SJS",
+  "position": "LW",
+  "eligiblePos": "LW,C",
+  "status": "FA"
+ },
+ "05u4d": {
+  "rotowireId": 6541,
+  "sportRadarId": "1c69eb8c-8517-4d63-8a3e-55b4b928c8d9",
+  "name": "Trudeau, William",
+  "fantraxId": "05u4d",
+  "team": "NSH",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "05u4e": {
+  "rotowireId": 6536,
+  "sportRadarId": "b3383290-50a6-46aa-b0e0-b0b7c7b084a5",
+  "name": "Fedotov, Ilya",
+  "fantraxId": "05u4e",
+  "team": "UTA",
+  "position": "LW",
+  "eligiblePos": "LW",
+  "status": "FA"
+ },
+ "05u6d": {
+  "rotowireId": 7635,
+  "sportRadarId": "22983695-9bc9-4632-baf0-abeb7e2b7783",
+  "name": "Mittelstadt, Luke",
+  "fantraxId": "05u6d",
+  "team": "MTL",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "05ub3": {
+  "rotowireId": 6563,
+  "sportRadarId": "133afe3b-6d7e-4dcb-be69-8beb055aeb36",
+  "name": "Hinds, Tyson",
+  "fantraxId": "05ub3",
+  "team": "ANA",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "05ubx": {
+  "rotowireId": 6553,
+  "sportRadarId": "e4b6bef9-7acc-4bc9-8d13-59e12ea6b41a",
+  "name": "Evans, Ryker",
+  "fantraxId": "05ubx",
+  "team": "SEA",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "05ufl": {
+  "rotowireId": 7046,
+  "sportRadarId": "31b7b631-1b09-4543-9ef5-3e7facee5e25",
+  "name": "Chmelar, Jaroslav",
+  "fantraxId": "05ufl",
+  "team": "NYR",
+  "position": "RW",
+  "eligiblePos": "RW",
+  "status": "FA"
+ },
+ "05x9p": {
+  "sportRadarId": "fce811ed-df9e-4234-be67-58a48dc100e5",
+  "name": "Fizer, Tarun",
+  "fantraxId": "05x9p",
+  "team": "OTT",
+  "position": "RW",
+  "eligiblePos": "RW",
+  "status": "FA"
+ },
+ "05ymr": {
+  "rotowireId": 6740,
+  "sportRadarId": "b53ee890-bede-470b-b54c-0d2100b4f3ed",
+  "name": "Lorenz, Rieger",
+  "fantraxId": "05ymr",
+  "team": "MIN",
+  "position": "C",
+  "eligiblePos": "C",
+  "status": "FA"
+ },
+ "060je": {
+  "rotowireId": 6761,
+  "sportRadarId": "93ce680c-7ce0-4200-bc9d-69bb440c8a61",
+  "name": "Warren, Noah",
+  "fantraxId": "060je",
+  "team": "ANA",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "060jk": {
+  "rotowireId": 6760,
+  "sportRadarId": "b687a277-2f59-4805-87e1-8a702619f96b",
+  "name": "Kaskimaki, Aleksanteri",
+  "fantraxId": "060jk",
+  "team": "STL",
+  "position": "C",
+  "eligiblePos": "C",
+  "status": "FA"
+ },
+ "060nb": {
+  "rotowireId": 6789,
+  "sportRadarId": "623e4a05-3a49-4921-9f90-da01969ff084",
+  "name": "Booth, Angus",
+  "fantraxId": "060nb",
+  "team": "LAK",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "060x9": {
+  "rotowireId": 7271,
+  "sportRadarId": "83971db0-b4c2-4544-8eaf-f11721fbc423",
+  "name": "Kmec, Viliam",
+  "fantraxId": "060x9",
+  "team": "VGK",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "060ya": {
+  "rotowireId": 7041,
+  "sportRadarId": "e7acf078-690c-4799-8548-0d9ee71739d4",
+  "name": "DiVincentiis, Domenic",
+  "fantraxId": "060ya",
+  "team": "WPG",
+  "position": "G",
+  "eligiblePos": "G",
+  "status": "FA"
+ },
+ "061bk": {
+  "rotowireId": 7307,
+  "sportRadarId": "637bfc2f-d2d7-4352-8619-2b414b01b913",
+  "name": "Johansson, Anton",
+  "fantraxId": "061bk",
+  "team": "DET",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "WW"
+ },
+ "061i9": {
+  "rotowireId": 6865,
+  "sportRadarId": "e0b5cd78-dd55-4e1c-99e9-df63fe10155d",
+  "name": "Kudryavtsev, Kirill",
+  "fantraxId": "061i9",
+  "team": "VAN",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "062pv": {
+  "rotowireId": 7357,
+  "sportRadarId": "76faf3ea-dc4c-410a-b8ff-793a6619c42c",
+  "name": "Wright, Jared",
+  "fantraxId": "062pv",
+  "team": "LAK",
+  "position": "RW",
+  "eligiblePos": "RW",
+  "status": "FA"
+ },
+ "06bdk": {
+  "sportRadarId": "a15506f5-3693-40f9-b153-7488744f5df3",
+  "name": "Wikman, Albert",
+  "fantraxId": "06bdk",
+  "team": "FLA",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "06bdl": {
+  "rotowireId": 7007,
+  "sportRadarId": "4b7ad2c9-998f-4993-95d7-d75f2351574a",
+  "name": "Rykov, Alexander",
+  "fantraxId": "06bdl",
+  "team": "CAR",
+  "position": "RW",
+  "eligiblePos": "RW",
+  "status": "FA"
+ },
+ "06bur": {
+  "rotowireId": 6967,
+  "sportRadarId": "6f5c171b-3d23-48ca-8aff-b9d9863bea33",
+  "name": "McCarthy, Gavin",
+  "fantraxId": "06bur",
+  "team": "BUF",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "06c6w": {
+  "rotowireId": 7065,
+  "sportRadarId": "99a22975-792b-40a3-9fbb-9d1307182b18",
+  "name": "Chadwick, Noah",
+  "fantraxId": "06c6w",
+  "team": "TOR",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "06c9b": {
+  "rotowireId": 7273,
+  "sportRadarId": "bf207922-beeb-4cdd-8eee-e8970c4d6b3c",
+  "name": "Konyushkov, Bogdan",
+  "fantraxId": "06c9b",
+  "team": "MTL",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "06cdz": {
+  "sportRadarId": "ed72eae3-8d51-4b47-bfe5-8b13afca03fc",
+  "name": "Eriksson, Filip",
+  "fantraxId": "06cdz",
+  "team": "MTL",
+  "position": "C",
+  "eligiblePos": "C",
+  "status": "FA"
+ },
+ "06clf": {
+  "rotowireId": 7653,
+  "sportRadarId": "22ec10b4-fa5f-4583-8885-822910710965",
+  "name": "Hurtig, Axel",
+  "fantraxId": "06clf",
+  "team": "CGY",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "06clh": {
+  "sportRadarId": "2abe436e-3d0a-4c39-bb75-49d73e672dba",
+  "name": "Rimashevskiy, Yegor",
+  "fantraxId": "06clh",
+  "team": "SJS",
+  "position": "RW",
+  "eligiblePos": "LW,RW",
+  "status": "FA"
+ },
+ "06jhg": {
+  "rotowireId": 7192,
+  "sportRadarId": "6f8d69f7-8696-471d-b443-44c05a53336d",
+  "name": "Leenders, Ryerson",
+  "fantraxId": "06jhg",
+  "team": "BUF",
+  "position": "G",
+  "eligiblePos": "G",
+  "status": "FA"
+ },
+ "06l26": {
+  "rotowireId": 7114,
+  "sportRadarId": "0c5bc27e-dd37-4474-88f8-edc5722548e9",
+  "name": "Hovorka, Mikulas",
+  "fantraxId": "06l26",
+  "team": "FLA",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "06lv0": {
+  "rotowireId": 7182,
+  "sportRadarId": "214f6770-555e-48dd-a040-2ad35841bab0",
+  "name": "Gill, Spencer",
+  "fantraxId": "06lv0",
+  "team": "PHI",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "06mbg": {
+  "rotowireId": 7227,
+  "sportRadarId": "c9544a44-35e3-498e-85e4-9b2c86db5a87",
+  "name": "Marrelli, Luca",
+  "fantraxId": "06mbg",
+  "team": "CBJ",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "06mcw": {
+  "rotowireId": 7223,
+  "sportRadarId": "75753951-bf39-4259-b684-ff53bce41056",
+  "name": "Berglund, Jack",
+  "fantraxId": "06mcw",
+  "team": "PHI",
+  "position": "C",
+  "eligiblePos": "LW,C",
+  "status": "FA"
+ },
+ "06mgx": {
+  "sportRadarId": "4afe432a-d232-4c78-98f1-10bbad192c2e",
+  "name": "Forslund, Charlie",
+  "fantraxId": "06mgx",
+  "team": "DET",
+  "position": "LW",
+  "eligiblePos": "LW,RW",
+  "status": "FA"
+ },
+ "06mgz": {
+  "rotowireId": 7683,
+  "sportRadarId": "6f2e549d-1ea2-4971-b5dd-da85d237bb3d",
+  "name": "Nieminen, Daniel",
+  "fantraxId": "06mgz",
+  "team": "NSH",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "06mhk": {
+  "sportRadarId": "707c666b-1c25-4b9a-96fb-8cae208ed7dd",
+  "name": "Kol, Timur",
+  "fantraxId": "06mhk",
+  "team": "CAR",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "06mj1": {
+  "sportRadarId": "cc323b5c-45ce-4d0e-a66e-9ba164255d4f",
+  "name": "Miller, Landon",
+  "fantraxId": "06mj1",
+  "team": "DET",
+  "position": "G",
+  "eligiblePos": "G",
+  "status": "FA"
+ },
+ "06mji": {
+  "sportRadarId": "b0cb351f-2f45-479d-b367-cd87b705cd42",
+  "name": "Svensson, Joel",
+  "fantraxId": "06mji",
+  "team": "CHI",
+  "position": "LW",
+  "eligiblePos": "LW,C",
+  "status": "FA"
+ },
+ "06pwt": {
+  "sportRadarId": "17dd6030-7a57-4691-8863-5ea53de7728a",
+  "name": "Sarkenov, Asanali",
+  "fantraxId": "06pwt",
+  "team": "COL",
+  "position": "RW",
+  "eligiblePos": "RW",
+  "status": "FA"
+ },
+ "06qqb": {
+  "rotowireId": 7325,
+  "sportRadarId": "abf7d981-9c6f-40a8-916c-484b00153ce2",
+  "name": "Posch, Isak",
+  "fantraxId": "06qqb",
+  "team": "NSH",
+  "position": "G",
+  "eligiblePos": "G",
+  "status": "FA"
+ },
+ "06qw6": {
+  "rotowireId": 7338,
+  "sportRadarId": "fe20c268-5604-4e29-8bca-34e292fb3f97",
+  "name": "Samanski, Josh",
+  "fantraxId": "06qw6",
+  "team": "EDM",
+  "position": "C",
+  "eligiblePos": "C",
+  "status": "FA"
+ },
+ "06sq3": {
+  "rotowireId": 7466,
+  "sportRadarId": "d072fd6e-2f23-4bbc-861f-0960cda8e994",
+  "name": "Agafonov, Maxim",
+  "fantraxId": "06sq3",
+  "team": "SEA",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "06tas": {
+  "sportRadarId": "0d0f6a50-205b-42bb-9729-f3dc8b0fde2c",
+  "name": "Eriksen, Mikkel",
+  "fantraxId": "06tas",
+  "team": "NYR",
+  "position": "C",
+  "eligiblePos": "C",
+  "status": "FA"
+ },
+ "06tmr": {
+  "sportRadarId": "2f214fe3-da82-41f3-9eb9-07e07868a7b6",
+  "name": "Isayev, Dmitri",
+  "fantraxId": "06tmr",
+  "team": "OTT",
+  "position": "LW",
+  "eligiblePos": "LW",
+  "status": "FA"
+ },
+ "06uk3": {
+  "rotowireId": 7456,
+  "sportRadarId": "4e2e457a-73de-44d3-b14e-7e223ee927a0",
+  "name": "Schock, Drew",
+  "fantraxId": "06uk3",
+  "team": "ANA",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "06xwh": {
+  "sportRadarId": "93eff15a-fde8-48a6-846a-41b904090dee",
+  "name": "Sanderson, Carter",
+  "fantraxId": "06xwh",
+  "team": "PIT",
+  "position": "LW",
+  "eligiblePos": "LW",
+  "status": "FA"
+ },
+ "06xwl": {
+  "sportRadarId": "6b2a72fb-04f4-4c79-bc16-acad813ac4bc",
+  "name": "Tkach-Tkachenko, Ivan",
+  "fantraxId": "06xwl",
+  "team": "UTA",
+  "position": "G",
+  "eligiblePos": "G",
+  "status": "FA"
+ },
+ "072g1": {
+  "sportRadarId": "b66480c8-2d24-4264-873e-dc28dae5372e",
+  "name": "Minchak, Matthew",
+  "fantraxId": "072g1",
+  "team": "VGK",
+  "position": "G",
+  "eligiblePos": "G",
+  "status": "FA"
+ },
+ "072jd": {
+  "rotowireId": 7655,
+  "sportRadarId": "94e66331-4f20-48ba-b62c-f45a847a8037",
+  "name": "Michaels, Owen",
+  "fantraxId": "072jd",
+  "team": "EDM",
+  "position": "RW",
+  "eligiblePos": "RW",
+  "status": "FA"
+ },
+ "072yz": {
+  "sportRadarId": "1006bde1-fae8-4d1e-8b83-206f3977c8e8",
+  "name": "Patrikhayev, Ivan",
+  "fantraxId": "072yz",
+  "team": "NYR",
+  "position": "D",
+  "eligiblePos": "D",
+  "status": "FA"
+ },
+ "0760m": {
+  "rotowireId": 7763,
+  "sportRadarId": "a343dae9-b9aa-4c09-b856-e0e84f32c67a",
+  "name": "Hamilton, Beckett",
+  "fantraxId": "0760m",
+  "team": "COL",
+  "position": "RW",
+  "eligiblePos": "RW",
+  "status": "FA"
+ },
+ "076qa": {
+  "sportRadarId": "fb1852d3-4eee-4ba5-b497-c769c55ee601",
+  "name": "Proskurin, Vladimir",
+  "fantraxId": "076qa",
+  "team": "STL",
+  "position": "G",
+  "eligiblePos": "G",
+  "status": "FA"
+ },
+ "076xh": {
+  "sportRadarId": "29e25e3c-5f9a-4925-9e65-f42f3d9873dd",
+  "name": "Sorbrand, William",
+  "fantraxId": "076xh",
+  "team": "CHI",
+  "position": "C",
+  "eligiblePos": "C",
+  "status": "FA"
+ },
+ "076y0": {
+  "sportRadarId": "a4db4d50-eb52-42c1-bc28-9ba31074cca9",
+  "name": "Nikonovich, Matvei",
+  "fantraxId": "076y0",
+  "team": "PIT",
+  "position": "G",
+  "eligiblePos": "G",
+  "status": "FA"
+ },
+ "076yf": {
+  "sportRadarId": "3394be65-e9ed-46c5-b594-9ead7bd7f167",
+  "name": "Shurygin, Stepan",
+  "fantraxId": "076yf",
+  "team": "TBL",
+  "position": "G",
+  "eligiblePos": "G",
+  "status": "FA"
+ },
+ "078c7": {
+  "sportRadarId": "c11f72b3-98d5-4905-879c-3fb72aeef397",
+  "name": "Humphries, Matthew",
+  "fantraxId": "078c7",
+  "team": "DAL",
+  "position": "G",
+  "eligiblePos": "G",
+  "status": "FA"
+ }
+}
