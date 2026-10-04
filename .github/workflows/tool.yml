@@ -1,0 +1,31 @@
+name: One-off tool
+
+on:
+  workflow_dispatch:
+    inputs:
+      tool:
+        description: 'Script in src/tools/ to run (without .js)'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci || npm install
+      - run: node src/tools/${{ github.event.inputs.tool }}.js
+      - name: Save results
+        run: |
+          git config user.name "whalers-scan"
+          git config user.email "whalers-scan@users.noreply.github.com"
+          git add -A data/adhoc
+          git diff --cached --quiet || git commit -m "tool ${{ github.event.inputs.tool }} $(date -u +%F)"
+          git pull --rebase -q && git push
