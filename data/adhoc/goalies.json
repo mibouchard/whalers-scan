@@ -1,0 +1,1536 @@
+{
+ "at": "2026-10-04T01:17:47.924Z",
+ "period": 2,
+ "teams": {
+  "CGY": {
+   "capRoom": 51.51,
+   "main": 20,
+   "goalies": [
+    {
+     "id": "03nqi",
+     "name": "Alex Lyon",
+     "fxTeam": "BUF",
+     "nhlTeam": "BUF",
+     "status": "INJURED_RESERVE",
+     "salary": 1.5,
+     "age": 33,
+     "last": {
+      "gp": 36,
+      "gs": 34,
+      "w": 20,
+      "svp": 0.907048,
+      "gaa": 2.771061
+     },
+     "now": {},
+     "careerGP": 149
+    },
+    {
+     "id": "06c40",
+     "name": "Yegor Zavragin",
+     "fxTeam": "PHI",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    },
+    {
+     "id": "02oar",
+     "name": "Linus Ullmark",
+     "fxTeam": "OTT",
+     "nhlTeam": "OTT",
+     "status": "ACTIVE",
+     "salary": 8.25,
+     "age": 33,
+     "last": {
+      "gp": 49,
+      "gs": 49,
+      "w": 28,
+      "svp": 0.890651,
+      "gaa": 2.725886
+     },
+     "now": {},
+     "careerGP": 340
+    },
+    {
+     "id": "06s4g",
+     "name": "Michal Postava",
+     "fxTeam": "DET",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.975
+    },
+    {
+     "id": "06byc",
+     "name": "Hampton Slukynsky",
+     "fxTeam": "LAK",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 1.075
+    },
+    {
+     "id": "068yz",
+     "name": "Jacob Fowler",
+     "fxTeam": "MTL",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.946
+    },
+    {
+     "id": "075kl",
+     "name": "Ryder Fetterolf",
+     "fxTeam": "CAR",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    }
+   ]
+  },
+  "BOS": {
+   "capRoom": 7.66,
+   "main": 18,
+   "goalies": [
+    {
+     "id": "031pl",
+     "name": "Juuse Saros",
+     "fxTeam": "NSH",
+     "nhlTeam": "NSH",
+     "status": "ACTIVE",
+     "salary": 7.74,
+     "age": 31,
+     "last": {
+      "gp": 59,
+      "gs": 59,
+      "w": 28,
+      "svp": 0.893529,
+      "gaa": 3.163829
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 0,
+      "svp": 0.9,
+      "gaa": 3.086596
+     },
+     "careerGP": 468
+    },
+    {
+     "id": "03y7l",
+     "name": "Michael DiPietro",
+     "fxTeam": "BOS",
+     "nhlTeam": "BOS",
+     "status": "MINORS",
+     "salary": 0.813,
+     "age": 27,
+     "last": {
+      "gp": 1,
+      "gs": 0,
+      "w": 0,
+      "svp": 1,
+      "gaa": 0
+     },
+     "now": {},
+     "careerGP": 4
+    },
+    {
+     "id": "03yxp",
+     "name": "Stuart Skinner",
+     "fxTeam": "WPG",
+     "nhlTeam": "WPG",
+     "status": "RESERVE",
+     "salary": 3.75,
+     "age": 27,
+     "last": {
+      "gp": 50,
+      "gs": 50,
+      "w": 23,
+      "svp": 0.885222,
+      "gaa": 2.990095
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 0,
+      "svp": 0.866667,
+      "gaa": 3.788477
+     },
+     "careerGP": 225
+    }
+   ]
+  },
+  "CGS": {
+   "capRoom": 4.03,
+   "main": 20,
+   "goalies": [
+    {
+     "id": "03ynu",
+     "name": "Carter Hart",
+     "fxTeam": "VGK",
+     "nhlTeam": "VGK",
+     "status": "RESERVE",
+     "salary": 2,
+     "age": 28,
+     "last": {
+      "gp": 18,
+      "gs": 18,
+      "w": 11,
+      "svp": 0.890995,
+      "gaa": 2.706457
+     },
+     "now": {
+      "gp": 2,
+      "gs": 2,
+      "w": 1,
+      "svp": 0.869565,
+      "gaa": 3.060791
+     },
+     "careerGP": 247
+    },
+    {
+     "id": "01d6c",
+     "name": "Jacob Markstrom",
+     "fxTeam": "FLA",
+     "nhlTeam": "FLA",
+     "status": "ACTIVE",
+     "salary": 6,
+     "age": 36,
+     "last": {
+      "gp": 44,
+      "gs": 43,
+      "w": 23,
+      "svp": 0.883199,
+      "gaa": 3.066018
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 1,
+      "svp": 1,
+      "gaa": 0
+     },
+     "careerGP": 579
+    },
+    {
+     "id": "05tpw",
+     "name": "Semyon Vyazovoy",
+     "fxTeam": "SEA",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    },
+    {
+     "id": "06mba",
+     "name": "Kim Saarinen",
+     "fxTeam": "SEA",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.932
+    },
+    {
+     "id": "06mcz",
+     "name": "Marcus Gidlof",
+     "fxTeam": "STL",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    },
+    {
+     "id": "06jhh",
+     "name": "Evan Gardner",
+     "fxTeam": "CBJ",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.964
+    },
+    {
+     "id": "05mwh",
+     "name": "Devon Levi",
+     "fxTeam": "EDM",
+     "nhlTeam": "EDM",
+     "status": "MINORS",
+     "salary": 0.813,
+     "age": 24,
+     "last": {},
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 1,
+      "svp": 0.681818,
+      "gaa": 7.017544
+     },
+     "careerGP": 40
+    },
+    {
+     "id": "06mho",
+     "name": "Petteri Rimpinen",
+     "fxTeam": "LAK",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    }
+   ]
+  },
+  "VAN": {
+   "capRoom": 11.52,
+   "main": 19,
+   "goalies": [
+    {
+     "id": "0529k",
+     "name": "Yaroslav Askarov",
+     "fxTeam": "SJS",
+     "nhlTeam": "SJS",
+     "status": "RESERVE",
+     "salary": 2,
+     "age": 24,
+     "last": {
+      "gp": 47,
+      "gs": 47,
+      "w": 21,
+      "svp": 0.883669,
+      "gaa": 3.627984
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 1,
+      "svp": 0.884615,
+      "gaa": 2.8466
+     },
+     "careerGP": 64
+    },
+    {
+     "id": "05oxs",
+     "name": "Jakub Dobes",
+     "fxTeam": "MTL",
+     "nhlTeam": "MTL",
+     "status": "MINORS",
+     "salary": 0.965,
+     "age": 25,
+     "last": {
+      "gp": 43,
+      "gs": 42,
+      "w": 29,
+      "svp": 0.901432,
+      "gaa": 2.779556
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 1,
+      "svp": 0.928571,
+      "gaa": 2.013423
+     },
+     "careerGP": 60
+    },
+    {
+     "id": "0644l",
+     "name": "Michael Hrabal",
+     "fxTeam": "UTA",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 1.075
+    },
+    {
+     "id": "06qqe",
+     "name": "Semyon Frolov",
+     "fxTeam": "CAR",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    },
+    {
+     "id": "03rih",
+     "name": "Karel Vejmelka",
+     "fxTeam": "UTA",
+     "nhlTeam": "UTA",
+     "status": "ACTIVE",
+     "salary": 4.75,
+     "age": 30,
+     "last": {
+      "gp": 64,
+      "gs": 63,
+      "w": 38,
+      "svp": 0.896679,
+      "gaa": 2.745921
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 1,
+      "svp": 1,
+      "gaa": 0
+     },
+     "careerGP": 263
+    }
+   ]
+  },
+  "QUE": {
+   "capRoom": 11.32,
+   "main": 17,
+   "goalies": [
+    {
+     "id": "059mt",
+     "name": "Nicolas Daws",
+     "fxTeam": "NJD",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 1.1
+    },
+    {
+     "id": "06j7t",
+     "name": "Ilya Nabokov",
+     "fxTeam": "COL",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.975
+    },
+    {
+     "id": "061i2",
+     "name": "Sergei Murashov",
+     "fxTeam": "PIT",
+     "nhlTeam": "PIT",
+     "status": "RESERVE",
+     "salary": 0.936,
+     "age": 22,
+     "last": {
+      "gp": 5,
+      "gs": 4,
+      "w": 1,
+      "svp": 0.896552,
+      "gaa": 2.559697
+     },
+     "now": {},
+     "careerGP": 5
+    },
+    {
+     "id": "06qqd",
+     "name": "Pyotr Andreyanov",
+     "fxTeam": "CBJ",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    },
+    {
+     "id": "04zop",
+     "name": "Erik Portillo",
+     "fxTeam": "LAK",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.833
+    },
+    {
+     "id": "04zc8",
+     "name": "Devin Cooley",
+     "fxTeam": "CGY",
+     "nhlTeam": "CGY",
+     "status": "MINORS",
+     "salary": 1.35,
+     "age": 29,
+     "last": {
+      "gp": 31,
+      "gs": 26,
+      "w": 10,
+      "svp": 0.909091,
+      "gaa": 2.689173
+     },
+     "now": {},
+     "careerGP": 37
+    },
+    {
+     "id": "016kv",
+     "name": "Jake Allen",
+     "fxTeam": "NJD",
+     "nhlTeam": "NJD",
+     "status": "ACTIVE",
+     "salary": 1.8,
+     "age": 36,
+     "last": {
+      "gp": 37,
+      "gs": 36,
+      "w": 17,
+      "svp": 0.903977,
+      "gaa": 2.744028
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 1,
+      "svp": 0.92,
+      "gaa": 1.893242
+     },
+     "careerGP": 498
+    },
+    {
+     "id": "05nik",
+     "name": "Artur Akhtyamov",
+     "fxTeam": "TOR",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.9
+    }
+   ]
+  },
+  "WPG": {
+   "capRoom": 8.81,
+   "main": 20,
+   "goalies": [
+    {
+     "id": "04bii",
+     "name": "Spencer Knight",
+     "fxTeam": "CHI",
+     "nhlTeam": "CHI",
+     "status": "ACTIVE",
+     "salary": 5.833,
+     "age": 25,
+     "last": {
+      "gp": 55,
+      "gs": 55,
+      "w": 19,
+      "svp": 0.902085,
+      "gaa": 2.823958
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 0,
+      "svp": 0.888889,
+      "gaa": 4.014497
+     },
+     "careerGP": 151
+    },
+    {
+     "id": "042w1",
+     "name": "Joseph Woll",
+     "fxTeam": "PHI",
+     "nhlTeam": "PHI",
+     "status": "RESERVE",
+     "salary": 3.667,
+     "age": 28,
+     "last": {
+      "gp": 39,
+      "gs": 38,
+      "w": 15,
+      "svp": 0.89918,
+      "gaa": 3.336223
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 0,
+      "svp": 0.931818,
+      "gaa": 2.865482
+     },
+     "careerGP": 118
+    },
+    {
+     "id": "072z2",
+     "name": "Dmitri Borichev",
+     "fxTeam": "NSH",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    },
+    {
+     "id": "06rmr",
+     "name": "Alexei Medvedev",
+     "fxTeam": "VAN",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.965
+    },
+    {
+     "id": "068yu",
+     "name": "Trey Augustine",
+     "fxTeam": "DET",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 1.075
+    }
+   ]
+  },
+  "CHI": {
+   "capRoom": 11.32,
+   "main": 20,
+   "goalies": [
+    {
+     "id": "06tam",
+     "name": "Michal Pradel",
+     "fxTeam": "DET",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    },
+    {
+     "id": "02nom",
+     "name": "Andrei Vasilevskiy",
+     "fxTeam": "TBL",
+     "nhlTeam": "TBL",
+     "status": "ACTIVE",
+     "salary": 9.5,
+     "age": 32,
+     "last": {
+      "gp": 58,
+      "gs": 58,
+      "w": 39,
+      "svp": 0.91234,
+      "gaa": 2.308533
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 0,
+      "svp": 0.833333,
+      "gaa": 4.295943
+     },
+     "careerGP": 599
+    },
+    {
+     "id": "05k7t",
+     "name": "Drew Commesso",
+     "fxTeam": "CHI",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.875
+    },
+    {
+     "id": "04yg5",
+     "name": "Jesper Wallstedt",
+     "fxTeam": "MIN",
+     "nhlTeam": "MIN",
+     "status": "RESERVE",
+     "salary": 2.2,
+     "age": 23,
+     "last": {
+      "gp": 35,
+      "gs": 33,
+      "w": 18,
+      "svp": 0.915686,
+      "gaa": 2.614379
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 1,
+      "svp": 0.95,
+      "gaa": 1.012943
+     },
+     "careerGP": 41
+    },
+    {
+     "id": "01zry",
+     "name": "Frederik Andersen",
+     "fxTeam": "EDM",
+     "nhlTeam": "EDM",
+     "status": "INJURED_RESERVE",
+     "salary": 1,
+     "age": 37,
+     "last": {
+      "gp": 35,
+      "gs": 35,
+      "w": 16,
+      "svp": 0.873969,
+      "gaa": 3.054428
+     },
+     "now": {},
+     "careerGP": 552
+    },
+    {
+     "id": "04zb5",
+     "name": "Mads Sogaard",
+     "fxTeam": "TBL",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.85
+    },
+    {
+     "id": "05o01",
+     "name": "Sebastian Cossa",
+     "fxTeam": "UTA",
+     "nhlTeam": "UTA",
+     "status": "MINORS",
+     "salary": 2,
+     "age": 23,
+     "last": {},
+     "now": {},
+     "careerGP": 1
+    },
+    {
+     "id": "051v4",
+     "name": "Arturs Silovs",
+     "fxTeam": "PIT",
+     "nhlTeam": "PIT",
+     "status": "MINORS",
+     "salary": 2.8,
+     "age": 25,
+     "last": {
+      "gp": 39,
+      "gs": 38,
+      "w": 19,
+      "svp": 0.888235,
+      "gaa": 3.071376
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 1,
+      "svp": 1,
+      "gaa": 0
+     },
+     "careerGP": 59
+    }
+   ]
+  },
+  "WAS": {
+   "capRoom": 7.34,
+   "main": 17,
+   "goalies": [
+    {
+     "id": "01ud1",
+     "name": "Sergei Bobrovsky",
+     "fxTeam": "TOR",
+     "nhlTeam": "TOR",
+     "status": "ACTIVE",
+     "salary": 7,
+     "age": 38,
+     "last": {
+      "gp": 52,
+      "gs": 51,
+      "w": 27,
+      "svp": 0.8768,
+      "gaa": 3.070124
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 0,
+      "svp": 0.875,
+      "gaa": 3.06383
+     },
+     "careerGP": 807
+    },
+    {
+     "id": "04mdc",
+     "name": "Logan Thompson",
+     "fxTeam": "WSH",
+     "nhlTeam": "WSH",
+     "status": "RESERVE",
+     "salary": 5.85,
+     "age": 29,
+     "last": {
+      "gp": 58,
+      "gs": 58,
+      "w": 31,
+      "svp": 0.911783,
+      "gaa": 2.438281
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 1,
+      "svp": 0.939394,
+      "gaa": 2.003896
+     },
+     "careerGP": 205
+    },
+    {
+     "id": "03as7",
+     "name": "Thatcher Demko",
+     "fxTeam": "VAN",
+     "nhlTeam": "VAN",
+     "status": "INJURED_RESERVE",
+     "salary": 8.5,
+     "age": 30,
+     "last": {
+      "gp": 20,
+      "gs": 20,
+      "w": 8,
+      "svp": 0.896887,
+      "gaa": 2.903573
+     },
+     "now": {},
+     "careerGP": 262
+    },
+    {
+     "id": "06hk8",
+     "name": "Carter George",
+     "fxTeam": "LAK",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.929
+    }
+   ]
+  },
+  "ANA": {
+   "capRoom": 1.51,
+   "main": 20,
+   "goalies": [
+    {
+     "id": "01zs1",
+     "name": "Scott Wedgewood",
+     "fxTeam": "COL",
+     "nhlTeam": "COL",
+     "status": "ACTIVE",
+     "salary": 2.5,
+     "age": 34,
+     "last": {
+      "gp": 45,
+      "gs": 43,
+      "w": 31,
+      "svp": 0.921317,
+      "gaa": 2.02427
+     },
+     "now": {},
+     "careerGP": 199
+    },
+    {
+     "id": "04bih",
+     "name": "Cayden Primeau",
+     "fxTeam": "CAR",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.912
+    },
+    {
+     "id": "04r01",
+     "name": "Akira Schmid",
+     "fxTeam": "FLA",
+     "nhlTeam": "FLA",
+     "status": "RESERVE",
+     "salary": 2,
+     "age": 26,
+     "last": {
+      "gp": 34,
+      "gs": 29,
+      "w": 16,
+      "svp": 0.892541,
+      "gaa": 2.594386
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 0,
+      "svp": 0.875,
+      "gaa": 3.795467
+     },
+     "careerGP": 83
+    },
+    {
+     "id": "05oxl",
+     "name": "Leevi Merilainen",
+     "fxTeam": "VAN",
+     "nhlTeam": "VAN",
+     "status": "MINORS",
+     "salary": 1.1,
+     "age": 24,
+     "last": {
+      "gp": 20,
+      "gs": 19,
+      "w": 8,
+      "svp": 0.859956,
+      "gaa": 3.508505
+     },
+     "now": {
+      "gp": 1,
+      "gs": 0,
+      "w": 0,
+      "svp": 0.909091,
+      "gaa": 1.955459
+     },
+     "careerGP": 35
+    },
+    {
+     "id": "067yt",
+     "name": "Adam Gajan",
+     "fxTeam": "CHI",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 1.05
+    }
+   ]
+  },
+  "COL": {
+   "capRoom": 4.87,
+   "main": 18,
+   "goalies": [
+    {
+     "id": "02o7s",
+     "name": "Connor Hellebuyck",
+     "fxTeam": "WPG",
+     "nhlTeam": "WPG",
+     "status": "INJURED_RESERVE",
+     "salary": 8.5,
+     "age": 33,
+     "last": {
+      "gp": 57,
+      "gs": 57,
+      "w": 23,
+      "svp": 0.895281,
+      "gaa": 2.857605
+     },
+     "now": {},
+     "careerGP": 625
+    },
+    {
+     "id": "05k9b",
+     "name": "Joel Blomqvist",
+     "fxTeam": "PIT",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.875
+    },
+    {
+     "id": "02b3y",
+     "name": "John Gibson",
+     "fxTeam": "DET",
+     "nhlTeam": "DET",
+     "status": "ACTIVE",
+     "salary": 6.4,
+     "age": 33,
+     "last": {
+      "gp": 57,
+      "gs": 57,
+      "w": 29,
+      "svp": 0.901437,
+      "gaa": 2.715928
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 0,
+      "svp": 0.95,
+      "gaa": 1.016375
+     },
+     "careerGP": 564
+    },
+    {
+     "id": "05ugg",
+     "name": "Arsenii Sergeev",
+     "fxTeam": "CGY",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.941
+    },
+    {
+     "id": "05ws3",
+     "name": "Niklas Kokko",
+     "fxTeam": "SEA",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.892
+    },
+    {
+     "id": "05lui",
+     "name": "Calle Clang",
+     "fxTeam": "ANA",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.775
+    },
+    {
+     "id": "0457i",
+     "name": "Ukko-Pekka Luukkonen",
+     "fxTeam": "BUF",
+     "nhlTeam": "BUF",
+     "status": "RESERVE",
+     "salary": 4.75,
+     "age": 27,
+     "last": {
+      "gp": 35,
+      "gs": 34,
+      "w": 22,
+      "svp": 0.909677,
+      "gaa": 2.515082
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 0,
+      "svp": 0.772727,
+      "gaa": 5.073281
+     },
+     "careerGP": 191
+    },
+    {
+     "id": "05ylu",
+     "name": "Topias Leinonen",
+     "fxTeam": "BUF",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.962
+    }
+   ]
+  },
+  "OTT": {
+   "capRoom": 1.71,
+   "main": 20,
+   "goalies": [
+    {
+     "id": "06loo",
+     "name": "Louka Cloutier",
+     "fxTeam": "COL",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    },
+    {
+     "id": "06gk1",
+     "name": "Jack Ivankovic",
+     "fxTeam": "NSH",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    },
+    {
+     "id": "06pzf",
+     "name": "Love Harenstam",
+     "fxTeam": "STL",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    },
+    {
+     "id": "03mbn",
+     "name": "Mackenzie Blackwood",
+     "fxTeam": "COL",
+     "nhlTeam": "COL",
+     "status": "RESERVE",
+     "salary": 5.25,
+     "age": 29,
+     "last": {
+      "gp": 39,
+      "gs": 36,
+      "w": 23,
+      "svp": 0.903537,
+      "gaa": 2.505006
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 1,
+      "svp": 0.870968,
+      "gaa": 4
+     },
+     "careerGP": 292
+    },
+    {
+     "id": "0457k",
+     "name": "Jake Oettinger",
+     "fxTeam": "DAL",
+     "nhlTeam": "DAL",
+     "status": "ACTIVE",
+     "salary": 8.25,
+     "age": 27,
+     "last": {
+      "gp": 54,
+      "gs": 54,
+      "w": 35,
+      "svp": 0.899417,
+      "gaa": 2.592212
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 0,
+      "svp": 0.909091,
+      "gaa": 2.058908
+     },
+     "careerGP": 306
+    },
+    {
+     "id": "06lom",
+     "name": "Mikhail Yegorov",
+     "fxTeam": "NJD",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    }
+   ]
+  },
+  "MTL": {
+   "capRoom": 1.76,
+   "main": 20,
+   "goalies": [
+    {
+     "id": "04qyv",
+     "name": "Lukas Dostal",
+     "fxTeam": "ANA",
+     "nhlTeam": "ANA",
+     "status": "ACTIVE",
+     "salary": 6.5,
+     "age": 26,
+     "last": {
+      "gp": 56,
+      "gs": 55,
+      "w": 30,
+      "svp": 0.888301,
+      "gaa": 3.102878
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 1,
+      "svp": 0.9,
+      "gaa": 3
+     },
+     "careerGP": 178
+    },
+    {
+     "id": "06pww",
+     "name": "Joshua Ravensbergen",
+     "fxTeam": "SJS",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    },
+    {
+     "id": "072z3",
+     "name": "Brady Knowling",
+     "fxTeam": "SJS",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    },
+    {
+     "id": "074md",
+     "name": "Filip Ruzicka",
+     "fxTeam": "MIN",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.988
+    },
+    {
+     "id": "05yme",
+     "name": "Sergei Ivanov",
+     "fxTeam": "CBJ",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.97
+    },
+    {
+     "id": "04qzc",
+     "name": "Joel Hofer",
+     "fxTeam": "STL",
+     "nhlTeam": "STL",
+     "status": "RESERVE",
+     "salary": 3.4,
+     "age": 26,
+     "last": {
+      "gp": 46,
+      "gs": 43,
+      "w": 24,
+      "svp": 0.9096,
+      "gaa": 2.606062
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 1,
+      "svp": 1,
+      "gaa": 0
+     },
+     "careerGP": 116
+    },
+    {
+     "id": "04mjq",
+     "name": "Colten Ellis",
+     "fxTeam": "BUF",
+     "nhlTeam": "BUF",
+     "status": "MINORS",
+     "salary": 0.85,
+     "age": 25,
+     "last": {
+      "gp": 16,
+      "gs": 14,
+      "w": 8,
+      "svp": 0.903297,
+      "gaa": 2.896854
+     },
+     "now": {},
+     "careerGP": 16
+    },
+    {
+     "id": "07337",
+     "name": "Tobias Trejbal",
+     "fxTeam": "CGY",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    }
+   ]
+  },
+  "CAR": {
+   "capRoom": 14.23,
+   "main": 14,
+   "goalies": [
+    {
+     "id": "03ece",
+     "name": "Igor Shesterkin",
+     "fxTeam": "NYR",
+     "nhlTeam": "NYR",
+     "status": "ACTIVE",
+     "salary": 11.568,
+     "age": 30,
+     "last": {
+      "gp": 51,
+      "gs": 51,
+      "w": 25,
+      "svp": 0.911579,
+      "gaa": 2.499821
+     },
+     "now": {
+      "gp": 2,
+      "gs": 2,
+      "w": 1,
+      "svp": 0.934783,
+      "gaa": 1.507748
+     },
+     "careerGP": 327
+    },
+    {
+     "id": "05u3g",
+     "name": "Thomas Milic",
+     "fxTeam": "WPG",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.917
+    },
+    {
+     "id": "04qyd",
+     "name": "Justus Annunen",
+     "fxTeam": "NSH",
+     "nhlTeam": "NSH",
+     "status": "MINORS",
+     "salary": 1.25,
+     "age": 26,
+     "last": {
+      "gp": 28,
+      "gs": 23,
+      "w": 10,
+      "svp": 0.907173,
+      "gaa": 2.679047
+     },
+     "now": {},
+     "careerGP": 80
+    },
+    {
+     "id": "04yla",
+     "name": "Brandon Bussi",
+     "fxTeam": "CAR",
+     "nhlTeam": "CAR",
+     "status": "MINORS",
+     "salary": 1.9,
+     "age": 28,
+     "last": {
+      "gp": 39,
+      "gs": 39,
+      "w": 31,
+      "svp": 0.894737,
+      "gaa": 2.465249
+     },
+     "now": {
+      "gp": 2,
+      "gs": 2,
+      "w": 0,
+      "svp": 0.87234,
+      "gaa": 2.881921
+     },
+     "careerGP": 41
+    },
+    {
+     "id": "060us",
+     "name": "Dennis Hildeby",
+     "fxTeam": "TBL",
+     "nhlTeam": "TBL",
+     "status": "MINORS",
+     "salary": 0.842,
+     "age": 25,
+     "last": {
+      "gp": 20,
+      "gs": 14,
+      "w": 5,
+      "svp": 0.914234,
+      "gaa": 2.855066
+     },
+     "now": {},
+     "careerGP": 26
+    },
+    {
+     "id": "04f20",
+     "name": "Eetu Makiniemi",
+     "fxTeam": "PHI",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    }
+   ]
+  },
+  "EDM": {
+   "capRoom": 4.65,
+   "main": 17,
+   "goalies": [
+    {
+     "id": "03rjk",
+     "name": "Ivan Fedotov",
+     "fxTeam": "CBJ",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 3.275
+    },
+    {
+     "id": "076wk",
+     "name": "Yuri Ivanov",
+     "fxTeam": "BOS",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    },
+    {
+     "id": "068y9",
+     "name": "Eemil Vinni",
+     "fxTeam": "EDM",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    },
+    {
+     "id": "066pa",
+     "name": "Carson Bjarnason",
+     "fxTeam": "PHI",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.885
+    },
+    {
+     "id": "05r8v",
+     "name": "Alexei Kolosov",
+     "fxTeam": "PHI",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.85
+    },
+    {
+     "id": "03zul",
+     "name": "Filip Gustavsson",
+     "fxTeam": "MIN",
+     "nhlTeam": null,
+     "status": "INJURED_RESERVE",
+     "salary": 6.8
+    },
+    {
+     "id": "060fz",
+     "name": "Clay Stevenson",
+     "fxTeam": "WPG",
+     "nhlTeam": "WPG",
+     "status": "MINORS",
+     "salary": 0.85,
+     "age": 27,
+     "last": {
+      "gp": 4,
+      "gs": 4,
+      "w": 3,
+      "svp": 0.920792,
+      "gaa": 2.002225
+     },
+     "now": {},
+     "careerGP": 5
+    },
+    {
+     "id": "04yi4",
+     "name": "Pyotr Kochetkov",
+     "fxTeam": "CAR",
+     "nhlTeam": "CAR",
+     "status": "ACTIVE",
+     "salary": 2,
+     "age": 27,
+     "last": {
+      "gp": 9,
+      "gs": 8,
+      "w": 6,
+      "svp": 0.899471,
+      "gaa": 2.325819
+     },
+     "now": {},
+     "careerGP": 125
+    }
+   ]
+  },
+  "DET": {
+   "capRoom": 7.64,
+   "main": 19,
+   "goalies": [
+    {
+     "id": "06c31",
+     "name": "Ruslan Khazheyev",
+     "fxTeam": "CAR",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.92
+    },
+    {
+     "id": "05tpb",
+     "name": "Carl Lindbom",
+     "fxTeam": "VGK",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.9
+    },
+    {
+     "id": "04f24",
+     "name": "Jeremy Swayman",
+     "fxTeam": "BOS",
+     "nhlTeam": "BOS",
+     "status": "ACTIVE",
+     "salary": 8.25,
+     "age": 27,
+     "last": {
+      "gp": 55,
+      "gs": 54,
+      "w": 31,
+      "svp": 0.907702,
+      "gaa": 2.707645
+     },
+     "now": {
+      "gp": 2,
+      "gs": 2,
+      "w": 2,
+      "svp": 0.947368,
+      "gaa": 1.470388
+     },
+     "careerGP": 247
+    },
+    {
+     "id": "06tan",
+     "name": "Lucas Beckman",
+     "fxTeam": "OTT",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 1.028
+    },
+    {
+     "id": "05lud",
+     "name": "Dylan Garand",
+     "fxTeam": "NYR",
+     "nhlTeam": "NYR",
+     "status": "MINORS",
+     "salary": 0.875,
+     "age": 24,
+     "last": {
+      "gp": 3,
+      "gs": 3,
+      "w": 2,
+      "svp": 0.947917,
+      "gaa": 1.621622
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 1,
+      "svp": 1,
+      "gaa": 0
+     },
+     "careerGP": 4
+    },
+    {
+     "id": "051wf",
+     "name": "Dustin Wolf",
+     "fxTeam": "CGY",
+     "nhlTeam": "CGY",
+     "status": "RESERVE",
+     "salary": 7.5,
+     "age": 25,
+     "last": {
+      "gp": 57,
+      "gs": 55,
+      "w": 23,
+      "svp": 0.89923,
+      "gaa": 3.010256
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 0,
+      "svp": 0.8125,
+      "gaa": 6.016713
+     },
+     "careerGP": 129
+    }
+   ]
+  },
+  "HFD": {
+   "capRoom": 19.03,
+   "main": 18,
+   "goalies": [
+    {
+     "id": "0322w",
+     "name": "Ilya Sorokin",
+     "fxTeam": "NYI",
+     "nhlTeam": "NYI",
+     "status": "ACTIVE",
+     "salary": 8.25,
+     "age": 31,
+     "last": {
+      "gp": 55,
+      "gs": 54,
+      "w": 29,
+      "svp": 0.905882,
+      "gaa": 2.678101
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 0,
+      "svp": 0.923077,
+      "gaa": 2.071346
+     },
+     "careerGP": 309
+    },
+    {
+     "id": "05xct",
+     "name": "Jet Greaves",
+     "fxTeam": "CBJ",
+     "nhlTeam": "CBJ",
+     "status": "MINORS",
+     "salary": 5,
+     "age": 25,
+     "last": {
+      "gp": 55,
+      "gs": 53,
+      "w": 26,
+      "svp": 0.907732,
+      "gaa": 2.600653
+     },
+     "now": {
+      "gp": 1,
+      "gs": 1,
+      "w": 1,
+      "svp": 0.884615,
+      "gaa": 3
+     },
+     "careerGP": 77
+    },
+    {
+     "id": "03rfo",
+     "name": "Daniel Vladar",
+     "fxTeam": "PHI",
+     "nhlTeam": null,
+     "status": "RESERVE",
+     "salary": 3.35
+    },
+    {
+     "id": "062pr",
+     "name": "Samuel Jonsson",
+     "fxTeam": "EDM",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0.855
+    },
+    {
+     "id": "06ims",
+     "name": "Dmitri Gamzin",
+     "fxTeam": "NYI",
+     "nhlTeam": null,
+     "status": "MINORS",
+     "salary": 0
+    }
+   ]
+  }
+ }
+}
