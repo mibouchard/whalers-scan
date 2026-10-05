@@ -34,8 +34,8 @@ const free = s => { if (!pinfo) return true; const id = s.split('|')[0]; return 
 const add = (lg, r) => {
   res.cov[lg] = [r.nSk, r.nG, r.matched, r.owned.length, r.nDays];
   if (r.leaders) {
-    // [name, team, value, gp, owner, fantraxId, nhlRights, fantraxStatus]: status FA or WW = an unclaimed free agent you could add
-    for (const x of Object.values(r.leaders)) if (x) x.push(x[5] && pinfo ? (pinfo[x[5]]?.status || '') : '');
+    // [name, team, value, gp, owner, fantraxId, nhlRights, fantraxStatus, pos, age]: status FA or WW = an unclaimed free agent you could add
+    for (const x of Object.values(r.leaders)) if (x) x[7] = x[5] && pinfo ? (pinfo[x[5]]?.status || '') : '';
     res.leaders[lg] = r.leaders;
   }
   r.owned.forEach(x => res.owned.push(lg + '|' + x)); r.avail.filter(free).slice(0, 12).forEach(x => res.avail.push(lg + '|' + x));
