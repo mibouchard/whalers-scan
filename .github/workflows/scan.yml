@@ -43,6 +43,10 @@ jobs:
       - name: Run scan
         if: steps.done.outputs.skip != 'true'
         run: node src/scan.js ${{ github.event.inputs.leagues }}
+      - name: Recent form (last 5 games, league scoring)
+        if: steps.done.outputs.skip != 'true'
+        continue-on-error: true
+        run: node src/tools/form.js
       - name: Save results
         if: steps.done.outputs.skip != 'true'
         run: |
