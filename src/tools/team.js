@@ -6,7 +6,7 @@ import path from 'node:path';
 import { ROOT } from '../env.js';
 
 const L = 'fs61ldkdmow7aw2h';
-const want = (process.argv[2] || 'Ottawa Senators').toLowerCase();
+const want = (process.argv[2] || process.env.TEAM || 'Calgary Flames').toLowerCase();
 const j = u => fetch(u).then(r => { if (!r.ok) throw new Error(r.status + ' ' + u); return r.json(); });
 const info = await j(`https://www.fantrax.com/fxea/general/getLeagueInfo?leagueId=${L}`);
 const teams = info.teamInfo || {};
