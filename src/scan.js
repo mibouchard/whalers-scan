@@ -33,7 +33,11 @@ const pinfo = await fetch('https://www.fantrax.com/fxea/general/getLeagueInfo?le
 const free = s => { if (!pinfo) return true; const id = s.split('|')[0]; return !id || ['FA', 'WW'].includes(pinfo[id]?.status); };
 const add = (lg, r) => {
   res.cov[lg] = [r.nSk, r.nG, r.matched, r.owned.length, r.nDays];
-  if (r.leaders) res.leaders[lg] = r.leaders;
+  if (r.leaders) {
+    // [name, team, value, gp, owner, fantraxId, nhlRights, fantraxStatus]: status FA or WW = an unclaimed free agent you could add
+    for (const x of Object.values(r.leaders)) if (x) x.push(x[5] && pinfo ? (pinfo[x[5]]?.status || '') : '');
+    res.leaders[lg] = r.leaders;
+  }
   r.owned.forEach(x => res.owned.push(lg + '|' + x)); r.avail.filter(free).slice(0, 12).forEach(x => res.avail.push(lg + '|' + x));
   r.undrafted.filter(free).slice(0, 6).forEach(x => res.und.push(lg + '|' + x)); r.risers.filter(free).forEach(x => res.risers.push(lg + '|' + x));
   r.goalies.filter(g => g.split('|')[1] || free(g)).forEach(x => res.goalies.push(lg + '|' + x));
