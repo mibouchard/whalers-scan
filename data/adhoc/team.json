@@ -1,0 +1,1743 @@
+{
+ "at": "2026-10-05T15:39:03.263Z",
+ "team": "Ottawa Senators",
+ "teamId": "br7rvnwsmow7aw2u",
+ "teamNames": {
+  "4psrznwkmow7aw2u": "Calgary Flames",
+  "h32ctyahmow7aw2v": "Boston Bruins",
+  "svnb4s7amow7aw2u": "California Golden Seals",
+  "fay1fny2mow7aw2u": "Vancouver Canucks",
+  "nw53mrdzmow7aw2v": "Quebec Nordiques",
+  "ps4l4b6mmow7aw2v": "Winnipeg Jets",
+  "39n75kyjmow7aw2u": "Chicago Blackhawks",
+  "tu2c5havmow7aw2v": "Washington Capitals",
+  "tsr78hmdmow7aw2u": "Anaheim Ducks",
+  "nx9xgs2mmow7aw2u": "Colorado Avalanche",
+  "br7rvnwsmow7aw2u": "Ottawa Senators",
+  "z64j08mgmow7aw2u": "Montreal Canadiens",
+  "vm1rdwvtmow7aw2u": "Carolina Hurricanes",
+  "hghiywi2mow7aw2u": "Edmonton Oilers",
+  "4yx4ssw6mow7aw2v": "Detroit Red Wings",
+  "m1hfr04lmow7aw2v": "Hartford Whalers"
+ },
+ "period": 2,
+ "current": [
+  {
+   "id": "06h8g",
+   "name": "Henry Mews",
+   "nhlTeam": "CGY",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "0760m",
+   "name": "Beckett Hamilton",
+   "nhlTeam": "COL",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "02yjp",
+   "name": "Ivan Barbashev",
+   "nhlTeam": "VGK",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "RESERVE",
+   "salary": 5
+  },
+  {
+   "id": "0769h",
+   "name": "Alexander Bilecki",
+   "nhlTeam": "TOR",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "05rjg",
+   "name": "Danila Yurov",
+   "nhlTeam": "MIN",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0.973
+  },
+  {
+   "id": "05tv0",
+   "name": "Jackson Blake",
+   "nhlTeam": "CAR",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 5.117
+  },
+  {
+   "id": "06ig3",
+   "name": "Cayden Lindstrom",
+   "nhlTeam": "CBJ",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "051yz",
+   "name": "Dylan Holloway",
+   "nhlTeam": "STL",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "RESERVE",
+   "salary": 7.75
+  },
+  {
+   "id": "06loo",
+   "name": "Louka Cloutier",
+   "nhlTeam": "COL",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06psl",
+   "name": "Ivar Stenberg",
+   "nhlTeam": "SJS",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "RESERVE",
+   "salary": 1.075
+  },
+  {
+   "id": "06gk1",
+   "name": "Jack Ivankovic",
+   "nhlTeam": "NSH",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06pzf",
+   "name": "Love Harenstam",
+   "nhlTeam": "STL",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06h8h",
+   "name": "Trevor Connelly",
+   "nhlTeam": "VGK",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0.975
+  },
+  {
+   "id": "05k8c",
+   "name": "Tyson Foerster",
+   "nhlTeam": "PHI",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "RESERVE",
+   "salary": 3.75
+  },
+  {
+   "id": "03mbn",
+   "name": "Mackenzie Blackwood",
+   "nhlTeam": "COL",
+   "pos": "G",
+   "elig": "G",
+   "status": "RESERVE",
+   "salary": 5.25
+  },
+  {
+   "id": "06amv",
+   "name": "Sam Dickinson",
+   "nhlTeam": "SJS",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0.954
+  },
+  {
+   "id": "06imq",
+   "name": "Maxim Shabanov",
+   "nhlTeam": "MIN",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 1.6
+  },
+  {
+   "id": "06bao",
+   "name": "Denver Barkey",
+   "nhlTeam": "PHI",
+   "pos": "C",
+   "elig": "C",
+   "status": "INJURED_RESERVE",
+   "salary": 0.926
+  },
+  {
+   "id": "05m17",
+   "name": "Frank Nazar",
+   "nhlTeam": "CHI",
+   "pos": "C",
+   "elig": "C",
+   "status": "RESERVE",
+   "salary": 6.6
+  },
+  {
+   "id": "05r1l",
+   "name": "William Eklund",
+   "nhlTeam": "OTT",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "ACTIVE",
+   "salary": 5.6
+  },
+  {
+   "id": "0760p",
+   "name": "Victor Plante",
+   "nhlTeam": "DET",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "03yg3",
+   "name": "Mikhail Sergachev",
+   "nhlTeam": "UTA",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 8.5
+  },
+  {
+   "id": "068a6",
+   "name": "Eric Pohlkamp",
+   "nhlTeam": "SJS",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 1.05
+  },
+  {
+   "id": "03wor",
+   "name": "Mason Marchment",
+   "nhlTeam": "SJS",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "ACTIVE",
+   "salary": 6.75
+  },
+  {
+   "id": "0457k",
+   "name": "Jake Oettinger",
+   "nhlTeam": "DAL",
+   "pos": "G",
+   "elig": "G",
+   "status": "ACTIVE",
+   "salary": 8.25
+  },
+  {
+   "id": "070fm",
+   "name": "Ryan Lin",
+   "nhlTeam": "SJS",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "05gvo",
+   "name": "Matvei Michkov",
+   "nhlTeam": "PHI",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 0.95
+  },
+  {
+   "id": "06lom",
+   "name": "Mikhail Yegorov",
+   "nhlTeam": "NJD",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06jhd",
+   "name": "Anton Frondell",
+   "nhlTeam": "CHI",
+   "pos": "C",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 0.975
+  },
+  {
+   "id": "06tzg",
+   "name": "Max Westergard",
+   "nhlTeam": "PHI",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "051z0",
+   "name": "Tim Stutzle",
+   "nhlTeam": "OTT",
+   "pos": "C",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 8.35
+  },
+  {
+   "id": "04bdb",
+   "name": "Jack Hughes",
+   "nhlTeam": "NJD",
+   "pos": "C",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 8
+  },
+  {
+   "id": "059e0",
+   "name": "Jake Sanderson",
+   "nhlTeam": "OTT",
+   "pos": "D",
+   "elig": "D",
+   "status": "INJURED_RESERVE",
+   "salary": 8.05
+  },
+  {
+   "id": "076wj",
+   "name": "Nikita Scherbakov",
+   "nhlTeam": "NJD",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "04xec",
+   "name": "Matt Boldy",
+   "nhlTeam": "MIN",
+   "pos": "LW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 7
+  },
+  {
+   "id": "05td4",
+   "name": "Ryan Ufko",
+   "nhlTeam": "NSH",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0.943
+  },
+  {
+   "id": "06sn8",
+   "name": "Ethan Wyttenbach",
+   "nhlTeam": "CGY",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "05mx8",
+   "name": "Declan Carlile",
+   "nhlTeam": "PIT",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 1.5
+  },
+  {
+   "id": "05rjy",
+   "name": "Cole Eiserman",
+   "nhlTeam": "NYI",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 1.075
+  },
+  {
+   "id": "04ymt",
+   "name": "Lucas Raymond",
+   "nhlTeam": "DET",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 8.075
+  },
+  {
+   "id": "06c42",
+   "name": "Benjamin Rautiainen",
+   "nhlTeam": "TBL",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 1.008
+  },
+  {
+   "id": "06jha",
+   "name": "Max Plante",
+   "nhlTeam": "DET",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "04ldb",
+   "name": "Bowen Byram",
+   "nhlTeam": "CHI",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 6.25
+  },
+  {
+   "id": "06nkc",
+   "name": "Jake OBrien",
+   "nhlTeam": "SEA",
+   "pos": "C",
+   "elig": "C",
+   "status": "INJURED_RESERVE",
+   "salary": 0.974
+  },
+  {
+   "id": "070fu",
+   "name": "Tomas Chrenko",
+   "nhlTeam": "NYR",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06b7a",
+   "name": "Felix Nilsson",
+   "nhlTeam": "NSH",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 1.028
+  },
+  {
+   "id": "06r5z",
+   "name": "Keaton Verhoeff",
+   "nhlTeam": "SJS",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0
+  }
+ ],
+ "next": [
+  {
+   "id": "06h8g",
+   "name": "Henry Mews",
+   "nhlTeam": "CGY",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "0760m",
+   "name": "Beckett Hamilton",
+   "nhlTeam": "COL",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "02yjp",
+   "name": "Ivan Barbashev",
+   "nhlTeam": "VGK",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "RESERVE",
+   "salary": 5
+  },
+  {
+   "id": "0769h",
+   "name": "Alexander Bilecki",
+   "nhlTeam": "TOR",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "05rjg",
+   "name": "Danila Yurov",
+   "nhlTeam": "MIN",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0.973
+  },
+  {
+   "id": "05tv0",
+   "name": "Jackson Blake",
+   "nhlTeam": "CAR",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 5.117
+  },
+  {
+   "id": "06ig3",
+   "name": "Cayden Lindstrom",
+   "nhlTeam": "CBJ",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "051yz",
+   "name": "Dylan Holloway",
+   "nhlTeam": "STL",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "RESERVE",
+   "salary": 7.75
+  },
+  {
+   "id": "06loo",
+   "name": "Louka Cloutier",
+   "nhlTeam": "COL",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06psl",
+   "name": "Ivar Stenberg",
+   "nhlTeam": "SJS",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "RESERVE",
+   "salary": 1.075
+  },
+  {
+   "id": "06gk1",
+   "name": "Jack Ivankovic",
+   "nhlTeam": "NSH",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06pzf",
+   "name": "Love Harenstam",
+   "nhlTeam": "STL",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06h8h",
+   "name": "Trevor Connelly",
+   "nhlTeam": "VGK",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0.975
+  },
+  {
+   "id": "05k8c",
+   "name": "Tyson Foerster",
+   "nhlTeam": "PHI",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "RESERVE",
+   "salary": 3.75
+  },
+  {
+   "id": "03mbn",
+   "name": "Mackenzie Blackwood",
+   "nhlTeam": "COL",
+   "pos": "G",
+   "elig": "G",
+   "status": "RESERVE",
+   "salary": 5.25
+  },
+  {
+   "id": "06amv",
+   "name": "Sam Dickinson",
+   "nhlTeam": "SJS",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0.954
+  },
+  {
+   "id": "06imq",
+   "name": "Maxim Shabanov",
+   "nhlTeam": "MIN",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 1.6
+  },
+  {
+   "id": "06bao",
+   "name": "Denver Barkey",
+   "nhlTeam": "PHI",
+   "pos": "C",
+   "elig": "C",
+   "status": "INJURED_RESERVE",
+   "salary": 0.926
+  },
+  {
+   "id": "05m17",
+   "name": "Frank Nazar",
+   "nhlTeam": "CHI",
+   "pos": "C",
+   "elig": "C",
+   "status": "RESERVE",
+   "salary": 6.6
+  },
+  {
+   "id": "05r1l",
+   "name": "William Eklund",
+   "nhlTeam": "OTT",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "ACTIVE",
+   "salary": 5.6
+  },
+  {
+   "id": "0760p",
+   "name": "Victor Plante",
+   "nhlTeam": "DET",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "03yg3",
+   "name": "Mikhail Sergachev",
+   "nhlTeam": "UTA",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 8.5
+  },
+  {
+   "id": "068a6",
+   "name": "Eric Pohlkamp",
+   "nhlTeam": "SJS",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 1.05
+  },
+  {
+   "id": "03wor",
+   "name": "Mason Marchment",
+   "nhlTeam": "SJS",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "ACTIVE",
+   "salary": 6.75
+  },
+  {
+   "id": "0457k",
+   "name": "Jake Oettinger",
+   "nhlTeam": "DAL",
+   "pos": "G",
+   "elig": "G",
+   "status": "ACTIVE",
+   "salary": 8.25
+  },
+  {
+   "id": "070fm",
+   "name": "Ryan Lin",
+   "nhlTeam": "SJS",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "05gvo",
+   "name": "Matvei Michkov",
+   "nhlTeam": "PHI",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 0.95
+  },
+  {
+   "id": "06lom",
+   "name": "Mikhail Yegorov",
+   "nhlTeam": "NJD",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06jhd",
+   "name": "Anton Frondell",
+   "nhlTeam": "CHI",
+   "pos": "C",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 0.975
+  },
+  {
+   "id": "06tzg",
+   "name": "Max Westergard",
+   "nhlTeam": "PHI",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "051z0",
+   "name": "Tim Stutzle",
+   "nhlTeam": "OTT",
+   "pos": "C",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 8.35
+  },
+  {
+   "id": "04bdb",
+   "name": "Jack Hughes",
+   "nhlTeam": "NJD",
+   "pos": "C",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 8
+  },
+  {
+   "id": "059e0",
+   "name": "Jake Sanderson",
+   "nhlTeam": "OTT",
+   "pos": "D",
+   "elig": "D",
+   "status": "INJURED_RESERVE",
+   "salary": 8.05
+  },
+  {
+   "id": "076wj",
+   "name": "Nikita Scherbakov",
+   "nhlTeam": "NJD",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "04xec",
+   "name": "Matt Boldy",
+   "nhlTeam": "MIN",
+   "pos": "LW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 7
+  },
+  {
+   "id": "05td4",
+   "name": "Ryan Ufko",
+   "nhlTeam": "NSH",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0.943
+  },
+  {
+   "id": "06sn8",
+   "name": "Ethan Wyttenbach",
+   "nhlTeam": "CGY",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "05mx8",
+   "name": "Declan Carlile",
+   "nhlTeam": "PIT",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 1.5
+  },
+  {
+   "id": "05rjy",
+   "name": "Cole Eiserman",
+   "nhlTeam": "NYI",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 1.075
+  },
+  {
+   "id": "04ymt",
+   "name": "Lucas Raymond",
+   "nhlTeam": "DET",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 8.075
+  },
+  {
+   "id": "06c42",
+   "name": "Benjamin Rautiainen",
+   "nhlTeam": "TBL",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 1.008
+  },
+  {
+   "id": "06jha",
+   "name": "Max Plante",
+   "nhlTeam": "DET",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "04ldb",
+   "name": "Bowen Byram",
+   "nhlTeam": "CHI",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 6.25
+  },
+  {
+   "id": "06nkc",
+   "name": "Jake OBrien",
+   "nhlTeam": "SEA",
+   "pos": "C",
+   "elig": "C",
+   "status": "INJURED_RESERVE",
+   "salary": 0.974
+  },
+  {
+   "id": "070fu",
+   "name": "Tomas Chrenko",
+   "nhlTeam": "NYR",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06b7a",
+   "name": "Felix Nilsson",
+   "nhlTeam": "NSH",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 1.028
+  },
+  {
+   "id": "06r5z",
+   "name": "Keaton Verhoeff",
+   "nhlTeam": "SJS",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0
+  }
+ ],
+ "picks": {
+  "futureDraftPicks": [
+   {
+    "currentOwnerTeamId": "4psrznwkmow7aw2u",
+    "round": 3,
+    "year": 2027,
+    "originalOwnerTeamId": "39n75kyjmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "h32ctyahmow7aw2v",
+    "round": 1,
+    "year": 2027,
+    "originalOwnerTeamId": "h32ctyahmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "h32ctyahmow7aw2v",
+    "round": 2,
+    "year": 2027,
+    "originalOwnerTeamId": "h32ctyahmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "h32ctyahmow7aw2v",
+    "round": 3,
+    "year": 2027,
+    "originalOwnerTeamId": "h32ctyahmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "h32ctyahmow7aw2v",
+    "round": 1,
+    "year": 2028,
+    "originalOwnerTeamId": "h32ctyahmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "h32ctyahmow7aw2v",
+    "round": 2,
+    "year": 2028,
+    "originalOwnerTeamId": "h32ctyahmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "h32ctyahmow7aw2v",
+    "round": 3,
+    "year": 2028,
+    "originalOwnerTeamId": "h32ctyahmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "h32ctyahmow7aw2v",
+    "round": 1,
+    "year": 2029,
+    "originalOwnerTeamId": "h32ctyahmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "h32ctyahmow7aw2v",
+    "round": 2,
+    "year": 2029,
+    "originalOwnerTeamId": "h32ctyahmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "h32ctyahmow7aw2v",
+    "round": 3,
+    "year": 2029,
+    "originalOwnerTeamId": "h32ctyahmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "svnb4s7amow7aw2u",
+    "round": 1,
+    "year": 2028,
+    "originalOwnerTeamId": "nx9xgs2mmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "svnb4s7amow7aw2u",
+    "round": 1,
+    "year": 2028,
+    "originalOwnerTeamId": "vm1rdwvtmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "svnb4s7amow7aw2u",
+    "round": 3,
+    "year": 2028,
+    "originalOwnerTeamId": "svnb4s7amow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "svnb4s7amow7aw2u",
+    "round": 3,
+    "year": 2028,
+    "originalOwnerTeamId": "fay1fny2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "svnb4s7amow7aw2u",
+    "round": 1,
+    "year": 2029,
+    "originalOwnerTeamId": "svnb4s7amow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "svnb4s7amow7aw2u",
+    "round": 2,
+    "year": 2029,
+    "originalOwnerTeamId": "br7rvnwsmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "svnb4s7amow7aw2u",
+    "round": 3,
+    "year": 2029,
+    "originalOwnerTeamId": "svnb4s7amow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "svnb4s7amow7aw2u",
+    "round": 3,
+    "year": 2029,
+    "originalOwnerTeamId": "br7rvnwsmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 1,
+    "year": 2027,
+    "originalOwnerTeamId": "fay1fny2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 1,
+    "year": 2027,
+    "originalOwnerTeamId": "svnb4s7amow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 1,
+    "year": 2027,
+    "originalOwnerTeamId": "4yx4ssw6mow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 1,
+    "year": 2027,
+    "originalOwnerTeamId": "br7rvnwsmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 2,
+    "year": 2027,
+    "originalOwnerTeamId": "fay1fny2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 2,
+    "year": 2027,
+    "originalOwnerTeamId": "4psrznwkmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 2,
+    "year": 2027,
+    "originalOwnerTeamId": "z64j08mgmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 2,
+    "year": 2027,
+    "originalOwnerTeamId": "br7rvnwsmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 3,
+    "year": 2027,
+    "originalOwnerTeamId": "tsr78hmdmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 1,
+    "year": 2028,
+    "originalOwnerTeamId": "fay1fny2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 1,
+    "year": 2028,
+    "originalOwnerTeamId": "hghiywi2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 1,
+    "year": 2028,
+    "originalOwnerTeamId": "tsr78hmdmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 1,
+    "year": 2028,
+    "originalOwnerTeamId": "4yx4ssw6mow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 1,
+    "year": 2028,
+    "originalOwnerTeamId": "br7rvnwsmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 2,
+    "year": 2028,
+    "originalOwnerTeamId": "tsr78hmdmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 2,
+    "year": 2028,
+    "originalOwnerTeamId": "z64j08mgmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 2,
+    "year": 2028,
+    "originalOwnerTeamId": "br7rvnwsmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 2,
+    "year": 2028,
+    "originalOwnerTeamId": "hghiywi2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 2,
+    "year": 2028,
+    "originalOwnerTeamId": "vm1rdwvtmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 2,
+    "year": 2028,
+    "originalOwnerTeamId": "39n75kyjmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 3,
+    "year": 2028,
+    "originalOwnerTeamId": "nx9xgs2mmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 1,
+    "year": 2029,
+    "originalOwnerTeamId": "fay1fny2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 1,
+    "year": 2029,
+    "originalOwnerTeamId": "4psrznwkmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 1,
+    "year": 2029,
+    "originalOwnerTeamId": "4yx4ssw6mow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 2,
+    "year": 2029,
+    "originalOwnerTeamId": "fay1fny2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 2,
+    "year": 2029,
+    "originalOwnerTeamId": "svnb4s7amow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 2,
+    "year": 2029,
+    "originalOwnerTeamId": "4psrznwkmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 3,
+    "year": 2029,
+    "originalOwnerTeamId": "fay1fny2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "fay1fny2mow7aw2u",
+    "round": 3,
+    "year": 2029,
+    "originalOwnerTeamId": "4psrznwkmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 1,
+    "year": 2027,
+    "originalOwnerTeamId": "nw53mrdzmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 2,
+    "year": 2027,
+    "originalOwnerTeamId": "hghiywi2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 2,
+    "year": 2027,
+    "originalOwnerTeamId": "4yx4ssw6mow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 3,
+    "year": 2027,
+    "originalOwnerTeamId": "nw53mrdzmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 3,
+    "year": 2027,
+    "originalOwnerTeamId": "z64j08mgmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 3,
+    "year": 2027,
+    "originalOwnerTeamId": "fay1fny2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 3,
+    "year": 2027,
+    "originalOwnerTeamId": "svnb4s7amow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 1,
+    "year": 2028,
+    "originalOwnerTeamId": "nw53mrdzmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 2,
+    "year": 2028,
+    "originalOwnerTeamId": "nw53mrdzmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 2,
+    "year": 2028,
+    "originalOwnerTeamId": "4yx4ssw6mow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 3,
+    "year": 2028,
+    "originalOwnerTeamId": "hghiywi2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 1,
+    "year": 2029,
+    "originalOwnerTeamId": "nw53mrdzmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 1,
+    "year": 2029,
+    "originalOwnerTeamId": "hghiywi2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 2,
+    "year": 2029,
+    "originalOwnerTeamId": "nw53mrdzmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 2,
+    "year": 2029,
+    "originalOwnerTeamId": "hghiywi2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 3,
+    "year": 2029,
+    "originalOwnerTeamId": "nw53mrdzmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "nw53mrdzmow7aw2v",
+    "round": 3,
+    "year": 2029,
+    "originalOwnerTeamId": "hghiywi2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "ps4l4b6mmow7aw2v",
+    "round": 1,
+    "year": 2027,
+    "originalOwnerTeamId": "ps4l4b6mmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "ps4l4b6mmow7aw2v",
+    "round": 2,
+    "year": 2027,
+    "originalOwnerTeamId": "ps4l4b6mmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "ps4l4b6mmow7aw2v",
+    "round": 3,
+    "year": 2027,
+    "originalOwnerTeamId": "ps4l4b6mmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "ps4l4b6mmow7aw2v",
+    "round": 1,
+    "year": 2028,
+    "originalOwnerTeamId": "ps4l4b6mmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "ps4l4b6mmow7aw2v",
+    "round": 2,
+    "year": 2028,
+    "originalOwnerTeamId": "ps4l4b6mmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "ps4l4b6mmow7aw2v",
+    "round": 3,
+    "year": 2028,
+    "originalOwnerTeamId": "ps4l4b6mmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "ps4l4b6mmow7aw2v",
+    "round": 1,
+    "year": 2029,
+    "originalOwnerTeamId": "ps4l4b6mmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "ps4l4b6mmow7aw2v",
+    "round": 2,
+    "year": 2029,
+    "originalOwnerTeamId": "ps4l4b6mmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "ps4l4b6mmow7aw2v",
+    "round": 3,
+    "year": 2029,
+    "originalOwnerTeamId": "ps4l4b6mmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "39n75kyjmow7aw2u",
+    "round": 1,
+    "year": 2027,
+    "originalOwnerTeamId": "39n75kyjmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "39n75kyjmow7aw2u",
+    "round": 1,
+    "year": 2027,
+    "originalOwnerTeamId": "vm1rdwvtmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "39n75kyjmow7aw2u",
+    "round": 1,
+    "year": 2027,
+    "originalOwnerTeamId": "m1hfr04lmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "39n75kyjmow7aw2u",
+    "round": 1,
+    "year": 2028,
+    "originalOwnerTeamId": "39n75kyjmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "39n75kyjmow7aw2u",
+    "round": 1,
+    "year": 2028,
+    "originalOwnerTeamId": "4psrznwkmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "39n75kyjmow7aw2u",
+    "round": 3,
+    "year": 2028,
+    "originalOwnerTeamId": "39n75kyjmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "39n75kyjmow7aw2u",
+    "round": 1,
+    "year": 2029,
+    "originalOwnerTeamId": "39n75kyjmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "39n75kyjmow7aw2u",
+    "round": 2,
+    "year": 2029,
+    "originalOwnerTeamId": "39n75kyjmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "39n75kyjmow7aw2u",
+    "round": 3,
+    "year": 2029,
+    "originalOwnerTeamId": "39n75kyjmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "tu2c5havmow7aw2v",
+    "round": 1,
+    "year": 2027,
+    "originalOwnerTeamId": "tu2c5havmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "tu2c5havmow7aw2v",
+    "round": 3,
+    "year": 2027,
+    "originalOwnerTeamId": "tu2c5havmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "tu2c5havmow7aw2v",
+    "round": 3,
+    "year": 2027,
+    "originalOwnerTeamId": "m1hfr04lmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "tu2c5havmow7aw2v",
+    "round": 1,
+    "year": 2028,
+    "originalOwnerTeamId": "tu2c5havmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "tu2c5havmow7aw2v",
+    "round": 2,
+    "year": 2028,
+    "originalOwnerTeamId": "tu2c5havmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "tu2c5havmow7aw2v",
+    "round": 3,
+    "year": 2028,
+    "originalOwnerTeamId": "tu2c5havmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "tu2c5havmow7aw2v",
+    "round": 1,
+    "year": 2029,
+    "originalOwnerTeamId": "tu2c5havmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "tu2c5havmow7aw2v",
+    "round": 2,
+    "year": 2029,
+    "originalOwnerTeamId": "tu2c5havmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "tu2c5havmow7aw2v",
+    "round": 3,
+    "year": 2029,
+    "originalOwnerTeamId": "tu2c5havmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "tsr78hmdmow7aw2u",
+    "round": 1,
+    "year": 2027,
+    "originalOwnerTeamId": "tsr78hmdmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "tsr78hmdmow7aw2u",
+    "round": 1,
+    "year": 2029,
+    "originalOwnerTeamId": "tsr78hmdmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "tsr78hmdmow7aw2u",
+    "round": 2,
+    "year": 2029,
+    "originalOwnerTeamId": "tsr78hmdmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "tsr78hmdmow7aw2u",
+    "round": 3,
+    "year": 2029,
+    "originalOwnerTeamId": "tsr78hmdmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nx9xgs2mmow7aw2u",
+    "round": 1,
+    "year": 2027,
+    "originalOwnerTeamId": "nx9xgs2mmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nx9xgs2mmow7aw2u",
+    "round": 2,
+    "year": 2027,
+    "originalOwnerTeamId": "nx9xgs2mmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nx9xgs2mmow7aw2u",
+    "round": 2,
+    "year": 2027,
+    "originalOwnerTeamId": "39n75kyjmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nx9xgs2mmow7aw2u",
+    "round": 2,
+    "year": 2027,
+    "originalOwnerTeamId": "nw53mrdzmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "nx9xgs2mmow7aw2u",
+    "round": 2,
+    "year": 2027,
+    "originalOwnerTeamId": "vm1rdwvtmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nx9xgs2mmow7aw2u",
+    "round": 3,
+    "year": 2027,
+    "originalOwnerTeamId": "4psrznwkmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nx9xgs2mmow7aw2u",
+    "round": 3,
+    "year": 2027,
+    "originalOwnerTeamId": "br7rvnwsmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nx9xgs2mmow7aw2u",
+    "round": 2,
+    "year": 2028,
+    "originalOwnerTeamId": "nx9xgs2mmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nx9xgs2mmow7aw2u",
+    "round": 2,
+    "year": 2028,
+    "originalOwnerTeamId": "fay1fny2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nx9xgs2mmow7aw2u",
+    "round": 2,
+    "year": 2028,
+    "originalOwnerTeamId": "svnb4s7amow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nx9xgs2mmow7aw2u",
+    "round": 3,
+    "year": 2028,
+    "originalOwnerTeamId": "tsr78hmdmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nx9xgs2mmow7aw2u",
+    "round": 1,
+    "year": 2029,
+    "originalOwnerTeamId": "nx9xgs2mmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nx9xgs2mmow7aw2u",
+    "round": 2,
+    "year": 2029,
+    "originalOwnerTeamId": "nx9xgs2mmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "nx9xgs2mmow7aw2u",
+    "round": 3,
+    "year": 2029,
+    "originalOwnerTeamId": "nx9xgs2mmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "br7rvnwsmow7aw2u",
+    "round": 3,
+    "year": 2027,
+    "originalOwnerTeamId": "4yx4ssw6mow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "br7rvnwsmow7aw2u",
+    "round": 3,
+    "year": 2028,
+    "originalOwnerTeamId": "4yx4ssw6mow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "br7rvnwsmow7aw2u",
+    "round": 1,
+    "year": 2029,
+    "originalOwnerTeamId": "br7rvnwsmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "z64j08mgmow7aw2u",
+    "round": 1,
+    "year": 2027,
+    "originalOwnerTeamId": "z64j08mgmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "z64j08mgmow7aw2u",
+    "round": 2,
+    "year": 2027,
+    "originalOwnerTeamId": "m1hfr04lmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "z64j08mgmow7aw2u",
+    "round": 2,
+    "year": 2027,
+    "originalOwnerTeamId": "tsr78hmdmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "z64j08mgmow7aw2u",
+    "round": 1,
+    "year": 2028,
+    "originalOwnerTeamId": "z64j08mgmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "z64j08mgmow7aw2u",
+    "round": 3,
+    "year": 2028,
+    "originalOwnerTeamId": "z64j08mgmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "z64j08mgmow7aw2u",
+    "round": 3,
+    "year": 2028,
+    "originalOwnerTeamId": "br7rvnwsmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "z64j08mgmow7aw2u",
+    "round": 1,
+    "year": 2029,
+    "originalOwnerTeamId": "z64j08mgmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "z64j08mgmow7aw2u",
+    "round": 2,
+    "year": 2029,
+    "originalOwnerTeamId": "z64j08mgmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "vm1rdwvtmow7aw2u",
+    "round": 3,
+    "year": 2027,
+    "originalOwnerTeamId": "vm1rdwvtmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "vm1rdwvtmow7aw2u",
+    "round": 3,
+    "year": 2027,
+    "originalOwnerTeamId": "nx9xgs2mmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "vm1rdwvtmow7aw2u",
+    "round": 3,
+    "year": 2027,
+    "originalOwnerTeamId": "hghiywi2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "vm1rdwvtmow7aw2u",
+    "round": 3,
+    "year": 2028,
+    "originalOwnerTeamId": "vm1rdwvtmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "vm1rdwvtmow7aw2u",
+    "round": 3,
+    "year": 2028,
+    "originalOwnerTeamId": "nw53mrdzmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "vm1rdwvtmow7aw2u",
+    "round": 3,
+    "year": 2028,
+    "originalOwnerTeamId": "4psrznwkmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "vm1rdwvtmow7aw2u",
+    "round": 1,
+    "year": 2029,
+    "originalOwnerTeamId": "vm1rdwvtmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "vm1rdwvtmow7aw2u",
+    "round": 2,
+    "year": 2029,
+    "originalOwnerTeamId": "vm1rdwvtmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "vm1rdwvtmow7aw2u",
+    "round": 3,
+    "year": 2029,
+    "originalOwnerTeamId": "vm1rdwvtmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "4yx4ssw6mow7aw2v",
+    "round": 2,
+    "year": 2029,
+    "originalOwnerTeamId": "4yx4ssw6mow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "4yx4ssw6mow7aw2v",
+    "round": 3,
+    "year": 2029,
+    "originalOwnerTeamId": "4yx4ssw6mow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "m1hfr04lmow7aw2v",
+    "round": 1,
+    "year": 2027,
+    "originalOwnerTeamId": "4psrznwkmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "m1hfr04lmow7aw2v",
+    "round": 1,
+    "year": 2027,
+    "originalOwnerTeamId": "hghiywi2mow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "m1hfr04lmow7aw2v",
+    "round": 2,
+    "year": 2027,
+    "originalOwnerTeamId": "tu2c5havmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "m1hfr04lmow7aw2v",
+    "round": 2,
+    "year": 2027,
+    "originalOwnerTeamId": "svnb4s7amow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "m1hfr04lmow7aw2v",
+    "round": 1,
+    "year": 2028,
+    "originalOwnerTeamId": "m1hfr04lmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "m1hfr04lmow7aw2v",
+    "round": 1,
+    "year": 2028,
+    "originalOwnerTeamId": "svnb4s7amow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "m1hfr04lmow7aw2v",
+    "round": 2,
+    "year": 2028,
+    "originalOwnerTeamId": "m1hfr04lmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "m1hfr04lmow7aw2v",
+    "round": 2,
+    "year": 2028,
+    "originalOwnerTeamId": "4psrznwkmow7aw2u"
+   },
+   {
+    "currentOwnerTeamId": "m1hfr04lmow7aw2v",
+    "round": 3,
+    "year": 2028,
+    "originalOwnerTeamId": "m1hfr04lmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "m1hfr04lmow7aw2v",
+    "round": 1,
+    "year": 2029,
+    "originalOwnerTeamId": "m1hfr04lmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "m1hfr04lmow7aw2v",
+    "round": 2,
+    "year": 2029,
+    "originalOwnerTeamId": "m1hfr04lmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "m1hfr04lmow7aw2v",
+    "round": 3,
+    "year": 2029,
+    "originalOwnerTeamId": "m1hfr04lmow7aw2v"
+   },
+   {
+    "currentOwnerTeamId": "m1hfr04lmow7aw2v",
+    "round": 3,
+    "year": 2029,
+    "originalOwnerTeamId": "z64j08mgmow7aw2u"
+   }
+  ],
+  "currentDraftPicks": []
+ }
+}
