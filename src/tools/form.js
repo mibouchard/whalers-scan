@@ -36,7 +36,9 @@ async function hitsBlocks(gameId, pid) {
   return null;
 }
 
-const out = { at: new Date().toISOString(), window: N, scoring: 'league', players: {} };
+const out = { at: new Date().toISOString(), window: N, scoring: 'league', players: {},
+  // every player on Fred's roster with name, NHL club holding his rights, and positions, so the page can name new claims
+  roster: Object.fromEntries([...items.values()].map(r => [r.id, [r.name, r.team || '', (ids[r.id] || {}).position || '']])) };
 for (const r of items.values()) {
   const pid = nhl[r.team + '|' + norm(r.name)]; if (!pid) continue;
   let log;
