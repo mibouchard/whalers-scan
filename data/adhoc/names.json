@@ -1,0 +1,452 @@
+{
+ "Landon DuPont": [
+  {
+   "id": "06hrk",
+   "name": "Dupont, Landon",
+   "team": "(N/A)",
+   "pos": "D",
+   "status": "FA",
+   "owner": null
+  }
+ ],
+ "Chase Reid": [
+  {
+   "id": "070fo",
+   "name": "Reid, Chase",
+   "team": "SEA",
+   "pos": "D",
+   "status": "T",
+   "owner": "ANA:MINORS"
+  }
+ ],
+ "Caleb Malhotra": [
+  {
+   "id": "0725x",
+   "name": "Malhotra, Caleb",
+   "team": "VAN",
+   "pos": "C",
+   "status": "T",
+   "owner": "QUE:MINORS"
+  }
+ ],
+ "Carson Carels": [
+  {
+   "id": "071wj",
+   "name": "Carels, Carson",
+   "team": "CGY",
+   "pos": "D",
+   "status": "T",
+   "owner": "CGS:MINORS"
+  }
+ ],
+ "Daxon Rudolph": [
+  {
+   "id": "070fp",
+   "name": "Rudolph, Daxon",
+   "team": "BUF",
+   "pos": "D",
+   "status": "T",
+   "owner": "ANA:MINORS"
+  }
+ ],
+ "Wyatt Cullen": [
+  {
+   "id": "075ko",
+   "name": "Cullen, Wyatt",
+   "team": "NSH",
+   "pos": "LW",
+   "status": "T",
+   "owner": "MTL:MINORS"
+  }
+ ],
+ "Joshua Ravensbergen": [
+  {
+   "id": "06pww",
+   "name": "Ravensbergen, Joshua",
+   "team": "SJS",
+   "pos": "G",
+   "status": "T",
+   "owner": "MTL:MINORS"
+  }
+ ],
+ "Ryan Lin": [
+  {
+   "id": "070fm",
+   "name": "Lin, Ryan",
+   "team": "SJS",
+   "pos": "D",
+   "status": "T",
+   "owner": "OTT:MINORS"
+  }
+ ],
+ "Sammy Nelson": [
+  {
+   "id": "076f1",
+   "name": "Nelson, Sammy",
+   "team": "(N/A)",
+   "pos": "RW",
+   "status": "FA",
+   "owner": null
+  }
+ ],
+ "Ethan Belchetz": [
+  {
+   "id": "06loj",
+   "name": "Belchetz, Ethan",
+   "team": "UTA",
+   "pos": "LW",
+   "status": "T",
+   "owner": "VAN:MINORS"
+  }
+ ],
+ "Cameron Reid": [
+  {
+   "id": "06rut",
+   "name": "Reid, Cameron",
+   "team": "NSH",
+   "pos": "D",
+   "status": "T",
+   "owner": "QUE:MINORS"
+  }
+ ],
+ "Tommy Bleyl": [
+  {
+   "id": "074v1",
+   "name": "Bleyl, Tommy",
+   "team": "NSH",
+   "pos": "D",
+   "status": "T",
+   "owner": "CGY:MINORS"
+  }
+ ],
+ "J.P. Hurlbert": [
+  {
+   "id": "06rmq",
+   "name": "Hurlbert, J.P.",
+   "team": "DET",
+   "pos": "RW",
+   "status": "T",
+   "owner": "COL:MINORS"
+  }
+ ],
+ "Xavier Villeneuve": [
+  {
+   "id": "070fr",
+   "name": "Villeneuve, Xavier",
+   "team": "CHI",
+   "pos": "D",
+   "status": "T",
+   "owner": "COL:MINORS"
+  }
+ ],
+ "Tobias Trejbal": [
+  {
+   "id": "07337",
+   "name": "Trejbal, Tobias",
+   "team": "CGY",
+   "pos": "G",
+   "status": "T",
+   "owner": "MTL:MINORS"
+  }
+ ],
+ "Jack Nesbitt": [
+  {
+   "id": "06snc",
+   "name": "Nesbitt, Jack",
+   "team": "PHI",
+   "pos": "C",
+   "status": "T",
+   "owner": "ANA:MINORS"
+  }
+ ],
+ "Niklas Aaram-Olsen": [
+  {
+   "id": "071wn",
+   "name": "Aaram-Olsen, Niklas",
+   "team": "VAN",
+   "pos": "RW",
+   "status": "T",
+   "owner": "CGY:RESERVE"
+  }
+ ],
+ "Adam Benák": [
+  {
+   "id": "06pyo",
+   "name": "Benak, Adam",
+   "team": "MIN",
+   "pos": "C",
+   "status": "T",
+   "owner": "CGY:MINORS"
+  }
+ ],
+ "Matias Vanhanen": [
+  {
+   "id": "06ydv",
+   "name": "Vanhanen, Matias",
+   "team": "NJD",
+   "pos": "LW",
+   "status": "T",
+   "owner": "HFD:MINORS"
+  }
+ ],
+ "Maxim Massé": [
+  {
+   "id": "06cug",
+   "name": "Masse, Maxim",
+   "team": "ANA",
+   "pos": "RW",
+   "status": "T",
+   "owner": "ANA:MINORS"
+  }
+ ],
+ "Egor Barabanov": [
+  {
+   "id": "07257",
+   "name": "Barabanov, Egor",
+   "team": "CGY",
+   "pos": "LW",
+   "status": "FA",
+   "owner": null
+  }
+ ],
+ "Cooper Simpson": [
+  {
+   "id": "06sq9",
+   "name": "Simpson, Cooper",
+   "team": "BOS",
+   "pos": "LW",
+   "status": "FA",
+   "owner": null
+  }
+ ],
+ "Mason West": [
+  {
+   "id": "06sqj",
+   "name": "West, Mason",
+   "team": "CHI",
+   "pos": "RW",
+   "status": "T",
+   "owner": "EDM:MINORS"
+  }
+ ],
+ "Jack Hextall": [
+  {
+   "id": "071wm",
+   "name": "Hextall, Jack",
+   "team": "CGY",
+   "pos": "C",
+   "status": "T",
+   "owner": "QUE:MINORS"
+  }
+ ],
+ "Ryder Cali": [
+  {
+   "id": "0760x",
+   "name": "Cali, Ryder",
+   "team": "FLA",
+   "pos": "C",
+   "status": "FA",
+   "owner": null
+  }
+ ],
+ "Casey Mutryn": [
+  {
+   "id": "0760i",
+   "name": "Mutryn, Casey",
+   "team": "SEA",
+   "pos": "RW",
+   "status": "T",
+   "owner": "QUE:MINORS"
+  }
+ ],
+ "Alex Huang": [
+  {
+   "id": "06pyq",
+   "name": "Huang, Alex",
+   "team": "NSH",
+   "pos": "D",
+   "status": "FA",
+   "owner": null
+  }
+ ],
+ "Samu Alalauri": [
+  {
+   "id": "076jh",
+   "name": "Alalauri, Samu",
+   "team": "CHI",
+   "pos": "D",
+   "status": "FA",
+   "owner": null
+  }
+ ],
+ "Ben Macbeath": [
+  {
+   "id": "0760t",
+   "name": "Macbeath, Ben",
+   "team": "NYR",
+   "pos": "D",
+   "status": "FA",
+   "owner": null
+  }
+ ],
+ "Mikey Berchild": [
+  {
+   "id": "06pkj",
+   "name": "Berchild, Mikey",
+   "team": "CAR",
+   "pos": "LW",
+   "status": "T",
+   "owner": "DET:MINORS"
+  }
+ ],
+ "Ethan MacKenzie": [
+  {
+   "id": "072h4",
+   "name": "MacKenzie, Ethan",
+   "team": "TOR",
+   "pos": "D",
+   "status": "T",
+   "owner": "ANA:MINORS"
+  }
+ ],
+ "Nathan Behm": [
+  {
+   "id": "06sqn",
+   "name": "Behm, Nathan",
+   "team": "CHI",
+   "pos": "RW",
+   "status": "T",
+   "owner": "WAS:MINORS"
+  }
+ ],
+ "Blake Fiddler": [
+  {
+   "id": "06pyy",
+   "name": "Fiddler, Blake",
+   "team": "SEA",
+   "pos": "D",
+   "status": "T",
+   "owner": "CHI:MINORS"
+  }
+ ],
+ "Jack Pridham": [
+  {
+   "id": "06mhj",
+   "name": "Pridham, Jack",
+   "team": "TBL",
+   "pos": "RW",
+   "status": "FA",
+   "owner": null
+  }
+ ],
+ "Timmy Runtso": [
+  {
+   "id": "076kk",
+   "name": "Runtso, Timofei",
+   "team": "MTL",
+   "pos": "D",
+   "status": "T",
+   "owner": "VAN:MINORS"
+  }
+ ],
+ "Jacob Kvasnicka": [
+  {
+   "id": "06uy3",
+   "name": "Kvasnicka, Jacob",
+   "team": "NYI",
+   "pos": "C",
+   "status": "T",
+   "owner": "DET:MINORS"
+  }
+ ],
+ "Tarin Smith": [
+  {
+   "id": "06mb7",
+   "name": "Smith, Tarin",
+   "team": "ANA",
+   "pos": "D",
+   "status": "T",
+   "owner": "CGY:MINORS"
+  }
+ ],
+ "Haoxi Wang": [
+  {
+   "id": "06sqo",
+   "name": "Wang, Haoxi",
+   "team": "SJS",
+   "pos": "D",
+   "status": "T",
+   "owner": "HFD:MINORS"
+  }
+ ],
+ "Zac Olsen": [
+  {
+   "id": "076rl",
+   "name": "Olsen, Zach",
+   "team": "TOR",
+   "pos": "RW",
+   "status": "FA",
+   "owner": null
+  }
+ ],
+ "Victor Plante": [
+  {
+   "id": "0760p",
+   "name": "Plante, Victor",
+   "team": "DET",
+   "pos": "LW",
+   "status": "T",
+   "owner": "OTT:MINORS"
+  }
+ ],
+ "Olivers Mūrnieks": [
+  {
+   "id": "072jr",
+   "name": "Murnieks, Olivers",
+   "team": "BUF",
+   "pos": "C",
+   "status": "FA",
+   "owner": null
+  }
+ ],
+ "Jonas Woo": [
+  {
+   "id": "06une",
+   "name": "Woo, Jonas",
+   "team": "CBJ",
+   "pos": "D",
+   "status": "FA",
+   "owner": null
+  }
+ ],
+ "Shea Busch": [
+  {
+   "id": "06xwz",
+   "name": "Busch, Shea",
+   "team": "FLA",
+   "pos": "LW",
+   "status": "FA",
+   "owner": null
+  }
+ ],
+ "Thomas Vandenberg": [
+  {
+   "id": "0760q",
+   "name": "Vandenberg, Thomas",
+   "team": "LAK",
+   "pos": "C",
+   "status": "FA",
+   "owner": null
+  }
+ ],
+ "Luke Schairer": [
+  {
+   "id": "06r64",
+   "name": "Schairer, Luke",
+   "team": "STL",
+   "pos": "D",
+   "status": "FA",
+   "owner": null
+  }
+ ]
+}
