@@ -6,6 +6,10 @@ on:
       tool:
         description: 'Script in src/tools/ to run (without .js)'
         required: true
+      args:
+        description: 'Optional arguments for the script (e.g. a date)'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -21,7 +25,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci || npm install
-      - run: node src/tools/${{ github.event.inputs.tool }}.js
+      - run: node src/tools/${{ github.event.inputs.tool }}.js ${{ github.event.inputs.args }}
       - name: Save results
         run: |
           git config user.name "whalers-scan"
