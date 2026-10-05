@@ -1,5 +1,5 @@
 {
- "at": "2026-10-05T18:38:21.200Z",
+ "at": "2026-10-05T18:45:52.426Z",
  "window": 5,
  "scoring": "league",
  "players": {
@@ -439,5 +439,237 @@
     ]
    ]
   }
+ },
+ "roster": {
+  "070ft": [
+   "Braidy Wassilyn",
+   "MTL",
+   "F"
+  ],
+  "06sqo": [
+   "Haoxi Wang",
+   "SJS",
+   "D"
+  ],
+  "05rfa": [
+   "Isaac Howard",
+   "EDM",
+   "LW"
+  ],
+  "05rjd": [
+   "Cutter Gauthier",
+   "ANA",
+   "LW"
+  ],
+  "05kuc": [
+   "Tyler Kleven",
+   "OTT",
+   "D"
+  ],
+  "05ubc": [
+   "Viljami Marjala",
+   "EDM",
+   "LW"
+  ],
+  "0322w": [
+   "Ilya Sorokin",
+   "NYI",
+   "G"
+  ],
+  "0644c": [
+   "Daniil But",
+   "UTA",
+   "LW"
+  ],
+  "06sq9": [
+   "Cooper Simpson",
+   "BOS",
+   "LW"
+  ],
+  "05ymj": [
+   "Jimmy Snuggerud",
+   "STL",
+   "RW"
+  ],
+  "05xct": [
+   "Jet Greaves",
+   "CBJ",
+   "G"
+  ],
+  "076q8": [
+   "Brayden Klimpke",
+   "MTL",
+   "D"
+  ],
+  "06lkx": [
+   "Terik Parascak",
+   "WSH",
+   "RW"
+  ],
+  "067xd": [
+   "T.J. Hughes",
+   "COL",
+   "RW"
+  ],
+  "04zp2": [
+   "Drew Helleson",
+   "ANA",
+   "D"
+  ],
+  "03rfo": [
+   "Daniel Vladar",
+   "PHI",
+   "G"
+  ],
+  "05rj3": [
+   "Tristan Luneau",
+   "ANA",
+   "D"
+  ],
+  "07693": [
+   "Matvei Kotkov",
+   "BOS",
+   "RW"
+  ],
+  "06ay2": [
+   "Luca Cagnoni",
+   "SJS",
+   "D"
+  ],
+  "04mtp": [
+   "Dylan Cozens",
+   "OTT",
+   "C"
+  ],
+  "05ltt": [
+   "Alex Laferriere",
+   "LAK",
+   "RW"
+  ],
+  "04qve": [
+   "KAndre Miller",
+   "CAR",
+   "D"
+  ],
+  "06ydv": [
+   "Matias Vanhanen",
+   "NJD",
+   "LW"
+  ],
+  "03yh8": [
+   "Owen Tippett",
+   "PHI",
+   "LW"
+  ],
+  "0618l": [
+   "Yegor Sidorov",
+   "ANA",
+   "RW"
+  ],
+  "06mcs": [
+   "Matvei Korotky",
+   "STL",
+   "C"
+  ],
+  "06ba8": [
+   "Beau Akey",
+   "EDM",
+   "D"
+  ],
+  "01f6d": [
+   "Ryan OReilly",
+   "NSH",
+   "C"
+  ],
+  "051xf": [
+   "Egor Chinakhov",
+   "PIT",
+   "LW"
+  ],
+  "06pz0": [
+   "Shane Vansaghi",
+   "PHI",
+   "RW"
+  ],
+  "0644e": [
+   "Oliver Moore",
+   "CHI",
+   "C"
+  ],
+  "06mcw": [
+   "Jack Berglund",
+   "PHI",
+   "C"
+  ],
+  "02un7": [
+   "Aleksander Barkov",
+   "FLA",
+   "C"
+  ],
+  "04kyh": [
+   "Brady Tkachuk",
+   "FLA",
+   "LW"
+  ],
+  "062pr": [
+   "Samuel Jonsson",
+   "EDM",
+   "G"
+  ],
+  "061im": [
+   "Michael Misa",
+   "SJS",
+   "C"
+  ],
+  "01ztp": [
+   "Zach Hyman",
+   "EDM",
+   "RW"
+  ],
+  "066q1": [
+   "Sacha Boisvert",
+   "CHI",
+   "C"
+  ],
+  "02ybn": [
+   "Josh Morrissey",
+   "WPG",
+   "D"
+  ],
+  "06kr3": [
+   "Sam OReilly",
+   "TBL",
+   "C"
+  ],
+  "064r2": [
+   "Ivan Demidov",
+   "MTL",
+   "RW"
+  ],
+  "06pyw": [
+   "Victor Eklund",
+   "NYI",
+   "LW"
+  ],
+  "042vx": [
+   "Filip Hronek",
+   "VAN",
+   "D"
+  ],
+  "03167": [
+   "Bo Horvat",
+   "NYI",
+   "C"
+  ],
+  "05ui5": [
+   "Quentin Musty",
+   "SJS",
+   "LW"
+  ],
+  "06ims": [
+   "Dmitri Gamzin",
+   "NYI",
+   "G"
+  ]
  }
 }
