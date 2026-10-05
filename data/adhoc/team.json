@@ -1,7 +1,7 @@
 {
- "at": "2026-10-05T15:39:03.263Z",
- "team": "Ottawa Senators",
- "teamId": "br7rvnwsmow7aw2u",
+ "at": "2026-10-05T18:54:04.171Z",
+ "team": "Calgary Flames",
+ "teamId": "4psrznwkmow7aw2u",
  "teamNames": {
   "4psrznwkmow7aw2u": "Calgary Flames",
   "h32ctyahmow7aw2v": "Boston Bruins",
@@ -23,852 +23,852 @@
  "period": 2,
  "current": [
   {
-   "id": "06h8g",
-   "name": "Henry Mews",
+   "id": "05ril",
+   "name": "Simon Nemec",
    "nhlTeam": "CGY",
    "pos": "D",
    "elig": "D",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "0760m",
-   "name": "Beckett Hamilton",
-   "nhlTeam": "COL",
-   "pos": "RW",
-   "elig": "RW",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "02yjp",
-   "name": "Ivan Barbashev",
-   "nhlTeam": "VGK",
-   "pos": "LW",
-   "elig": "LW",
    "status": "RESERVE",
-   "salary": 5
+   "salary": 7.25
   },
   {
-   "id": "0769h",
-   "name": "Alexander Bilecki",
-   "nhlTeam": "TOR",
-   "pos": "D",
-   "elig": "D",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "05rjg",
-   "name": "Danila Yurov",
-   "nhlTeam": "MIN",
+   "id": "060pq",
+   "name": "Alex Bump",
+   "nhlTeam": "PHI",
    "pos": "LW",
    "elig": "LW",
    "status": "MINORS",
    "salary": 0.973
   },
   {
-   "id": "05tv0",
-   "name": "Jackson Blake",
-   "nhlTeam": "CAR",
-   "pos": "RW",
-   "elig": "RW",
-   "status": "ACTIVE",
-   "salary": 5.117
+   "id": "03nqi",
+   "name": "Alex Lyon",
+   "nhlTeam": "BUF",
+   "pos": "G",
+   "elig": "G",
+   "status": "INJURED_RESERVE",
+   "salary": 1.5
   },
   {
-   "id": "06ig3",
-   "name": "Cayden Lindstrom",
-   "nhlTeam": "CBJ",
+   "id": "06loa",
+   "name": "William Zellers",
+   "nhlTeam": "BOS",
    "pos": "LW",
    "elig": "LW",
    "status": "MINORS",
    "salary": 0
   },
   {
-   "id": "051yz",
-   "name": "Dylan Holloway",
-   "nhlTeam": "STL",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "RESERVE",
-   "salary": 7.75
-  },
-  {
-   "id": "06loo",
-   "name": "Louka Cloutier",
-   "nhlTeam": "COL",
-   "pos": "G",
-   "elig": "G",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "06psl",
-   "name": "Ivar Stenberg",
-   "nhlTeam": "SJS",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "RESERVE",
-   "salary": 1.075
-  },
-  {
-   "id": "06gk1",
-   "name": "Jack Ivankovic",
-   "nhlTeam": "NSH",
-   "pos": "G",
-   "elig": "G",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "06pzf",
-   "name": "Love Harenstam",
-   "nhlTeam": "STL",
-   "pos": "G",
-   "elig": "G",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "06h8h",
-   "name": "Trevor Connelly",
-   "nhlTeam": "VGK",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "MINORS",
-   "salary": 0.975
-  },
-  {
-   "id": "05k8c",
-   "name": "Tyson Foerster",
-   "nhlTeam": "PHI",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "RESERVE",
-   "salary": 3.75
-  },
-  {
-   "id": "03mbn",
-   "name": "Mackenzie Blackwood",
-   "nhlTeam": "COL",
-   "pos": "G",
-   "elig": "G",
-   "status": "RESERVE",
-   "salary": 5.25
-  },
-  {
-   "id": "06amv",
-   "name": "Sam Dickinson",
+   "id": "06lut",
+   "name": "Leo Sahlin Wallenius",
    "nhlTeam": "SJS",
    "pos": "D",
    "elig": "D",
+   "status": "MINORS",
+   "salary": 0.965
+  },
+  {
+   "id": "06fzv",
+   "name": "Cole Hutson",
+   "nhlTeam": "WSH",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 0.952
+  },
+  {
+   "id": "071wp",
+   "name": "Yegor Shilov",
+   "nhlTeam": "COL",
+   "pos": "C",
+   "elig": "C",
+   "status": "RESERVE",
+   "salary": 0
+  },
+  {
+   "id": "06byc",
+   "name": "Hampton Slukynsky",
+   "nhlTeam": "LAK",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 1.075
+  },
+  {
+   "id": "06pys",
+   "name": "Cameron Schmidt",
+   "nhlTeam": "DAL",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "075w7",
+   "name": "Simas Ignatavicius",
+   "nhlTeam": "FLA",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06sqm",
+   "name": "Ryker Lee",
+   "nhlTeam": "NSH",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06mh7",
+   "name": "Tomas Galvas",
+   "nhlTeam": "PIT",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 1.008
+  },
+  {
+   "id": "06bdr",
+   "name": "Roman Kantserov",
+   "nhlTeam": "CHI",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 1.075
+  },
+  {
+   "id": "05rjh",
+   "name": "Noah Ostlund",
+   "nhlTeam": "BUF",
+   "pos": "C",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 0.887
+  },
+  {
+   "id": "05ran",
+   "name": "Matt Coronato",
+   "nhlTeam": "CGY",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 6.5
+  },
+  {
+   "id": "06pyo",
+   "name": "Adam Benak",
+   "nhlTeam": "MIN",
+   "pos": "C",
+   "elig": "C",
+   "status": "RESERVE",
+   "salary": 0
+  },
+  {
+   "id": "0760j",
+   "name": "Adam Nemec",
+   "nhlTeam": "OTT",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "068yz",
+   "name": "Jacob Fowler",
+   "nhlTeam": "MTL",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 0.946
+  },
+  {
+   "id": "05ubx",
+   "name": "Ryker Evans",
+   "nhlTeam": "SEA",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 2.05
+  },
+  {
+   "id": "04o0g",
+   "name": "Marco Rossi",
+   "nhlTeam": "VAN",
+   "pos": "C",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 5
+  },
+  {
+   "id": "071wn",
+   "name": "Niklas Aaram-Olsen",
+   "nhlTeam": "VAN",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "RESERVE",
+   "salary": 0
+  },
+  {
+   "id": "074v1",
+   "name": "Tommy Bleyl",
+   "nhlTeam": "NSH",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06jhc",
+   "name": "Tij Iginla",
+   "nhlTeam": "UTA",
+   "pos": "C",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0.942
+  },
+  {
+   "id": "06mb7",
+   "name": "Tarin Smith",
+   "nhlTeam": "ANA",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06cl1",
+   "name": "Emmitt Finnie",
+   "nhlTeam": "DET",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "ACTIVE",
+   "salary": 0.922
+  },
+  {
+   "id": "067y1",
+   "name": "Justin Hryckowian",
+   "nhlTeam": "DAL",
+   "pos": "LW",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 0.95
+  },
+  {
+   "id": "06c40",
+   "name": "Yegor Zavragin",
+   "nhlTeam": "PHI",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06pyz",
+   "name": "Bill Zonnon",
+   "nhlTeam": "PIT",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 1.075
+  },
+  {
+   "id": "06bap",
+   "name": "Easton Cowan",
+   "nhlTeam": "TOR",
+   "pos": "RW",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 0.9
+  },
+  {
+   "id": "075w6",
+   "name": "Malte Gustafsson",
+   "nhlTeam": "NYI",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 1.075
+  },
+  {
+   "id": "05yli",
+   "name": "Pavel Mintyukov",
+   "nhlTeam": "ANA",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 7.2
+  },
+  {
+   "id": "06ydq",
+   "name": "Viktor Fedorov",
+   "nhlTeam": "SEA",
+   "pos": "C",
+   "elig": "C",
+   "status": "RESERVE",
+   "salary": 0
+  },
+  {
+   "id": "04uql",
+   "name": "Cole Perfetti",
+   "nhlTeam": "WPG",
+   "pos": "LW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 6
+  },
+  {
+   "id": "066on",
+   "name": "Michael Brandsegg-Nygard",
+   "nhlTeam": "DET",
+   "pos": "RW",
+   "elig": "RW",
    "status": "MINORS",
    "salary": 0.954
   },
   {
-   "id": "06imq",
-   "name": "Maxim Shabanov",
-   "nhlTeam": "MIN",
-   "pos": "RW",
-   "elig": "RW",
-   "status": "MINORS",
-   "salary": 1.6
-  },
-  {
-   "id": "06bao",
-   "name": "Denver Barkey",
-   "nhlTeam": "PHI",
+   "id": "05kdw",
+   "name": "Ridly Greig",
+   "nhlTeam": "OTT",
    "pos": "C",
    "elig": "C",
    "status": "INJURED_RESERVE",
-   "salary": 0.926
+   "salary": 3.25
   },
   {
-   "id": "05m17",
-   "name": "Frank Nazar",
-   "nhlTeam": "CHI",
-   "pos": "C",
-   "elig": "C",
-   "status": "RESERVE",
-   "salary": 6.6
+   "id": "05y7m",
+   "name": "Denton Mateychuk",
+   "nhlTeam": "CBJ",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 0.887
   },
   {
-   "id": "05r1l",
-   "name": "William Eklund",
+   "id": "02oar",
+   "name": "Linus Ullmark",
    "nhlTeam": "OTT",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "ACTIVE",
-   "salary": 5.6
-  },
-  {
-   "id": "0760p",
-   "name": "Victor Plante",
-   "nhlTeam": "DET",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "03yg3",
-   "name": "Mikhail Sergachev",
-   "nhlTeam": "UTA",
-   "pos": "D",
-   "elig": "D",
-   "status": "ACTIVE",
-   "salary": 8.5
-  },
-  {
-   "id": "068a6",
-   "name": "Eric Pohlkamp",
-   "nhlTeam": "SJS",
-   "pos": "D",
-   "elig": "D",
-   "status": "MINORS",
-   "salary": 1.05
-  },
-  {
-   "id": "03wor",
-   "name": "Mason Marchment",
-   "nhlTeam": "SJS",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "ACTIVE",
-   "salary": 6.75
-  },
-  {
-   "id": "0457k",
-   "name": "Jake Oettinger",
-   "nhlTeam": "DAL",
    "pos": "G",
    "elig": "G",
    "status": "ACTIVE",
    "salary": 8.25
   },
   {
-   "id": "070fm",
-   "name": "Ryan Lin",
+   "id": "05uao",
+   "name": "Collin Graf",
    "nhlTeam": "SJS",
-   "pos": "D",
-   "elig": "D",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 4.25
+  },
+  {
+   "id": "064n0",
+   "name": "Malcolm Spence",
+   "nhlTeam": "NYR",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "RESERVE",
+   "salary": 0
+  },
+  {
+   "id": "06q37",
+   "name": "Lars Steiner",
+   "nhlTeam": "STL",
+   "pos": "RW",
+   "elig": "RW",
    "status": "MINORS",
    "salary": 0
   },
   {
-   "id": "05gvo",
-   "name": "Matvei Michkov",
-   "nhlTeam": "PHI",
-   "pos": "RW",
-   "elig": "RW",
-   "status": "ACTIVE",
-   "salary": 0.95
+   "id": "06s4g",
+   "name": "Michal Postava",
+   "nhlTeam": "DET",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 0.975
   },
   {
-   "id": "06lom",
-   "name": "Mikhail Yegorov",
-   "nhlTeam": "NJD",
+   "id": "05ymq",
+   "name": "Matthew Poitras",
+   "nhlTeam": "BOS",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 0.85
+  },
+  {
+   "id": "076kr",
+   "name": "Jonas Lagerberg Hoen",
+   "nhlTeam": "OTT",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "075kl",
+   "name": "Ryder Fetterolf",
+   "nhlTeam": "CAR",
    "pos": "G",
    "elig": "G",
    "status": "MINORS",
    "salary": 0
   },
   {
-   "id": "06jhd",
-   "name": "Anton Frondell",
-   "nhlTeam": "CHI",
-   "pos": "C",
-   "elig": "C",
-   "status": "ACTIVE",
-   "salary": 0.975
-  },
-  {
-   "id": "06tzg",
-   "name": "Max Westergard",
-   "nhlTeam": "PHI",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "051z0",
-   "name": "Tim Stutzle",
-   "nhlTeam": "OTT",
-   "pos": "C",
-   "elig": "C",
-   "status": "ACTIVE",
-   "salary": 8.35
-  },
-  {
-   "id": "04bdb",
-   "name": "Jack Hughes",
-   "nhlTeam": "NJD",
-   "pos": "C",
-   "elig": "C",
-   "status": "ACTIVE",
-   "salary": 8
-  },
-  {
-   "id": "059e0",
-   "name": "Jake Sanderson",
-   "nhlTeam": "OTT",
-   "pos": "D",
-   "elig": "D",
-   "status": "INJURED_RESERVE",
-   "salary": 8.05
-  },
-  {
-   "id": "076wj",
-   "name": "Nikita Scherbakov",
-   "nhlTeam": "NJD",
-   "pos": "D",
-   "elig": "D",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "04xec",
-   "name": "Matt Boldy",
-   "nhlTeam": "MIN",
-   "pos": "LW",
-   "elig": "RW",
-   "status": "ACTIVE",
-   "salary": 7
-  },
-  {
-   "id": "05td4",
-   "name": "Ryan Ufko",
+   "id": "06baf",
+   "name": "Aiden Fink",
    "nhlTeam": "NSH",
-   "pos": "D",
-   "elig": "D",
-   "status": "MINORS",
-   "salary": 0.943
-  },
-  {
-   "id": "06sn8",
-   "name": "Ethan Wyttenbach",
-   "nhlTeam": "CGY",
    "pos": "RW",
    "elig": "RW",
    "status": "MINORS",
-   "salary": 0
+   "salary": 0.973
   },
   {
-   "id": "05mx8",
-   "name": "Declan Carlile",
-   "nhlTeam": "PIT",
-   "pos": "D",
-   "elig": "D",
-   "status": "ACTIVE",
-   "salary": 1.5
-  },
-  {
-   "id": "05rjy",
-   "name": "Cole Eiserman",
-   "nhlTeam": "NYI",
-   "pos": "LW",
-   "elig": "LW",
+   "id": "06lok",
+   "name": "Viggo Bjorck",
+   "nhlTeam": "WPG",
+   "pos": "C",
+   "elig": "C",
    "status": "MINORS",
    "salary": 1.075
   },
   {
-   "id": "04ymt",
-   "name": "Lucas Raymond",
-   "nhlTeam": "DET",
-   "pos": "RW",
-   "elig": "RW",
+   "id": "04yqp",
+   "name": "Anton Lundell",
+   "nhlTeam": "FLA",
+   "pos": "C",
+   "elig": "C",
    "status": "ACTIVE",
-   "salary": 8.075
-  },
-  {
-   "id": "06c42",
-   "name": "Benjamin Rautiainen",
-   "nhlTeam": "TBL",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 1.008
-  },
-  {
-   "id": "06jha",
-   "name": "Max Plante",
-   "nhlTeam": "DET",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "04ldb",
-   "name": "Bowen Byram",
-   "nhlTeam": "CHI",
-   "pos": "D",
-   "elig": "D",
-   "status": "ACTIVE",
-   "salary": 6.25
-  },
-  {
-   "id": "06nkc",
-   "name": "Jake OBrien",
-   "nhlTeam": "SEA",
-   "pos": "C",
-   "elig": "C",
-   "status": "INJURED_RESERVE",
-   "salary": 0.974
-  },
-  {
-   "id": "070fu",
-   "name": "Tomas Chrenko",
-   "nhlTeam": "NYR",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "06b7a",
-   "name": "Felix Nilsson",
-   "nhlTeam": "NSH",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 1.028
-  },
-  {
-   "id": "06r5z",
-   "name": "Keaton Verhoeff",
-   "nhlTeam": "SJS",
-   "pos": "D",
-   "elig": "D",
-   "status": "MINORS",
-   "salary": 0
+   "salary": 5
   }
  ],
  "next": [
   {
-   "id": "06h8g",
-   "name": "Henry Mews",
+   "id": "05ril",
+   "name": "Simon Nemec",
    "nhlTeam": "CGY",
    "pos": "D",
    "elig": "D",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "0760m",
-   "name": "Beckett Hamilton",
-   "nhlTeam": "COL",
-   "pos": "RW",
-   "elig": "RW",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "02yjp",
-   "name": "Ivan Barbashev",
-   "nhlTeam": "VGK",
-   "pos": "LW",
-   "elig": "LW",
    "status": "RESERVE",
-   "salary": 5
+   "salary": 7.25
   },
   {
-   "id": "0769h",
-   "name": "Alexander Bilecki",
-   "nhlTeam": "TOR",
-   "pos": "D",
-   "elig": "D",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "05rjg",
-   "name": "Danila Yurov",
-   "nhlTeam": "MIN",
+   "id": "060pq",
+   "name": "Alex Bump",
+   "nhlTeam": "PHI",
    "pos": "LW",
    "elig": "LW",
    "status": "MINORS",
    "salary": 0.973
   },
   {
-   "id": "05tv0",
-   "name": "Jackson Blake",
-   "nhlTeam": "CAR",
-   "pos": "RW",
-   "elig": "RW",
-   "status": "ACTIVE",
-   "salary": 5.117
+   "id": "03nqi",
+   "name": "Alex Lyon",
+   "nhlTeam": "BUF",
+   "pos": "G",
+   "elig": "G",
+   "status": "INJURED_RESERVE",
+   "salary": 1.5
   },
   {
-   "id": "06ig3",
-   "name": "Cayden Lindstrom",
-   "nhlTeam": "CBJ",
+   "id": "06loa",
+   "name": "William Zellers",
+   "nhlTeam": "BOS",
    "pos": "LW",
    "elig": "LW",
    "status": "MINORS",
    "salary": 0
   },
   {
-   "id": "051yz",
-   "name": "Dylan Holloway",
-   "nhlTeam": "STL",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "RESERVE",
-   "salary": 7.75
-  },
-  {
-   "id": "06loo",
-   "name": "Louka Cloutier",
-   "nhlTeam": "COL",
-   "pos": "G",
-   "elig": "G",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "06psl",
-   "name": "Ivar Stenberg",
-   "nhlTeam": "SJS",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "RESERVE",
-   "salary": 1.075
-  },
-  {
-   "id": "06gk1",
-   "name": "Jack Ivankovic",
-   "nhlTeam": "NSH",
-   "pos": "G",
-   "elig": "G",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "06pzf",
-   "name": "Love Harenstam",
-   "nhlTeam": "STL",
-   "pos": "G",
-   "elig": "G",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "06h8h",
-   "name": "Trevor Connelly",
-   "nhlTeam": "VGK",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "MINORS",
-   "salary": 0.975
-  },
-  {
-   "id": "05k8c",
-   "name": "Tyson Foerster",
-   "nhlTeam": "PHI",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "RESERVE",
-   "salary": 3.75
-  },
-  {
-   "id": "03mbn",
-   "name": "Mackenzie Blackwood",
-   "nhlTeam": "COL",
-   "pos": "G",
-   "elig": "G",
-   "status": "RESERVE",
-   "salary": 5.25
-  },
-  {
-   "id": "06amv",
-   "name": "Sam Dickinson",
+   "id": "06lut",
+   "name": "Leo Sahlin Wallenius",
    "nhlTeam": "SJS",
    "pos": "D",
    "elig": "D",
+   "status": "MINORS",
+   "salary": 0.965
+  },
+  {
+   "id": "06fzv",
+   "name": "Cole Hutson",
+   "nhlTeam": "WSH",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 0.952
+  },
+  {
+   "id": "071wp",
+   "name": "Yegor Shilov",
+   "nhlTeam": "COL",
+   "pos": "C",
+   "elig": "C",
+   "status": "RESERVE",
+   "salary": 0
+  },
+  {
+   "id": "06byc",
+   "name": "Hampton Slukynsky",
+   "nhlTeam": "LAK",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 1.075
+  },
+  {
+   "id": "06pys",
+   "name": "Cameron Schmidt",
+   "nhlTeam": "DAL",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "075w7",
+   "name": "Simas Ignatavicius",
+   "nhlTeam": "FLA",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06sqm",
+   "name": "Ryker Lee",
+   "nhlTeam": "NSH",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06mh7",
+   "name": "Tomas Galvas",
+   "nhlTeam": "PIT",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 1.008
+  },
+  {
+   "id": "06bdr",
+   "name": "Roman Kantserov",
+   "nhlTeam": "CHI",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 1.075
+  },
+  {
+   "id": "05rjh",
+   "name": "Noah Ostlund",
+   "nhlTeam": "BUF",
+   "pos": "C",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 0.887
+  },
+  {
+   "id": "05ran",
+   "name": "Matt Coronato",
+   "nhlTeam": "CGY",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 6.5
+  },
+  {
+   "id": "06pyo",
+   "name": "Adam Benak",
+   "nhlTeam": "MIN",
+   "pos": "C",
+   "elig": "C",
+   "status": "RESERVE",
+   "salary": 0
+  },
+  {
+   "id": "0760j",
+   "name": "Adam Nemec",
+   "nhlTeam": "OTT",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "068yz",
+   "name": "Jacob Fowler",
+   "nhlTeam": "MTL",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 0.946
+  },
+  {
+   "id": "05ubx",
+   "name": "Ryker Evans",
+   "nhlTeam": "SEA",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 2.05
+  },
+  {
+   "id": "04o0g",
+   "name": "Marco Rossi",
+   "nhlTeam": "VAN",
+   "pos": "C",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 5
+  },
+  {
+   "id": "071wn",
+   "name": "Niklas Aaram-Olsen",
+   "nhlTeam": "VAN",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "RESERVE",
+   "salary": 0
+  },
+  {
+   "id": "074v1",
+   "name": "Tommy Bleyl",
+   "nhlTeam": "NSH",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06jhc",
+   "name": "Tij Iginla",
+   "nhlTeam": "UTA",
+   "pos": "C",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0.942
+  },
+  {
+   "id": "06mb7",
+   "name": "Tarin Smith",
+   "nhlTeam": "ANA",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06cl1",
+   "name": "Emmitt Finnie",
+   "nhlTeam": "DET",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "ACTIVE",
+   "salary": 0.922
+  },
+  {
+   "id": "067y1",
+   "name": "Justin Hryckowian",
+   "nhlTeam": "DAL",
+   "pos": "LW",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 0.95
+  },
+  {
+   "id": "06c40",
+   "name": "Yegor Zavragin",
+   "nhlTeam": "PHI",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "06pyz",
+   "name": "Bill Zonnon",
+   "nhlTeam": "PIT",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 1.075
+  },
+  {
+   "id": "06bap",
+   "name": "Easton Cowan",
+   "nhlTeam": "TOR",
+   "pos": "RW",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 0.9
+  },
+  {
+   "id": "075w6",
+   "name": "Malte Gustafsson",
+   "nhlTeam": "NYI",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 1.075
+  },
+  {
+   "id": "05yli",
+   "name": "Pavel Mintyukov",
+   "nhlTeam": "ANA",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 7.2
+  },
+  {
+   "id": "06ydq",
+   "name": "Viktor Fedorov",
+   "nhlTeam": "SEA",
+   "pos": "C",
+   "elig": "C",
+   "status": "RESERVE",
+   "salary": 0
+  },
+  {
+   "id": "04uql",
+   "name": "Cole Perfetti",
+   "nhlTeam": "WPG",
+   "pos": "LW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 6
+  },
+  {
+   "id": "066on",
+   "name": "Michael Brandsegg-Nygard",
+   "nhlTeam": "DET",
+   "pos": "RW",
+   "elig": "RW",
    "status": "MINORS",
    "salary": 0.954
   },
   {
-   "id": "06imq",
-   "name": "Maxim Shabanov",
-   "nhlTeam": "MIN",
-   "pos": "RW",
-   "elig": "RW",
-   "status": "MINORS",
-   "salary": 1.6
-  },
-  {
-   "id": "06bao",
-   "name": "Denver Barkey",
-   "nhlTeam": "PHI",
+   "id": "05kdw",
+   "name": "Ridly Greig",
+   "nhlTeam": "OTT",
    "pos": "C",
    "elig": "C",
    "status": "INJURED_RESERVE",
-   "salary": 0.926
+   "salary": 3.25
   },
   {
-   "id": "05m17",
-   "name": "Frank Nazar",
-   "nhlTeam": "CHI",
-   "pos": "C",
-   "elig": "C",
-   "status": "RESERVE",
-   "salary": 6.6
+   "id": "05y7m",
+   "name": "Denton Mateychuk",
+   "nhlTeam": "CBJ",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 0.887
   },
   {
-   "id": "05r1l",
-   "name": "William Eklund",
+   "id": "02oar",
+   "name": "Linus Ullmark",
    "nhlTeam": "OTT",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "ACTIVE",
-   "salary": 5.6
-  },
-  {
-   "id": "0760p",
-   "name": "Victor Plante",
-   "nhlTeam": "DET",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "03yg3",
-   "name": "Mikhail Sergachev",
-   "nhlTeam": "UTA",
-   "pos": "D",
-   "elig": "D",
-   "status": "ACTIVE",
-   "salary": 8.5
-  },
-  {
-   "id": "068a6",
-   "name": "Eric Pohlkamp",
-   "nhlTeam": "SJS",
-   "pos": "D",
-   "elig": "D",
-   "status": "MINORS",
-   "salary": 1.05
-  },
-  {
-   "id": "03wor",
-   "name": "Mason Marchment",
-   "nhlTeam": "SJS",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "ACTIVE",
-   "salary": 6.75
-  },
-  {
-   "id": "0457k",
-   "name": "Jake Oettinger",
-   "nhlTeam": "DAL",
    "pos": "G",
    "elig": "G",
    "status": "ACTIVE",
    "salary": 8.25
   },
   {
-   "id": "070fm",
-   "name": "Ryan Lin",
+   "id": "05uao",
+   "name": "Collin Graf",
    "nhlTeam": "SJS",
-   "pos": "D",
-   "elig": "D",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 4.25
+  },
+  {
+   "id": "064n0",
+   "name": "Malcolm Spence",
+   "nhlTeam": "NYR",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "RESERVE",
+   "salary": 0
+  },
+  {
+   "id": "06q37",
+   "name": "Lars Steiner",
+   "nhlTeam": "STL",
+   "pos": "RW",
+   "elig": "RW",
    "status": "MINORS",
    "salary": 0
   },
   {
-   "id": "05gvo",
-   "name": "Matvei Michkov",
-   "nhlTeam": "PHI",
-   "pos": "RW",
-   "elig": "RW",
-   "status": "ACTIVE",
-   "salary": 0.95
+   "id": "06s4g",
+   "name": "Michal Postava",
+   "nhlTeam": "DET",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 0.975
   },
   {
-   "id": "06lom",
-   "name": "Mikhail Yegorov",
-   "nhlTeam": "NJD",
+   "id": "05ymq",
+   "name": "Matthew Poitras",
+   "nhlTeam": "BOS",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 0.85
+  },
+  {
+   "id": "076kr",
+   "name": "Jonas Lagerberg Hoen",
+   "nhlTeam": "OTT",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0
+  },
+  {
+   "id": "075kl",
+   "name": "Ryder Fetterolf",
+   "nhlTeam": "CAR",
    "pos": "G",
    "elig": "G",
    "status": "MINORS",
    "salary": 0
   },
   {
-   "id": "06jhd",
-   "name": "Anton Frondell",
-   "nhlTeam": "CHI",
-   "pos": "C",
-   "elig": "C",
-   "status": "ACTIVE",
-   "salary": 0.975
-  },
-  {
-   "id": "06tzg",
-   "name": "Max Westergard",
-   "nhlTeam": "PHI",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "051z0",
-   "name": "Tim Stutzle",
-   "nhlTeam": "OTT",
-   "pos": "C",
-   "elig": "C",
-   "status": "ACTIVE",
-   "salary": 8.35
-  },
-  {
-   "id": "04bdb",
-   "name": "Jack Hughes",
-   "nhlTeam": "NJD",
-   "pos": "C",
-   "elig": "C",
-   "status": "ACTIVE",
-   "salary": 8
-  },
-  {
-   "id": "059e0",
-   "name": "Jake Sanderson",
-   "nhlTeam": "OTT",
-   "pos": "D",
-   "elig": "D",
-   "status": "INJURED_RESERVE",
-   "salary": 8.05
-  },
-  {
-   "id": "076wj",
-   "name": "Nikita Scherbakov",
-   "nhlTeam": "NJD",
-   "pos": "D",
-   "elig": "D",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "04xec",
-   "name": "Matt Boldy",
-   "nhlTeam": "MIN",
-   "pos": "LW",
-   "elig": "RW",
-   "status": "ACTIVE",
-   "salary": 7
-  },
-  {
-   "id": "05td4",
-   "name": "Ryan Ufko",
+   "id": "06baf",
+   "name": "Aiden Fink",
    "nhlTeam": "NSH",
-   "pos": "D",
-   "elig": "D",
-   "status": "MINORS",
-   "salary": 0.943
-  },
-  {
-   "id": "06sn8",
-   "name": "Ethan Wyttenbach",
-   "nhlTeam": "CGY",
    "pos": "RW",
    "elig": "RW",
    "status": "MINORS",
-   "salary": 0
+   "salary": 0.973
   },
   {
-   "id": "05mx8",
-   "name": "Declan Carlile",
-   "nhlTeam": "PIT",
-   "pos": "D",
-   "elig": "D",
-   "status": "ACTIVE",
-   "salary": 1.5
-  },
-  {
-   "id": "05rjy",
-   "name": "Cole Eiserman",
-   "nhlTeam": "NYI",
-   "pos": "LW",
-   "elig": "LW",
+   "id": "06lok",
+   "name": "Viggo Bjorck",
+   "nhlTeam": "WPG",
+   "pos": "C",
+   "elig": "C",
    "status": "MINORS",
    "salary": 1.075
   },
   {
-   "id": "04ymt",
-   "name": "Lucas Raymond",
-   "nhlTeam": "DET",
-   "pos": "RW",
-   "elig": "RW",
+   "id": "04yqp",
+   "name": "Anton Lundell",
+   "nhlTeam": "FLA",
+   "pos": "C",
+   "elig": "C",
    "status": "ACTIVE",
-   "salary": 8.075
-  },
-  {
-   "id": "06c42",
-   "name": "Benjamin Rautiainen",
-   "nhlTeam": "TBL",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 1.008
-  },
-  {
-   "id": "06jha",
-   "name": "Max Plante",
-   "nhlTeam": "DET",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "04ldb",
-   "name": "Bowen Byram",
-   "nhlTeam": "CHI",
-   "pos": "D",
-   "elig": "D",
-   "status": "ACTIVE",
-   "salary": 6.25
-  },
-  {
-   "id": "06nkc",
-   "name": "Jake OBrien",
-   "nhlTeam": "SEA",
-   "pos": "C",
-   "elig": "C",
-   "status": "INJURED_RESERVE",
-   "salary": 0.974
-  },
-  {
-   "id": "070fu",
-   "name": "Tomas Chrenko",
-   "nhlTeam": "NYR",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 0
-  },
-  {
-   "id": "06b7a",
-   "name": "Felix Nilsson",
-   "nhlTeam": "NSH",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 1.028
-  },
-  {
-   "id": "06r5z",
-   "name": "Keaton Verhoeff",
-   "nhlTeam": "SJS",
-   "pos": "D",
-   "elig": "D",
-   "status": "MINORS",
-   "salary": 0
+   "salary": 5
   }
  ],
  "picks": {
