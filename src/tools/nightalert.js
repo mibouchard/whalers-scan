@@ -69,7 +69,7 @@ for (const g of done) {
 }
 
 // keep free agents with a big night, then check usage against each player's own season
-const out = [];
+const out = [], near = [];
 for (const r of rows) {
   if (r.goalie ? !(r.win && r.fp >= 10) : r.fp < 6) continue;
   let fx = null;
@@ -98,14 +98,13 @@ for (const r of rows) {
     try { const lg = ((await j(`https://api-web.nhle.com/v1/player/${r.pid}/game-log/now`)).gameLog || []).filter(x => String(x.gameId).slice(4, 6) === '02'); starts = lg.filter(x => x.gamesStarted).slice(0, 3).length; r.gpBefore = lg.length; } catch (e) { }
     if (starts >= 2) { reasons.push(`${starts} starts in his last 3 games`); roleChange = true; }
   }
-  if (!reasons.length) continue;
   const young = r.age != null && r.age <= 25;
-  if (!young && !roleChange) continue;
+  if (!reasons.length || (!young && !roleChange)) { near.push(`${r.full || r.name} (${r.team}, ${r.age ?? '?'}): ${r.fp} FP, ${reasons.join(', ') || 'no usage signal'}${r.toiTxt ? ', ' + r.toiTxt + ' TOI' : ''}`); continue; }
   out.push({ name: r.full || r.name, team: r.team, pos: r.pos, age: r.age, fx, status: st, fp: r.fp, line: r.line, toi: r.toiTxt || null, avgToi: r.avgToi || null,
     reasons, why: young ? (roleChange ? 'young + role change' : 'young + usage') : 'role change' });
 }
 out.sort((a, b) => (b.why.includes('role') - a.why.includes('role')) || b.fp - a.fp);
-const res = { at: new Date().toISOString(), date, gamesFinal: done.length, gamesPending: pending, candidates: out.slice(0, 5) };
+const res = { at: new Date().toISOString(), date, gamesFinal: done.length, gamesPending: pending, candidates: out.slice(0, 5), nearMisses: near.slice(0, 10) };
 const dir = path.join(ROOT, 'data', 'adhoc'); fs.mkdirSync(dir, { recursive: true });
 fs.writeFileSync(path.join(dir, 'alert.json'), JSON.stringify(res, null, 1));
 console.log(date, 'final', done.length, 'pending', pending.length, 'candidates', out.length, out.map(c => c.name).join(', '));
