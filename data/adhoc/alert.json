@@ -1,7 +1,16 @@
 {
- "at": "2026-10-05T21:53:05.744Z",
- "date": "2026-10-04",
- "gamesFinal": 5,
+ "at": "2026-10-05T21:54:11.797Z",
+ "date": "2026-10-03",
+ "gamesFinal": 13,
  "gamesPending": [],
- "candidates": []
+ "candidates": [],
+ "nearMisses": [
+  "Thomas Chabot (OTT, 29): 7.6 FP, 27:06 TOI, 27:06 TOI",
+  "Brayden Schenn (NYI, 35): 7.2 FP, no usage signal, 14:40 TOI",
+  "Casey Cizikas (NYI, 35): 8.8 FP, +4:36 over his 9:29 average, 14:05 TOI",
+  "Logan Stanley (NYI, 28): 6.8 FP, +4:04 over his 15:06 average, 19:10 TOI",
+  "Nicolas Roy (COL, 29): 7.1 FP, no usage signal, 12:53 TOI",
+  "Adam Klapka (CGY, 26): 7.25 FP, no usage signal, 8:07 TOI",
+  "Tyler Toffoli (SJS, 34): 7.7 FP, power-play point, +5:07 over his 9:24 average, 14:31 TOI"
+ ]
 }
