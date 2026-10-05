@@ -16,7 +16,7 @@ if (!WS.HT.ECHL) WS.HT.ECHL = ['echl', '2c2b89ea7345cae8'];
 const today = new Date().toISOString().slice(0, 10);
 const res = { d: today, at: new Date().toISOString(), src: 'github-actions',
   cols: { sk: ['lg', 'fx', 'own', 'st', 'name', 'team', 'pos', 'age', 'gp', 'g', 'a', 'pts', 'ppp', 'ppg', 'nhle', 'prev', 'yoy', 'tr', 'rgp', 'toi'], g: ['lg', 'fx', 'own', 'st', 'name', 'team', 'age', 'gp', 'svp', 'gaa', 'w', 'min'] },
-  cov: {}, status: {}, owned: [], avail: [], und: [], risers: [], goalies: [],
+  cov: {}, status: {}, leaders: {}, owned: [], avail: [], und: [], risers: [], goalies: [],
   pending: ['Swiss NL', 'DEL', 'Mestis / Finnish U20', 'Slovak Extraliga', 'BCHL'],
   notes: {
     NHL: 'Only players who have played NHL games are listed.',
@@ -33,6 +33,7 @@ const pinfo = await fetch('https://www.fantrax.com/fxea/general/getLeagueInfo?le
 const free = s => { if (!pinfo) return true; const id = s.split('|')[0]; return !id || ['FA', 'WW'].includes(pinfo[id]?.status); };
 const add = (lg, r) => {
   res.cov[lg] = [r.nSk, r.nG, r.matched, r.owned.length, r.nDays];
+  if (r.leaders) res.leaders[lg] = r.leaders;
   r.owned.forEach(x => res.owned.push(lg + '|' + x)); r.avail.filter(free).slice(0, 12).forEach(x => res.avail.push(lg + '|' + x));
   r.undrafted.filter(free).slice(0, 6).forEach(x => res.und.push(lg + '|' + x)); r.risers.filter(free).forEach(x => res.risers.push(lg + '|' + x));
   r.goalies.filter(g => g.split('|')[1] || free(g)).forEach(x => res.goalies.push(lg + '|' + x));

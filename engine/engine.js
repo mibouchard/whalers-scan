@@ -104,7 +104,10 @@ window.WS = (() => {
     const undrafted = sk.filter(r => !r.own && (!r.org || r.org === '(N/A)') && r.gp >= minGP && r.age != null && r.age <= 20).sort((a, b) => b.gem - a.gem).slice(0, opts.nUnd ?? 8).map(S);
     const risers = sk.filter(r => !r.own && r.tr != null && r.rgp >= 4 && (r.age == null || r.age <= 23)).sort((a, b) => b.tr - a.tr).slice(0, 6).map(S);
     const goalies = gl.filter(r => ownedOK(r) || (!r.own && r.fx && r.org && r.org !== '(N/A)' && r.gp >= minGP && (r.age == null || r.age <= (opts.maxAge ?? 24)))).sort((a, b) => (b.own ? 1 : 0) - (a.own ? 1 : 0) || (b.svp || 0) - (a.svp || 0)).slice(0, 14).map(G);
-    return { lg, d: today(), nSk: sk.length, nG: gl.length, nDays, matched: sk.filter(r => r.fx).length, owned, avail, undrafted, risers, goalies };
+    // league leaders on scan day: [name, team, value, gp, owner]; ties go to fewer games played
+    const lead = k => { const r = sk.filter(x => x[k] != null).sort((x, y) => (y[k] - x[k]) || (x.gp - y.gp))[0]; return r ? [r.first + ' ' + r.last, r.team, r[k], r.gp, r.own || ''] : null; };
+    const leaders = { pts: lead('pts'), g: lead('g'), a: lead('a') };
+    return { lg, d: today(), nSk: sk.length, nG: gl.length, nDays, matched: sk.filter(r => r.fx).length, owned, avail, undrafted, risers, goalies, leaders };
   }
 
   // ---- adapters ----
