@@ -1,5 +1,6 @@
-// Minors free-agent watch: every league's skaters and goalies who hold NHL rights, are 24 or younger, and are a free
-// agent or on waivers in our league per Fantrax's own status (getLeagueInfo). Counts players from game 1 (the daily
+// Minors free-agent watch: every league's skaters and goalies who are 24 or younger, are a free agent or on waivers in
+// our league per Fantrax's own status (getLeagueInfo), and either hold NHL rights (rights: true) or were already passed
+// over in an NHL draft (rights: false, dr 'post'). Players not yet through an NHL draft are never included. Counts players from game 1 (the daily
 // scan waits for 3) and ranks across leagues by gem score. Writes data/adhoc/fawatch.json.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -22,16 +23,20 @@ const jobs = [
   ['SHL', () => L.shl()], ['Allsvenskan', () => L.swe('Allsvenskan')], ['J20', () => L.swe('J20')],
   ['NCAA', () => L.ncaa(WS.ls)], ['Czech', () => L.czech()], ['NHL', () => WS.nhl()()],
 ];
-const SK = ['fx', 'own', 'st', 'name', 'team', 'pos', 'age', 'gp', 'g', 'a', 'pts', 'ppp', 'ppg', 'nhle', 'prev', 'yoy', 'tr', 'rgp', 'toi'];
+const SK = ['fx', 'own', 'st', 'name', 'team', 'pos', 'age', 'gp', 'g', 'a', 'pts', 'ppp', 'ppg', 'nhle', 'prev', 'yoy', 'tr', 'rgp', 'toi', 'dr'];
 const GC = ['fx', 'own', 'st', 'name', 'team', 'age', 'gp', 'svp', 'gaa', 'w', 'min'];
 const obj = (cols, s) => Object.fromEntries(s.split('|').map((v, i) => [cols[i], v === '' ? null : isNaN(v) ? v : +v]));
 const out = { at: new Date().toISOString(), status: {}, skaters: [], goalies: [] };
 for (const [lg, fn] of jobs) {
   try {
-    const r = await WS.run(lg, fn, { minGP: 1, maxAge: 24, nAvail: 80 });
-    for (const s of r.avail) {
+    const r = await WS.run(lg, fn, { minGP: 1, maxAge: 24, nAvail: 80, undMaxAge: 24, nUnd: 40 });
+    // avail = NHL rights held by a club. und = no NHL club: only players already passed over in an NHL draft
+    // (dr 'post') can be claimed; anyone not yet through a draft (dr 'pre') or unknown is left out (Fred's rule).
+    const und = r.undrafted.filter(s => { const o = obj(SK, s); return o.fx && o.dr === 'post'; });
+    for (const s of [...r.avail, ...und]) {
       const o = obj(SK, s); const st = pinfo[o.fx]?.status;
       if (st !== 'FA' && st !== 'WW') continue;
+      o.rights = r.avail.includes(s);
       const af = Math.max(.6, Math.min(1.4, 1 + .1 * (21 - (o.age ?? 21))));
       out.skaters.push({ lg, ...o, fxStatus: st, elig: pinfo[o.fx]?.eligiblePos, gem: +(o.nhle * af * (/D/.test(o.pos) ? 1.3 : 1)).toFixed(1) });
     }
