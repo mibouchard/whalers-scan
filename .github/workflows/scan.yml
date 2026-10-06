@@ -47,7 +47,7 @@ jobs:
         if: steps.done.outputs.skip != 'true'
         continue-on-error: true
         run: node src/tools/form.js
-      - name: Player pool (salaries, FA/waiver status, injuries)
+      - name: Player pool (waivers, injuries)
         if: steps.done.outputs.skip != 'true'
         continue-on-error: true
         run: node src/tools/pool.js
