@@ -94,7 +94,18 @@ window.WS = (() => {
     }
     score(lg, rows);
     const nDays = trend(lg, rows);
-    const S = r => [r.fx || '', r.own || '', r.st || '', r.first + ' ' + r.last, r.team, r.pos, r.age ?? '', r.gp, r.g, r.a, r.pts, r.ppp ?? '', r.ppg, r.nhle, r.prev ?? '', r.yoy ?? '', r.tr ?? '', r.rgp ?? '', r.toi ?? ''].join('|');
+    // NHL draft status. A player with no NHL club who has not yet been through an NHL draft is not a free-agent pickup:
+    // he has to go through the draft first (and only becomes claimable if he is passed over, or later released).
+    // First eligible: 18 by Sept 15 of the draft year; the draft is in late June. 'pre' = not yet through a draft,
+    // 'post' = drafted or already passed over, '' = unknown (no birthdate; Czech ages are bands).
+    const td = new Date(today()), drY = td.getMonth() >= 6 ? td.getFullYear() : td.getFullYear() - 1;
+    const cut = new Date(drY - 18, 8, 15);
+    for (const r of rows) {
+      r.dr = r.org && r.org !== '(N/A)' ? 'post'
+        : r.dob ? (new Date(r.dob) > cut ? 'pre' : 'post')
+        : r.age != null && lg !== 'Czech' ? (r.age <= 17 ? 'pre' : r.age >= 19 ? 'post' : '') : '';
+    }
+    const S = r => [r.fx || '', r.own || '', r.st || '', r.first + ' ' + r.last, r.team, r.pos, r.age ?? '', r.gp, r.g, r.a, r.pts, r.ppp ?? '', r.ppg, r.nhle, r.prev ?? '', r.yoy ?? '', r.tr ?? '', r.rgp ?? '', r.toi ?? '', r.dr || ''].join('|');
     const G = r => [r.fx || '', r.own || '', r.st || '', r.first + ' ' + r.last, r.team, r.age ?? '', r.gp, r.svp ?? '', r.gaa ?? '', r.w ?? '', r.min ?? ''].join('|');
     const sk = rows.filter(r => !r.goalie), gl = rows.filter(r => r.goalie);
     const minGP = opts.minGP ?? 3;
@@ -105,7 +116,7 @@ window.WS = (() => {
     const risers = sk.filter(r => !r.own && r.tr != null && r.rgp >= 4 && (r.age == null || r.age <= 23)).sort((a, b) => b.tr - a.tr).slice(0, 6).map(S);
     const goalies = gl.filter(r => ownedOK(r) || (!r.own && r.fx && r.org && r.org !== '(N/A)' && r.gp >= minGP && (r.age == null || r.age <= (opts.maxAge ?? 24)))).sort((a, b) => (b.own ? 1 : 0) - (a.own ? 1 : 0) || (b.svp || 0) - (a.svp || 0)).slice(0, 14).map(G);
     // league leaders on scan day: [name, team, value, gp, owner]; ties go to fewer games played
-    const lead = k => { const r = sk.filter(x => x[k] != null).sort((x, y) => (y[k] - x[k]) || (x.gp - y.gp))[0]; return r ? [r.first + ' ' + r.last, r.team, r[k], r.gp, r.own || '', r.fx || '', r.org && r.org !== '(N/A)' ? r.org : '', '', r.pos || '', r.age ?? ''] : null; };
+    const lead = k => { const r = sk.filter(x => x[k] != null).sort((x, y) => (y[k] - x[k]) || (x.gp - y.gp))[0]; return r ? [r.first + ' ' + r.last, r.team, r[k], r.gp, r.own || '', r.fx || '', r.org && r.org !== '(N/A)' ? r.org : '', '', r.pos || '', r.age ?? '', r.dr || ''] : null; };
     const leaders = { pts: lead('pts'), g: lead('g'), a: lead('a') };
     return { lg, d: today(), nSk: sk.length, nG: gl.length, nDays, matched: sk.filter(r => r.fx).length, owned, avail, undrafted, risers, goalies, leaders };
   }

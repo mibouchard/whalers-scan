@@ -15,7 +15,7 @@ if (!WS.HT.ECHL) WS.HT.ECHL = ['echl', '2c2b89ea7345cae8'];
 
 const today = new Date().toISOString().slice(0, 10);
 const res = { d: today, at: new Date().toISOString(), src: 'github-actions',
-  cols: { sk: ['lg', 'fx', 'own', 'st', 'name', 'team', 'pos', 'age', 'gp', 'g', 'a', 'pts', 'ppp', 'ppg', 'nhle', 'prev', 'yoy', 'tr', 'rgp', 'toi'], g: ['lg', 'fx', 'own', 'st', 'name', 'team', 'age', 'gp', 'svp', 'gaa', 'w', 'min'] },
+  cols: { sk: ['lg', 'fx', 'own', 'st', 'name', 'team', 'pos', 'age', 'gp', 'g', 'a', 'pts', 'ppp', 'ppg', 'nhle', 'prev', 'yoy', 'tr', 'rgp', 'toi', 'dr'], g: ['lg', 'fx', 'own', 'st', 'name', 'team', 'age', 'gp', 'svp', 'gaa', 'w', 'min'] },
   cov: {}, status: {}, leaders: {}, owned: [], avail: [], und: [], risers: [], goalies: [],
   pending: ['Swiss NL', 'DEL', 'Mestis / Finnish U20', 'Slovak Extraliga', 'BCHL'],
   notes: {
