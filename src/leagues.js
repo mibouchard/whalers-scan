@@ -1,8 +1,11 @@
-// League adapters that the browser scan ran as site "collectors". Each returns rows in the engine's shape:
+// League adapters for the sites that need more than a plain fetch (the rest are in engine/engine.js). Each returns rows
+// in the engine's shape:
 // skater {sid, first, last, pos, team, gp, g, a, pts, ppp, dob?, age?, prev?, toi?}; goalie {goalie: 1, sid, first, last, pos: 'G', team, gp, svp, gaa, w, min, dob?, age?}.
+// `dob` is a real birthdate; `age` without a dob is an estimate (NCAA class year, Czech age band) and never decides draft status.
 // Season ids that change yearly are constants at the top.
 import vm from 'node:vm';
-import { realFetch, UA, sleep, parseHTML, cookieHeader } from './env.js';
+import { realFetch, UA, sleep, parseHTML, cookieHeader, timeoutSignal } from './env.js';
+import { retry } from './lib/util.js';
 
 export const SEASON = {
   KHL: { season: 's19', tour: '1436' },          // en.khl.ru/stat/players/1436/
@@ -17,30 +20,37 @@ const json = async (u, o) => JSON.parse(await text(u, o));
 const splitFirst = s => { s = s.replace(/ /g, ' ').trim(); const i = s.indexOf(' '); return i < 0 ? ['', s] : [s.slice(0, i), s.slice(i + 1)]; };
 
 // ---------- KHL (en.khl.ru) ----------
-// Reuses the engine's WS.khl() adapter: it calls BX.bitrix_sessid() and relative /rest/ URLs, so give it a session token
-// from the stats page and route /rest/ calls to the site with that session's cookie, one at a time (the site answers
-// parallel calls with an HTML error page) and with retries.
+// Uses the engine's WS.khl() adapter with a session token from the stats page and a fetch that sends /rest/ calls to the
+// site with that session's cookie, one at a time (the site answers parallel calls with an HTML error page). Every call
+// gets six tries, and a thrown error (timeout, redirect loop, reset) is retried like a non-JSON answer is.
 export async function khl(WS) {
-  const page = await realFetch(`https://en.khl.ru/stat/players/${SEASON.KHL.tour}/`, { headers: UA, signal: AbortSignal.timeout(60000) });
-  const html = await page.text();
-  const sess = (html.match(/bitrix_sessid['"]\s*:\s*['"]([0-9a-f]+)['"]/) || [])[1];
-  if (!sess) throw new Error('KHL: no session token on the stats page');
-  globalThis.BX = { bitrix_sessid: () => sess };
-  const prev = globalThis.fetch; let q = Promise.resolve();
-  globalThis.fetch = (u, o = {}) => {
-    if (typeof u !== 'string' || !u.startsWith('/rest/')) return prev(u, o);
+  const pageUrl = `https://en.khl.ru/stat/players/${SEASON.KHL.tour}/`;
+  const sess = await retry(async () => {
+    const page = await realFetch(pageUrl, { headers: UA, signal: timeoutSignal(60000) });
+    const m = (await page.text()).match(/bitrix_sessid['"]\s*:\s*['"]([0-9a-f]+)['"]/);
+    if (!m) throw new Error('KHL: no session token on the stats page (HTTP ' + page.status + ')');
+    return m[1];
+  }, 3);
+  let q = Promise.resolve();
+  const rest = (u, o = {}) => {
     const p = q.then(async () => {
+      let last = 'non-JSON answer';
       for (let t = 0; t < 6; t++) {
-        const r = await realFetch('https://en.khl.ru' + u, { ...o, headers: { ...UA, ...(o.headers || {}), Cookie: cookieHeader('https://en.khl.ru/'), 'X-Requested-With': 'XMLHttpRequest', Referer: `https://en.khl.ru/stat/players/${SEASON.KHL.tour}/` }, signal: AbortSignal.timeout(60000) });
-        const txt = await r.text();
-        if (txt.trim().startsWith('{')) { await sleep(150); return new Response(txt, { status: 200, headers: { 'Content-Type': 'application/json' } }); }
+        const signal = timeoutSignal(60000);
+        try {
+          const r = await realFetch('https://en.khl.ru' + u, { ...o, headers: { ...UA, ...(o.headers || {}), Cookie: cookieHeader('https://en.khl.ru/'), 'X-Requested-With': 'XMLHttpRequest', Referer: pageUrl }, signal });
+          const txt = await r.text();
+          if (txt.trim().startsWith('{')) { await sleep(150); return new Response(txt, { status: 200, headers: { 'Content-Type': 'application/json' } }); }
+          last = 'non-JSON answer (HTTP ' + r.status + ')';
+        } catch (e) { last = e.message + (e.cause ? ' (' + (e.cause.code || e.cause.message || e.cause) + ')' : ''); }
+        if (signal.aborted && signal.reason?.message === 'deadline') break; // the league's deadline passed: stop at once
         await sleep(1500 * (t + 1));
       }
-      throw new Error('KHL: /rest/ kept returning non-JSON');
+      throw new Error('KHL: /rest/ kept failing: ' + last);
     });
     q = p.catch(() => { }); return p;
   };
-  try { return await WS.khl(SEASON.KHL.season, SEASON.KHL.tour)(); } finally { globalThis.fetch = prev; }
+  return WS.khl(SEASON.KHL.season, SEASON.KHL.tour, { fetch: rest, sess })();
 }
 
 // ---------- Russian transliteration (VHL, MHL) ----------
@@ -100,12 +110,23 @@ export async function mhl() {
   return rows;
 }
 
-// SHL (shl.se): full skater and goalie summaries with birthdates.
+// SHL (shl.se): full skater and goalie summaries with birthdates. A player who changed clubs is listed once per club:
+// rows are merged by player uuid (identical repeats are dropped, split seasons are added up under the club with most games).
+export function mergeByUuid(list, sumKeys) {
+  const m = new Map();
+  for (const r of list) {
+    const o = m.get(r.sid); if (!o) { m.set(r.sid, { ...r, _gp: r.gp }); continue; }
+    if (o.team === r.team) continue; // the same line twice
+    if (r.gp > o._gp) { o.team = r.team; o._gp = r.gp; if (r.toi) o.toi = r.toi; if (r.svp) { o.svp = r.svp; o.gaa = r.gaa; } }
+    for (const k of sumKeys) o[k] = (+o[k] || 0) + (+r[k] || 0);
+  }
+  return [...m.values()].map(({ _gp, ...r }) => r);
+}
 export async function shl() {
   const get = k => json(`https://www.shl.se/api/statistics-v2/stats-info/${k}?count=2000&ssgtUuid=${SEASON.SHL}&provider=statnet`, { headers: { Accept: 'application/json', Referer: 'https://www.shl.se/game-stats/players' } }).then(j => j[0].stats);
   const [sk, gk] = await Promise.all([get('players_summary'), get('goalkeepers_summary')]);
-  const rows = sk.filter(s => s.info && s.info.position !== 'GK').map(s => ({ sid: s.info.uuid, first: s.info.firstName, last: s.info.lastName, pos: s.info.position, team: s.info.teamCode, gp: +s.GP, g: +s.G, a: +s.A, pts: +s.TP, ppp: null, dob: s.info.birthDate, toi: s.TOI_GP || '' }));
-  gk.forEach(s => { if (s.info) rows.push({ goalie: 1, sid: s.info.uuid, first: s.info.firstName, last: s.info.lastName, pos: 'G', team: s.info.teamCode, gp: +s.GPI, svp: s.SVSPerc ? (parseFloat(s.SVSPerc) / 100).toFixed(3) : '', gaa: s.GAA, w: s.W, min: s.MIP, dob: s.info.birthDate }); });
+  const rows = mergeByUuid(sk.filter(s => s.info && s.info.uuid && s.info.position !== 'GK').map(s => ({ sid: s.info.uuid, first: s.info.firstName, last: s.info.lastName, pos: s.info.position, team: s.info.teamCode, gp: +s.GP, g: +s.G, a: +s.A, pts: +s.TP, ppp: null, dob: s.info.birthDate, toi: s.TOI_GP || '' })), ['gp', 'g', 'a', 'pts']);
+  rows.push(...mergeByUuid(gk.filter(s => s.info && s.info.uuid).map(s => ({ goalie: 1, sid: s.info.uuid, first: s.info.firstName, last: s.info.lastName, pos: 'G', team: s.info.teamCode, gp: +s.GPI, svp: s.SVSPerc ? (parseFloat(s.SVSPerc) / 100).toFixed(3) : '', gaa: s.GAA, w: +s.W || 0, min: s.MIP, dob: s.info.birthDate })), ['gp', 'w']));
   return rows;
 }
 
@@ -132,15 +153,67 @@ export async function swe(lg) {
   return rows;
 }
 
-// NCAA (collegehockeynews.com): every D1 skater, qualified goalies, last season's P/GP. Age estimated from class.
+// NCAA (collegehockeynews.com): every D1 skater, qualified goalies, last season's P/GP.
+// Ages: the stats pages only give the class year, so `age` is an estimate (Fr 19 ... Gr 23) and must never decide
+// draft status: a 2027-eligible freshman would look already passed over. Real birthdates are taken from the team roster
+// pages when those list them (cached in state/ws.dob.ncaa.json, refreshed weekly); a player without one keeps the
+// estimate and gets draft status "unknown".
+const CHN = 'https://www.collegehockeynews.com';
+export function parseBirth(s) {
+  s = String(s || '').trim(); let m;
+  const ok = (y, mo, d) => (y >= 1990 && y <= 2015 && mo >= 1 && mo <= 12 && d >= 1 && d <= 31) ? `${y}-${String(mo).padStart(2, '0')}-${String(d).padStart(2, '0')}` : null;
+  if ((m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/))) return ok(+m[1], +m[2], +m[3]);
+  if ((m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{2,4})$/))) { let y = +m[3]; if (y < 100) y += y > 30 ? 1900 : 2000; return ok(y, +m[1], +m[2]); }
+  if (/^[A-Za-z]{3,9}\.? \d{1,2},? \d{4}$/.test(s)) { const t = new Date(s.replace('.', '') + ' UTC'); return isNaN(t) ? null : ok(t.getUTCFullYear(), t.getUTCMonth() + 1, t.getUTCDate()); }
+  return null;
+}
+// roster page -> { playerId: 'YYYY-MM-DD' } from any table that has a birthdate column
+export function rosterBirths(doc) {
+  const out = {};
+  for (const t of doc.querySelectorAll('table')) {
+    let col = -1;
+    for (const trr of t.querySelectorAll('tr')) {
+      const cells = [...trr.children];
+      const h = cells.findIndex(c => /^(dob|d\.o\.b\.|born|birth ?date|birthdate)$/i.test(c.textContent.trim()));
+      if (h >= 0) { col = h; continue; }
+      if (col < 0 || !cells[col]) continue;
+      const a = trr.querySelector('a[href*="/players/"]'); const b = parseBirth(cells[col].textContent);
+      if (a && b) out[a.getAttribute('href').split('/').filter(Boolean).pop()] = b;
+    }
+  }
+  return out;
+}
+async function ncaaDobs(ls, statsDoc, season, notes) {
+  const C = ls.get('ws.dob.ncaa', { s: null, d: null, m: {} });
+  if (C.s === season && C.d && (Date.now() - new Date(C.d)) < 7 * 864e5) return C.m || {};
+  const m = {}; let pages = 0, failed = 0;
+  try {
+    const links = [...new Set([...statsDoc.querySelectorAll('a[href*="/reports/team/"]')].map(a => a.getAttribute('href')))].slice(0, 80);
+    const end = Date.now() + 90000; // birthdates are a bonus: never spend more than a minute and a half on them
+    for (let i = 0; i < links.length && Date.now() < end; i += 4) await Promise.all(links.slice(i, i + 4).map(async href => {
+      try { Object.assign(m, rosterBirths(parseHTML(await text(new URL(href.replace('/reports/team/', '/reports/roster/'), CHN).href)))); pages++; } catch (e) { failed++; }
+    }));
+    if (!links.length) notes.push('no team links on the stats page: no birthdates');
+  } catch (e) { notes.push('birthdates: ' + e.message); }
+  const n = Object.keys(m).length;
+  notes.push(n ? `birthdates for ${n} players from ${pages} roster pages` : `roster pages list no birthdates (${pages} read, ${failed} failed): ages are class-year estimates and draft status is unknown`);
+  // keep older birthdates when a refresh finds fewer (a birthdate does not change)
+  const merged = C.s === season ? { ...(C.m || {}), ...m } : m;
+  ls.set('ws.dob.ncaa', { s: season, d: new Date().toISOString().slice(0, 10), m: merged });
+  return merged;
+}
 export async function ncaa(ls) {
   const AGE = { Fr: 19, So: 20, Jr: 21, Sr: 22, Gr: 23 };
-  const parse = async u => [...parseHTML(await text('https://www.collegehockeynews.com' + u)).querySelectorAll('table tr')].map(trr => { const a = trr.querySelector('a[href*="/players/"]'); return { c: [...trr.children].map(x => x.textContent.replace(/ /g, ' ').trim()), id: a ? a.getAttribute('href').split('/').pop() : null }; }).filter(r => r.id && r.c.length > 10);
+  const load = async u => parseHTML(await text(CHN + u));
+  const rowsOf = d => [...d.querySelectorAll('table tr')].map(trr => { const a = trr.querySelector('a[href*="/players/"]'); return { c: [...trr.children].map(x => x.textContent.replace(/\u00a0/g, ' ').trim()), id: a ? a.getAttribute('href').split('/').filter(Boolean).pop() : null }; }).filter(r => r.id && r.c.length > 10);
   const y = new Date().getMonth() >= 6 ? new Date().getFullYear() : new Date().getFullYear() - 1;
   let P = ls.get('ws.prev.ncaa', null);
-  if (!P || P.s !== y - 1) { P = { s: y - 1, m: {} }; (await parse(`/stats/overall.php?season=${y - 1}${y}`)).forEach(r => { const gp = +r.c[5]; if (gp >= 10) P.m[r.id] = +(+r.c[8] / gp).toFixed(2); }); ls.set('ws.prev.ncaa', P); }
-  const rows = (await parse('/stats/overall.php')).map(r => { const [first, last] = splitFirst(r.c[1]); return { sid: r.id, first, last, pos: r.c[3], team: r.c[2], age: AGE[r.c[4]] ?? null, gp: +r.c[5], g: +r.c[6], a: +r.c[7], pts: +r.c[8], ppp: null, prev: P.m[r.id] ?? null, toi: r.c[18] || '' }; });
-  (await parse('/stats/overall-goalie.php')).forEach(r => { const [first, last] = splitFirst(r.c[1]); rows.push({ goalie: 1, sid: r.id, first, last, pos: 'G', team: r.c[2], age: AGE[r.c[3]] ?? null, gp: +r.c[4], w: +r.c[5], min: r.c[9], gaa: r.c[10], svp: r.c[13] }); });
+  if (!P || P.s !== y - 1) { P = { s: y - 1, m: {} }; rowsOf(await load(`/stats/overall.php?season=${y - 1}${y}`)).forEach(r => { const gp = +r.c[5]; if (gp >= 10) P.m[r.id] = +(+r.c[8] / gp).toFixed(2); }); ls.set('ws.prev.ncaa', P); }
+  const statsDoc = await load('/stats/overall.php'); const notes = [];
+  const dob = await ncaaDobs(ls, statsDoc, y, notes).catch(e => { notes.push('birthdates: ' + e.message); return {}; });
+  const rows = rowsOf(statsDoc).map(r => { const [first, last] = splitFirst(r.c[1]); return { sid: r.id, first, last, pos: r.c[3], team: r.c[2], age: AGE[r.c[4]] ?? null, dob: dob[r.id] || undefined, gp: +r.c[5], g: +r.c[6], a: +r.c[7], pts: +r.c[8], ppp: null, prev: P.m[r.id] ?? null, toi: r.c[18] || '' }; });
+  rowsOf(await load('/stats/overall-goalie.php')).forEach(r => { const [first, last] = splitFirst(r.c[1]); rows.push({ goalie: 1, sid: r.id, first, last, pos: 'G', team: r.c[2], age: AGE[r.c[3]] ?? null, dob: dob[r.id] || undefined, gp: +r.c[4], w: +r.c[5], min: r.c[9], gaa: r.c[10], svp: r.c[13] }); });
+  rows.notes = notes;
   return rows;
 }
 

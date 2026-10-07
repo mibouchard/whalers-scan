@@ -1,14 +1,17 @@
-// Browser-like globals so the shared engine (engine/engine.js, the same code the in-browser scan uses) runs in Node.
-// localStorage is file-backed under state/ so caches and the 75-day trend history survive between runs (the workflow commits state/).
+// Runtime for the scan and the tools: browser-like globals so engine/engine.js runs in Node, a file-backed localStorage
+// under state/ (caches and the 22-day trend history survive between runs because the workflow commits state/), and a
+// fetch with a browser user agent, per-host cookies, a 60 s timeout and an optional per-league abort signal.
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { DOMParser } from 'linkedom';
+import { ROOT, LEAGUE_ID, TEAMS, NHL_TEAMS } from './lib/config.js';
+import * as NAMES from './lib/names.js';
+import { retry, sleep } from './lib/util.js';
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
-const STATE = path.join(ROOT, 'state');
+const STATE = process.env.WS_STATE_DIR || path.join(ROOT, 'state'); // WS_STATE_DIR: tests point this at a temp folder
 // keys that are only same-day caches: kept in memory, never written to the repo
-const VOLATILE = [/^ws\.pool3$/, /^ws\.xfer\./, /^ws\.last$/];
+const VOLATILE = [/^ws\.tmp\./];
 const file = k => path.join(STATE, k.replace(/[^a-zA-Z0-9._-]/g, '_') + '.json');
 const mem = new Map();
 
@@ -48,15 +51,22 @@ async function realFetch(u, o = {}) {
   }
   throw new Error('too many redirects: ' + u);
 }
-// every request gets a browser user agent, cookies and a timeout; KHL /rest/ calls are routed by leagues.js
-globalThis.fetch = (u, o = {}) => realFetch(u, { ...o, headers: { ...UA, ...(o.headers || {}) }, signal: o.signal || AbortSignal.timeout(60000) });
+// The scan sets a signal while one league is being read (src/scan.js, per-league deadline): when it aborts, every request
+// that league still has in flight stops, so a slow league cannot hold the job.
+let leagueSignal = null;
+export const setLeagueSignal = s => { leagueSignal = s || null; };
+export const timeoutSignal = (ms = 60000) => leagueSignal ? AbortSignal.any([AbortSignal.timeout(ms), leagueSignal]) : AbortSignal.timeout(ms);
+// every request gets a browser user agent, cookies and a timeout
+globalThis.fetch = (u, o = {}) => realFetch(u, { ...o, headers: { ...UA, ...(o.headers || {}) }, signal: o.signal || timeoutSignal() });
 export { realFetch };
 
+// The engine is a classic script: it reads the shared helpers from window.WS_LIB (one name normaliser, one team map).
 export function loadEngine() {
+  globalThis.WS_LIB = { ...NAMES, retry, LEAGUE_ID, TEAMS, NHL_TEAMS };
   const src = fs.readFileSync(path.join(ROOT, 'engine', 'engine.js'), 'utf8');
   vm.runInThisContext(src, { filename: 'engine.js' });
   return globalThis.WS;
 }
-export const sleep = ms => new Promise(r => setTimeout(r, ms));
+export { sleep };
 export const parseHTML = html => new DOMParser().parseFromString(html, 'text/html');
 export { ROOT };
