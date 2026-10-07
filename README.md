@@ -122,7 +122,7 @@ Column values worth knowing: `dr` = `post` / `pre` / blank (draft status, above)
 - `alert.json`, from `nightalert.js`: `{ at, date, gamesFinal, gamesPending, candidates: [{ name, team, pos, age, fx, status, fp, line, toi, avgToi, gpBefore, reasons, why }], nearMisses, unmatched }`.
 - `alert-late.json`, from `nightalert.js late`: the same plus `late: true` and `lateGames` (the games `alert.json` listed as pending for that date, or all games if `alert.json` is for another date). Candidates come only from those games.
 - `fawatch.json`, from `fawatch.js`: `{ at, src, status, errors, skaters: [{ lg, <sk columns>, ageKnown, rights, fxStatus, elig, gem }], goalies: [...] }`. Free agents across all leagues, rows with a known age first.
-- `week.json`, from `week.js`: `{ at, week, period, scoring, hitsBlocks, games, byDay, current, next, stats }`.
+- `week.json`, from `week.js`: `{ at, week, period, scoring, hitsBlocks, games, byDay, nextWeek { week, games, byDay } (the following Monday-Sunday week), current, next, stats }`.
 - `hfd-roster.json`, `team.json`, `lookup.json`, `names.json`: the one-off lookups below.
 
 ## Tools (`src/tools/`)

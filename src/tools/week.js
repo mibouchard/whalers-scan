@@ -13,12 +13,19 @@ const today = torontoDate();
 const mon = [process.env.DATE, ...cliArgs()].find(isDate) || addDays(today, -((new Date(today + 'T12:00:00Z').getUTCDay() + 6) % 7));
 
 // Games per team, Monday to Sunday
-const sched = await nhl(`schedule/${mon}`);
-const games = {}, byDay = {};
-for (const day of sched.gameWeek || []) for (const g of day.games || []) {
-  if (g.gameType !== 2) continue;
-  for (const t of [g.awayTeam.abbrev, g.homeTeam.abbrev]) { games[t] = (games[t] || 0) + 1; (byDay[t] = byDay[t] || []).push(day.date.slice(5)); }
+async function weekGames(monday) {
+  const sched = await nhl(`schedule/${monday}`);
+  const games = {}, byDay = {};
+  for (const day of sched.gameWeek || []) for (const g of day.games || []) {
+    if (g.gameType !== 2) continue;
+    for (const t of [g.awayTeam.abbrev, g.homeTeam.abbrev]) { games[t] = (games[t] || 0) + 1; (byDay[t] = byDay[t] || []).push(day.date.slice(5)); }
+  }
+  return { week: monday, games, byDay };
 }
+const { games, byDay } = await weekGames(mon);
+// The following Monday-Sunday week too, so a Sunday pre-lock report has next week's games without a second run.
+let nextWeek = null;
+try { nextWeek = await weekGames(addDays(mon, 7)); } catch (e) { nextWeek = { week: addDays(mon, 7), err: String(e) }; }
 
 // Rosters
 const ids = await getPlayerIds();
@@ -42,7 +49,7 @@ async function fp(row) {
     return { nhlId: id, gp, fp: +(pts + SCORING.HIT * s.hit + SCORING.BLK * s.blk).toFixed(2), hit: s.hit, blk: s.blk, toi, note: 'includes hits and blocks (NHL season report)' };
   } catch (e) { return { nhlId: id, err: String(e) }; }
 }
-const out = { at: new Date().toISOString(), week: mon, period: ro.period, scoring: SCORING_TEXT, hitsBlocks: hb ? 'included' : 'not available (season report could not be read)', games, byDay, current: cur, next };
+const out = { at: new Date().toISOString(), week: mon, period: ro.period, scoring: SCORING_TEXT, hitsBlocks: hb ? 'included' : 'not available (season report could not be read)', games, byDay, nextWeek, current: cur, next };
 for (const r of [...out.current, ...out.next]) { r.games = games[r.nhlTeam] || 0; r.days = byDay[r.nhlTeam] || []; }
 const stat = {};
 for (const r of [...out.current, ...out.next]) if (!(r.id in stat)) stat[r.id] = await fp(r);
