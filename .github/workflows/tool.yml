@@ -1,35 +1,52 @@
 name: One-off tool
 
+# Runs one script from src/tools/ and saves what it wrote. An outside timer dispatches this with tool=nightalert at about
+# 11:40 PM Toronto time; everything else is run by hand (Actions tab -> One-off tool -> Run workflow).
+# Shares the concurrency group with the daily scan so two runs never push at the same time.
+
 on:
   workflow_dispatch:
     inputs:
       tool:
-        description: 'Script in src/tools/ to run (without .js)'
+        description: 'Script in src/tools/ to run, without .js (e.g. nightalert, box, team, league, week)'
         required: true
       args:
-        description: 'Optional arguments for the script (e.g. a date)'
+        description: 'Optional arguments, e.g. 2026-10-06, or late, or "Ottawa Senators"'
         required: false
         default: ''
 
 permissions:
   contents: write
 
+concurrency:
+  group: repo-write
+  cancel-in-progress: false
+
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
+    env:
+      # inputs only ever reach the shell through the environment, never by being pasted into a command
+      TOOL: ${{ github.event.inputs.tool }}
+      ARGS: ${{ github.event.inputs.args }}
     steps:
       - uses: actions/checkout@v4
+      - name: Check the tool name
+        run: |
+          if ! [[ "$TOOL" =~ ^[a-z]+$ ]]; then echo "::error::tool must be lower-case letters only"; exit 1; fi
+          if [ ! -f "src/tools/$TOOL.js" ]; then echo "::error::no such tool: src/tools/$TOOL.js"; ls src/tools; exit 1; fi
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-      - run: npm ci || npm install
-      - run: node src/tools/${{ github.event.inputs.tool }}.js ${{ github.event.inputs.args }}
+      - run: npm ci
+      - name: Run the tool (it reads its arguments from the ARGS environment variable)
+        id: tool
+        continue-on-error: true
+        run: node "src/tools/$TOOL.js"
       - name: Save results
-        run: |
-          git config user.name "whalers-scan"
-          git config user.email "whalers-scan@users.noreply.github.com"
-          git add -A data/adhoc; for f in data/form.json data/pool.json; do [ -f $f ] && git add $f; done
-          git diff --cached --quiet || git commit -m "tool ${{ github.event.inputs.tool }} $(date -u +%F)"
-          git checkout -- state 2>/dev/null; git clean -fdq state 2>/dev/null; git pull --rebase -q && git push
+        run: bash src/ci/push.sh "tool $TOOL $(date -u +%F)" data/adhoc data/form.json data/pool.json data/league.json data/fo data/health.json
+      - name: Fail the job if the tool failed
+        if: steps.tool.outcome == 'failure'
+        run: exit 1

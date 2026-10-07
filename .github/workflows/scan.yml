@@ -1,61 +1,108 @@
 name: Daily minors scan
 
+# What starts this job
+#   - An outside timer dispatches it (workflow_dispatch, no inputs) at about 09:14 UTC every day. That is the normal run.
+#   - GitHub's own schedule below is the backup, because GitHub sometimes skips or delays scheduled runs. Cron times are
+#     UTC and do not follow daylight saving: 09:17 UTC is 5:17 AM in Toronto on EDT (summer) and 4:17 AM on EST (winter).
+#     All three finish before the 6:54 AM (Toronto) morning report in both seasons.
+#   - A backup that finds today's scan complete and clean stops at once. If today's scan had failed leagues or failed
+#     steps, the backup re-reads only those leagues (scan.js --retry-failed), re-runs only those steps and merges.
+# Both workflows share one concurrency group so two runs never push at the same time.
+
 on:
   schedule:
-    # GitHub sometimes skips scheduled runs, so there are two backups. Whichever fires first scans; the others see
-    # today's results already saved and stop. All three finish before the 6:54 AM morning report (Toronto).
-    - cron: '17 9 * * *'   # 5:17 AM Toronto (EDT), 4:17 AM in winter
-    - cron: '47 9 * * *'   # backup, 5:47 AM
-    - cron: '23 10 * * *'  # backup, 6:23 AM
+    - cron: '17 9 * * *'   # 5:17 AM Toronto on EDT, 4:17 AM on EST
+    - cron: '47 9 * * *'   # 5:47 AM EDT / 4:47 AM EST
+    - cron: '23 10 * * *'  # 6:23 AM EDT / 5:23 AM EST
   workflow_dispatch:
     inputs:
       leagues:
-        description: 'Optional: only these leagues, space-separated (debug; does not overwrite latest.json)'
+        description: 'Debug only: scan just these leagues, space-separated (writes data/status-debug.json, leaves latest.json alone)'
         required: false
         default: ''
+      retry_failed:
+        description: 'Only re-run what failed in today''s scan (failed leagues and failed steps)'
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
 
 concurrency:
-  group: scan
+  group: repo-write
   cancel-in-progress: false
 
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 80
     steps:
       - uses: actions/checkout@v4
-      - name: Skip if today's scan already ran (scheduled runs only)
-        id: done
-        if: github.event_name == 'schedule'
-        run: |
-          node -e "const s=require('./data/status.json');process.exit(s.d===new Date().toISOString().slice(0,10)&&!(s.subset||[]).length?0:1)" \
-            && echo "skip=true" >> "$GITHUB_OUTPUT" && echo "Already scanned today" || true
       - uses: actions/setup-node@v4
-        if: steps.done.outputs.skip != 'true'
         with:
           node-version: 22
           cache: npm
-      - if: steps.done.outputs.skip != 'true'
-        run: npm ci || npm install
-      - name: Run scan
-        if: steps.done.outputs.skip != 'true'
-        run: node src/scan.js ${{ github.event.inputs.leagues }}
+      - name: Decide what to run (full / retry failed / skip / debug)
+        id: plan
+        env:
+          EVENT: ${{ github.event_name }}
+          LEAGUES: ${{ github.event.inputs.leagues }}
+          RETRY: ${{ github.event.inputs.retry_failed }}
+        run: node src/ci/guard.js
+      - name: Install
+        if: steps.plan.outputs.mode != 'skip'
+        run: npm ci
+
+      # Every step below records "ok" or "ERR: ..." for data/health.json and never stops the job: results are saved
+      # first, and the last step turns the job red if anything failed.
+      - name: Scan the leagues
+        id: scan
+        if: steps.plan.outputs.mode != 'skip'
+        continue-on-error: true
+        env:
+          LEAGUES: ${{ github.event.inputs.leagues }}
+        run: node src/ci/step.js scan src/scan.js
       - name: Recent form (last 5 games, league scoring)
-        if: steps.done.outputs.skip != 'true'
+        if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
         continue-on-error: true
-        run: node src/tools/form.js
+        run: node src/ci/step.js form src/tools/form.js
       - name: Player pool (waivers, injuries)
-        if: steps.done.outputs.skip != 'true'
+        if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
         continue-on-error: true
-        run: node src/tools/pool.js
+        run: node src/ci/step.js pool src/tools/pool.js
+      - name: League (rosters, cap, free agents, scores, standings, moves)
+        if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
+        continue-on-error: true
+        run: node src/ci/step.js league src/tools/league.js
+      - name: Box scores (yesterday)
+        if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
+        continue-on-error: true
+        run: node src/ci/step.js box src/tools/box.js
+      - name: Night alert, late pass (yesterday's games that were still on at 11:40 PM)
+        if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
+        continue-on-error: true
+        run: node src/ci/step.js alertLate src/tools/nightalert.js late
+      - name: Free-agent watch
+        if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
+        continue-on-error: true
+        run: node src/ci/step.js fawatch src/tools/fawatch.js
+      - name: Week (lineup check)
+        if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
+        continue-on-error: true
+        run: node src/ci/step.js week src/tools/week.js
+      - name: Health file
+        if: always() && (steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry')
+        run: node src/ci/health.js
+
       - name: Save results
-        if: steps.done.outputs.skip != 'true'
-        run: |
-          git config user.name "whalers-scan"
-          git config user.email "whalers-scan@users.noreply.github.com"
-          git add -A data state
-          git diff --cached --quiet || git commit -m "scan $(date -u +%F)"
-          git push
+        if: always() && steps.plan.outputs.mode != 'skip' && steps.plan.outputs.mode != ''
+        run: bash src/ci/push.sh "scan $(date -u +%F)${RUN_MODE:+ ($RUN_MODE)}" data state
+
+      # Last, after the push: a red job makes GitHub email the owner.
+      - name: Fail the job if any league or step failed
+        if: always() && (steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry')
+        run: node src/ci/health.js --check
+      - name: Fail the job if the debug scan failed
+        if: steps.plan.outputs.mode == 'debug' && steps.scan.outcome == 'failure'
+        run: exit 1
