@@ -2,11 +2,15 @@
   "name": "whalers-scan",
   "private": true,
   "type": "module",
-  "description": "Daily minors scan for the Hartford Whalers (Fantrax league The Hockey Life): 16 leagues matched to Fantrax, written to data/.",
+  "description": "Daily fantasy-hockey data for the Hartford Whalers (Fantrax league The Hockey Life): a 16-league minors scan matched to Fantrax plus league, box-score and alert files, written to data/ by GitHub Actions.",
   "scripts": {
-    "scan": "node src/scan.js"
+    "scan": "node src/scan.js",
+    "test": "node --test test/*.test.js",
+    "check": "for f in engine/*.js src/*.js src/lib/*.js src/tools/*.js src/ci/*.js test/*.js; do node --check \"$f\" || exit 1; done"
   },
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=22"
+  },
   "dependencies": {
     "linkedom": "^0.18.13"
   }
