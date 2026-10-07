@@ -1,12 +1,36 @@
 {
- "at": "2026-10-06T03:40:27.793Z",
- "date": "2026-10-05",
- "gamesFinal": 4,
- "gamesPending": [],
- "candidates": [],
+ "at": "2026-10-07T03:40:32.622Z",
+ "date": "2026-10-06",
+ "gamesFinal": 7,
+ "gamesPending": [
+  "VGK@SEA",
+  "FLA@LAK"
+ ],
+ "candidates": [
+  {
+   "name": "Vladislav Gavrikov",
+   "team": "NYR",
+   "pos": "D",
+   "age": 30,
+   "fx": "03ekl",
+   "status": "FA",
+   "fp": 6,
+   "line": "0G 2A, 3 SOG, 1 hits, 0 blk",
+   "toi": "24:10",
+   "avgToi": "20:54",
+   "reasons": [
+    "24:10 TOI",
+    "+3:17 over his 20:54 average"
+   ],
+   "why": "role change"
+  }
+ ],
  "nearMisses": [
-  "Pontus Holmberg (TBL, 27): 7.2 FP, no usage signal, 13:05 TOI",
-  "Michael Amadio (OTT, 30): 6.9 FP, no usage signal, 15:44 TOI",
-  "Alex Iafallo (WPG, 32): 6.4 FP, no usage signal, 10:24 TOI"
+  "Nils Hoglander (NSH, 25): 7.1 FP, no usage signal, 10:38 TOI",
+  "Mark Jankowski (CAR, 32): 6.4 FP, no usage signal, 12:37 TOI",
+  "Viktor Arvidsson (DET, 33): 6.3 FP, 17:20 TOI, power-play point, 17:20 TOI",
+  "Brayden Schenn (NYI, 35): 7.35 FP, 16:16 TOI, power-play point, 16:16 TOI",
+  "Oliver Bjorkstrand (NYR, 31): 10.45 FP, power-play point, 8:58 TOI",
+  "Cole Smith (CHI, 30): 6.6 FP, no usage signal, 14:36 TOI"
  ]
 }
