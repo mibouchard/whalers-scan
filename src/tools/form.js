@@ -1,64 +1,47 @@
-// Recent form for every NHL player on Fred's (HFD) Fantrax roster: fantasy points per game over his last 5 regular-season
-// games in league scoring (G 3, A 2, PPP 1, SHG 2, GWG 1, +/- 0.5, BLK 0.2, HIT 0.2, PIM 0.25, SOG 0.1;
-// goalies W 5, SO 5, SV 0.25, GA -1). Game logs give everything except hits and blocks, which come from each game's box score.
-// Writes data/form.json: { at, window, players: { <fantraxId>: { name, gp, fpg, games: [[date, fp], ...] } } }.
-import fs from 'node:fs';
-import path from 'node:path';
-import { ROOT } from '../env.js';
+// Recent form for every NHL player on the HFD Fantrax roster (current and next period): fantasy points per game over his
+// last 5 regular-season games in league scoring (src/lib/scoring.js). Game logs give everything except hits and blocks,
+// which come from each game's box score.
+// Writes data/form.json: { at, window, scoring, players: { <fantraxId>: { name, nhlId, gp, fpg, games: [[date, fp], ...] } },
+//                          roster: { <fantraxId>: [name, nhlTeam, positions] } }.
+import { TEAM_ID, writeJSON } from '../lib/config.js';
+import { getPlayerIds, rosterBundle } from '../lib/fantrax.js';
+import { nhl, findNhlId, isRegularSeasonId } from '../lib/nhl.js';
+import { gameLogFP } from '../lib/scoring.js';
+import { fxSplit, fxDisplay } from '../lib/names.js';
 
-const L = 'fs61ldkdmow7aw2h', HFD = 'm1hfr04lmow7aw2v', N = 5;
-const j = u => fetch(u).then(r => { if (!r.ok) throw new Error(r.status + ' ' + u); return r.json(); });
-const norm = s => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/['.\-]/g, '').toLowerCase().split(/\s+/).sort().join(' ');
-
-const ids = await j('https://www.fantrax.com/fxea/general/getPlayerIds?sport=NHL');
-const cur = await j(`https://www.fantrax.com/fxea/general/getTeamRosters?leagueId=${L}`);
-const nxt = await j(`https://www.fantrax.com/fxea/general/getTeamRosters?leagueId=${L}&period=${cur.period + 1}`).catch(() => null);
+const N = 5;
+const ids = await getPlayerIds();
+const ro = await rosterBundle();
 const items = new Map();
-for (const ro of [cur, nxt]) for (const i of ro?.rosters[HFD]?.rosterItems || []) {
-  const p = ids[i.id] || {}; const [l, f] = (p.name || '').split(', ');
-  if (!items.has(i.id)) items.set(i.id, { id: i.id, name: f ? f + ' ' + l : (p.name || i.id), team: p.team, goalie: (p.position || '').includes('G') });
-}
-
-const nhl = {};
-for (const t of new Set([...items.values()].map(r => r.team).filter(Boolean))) {
-  try {
-    const r = await j(`https://api-web.nhle.com/v1/roster/${t}/current`);
-    for (const p of [...(r.forwards || []), ...(r.defensemen || []), ...(r.goalies || [])]) nhl[t + '|' + norm(p.firstName.default + ' ' + p.lastName.default)] = p.id;
-  } catch (e) { }
+for (const x of [ro.cur, ro.next]) for (const i of x?.rosters[TEAM_ID]?.rosterItems || []) {
+  const p = ids[i.id] || {}; const [first, last] = fxSplit(p.name);
+  if (!items.has(i.id)) items.set(i.id, { id: i.id, first, last, name: p.name ? fxDisplay(p.name) : i.id, team: p.team, goalie: (p.position || '').includes('G') });
 }
 
 const box = new Map();
 async function hitsBlocks(gameId, pid) {
-  if (!box.has(gameId)) box.set(gameId, j(`https://api-web.nhle.com/v1/gamecenter/${gameId}/boxscore`).catch(() => null));
+  if (!box.has(gameId)) box.set(gameId, nhl(`gamecenter/${gameId}/boxscore`).catch(() => null));
   const b = await box.get(gameId); if (!b) return null;
   for (const side of ['awayTeam', 'homeTeam']) for (const g of ['forwards', 'defense']) for (const s of b.playerByGameStats?.[side]?.[g] || [])
-    if (s.playerId === pid) return { hits: s.hits || 0, blk: s.blockedShots || 0 };
+    if (s.playerId === pid) return { hit: s.hits || 0, blk: s.blockedShots || 0 };
   return null;
 }
 
 const out = { at: new Date().toISOString(), window: N, scoring: 'league', players: {},
-  // every player on Fred's roster with name, NHL club holding his rights, and positions, so the page can name new claims
+  // every player on the roster with name, NHL club holding his rights, and positions, so the page can name new claims
   roster: Object.fromEntries([...items.values()].map(r => [r.id, [r.name, r.team || '', (ids[r.id] || {}).position || '']])) };
 for (const r of items.values()) {
-  const pid = nhl[r.team + '|' + norm(r.name)]; if (!pid) continue;
+  const pid = await findNhlId(r.team, r.first, r.last); if (!pid) continue;
   let log;
-  try { log = (await j(`https://api-web.nhle.com/v1/player/${pid}/game-log/now`)).gameLog || []; } catch (e) { continue; }
-  log = log.filter(x => String(x.gameId).slice(4, 6) === '02').slice(0, N); // regular season, newest first
+  try { log = (await nhl(`player/${pid}/game-log/now`)).gameLog || []; } catch (e) { continue; }
+  log = log.filter(x => isRegularSeasonId(x.gameId)).slice(0, N); // regular season, newest first
   if (!log.length) continue;
   const games = [];
   for (const x of log) {
-    let fp;
-    if (r.goalie || x.shotsAgainst !== undefined) {
-      const sv = (x.shotsAgainst || 0) - (x.goalsAgainst || 0);
-      fp = (x.decision === 'W' ? 5 : 0) + (x.shutouts ? 5 : 0) + 0.25 * sv - (x.goalsAgainst || 0);
-    } else {
-      const hb = await hitsBlocks(x.gameId, pid) || { hits: 0, blk: 0 };
-      fp = 3 * (x.goals || 0) + 2 * (x.assists || 0) + (x.powerPlayPoints || 0) + 2 * (x.shorthandedGoals || 0) + (x.gameWinningGoals || 0)
-        + 0.5 * (x.plusMinus || 0) + 0.25 * (x.pim || 0) + 0.1 * (x.shots || 0) + 0.2 * hb.hits + 0.2 * hb.blk;
-    }
-    games.push([x.gameDate, +fp.toFixed(2)]);
+    const goalie = r.goalie || x.shotsAgainst !== undefined;
+    games.push([x.gameDate, gameLogFP(x, goalie ? {} : (await hitsBlocks(x.gameId, pid) || {}))]);
   }
   out.players[r.id] = { name: r.name, nhlId: pid, gp: games.length, fpg: +(games.reduce((s, g) => s + g[1], 0) / games.length).toFixed(2), games };
 }
-fs.writeFileSync(path.join(ROOT, 'data', 'form.json'), JSON.stringify(out, null, 1));
+writeJSON('data/form.json', out, 1);
 console.log('form for', Object.keys(out.players).length, 'players');

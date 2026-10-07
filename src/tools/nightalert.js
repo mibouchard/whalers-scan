@@ -1,110 +1,98 @@
-// Late-night free-agent alert. Scores tonight's finished NHL games with league scoring, keeps players Fantrax shows as free
-// agents (FA) or on waivers (WW) in The Hockey Life, and flags those whose big night came with a usage signal.
-// Writes data/adhoc/alert.json. Run around 11:40 PM ET; games still in progress are listed as pending and left to the
-// morning report.
+// Late-night free-agent alert. Scores the night's finished NHL games with league scoring, keeps players Fantrax itself
+// shows as free agents (FA) or on waivers (WW) in The Hockey Life, and flags those whose big night came with a usage signal.
 //
-// Rules (Fred, Oct 5 2026):
+//   node src/tools/nightalert.js [YYYY-MM-DD]        writes data/adhoc/alert.json  (run around 11:40 PM ET; games still
+//                                                    in progress are listed under gamesPending)
+//   node src/tools/nightalert.js late [YYYY-MM-DD]   the late pass, for yesterday by default: writes
+//                                                    data/adhoc/alert-late.json with candidates only from the games that
+//                                                    alert.json listed as pending (all games if alert.json is for another
+//                                                    date). Never touches alert.json.
+// The date and the late switch can also come from env DATE / LATE=1 / ARGS.
+//
+// Rules:
 //   big night   skater 6+ FP, or goalie win worth 10+ FP
-//   usage       forward 16:00+ (D 20:00+), or a power-play point, or 3:00+ above his own average this season
+//   usage       forward 16:00+ (D 20:00+), or a power-play point, or 3:00+ above his own season average
+//               (the average only counts once he has 3 earlier games; with fewer, `why` says "average of N games")
+//   goalie      2+ starts within his team's last three games
 //   who         25 or younger with a big night and any usage signal, or any age with a clear role change
-//               (3:00+ above his average AND 16:00+ for F / 20:00+ for D)
-import fs from 'node:fs';
-import path from 'node:path';
-import { ROOT } from '../env.js';
+//               (3:00+ above his average AND 16:00+ for F / 20:00+ for D; or the goalie test)
+import { torontoDate, torontoHour, addDays, isDate, cliArgs, readJSON, writeJSON } from '../lib/config.js';
+import { getLeagueInfo, getPlayerIds } from '../lib/fantrax.js';
+import { nhl, gamesOn, gameRows, gameLabel, isFinal, isRegularSeasonId, sec, mmss, ageFrom } from '../lib/nhl.js';
+import { makeMatcher } from '../lib/names.js';
 
-const L = 'fs61ldkdmow7aw2h';
-const j = u => fetch(u).then(r => { if (!r.ok) throw new Error(r.status + ' ' + u); return r.json(); });
-const tz = d => new Date(d.toLocaleString('en-US', { timeZone: 'America/Toronto' }));
-const now = tz(new Date());
-if (now.getHours() < 6) now.setDate(now.getDate() - 1); // run after midnight: still "tonight"
-const date = process.argv[2] || process.env.DATE || now.toISOString().slice(0, 10);
-const sec = t => { if (!t) return 0; const [m, s] = String(t).split(':').map(Number); return m * 60 + (s || 0); };
-const mmss = s => Math.floor(s / 60) + ':' + String(Math.round(s % 60)).padStart(2, '0');
-const norm = s => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/['.\-]/g, '').toLowerCase().split(/\s+/).sort().join(' ');
+const args = cliArgs();
+const late = args.includes('late') || /^(1|true|yes)$/i.test(process.env.LATE || '');
+// "tonight": before 6 AM Toronto it is still last night. The late pass is always about yesterday.
+const tonight = torontoHour() < 6 ? addDays(torontoDate(), -1) : torontoDate();
+const date = [process.env.DATE, ...args].find(isDate) || (late ? addDays(torontoDate(), -1) : tonight);
 
-const score = await j(`https://api-web.nhle.com/v1/score/${date}`);
-const games = (score.games || []).filter(g => g.gameType === 2);
-const done = games.filter(g => ['FINAL', 'OFF'].includes(g.gameState));
-const pending = games.filter(g => !['FINAL', 'OFF'].includes(g.gameState)).map(g => g.awayTeam.abbrev + '@' + g.homeTeam.abbrev);
+const { all, final: done, pending } = await gamesOn(date);
+let games = done, lateGames = null;
+if (late) {
+  const first = readJSON('data/adhoc/alert.json');
+  lateGames = first && first.date === date ? (first.gamesPending || []) : all.map(gameLabel);
+  games = done.filter(g => lateGames.includes(gameLabel(g)));
+}
 
 // Fantrax: player pool (names, NHL club) and each player's status in our league
-const ids = await j('https://www.fantrax.com/fxea/general/getPlayerIds?sport=NHL');
-const fxByKey = {};
-for (const [id, p] of Object.entries(ids)) { const [l, f] = (p.name || '').split(', '); fxByKey[(p.team || '') + '|' + norm((f || '') + ' ' + (l || ''))] = id; }
-const info = await j(`https://www.fantrax.com/fxea/general/getLeagueInfo?leagueId=${L}`);
-const status = id => (info.playerInfo || {})[id]?.status || '';
+const ids = await getPlayerIds();
+const info = await getLeagueInfo();
+if (!info.playerInfo) throw new Error('getLeagueInfo has no playerInfo: free-agent status unknown, no alert written');
+const status = id => info.playerInfo[id]?.status || '';
+const M = makeMatcher(ids);
 
 const rows = [];
-for (const g of done) {
-  const [box, land] = await Promise.all([j(`https://api-web.nhle.com/v1/gamecenter/${g.id}/boxscore`), j(`https://api-web.nhle.com/v1/gamecenter/${g.id}/landing`)]);
-  const away = box.awayTeam.abbrev, home = box.homeTeam.abbrev;
-  const fin = { [away]: box.awayTeam.score, [home]: box.homeTeam.score };
-  const winner = fin[away] > fin[home] ? away : home, loser = winner === away ? home : away;
-  const ppp = {}, shg = {}, gwg = {}; const run = { [away]: 0, [home]: 0 };
-  for (const per of land.summary?.scoring || []) {
-    if (per.periodDescriptor?.periodType === 'SO') continue;
-    for (const gl of per.goals || []) {
-      const team = gl.teamAbbrev?.default || gl.teamAbbrev; run[team] = (run[team] || 0) + 1;
-      if (gl.strength === 'pp') { ppp[gl.playerId] = (ppp[gl.playerId] || 0) + 1; for (const a of gl.assists || []) ppp[a.playerId] = (ppp[a.playerId] || 0) + 1; }
-      if (gl.strength === 'sh') shg[gl.playerId] = (shg[gl.playerId] || 0) + 1;
-      if (team === winner && run[team] === fin[loser] + 1) gwg[gl.playerId] = 1;
-    }
-  }
-  for (const [side, team] of [['awayTeam', away], ['homeTeam', home]]) {
-    const S = box.playerByGameStats?.[side] || {};
-    for (const p of [...(S.forwards || []), ...(S.defense || [])]) {
-      const fp = 3 * (p.goals || 0) + 2 * (p.assists || 0) + (ppp[p.playerId] || 0) + 2 * (shg[p.playerId] || 0) + (gwg[p.playerId] || 0)
-        + 0.5 * (p.plusMinus || 0) + 0.25 * (p.pim || 0) + 0.1 * (p.sog || 0) + 0.2 * (p.hits || 0) + 0.2 * (p.blockedShots || 0);
-      rows.push({ pid: p.playerId, name: p.name?.default, team, pos: p.position, d: p.position === 'D', fp: +fp.toFixed(2), toi: sec(p.toi), ppp: ppp[p.playerId] || 0,
-        line: `${p.goals || 0}G ${p.assists || 0}A${ppp[p.playerId] ? ', ' + ppp[p.playerId] + ' PPP' : ''}, ${p.sog || 0} SOG, ${p.hits || 0} hits, ${p.blockedShots || 0} blk` });
-    }
-    for (const p of S.goalies || []) {
-      if (!p.starter && !p.decision) continue;
-      const [sv, sa] = String(p.saveShotsAgainst || '0/0').split('/').map(Number);
-      const so = p.decision === 'W' && (p.goalsAgainst || 0) === 0;
-      const fp = (p.decision === 'W' ? 5 : 0) + (so ? 5 : 0) + 0.25 * sv - (p.goalsAgainst || 0);
-      rows.push({ pid: p.playerId, name: p.name?.default, team, pos: 'G', goalie: true, fp: +fp.toFixed(2), win: p.decision === 'W', line: `${p.decision || '-'}, ${sv} saves on ${sa}` });
-    }
-  }
-}
+for (const g of games) for (const r of await gameRows(g.id)) rows.push(r);
 
 // keep free agents with a big night, then check usage against each player's own season
-const out = [], near = [];
+const out = [], near = [], unmatched = [];
 for (const r of rows) {
-  if (r.goalie ? !(r.win && r.fp >= 10) : r.fp < 6) continue;
-  let fx = null;
-  try {
-    const pl = await j(`https://api-web.nhle.com/v1/player/${r.pid}/landing`);
-    r.full = `${pl.firstName?.default} ${pl.lastName?.default}`;
-    r.age = pl.birthDate ? Math.floor((Date.now() - Date.parse(pl.birthDate)) / 31557600000) : null;
-    fx = fxByKey[r.team + '|' + norm(r.full)] || fxByKey['|' + norm(r.full)] || null;
-  } catch (e) { continue; }
-  const st = fx ? status(fx) : '';
-  if (!fx || !['FA', 'WW'].includes(st)) continue;
-  const reasons = [];
-  let roleChange = false;
+  if (r.goalie ? !(r.dec === 'W' && r.fp >= 10) : r.fp < 6) continue;
+  let pl;
+  try { pl = await nhl(`player/${r.pid}/landing`); } catch (e) { unmatched.push(`${r.name} ${r.team} (no NHL profile)`); continue; }
+  const first = pl.firstName?.default || '', last = pl.lastName?.default || r.name;
+  r.full = `${first} ${last}`.trim(); r.age = ageFrom(pl.birthDate);
+  // full name first, then last name + NHL team (Tommy / Thomas, Mitch / Mitchell)
+  const m = M.find({ first, last, team: r.team, pos: r.pos, goalie: r.goalie });
+  if (!m) { unmatched.push(`${r.full} ${r.team}`); continue; }
+  const fx = m.id, st = status(fx);
+  if (!['FA', 'WW'].includes(st)) continue;
+  const reasons = []; let roleChange = false, thin = null;
+  const log = await nhl(`player/${r.pid}/game-log/now`).then(j => (j.gameLog || []).filter(x => isRegularSeasonId(x.gameId))).catch(() => null);
   if (!r.goalie) {
-    let prior = [];
-    try { prior = ((await j(`https://api-web.nhle.com/v1/player/${r.pid}/game-log/now`)).gameLog || []).filter(x => String(x.gameId).slice(4, 6) === '02' && x.gameDate < date); } catch (e) { }
+    const prior = (log || []).filter(x => x.gameDate < date); const toi = sec(r.toi), d = r.pos === 'D';
     const avg = prior.length ? prior.reduce((s, x) => s + sec(x.toi), 0) / prior.length : null;
-    const high = r.toi >= (r.d ? 1200 : 960);
-    if (high) reasons.push(`${mmss(r.toi)} TOI`);
+    const high = toi >= (d ? 1200 : 960);
+    if (high) reasons.push(`${mmss(toi)} TOI`);
     if (r.ppp) reasons.push('power-play point');
-    if (avg != null && r.toi - avg >= 180) reasons.push(`+${mmss(r.toi - avg)} over his ${mmss(avg)} average`);
-    roleChange = avg != null && r.toi - avg >= 180 && high;
-    r.avgToi = avg != null ? mmss(avg) : null; r.toiTxt = mmss(r.toi); r.gpBefore = prior.length;
+    const over = avg != null && toi - avg >= 180;
+    // an "average" of one or two games proves nothing: it only counts from three earlier games on
+    if (over && prior.length >= 3) { reasons.push(`+${mmss(toi - avg)} over his ${mmss(avg)} average`); roleChange = high; }
+    else if (over) thin = prior.length;
+    r.avgToi = avg != null ? mmss(avg) : null; r.toiTxt = mmss(toi); r.gpBefore = log ? prior.length : null;
+    r.line = `${r.g}G ${r.a}A${r.ppp ? ', ' + r.ppp + ' PPP' : ''}, ${r.sog} SOG, ${r.hit} hits, ${r.blk} blk`;
   } else {
-    let starts = 0;
-    try { const lg = ((await j(`https://api-web.nhle.com/v1/player/${r.pid}/game-log/now`)).gameLog || []).filter(x => String(x.gameId).slice(4, 6) === '02'); starts = lg.filter(x => x.gamesStarted).slice(0, 3).length; r.gpBefore = lg.length; } catch (e) { }
-    if (starts >= 2) { reasons.push(`${starts} starts in his last 3 games`); roleChange = true; }
+    // starts within his team's last three regular-season games (tonight included)
+    r.gpBefore = log ? log.filter(x => x.gameDate < date).length : null;
+    r.line = `${r.dec || '-'}, ${r.sv} saves on ${r.sa ?? '?'}${r.so ? ', shutout' : ''}`;
+    try {
+      const sched = await nhl(`club-schedule-season/${r.team}/now`);
+      const last3 = (sched.games || []).filter(g => g.gameType === 2 && g.gameDate <= date && (isFinal(g) || g.gameDate < date)).slice(-3).map(g => g.id);
+      const started = new Set((log || []).filter(x => x.gamesStarted).map(x => x.gameId));
+      const tonightId = games.find(g => [g.awayTeam.abbrev, g.homeTeam.abbrev].includes(r.team))?.id;
+      if (r.starter && tonightId) started.add(tonightId);
+      const starts = last3.filter(id => started.has(id)).length;
+      if (last3.length >= 3 && starts >= 2) { reasons.push(`${starts} starts in his team's last 3 games`); roleChange = true; }
+    } catch (e) { }
   }
   const young = r.age != null && r.age <= 25;
-  if (!reasons.length || (!young && !roleChange)) { near.push(`${r.full || r.name} (${r.team}, ${r.age ?? '?'}): ${r.fp} FP, ${reasons.join(', ') || 'no usage signal'}${r.toiTxt ? ', ' + r.toiTxt + ' TOI' : ''}`); continue; }
-  out.push({ name: r.full || r.name, team: r.team, pos: r.pos, age: r.age, fx, status: st, fp: r.fp, line: r.line, toi: r.toiTxt || null, avgToi: r.avgToi || null,
-    reasons, why: young ? (roleChange ? 'young + role change' : 'young + usage') : 'role change' });
+  if (!reasons.length || (!young && !roleChange)) { near.push(`${r.full} (${r.team}, ${r.age ?? '?'}): ${r.fp} FP, ${reasons.join(', ') || 'no usage signal'}${r.toiTxt && !reasons.some(x => x.endsWith(' TOI')) ? ', ' + r.toiTxt + ' TOI' : ''}`); continue; }
+  out.push({ name: r.full, team: r.team, pos: r.pos, age: r.age, fx, status: st, fp: r.fp, line: r.line, toi: r.toiTxt || null, avgToi: r.avgToi || null, gpBefore: r.gpBefore,
+    reasons, why: (young ? (roleChange ? 'young + role change' : 'young + usage') : 'role change') + (thin != null ? ` (TOI is above his average of ${thin} game${thin === 1 ? '' : 's'}, too few to count)` : '') });
 }
 out.sort((a, b) => (b.why.includes('role') - a.why.includes('role')) || b.fp - a.fp);
-const res = { at: new Date().toISOString(), date, gamesFinal: done.length, gamesPending: pending, candidates: out.slice(0, 5), nearMisses: near.slice(0, 10) };
-const dir = path.join(ROOT, 'data', 'adhoc'); fs.mkdirSync(dir, { recursive: true });
-fs.writeFileSync(path.join(dir, 'alert.json'), JSON.stringify(res, null, 1));
-console.log(date, 'final', done.length, 'pending', pending.length, 'candidates', out.length, out.map(c => c.name).join(', '));
+const res = { at: new Date().toISOString(), date, ...(late ? { late: true, lateGames } : {}), gamesFinal: games.length, gamesPending: (late ? pending.filter(g => lateGames.includes(gameLabel(g))) : pending).map(gameLabel),
+  candidates: out.slice(0, 5), nearMisses: near.slice(0, 10), unmatched };
+writeJSON(late ? 'data/adhoc/alert-late.json' : 'data/adhoc/alert.json', res, 1);
+console.log(date, late ? 'LATE pass' : '', 'final', games.length, 'pending', res.gamesPending.length, 'candidates', out.length, out.map(c => c.name).join(', '), unmatched.length ? '| unmatched: ' + unmatched.join(', ') : '');

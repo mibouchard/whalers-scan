@@ -5,30 +5,24 @@
 //     notes: [ ...anything that failed ] }
 // Injuries come from ESPN's NHL injury report, matched to Fantrax ids by name and NHL club. Each part is optional.
 // Salaries of unrostered players are NOT here: Fantrax only serves them to a logged-in browser (its public feed carries
-// salaries for rostered players, which the morning report's live rosters already refresh). Fred's Players export fills them.
-import fs from 'node:fs';
-import path from 'node:path';
-import { ROOT } from '../env.js';
+// salaries for rostered players only, which data/league.json has).
+import { readJSON, writeJSON } from '../lib/config.js';
+import { getLeagueInfo, getPlayerIds } from '../lib/fantrax.js';
+import { getJSONr as j } from '../lib/util.js';
+import { makeMatcher, fold } from '../lib/names.js';
 
-const L = 'fs61ldkdmow7aw2h';
-const j = (u, o) => fetch(u, o).then(r => { if (!r.ok) throw new Error(r.status + ' ' + u); return r.json(); });
-const norm = s => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/['.\-]/g, '').toLowerCase().split(/\s+/).filter(Boolean).sort().join(' ');
+const norm = s => fold(s).split(' ').sort().join(' ');
 const now = new Date().toISOString();
 const out = { at: now, status: null, injuries: null, notes: [] };
 
-// Fantrax ids, names and clubs
-const ids = await j('https://www.fantrax.com/fxea/general/getPlayerIds?sport=NHL');
-const byName = {};
-for (const [id, p] of Object.entries(ids)) {
-  const [l, f] = (p.name || '').split(', ');
-  const k = norm((f || '') + ' ' + (l || ''));
-  (byName[k] = byName[k] || []).push({ id, team: p.team || '' });
-}
-const fxFor = (name, team) => { const c = byName[norm(name)] || []; return (c.find(x => x.team === team) || (c.length === 1 ? c[0] : null))?.id || null; };
+// Fantrax ids, names and clubs. A name shared by two players only matches the one on the injured player's NHL club.
+const ids = await getPlayerIds();
+const M = makeMatcher(ids);
+const fxFor = (name, team) => { const i = name.indexOf(' '); return M.find({ first: i < 0 ? '' : name.slice(0, i), last: i < 0 ? name : name.slice(i + 1), team }, { strict: true })?.id || null; };
 
 // Waiver status
 try {
-  const info = await j(`https://www.fantrax.com/fxea/general/getLeagueInfo?leagueId=${L}`);
+  const info = await getLeagueInfo();
   const rows = {};
   for (const [id, v] of Object.entries(info.playerInfo || {})) if (v.status === 'WW') rows[id] = 'WW';
   out.status = { asOf: now, src: 'Fantrax league feed', rows };
@@ -55,8 +49,13 @@ try {
   if (!Object.keys(rows).length) throw new Error('no injuries matched (' + miss + ' unmatched)');
   out.injuries = { asOf: now, src: 'ESPN', rows };
   if (miss) out.notes.push(`injuries: ${miss} players not matched to Fantrax`);
-} catch (e) { out.notes.push('injuries: ' + e.message); }
+} catch (e) {
+  out.notes.push('injuries: ' + e.message);
+  // keep the last injury report we have (its asOf says how old it is) rather than publishing none
+  const prev = readJSON('data/pool.json');
+  if (prev?.injuries?.rows && Date.now() - Date.parse(prev.injuries.asOf) < 4 * 864e5) { out.injuries = prev.injuries; out.notes.push('injuries: carried from ' + prev.injuries.asOf); }
+}
 
-fs.writeFileSync(path.join(ROOT, 'data', 'pool.json'), JSON.stringify(out));
+writeJSON('data/pool.json', out);
 console.log('waivers', out.status ? Object.keys(out.status.rows).length : 'FAILED',
   '| injuries', out.injuries ? Object.keys(out.injuries.rows).length : 'FAILED', out.notes.length ? '| ' + out.notes.join('; ') : '');

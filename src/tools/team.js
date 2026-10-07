@@ -1,24 +1,20 @@
 // Any league team's roster (current and next period) with names, NHL team, position, status and salary, plus the
-// league's draft-pick ownership. Usage: node src/tools/team.js "Ottawa Senators"  (or a Fantrax team id).
-// Writes data/adhoc/team.json.
-import fs from 'node:fs';
-import path from 'node:path';
-import { ROOT } from '../env.js';
+// league's draft-pick ownership. Usage: node src/tools/team.js "Ottawa Senators"   (a team name, short code such as OTT,
+// or Fantrax team id; also via env TEAM or ARGS). Writes data/adhoc/team.json.
+import { TEAMS, cliArgs, writeJSON } from '../lib/config.js';
+import { getLeagueInfo, getPlayerIds, getDraftPicks, rosterBundle, rosterRows, capOf } from '../lib/fantrax.js';
 
-const L = 'fs61ldkdmow7aw2h';
-const want = (process.argv[2] || process.env.TEAM || 'Calgary Flames').toLowerCase();
-const j = u => fetch(u).then(r => { if (!r.ok) throw new Error(r.status + ' ' + u); return r.json(); });
-const info = await j(`https://www.fantrax.com/fxea/general/getLeagueInfo?leagueId=${L}`);
+// `team Ottawa Senators` (unquoted, from the workflow's args box) and `team "Ottawa Senators"` both work
+const want = (process.env.TEAM || cliArgs().join(' ') || 'Calgary Flames').trim().toLowerCase();
+const info = await getLeagueInfo();
 const teams = info.teamInfo || {};
-const tid = Object.keys(teams).find(id => id.toLowerCase() === want || (teams[id].name || '').toLowerCase() === want) ;
+const tid = Object.keys(teams).find(id => id.toLowerCase() === want || (teams[id].name || '').toLowerCase() === want || (TEAMS[id] || '').toLowerCase() === want);
 if (!tid) throw new Error('team not found: ' + want + ' / ' + Object.values(teams).map(t => t.name).join(', '));
-const ids = await j('https://www.fantrax.com/fxea/general/getPlayerIds?sport=NHL');
-const cur = await j(`https://www.fantrax.com/fxea/general/getTeamRosters?leagueId=${L}`);
-const nxt = await j(`https://www.fantrax.com/fxea/general/getTeamRosters?leagueId=${L}&period=${cur.period + 1}`).catch(() => null);
-const rows = ro => (ro?.rosters[tid]?.rosterItems || []).map(i => { const p = ids[i.id] || {}; const [l, f] = (p.name || '').split(', '); return { id: i.id, name: f ? f + ' ' + l : (p.name || i.id), nhlTeam: p.team || null, pos: i.position, elig: p.position || null, status: i.status, salary: +(i.salary / 1e6).toFixed(3) }; });
+const ids = await getPlayerIds();
+const ro = await rosterBundle();
 let picks = null;
-try { picks = await j(`https://www.fantrax.com/fxea/general/getDraftPicks?leagueId=${L}`); } catch (e) { picks = { err: String(e) }; }
-const out = { at: new Date().toISOString(), team: teams[tid].name, teamId: tid, teamNames: Object.fromEntries(Object.entries(teams).map(([k, v]) => [k, v.name])), period: cur.period, current: rows(cur), next: rows(nxt), picks };
-const dir = path.join(ROOT, 'data', 'adhoc'); fs.mkdirSync(dir, { recursive: true });
-fs.writeFileSync(path.join(dir, 'team.json'), JSON.stringify(out, null, 1));
+try { picks = await getDraftPicks(); } catch (e) { picks = { err: String(e) }; }
+const out = { at: new Date().toISOString(), team: teams[tid].name, teamId: tid, short: TEAMS[tid] || null, teamNames: Object.fromEntries(Object.entries(teams).map(([k, v]) => [k, v.name])), period: ro.period, nextPeriod: ro.nextPeriod,
+  current: rosterRows(ro.cur, tid, ids), next: ro.next ? rosterRows(ro.next, tid, ids) : [], cap: capOf((ro.next || ro.cur).rosters[tid]?.rosterItems || [], TEAMS[tid]), picks, notes: ro.notes };
+writeJSON('data/adhoc/team.json', out, 1);
 console.log(out.team, out.current.length, 'players');

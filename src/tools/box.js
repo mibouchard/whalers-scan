@@ -1,88 +1,61 @@
-// Last night's NHL games scored with league rules, tagged with the fantasy owner and status from the roster in effect
-// when the games were played (current period), plus next period's owner so this week's claims show.
-// Usage: node src/tools/box.js [YYYY-MM-DD]   (default: yesterday, Toronto time). Writes data/adhoc/box.json and box-<date>.json.
+// A night of NHL games scored with league rules. Every player is tagged with his fantasy owner and roster status from the
+// scoring period in effect when the game was played (periodForDate), with next period's owner (ownNext, so this week's
+// claims show) and with Fantrax's own free-agent status (fxStatus: FA, WW or T). Regular-season games only.
+// Usage: node src/tools/box.js [YYYY-MM-DD]   (or env DATE / ARGS; default: yesterday, Toronto time)
+// Writes data/adhoc/box.json and data/adhoc/box-<date>.json (dated copies are kept 14 days).
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT } from '../env.js';
+import { ROOT, TEAM_ID, MY, torontoDate, addDays, isDate, cliArgs, writeJSON } from '../lib/config.js';
+import { getLeagueInfo, getPlayerIds, getRosters, rosterBundle, ownership, capOf, periodForDate } from '../lib/fantrax.js';
+import { gamesOn, gameRows, clubRoster, gameLabel } from '../lib/nhl.js';
+import { makeMatcher, fxDisplay } from '../lib/names.js';
+import { errText } from '../lib/util.js';
 
-const L = 'fs61ldkdmow7aw2h';
-const TEAMS = { "m1hfr04lmow7aw2v": "HFD", "4psrznwkmow7aw2u": "CGY", "h32ctyahmow7aw2v": "BOS", "svnb4s7amow7aw2u": "CGS", "fay1fny2mow7aw2u": "VAN", "nw53mrdzmow7aw2v": "QUE", "ps4l4b6mmow7aw2v": "WPG", "39n75kyjmow7aw2u": "CHI", "tu2c5havmow7aw2v": "WAS", "tsr78hmdmow7aw2u": "ANA", "nx9xgs2mmow7aw2u": "COL", "br7rvnwsmow7aw2u": "OTT", "z64j08mgmow7aw2u": "MTL", "vm1rdwvtmow7aw2u": "CAR", "hghiywi2mow7aw2u": "EDM", "4yx4ssw6mow7aw2v": "DET" };
-const j = u => fetch(u).then(r => { if (!r.ok) throw new Error(r.status + ' ' + u); return r.json(); });
-const norm = s => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z]/gi, '').toLowerCase();
-const key = (f, l) => [norm(f), norm(l)].sort().join('|');
+const day = [process.env.DATE, ...cliArgs()].find(isDate) || addDays(torontoDate(), -1);
+const notes = [];
+const { final: games, pending } = await gamesOn(day);
 
-const tz = d => new Date(d.toLocaleString('en-US', { timeZone: 'America/Toronto' }));
-const day = process.argv[2] || (() => { const t = tz(new Date()); t.setDate(t.getDate() - 1); return t.toISOString().slice(0, 10); })();
+// Fantrax: names, rosters for the current and next period, and each player's status in our league
+const ids = await getPlayerIds();
+const ro = await rosterBundle(); notes.push(...ro.notes);
+const info = await getLeagueInfo().catch(e => { notes.push('getLeagueInfo failed (' + errText(e) + '): fxStatus and fa are unknown, period taken as the current one'); return null; });
+const pinfo = info?.playerInfo || null;
+// ownership in effect for each game: the scoring period that contains its start time
+const byPeriod = { [ro.period]: ownership(ro.cur) }; if (ro.next) byPeriod[ro.nextPeriod] = ownership(ro.next);
+const ownAt = async p => { if (!byPeriod[p]) byPeriod[p] = await getRosters(p).then(r => r.period === p ? ownership(r) : null).catch(e => { notes.push(`period ${p} rosters failed (${errText(e)}): owners for those games are from period ${ro.period}`); return null; }) || byPeriod[ro.period]; return byPeriod[p]; };
+const ownNext = byPeriod[ro.nextPeriod] || byPeriod[ro.period];
+const M = makeMatcher(ids);
 
-const score = await j(`https://api-web.nhle.com/v1/score/${day}`);
-const games = (score.games || []).filter(g => /FINAL|OFF/.test(g.gameState));
-
-// Fantrax: pool + rosters (current period = in effect for these games; next period for claims made this week)
-const ids = await j('https://www.fantrax.com/fxea/general/getPlayerIds?sport=NHL');
-const cur = await j(`https://www.fantrax.com/fxea/general/getTeamRosters?leagueId=${L}`);
-const nxt = await j(`https://www.fantrax.com/fxea/general/getTeamRosters?leagueId=${L}&period=${cur.period + 1}`).catch(() => cur);
-const own = (ro) => { const m = {}; for (const [tid, t] of Object.entries(ro.rosters)) for (const i of t.rosterItems) m[i.id] = { team: TEAMS[tid] || tid, st: i.status, sal: +(i.salary / 1e6).toFixed(3) }; return m; };
-const ownCur = own(cur), ownNxt = own(nxt);
-// League player info: per-player status in our league (FA, WW = waivers, T = on a team)
-const li = await j(`https://www.fantrax.com/fxea/general/getLeagueInfo?leagueId=${L}`).catch(() => ({}));
-const pinfo = li.playerInfo || {};
-const pool = {}, byLast = {}; // name key -> [{id, team, pos}]; last name + NHL team -> [...] (fallback for Tommy/Thomas, Dmitry/Dmitri)
-for (const [id, p] of Object.entries(ids)) { const [l, f] = (p.name || '').split(', '); const c = { id, team: p.team, pos: p.position }; (pool[key(f, l)] ||= []).push(c); (byLast[norm(l) + '|' + p.team] ||= []).push(c); }
-
-const rows = [];
+const rows = []; const periods = new Set(); let guessed = false;
 for (const g of games) {
-  const [box, land] = await Promise.all([j(`https://api-web.nhle.com/v1/gamecenter/${g.id}/boxscore`), j(`https://api-web.nhle.com/v1/gamecenter/${g.id}/landing`)]);
-  const a = box.awayTeam, h = box.homeTeam;
-  const win = a.score > h.score ? a.abbrev : h.abbrev, lose = Math.min(a.score, h.score);
-  // full names from both clubs' rosters
-  const names = {};
-  for (const t of [a.abbrev, h.abbrev]) { const r = await j(`https://api-web.nhle.com/v1/roster/${t}/current`).catch(() => ({})); for (const p of [...(r.forwards || []), ...(r.defensemen || []), ...(r.goalies || [])]) names[p.id] = [p.firstName.default, p.lastName.default]; }
-  const ex = {}; const bump = (pid, k) => { (ex[pid] ||= { ppp: 0, shg: 0, gwg: 0 })[k]++; };
-  let n = 0;
-  for (const per of land.summary?.scoring || []) for (const gl of per.goals || []) {
-    if (per.periodDescriptor?.periodType === 'SO') continue;
-    const st = (gl.strength || '').toLowerCase();
-    if (st === 'pp') { bump(gl.playerId, 'ppp'); (gl.assists || []).forEach(x => bump(x.playerId, 'ppp')); }
-    if (st === 'sh') bump(gl.playerId, 'shg');
-    if (gl.teamAbbrev?.default === win || gl.teamAbbrev === win) { const s = win === a.abbrev ? gl.awayScore : gl.homeScore; if (s === lose + 1) bump(gl.playerId, 'gwg'); }
-  }
-  for (const side of ['awayTeam', 'homeTeam']) {
-    const t = box[side].abbrev, opp = side === 'awayTeam' ? h.abbrev : a.abbrev, ps = box.playerByGameStats[side];
-    const gl = ps.goalies || [];
-    for (const p of [...(ps.forwards || []), ...(ps.defense || []), ...gl]) {
-      const isG = gl.includes(p); const nm = names[p.playerId] || [null, p.name?.default];
-      const e = ex[p.playerId] || { ppp: 0, shg: 0, gwg: 0 };
-      let fp, line;
-      if (isG) {
-        if (!p.toi || p.toi === '00:00') continue;
-        const sv = p.saves ?? 0, ga = p.goalsAgainst ?? 0, w = p.decision === 'W' ? 1 : 0;
-        const so = w && ga === 0 && gl.filter(x => x.toi && x.toi !== '00:00').length === 1 ? 1 : 0;
-        fp = 5 * w + 5 * so + 0.25 * sv - ga + 2 * (p.assists || 0) + 3 * (p.goals || 0);
-        line = { dec: p.decision || '', sv, sa: p.shotsAgainst, ga, so, toi: p.toi };
-      } else {
-        const G = p.goals || 0, A = p.assists || 0;
-        fp = 3 * G + 2 * A + e.ppp + 2 * e.shg + e.gwg + 0.5 * (p.plusMinus || 0) + 0.2 * (p.blockedShots || 0) + 0.2 * (p.hits || 0) + 0.25 * (p.pim || 0) + 0.1 * (p.sog || 0);
-        line = { g: G, a: A, ppp: e.ppp, shg: e.shg, gwg: e.gwg, pm: p.plusMinus || 0, sog: p.sog || 0, hit: p.hits || 0, blk: p.blockedShots || 0, pim: p.pim || 0, toi: p.toi };
-      }
-      let cands = (pool[key(nm[0], nm[1])] || []).filter(c => /G/.test(c.pos) === isG);
-      if (!cands.length) cands = (byLast[norm(nm[1]) + '|' + t] || []).filter(c => /G/.test(c.pos) === isG);
-      // same-name players (two Elias Petterssons on VAN): break the tie on position
-      const pc = isG ? 'G' : p.position === 'D' ? 'D' : null;
-      const c = (cands.length > 1 && cands.filter(c => c.team === t).length > 1 ? cands.find(c => c.team === t && (pc ? c.pos.includes(pc) : !/D/.test(c.pos) && c.pos.includes(p.position))) : null)
-        || cands.find(c => c.team === t) || (cands.length === 1 ? cands[0] : cands.find(c => !c.team || c.team === '(N/A)') || cands[0]);
-      const fx = c?.id || null;
-      const fxs = fx ? (pinfo[fx]?.status || null) : null;
-      rows.push({ fxStatus: fxs, name: (nm[0] ? nm[0] + ' ' : '') + nm[1], team: t, opp, pos: isG ? 'G' : p.position, fp: +fp.toFixed(2), ...line, fx, own: fx && ownCur[fx] ? ownCur[fx].team : null, st: fx && ownCur[fx] ? ownCur[fx].st : null, ownNext: fx && ownNxt[fx] ? ownNxt[fx].team + ':' + ownNxt[fx].st : null, sal: fx && (ownNxt[fx] || ownCur[fx]) ? (ownNxt[fx] || ownCur[fx]).sal : null });
-    }
+  let p = periodForDate(g.startTimeUTC || day, info);
+  if (p == null) { p = ro.period; guessed = true; }
+  periods.add(p); const own = await ownAt(p);
+  const names = { ...(await clubRoster(g.awayTeam.abbrev)), ...(await clubRoster(g.homeTeam.abbrev)) };
+  for (const r of await gameRows(g.id)) {
+    // full name from the club roster; a player no longer on it only has the box score's "F. Last"
+    const n = names[r.pid]; const ini = /^([A-Z])\. (.+)$/.exec(r.name);
+    const first = n ? n.first : ini ? ini[1] : '', last = n ? n.last : ini ? ini[2] : r.name;
+    const m = M.find({ first, last, team: r.team, pos: r.pos, goalie: r.goalie });
+    const fx = m ? m.id : null; const o = fx ? own[fx] : null, nx = fx ? ownNext[fx] : null;
+    const line = r.goalie ? { dec: r.dec, sv: r.sv, sa: r.sa, ga: r.ga, so: r.so, g: r.g, a: r.a, toi: r.toi }
+      : { g: r.g, a: r.a, ppp: r.ppp, shg: r.shg, gwg: r.gwg, pm: r.pm, sog: r.sog, hit: r.hit, blk: r.blk, pim: r.pim, toi: r.toi };
+    rows.push({ fxStatus: fx && pinfo ? (pinfo[fx]?.status || null) : null, name: n ? first + ' ' + last : fx && ids[fx]?.name ? fxDisplay(ids[fx].name) : r.name, team: r.team, opp: r.opp, pos: r.pos, fp: r.fp, ...line, fx,
+      own: o ? o.team : null, st: o ? o.st : null, ownNext: nx ? nx.team + ':' + nx.st : null, sal: (nx || o)?.sal ?? null, period: p });
   }
 }
+if (guessed) notes.push(`no period dates from Fantrax: games taken as period ${ro.period} (the current one)`);
 rows.sort((x, y) => y.fp - x.fp);
-// free agents and waiver players by Fantrax's own status, with salary, for the cap check
-const fa = rows.filter(r => r.fxStatus && r.fxStatus !== 'T').map(r => ({ name: r.name, team: r.team, pos: r.pos, fp: r.fp, fx: r.fx, ...pinfo[r.fx] }));
-const capRoom = (() => { const t = nxt.rosters['m1hfr04lmow7aw2v']; if (!t) return null; const used = t.rosterItems.filter(i => i.status === 'ACTIVE' || i.status === 'RESERVE').reduce((s, i) => s + i.salary / 1e6, 0); return +(114.4 - used).toFixed(2); })();
-const infoSample = Object.entries(pinfo).slice(0, 2);
-const out = { d: day, at: new Date().toISOString(), period: cur.period, games: games.map(g => `${g.awayTeam.abbrev} ${g.awayTeam.score}-${g.homeTeam.score} ${g.homeTeam.abbrev}${g.gameOutcome?.lastPeriodType && g.gameOutcome.lastPeriodType !== 'REG' ? ' ' + g.gameOutcome.lastPeriodType : ''}`), gameType: [...new Set(games.map(g => g.gameType))], hfdCapRoomNext: capRoom, nPlayerInfo: Object.keys(pinfo).length, infoSample, fa, unmatched: rows.filter(r => !r.fx).map(r => r.name + ' ' + r.team), rows };
-const dir = path.join(ROOT, 'data', 'adhoc'); fs.mkdirSync(dir, { recursive: true });
-fs.writeFileSync(path.join(dir, 'box.json'), JSON.stringify(out));
-fs.writeFileSync(path.join(dir, `box-${day}.json`), JSON.stringify(out));
-console.log(day, games.length, 'games', rows.length, 'players');
+// free agents and waiver players by Fantrax's own status (never inferred from rosters)
+const fa = pinfo ? rows.filter(r => r.fxStatus === 'FA' || r.fxStatus === 'WW').map(r => ({ name: r.name, team: r.team, pos: r.pos, fp: r.fp, fx: r.fx, ...pinfo[r.fx] })) : null;
+// cap room next period: active + reserve + dead cap count
+const hfdItems = (ro.next || ro.cur).rosters[TEAM_ID]?.rosterItems; const cap = hfdItems ? capOf(hfdItems, MY) : null;
+const out = { d: day, at: new Date().toISOString(), period: periods.size ? Math.min(...periods) : (periodForDate(day, info) ?? ro.period), periods: [...periods].sort((a, b) => a - b), currentPeriod: ro.period, nextPeriod: ro.nextPeriod,
+  games: games.map(g => `${g.awayTeam.abbrev} ${g.awayTeam.score}-${g.homeTeam.score} ${g.homeTeam.abbrev}${g.gameOutcome?.lastPeriodType && g.gameOutcome.lastPeriodType !== 'REG' ? ' ' + g.gameOutcome.lastPeriodType : ''}`),
+  gamesPending: pending.map(gameLabel), gameType: [2], hfdCapRoomNext: cap ? +cap.room.toFixed(2) : null, hfdCap: cap, nPlayerInfo: pinfo ? Object.keys(pinfo).length : 0,
+  fa, unmatched: rows.filter(r => !r.fx).map(r => r.name + ' ' + r.team), notes, rows };
+writeJSON('data/adhoc/box.json', out); writeJSON(`data/adhoc/box-${day}.json`, out);
+// dated copies: keep 14 days
+const dir = path.join(ROOT, 'data', 'adhoc');
+for (const f of fs.readdirSync(dir)) { const m = f.match(/^box-(\d{4}-\d{2}-\d{2})\.json$/); if (m && Date.now() - Date.parse(m[1]) > 14 * 864e5) fs.unlinkSync(path.join(dir, f)); }
+console.log(day, 'period', out.period, '|', games.length, 'games', pending.length, 'pending |', rows.length, 'players |', out.unmatched.length, 'unmatched', notes.length ? '| ' + notes.join('; ') : '');
