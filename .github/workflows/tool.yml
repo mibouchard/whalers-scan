@@ -1,7 +1,7 @@
 name: One-off tool
 
 # Runs one script from src/tools/ and saves what it wrote. An outside timer dispatches this with tool=nightalert at about
-# 11:40 PM Toronto time; everything else is run by hand (Actions tab -> One-off tool -> Run workflow).
+# 10:00 PM Toronto time; everything else is run by hand (Actions tab -> One-off tool -> Run workflow).
 # Shares the concurrency group with the daily scan so two runs never push at the same time.
 
 on:

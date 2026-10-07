@@ -1,7 +1,7 @@
 // Late-night free-agent alert. Scores the night's finished NHL games with league scoring, keeps players Fantrax itself
 // shows as free agents (FA) or on waivers (WW) in The Hockey Life, and flags those whose big night came with a usage signal.
 //
-//   node src/tools/nightalert.js [YYYY-MM-DD]        writes data/adhoc/alert.json  (run around 11:40 PM ET; games still
+//   node src/tools/nightalert.js [YYYY-MM-DD]        writes data/adhoc/alert.json  (run around 10:00 PM ET; games still
 //                                                    in progress are listed under gamesPending)
 //   node src/tools/nightalert.js late [YYYY-MM-DD]   the late pass, for yesterday by default: writes
 //                                                    data/adhoc/alert-late.json with candidates only from the games that

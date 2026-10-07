@@ -10,7 +10,7 @@ This repository is public. It holds no secrets, tokens, cookies or logins, and n
 |---|---|---|
 | about 09:14 UTC daily | An outside timer starts the **Daily minors scan** workflow (`scan.yml`, by `workflow_dispatch`). | everything under "Daily files" |
 | 09:17, 09:47, 10:23 UTC | GitHub's own schedule, as backups. A backup stops at once if today's scan finished clean. If leagues or steps failed, it re-reads only those leagues, re-runs only those steps and merges. | the same files |
-| about 11:40 PM Toronto | An outside timer starts the **One-off tool** workflow (`tool.yml`) with `tool=nightalert`. | `data/adhoc/alert.json` |
+| about 10:00 PM Toronto | An outside timer starts the **One-off tool** workflow (`tool.yml`) with `tool=nightalert`. | `data/adhoc/alert.json` |
 | by hand | Actions tab, "One-off tool", pick a script from `src/tools/`. | that tool's file |
 
 Cron times are UTC and do not follow daylight saving. 09:17 UTC is 5:17 AM in Toronto on EDT (summer) and 4:17 AM on EST (winter). Every date the code works out itself ("yesterday", "tonight", "today's scan") uses the America/Toronto calendar, whatever the season.
@@ -37,7 +37,7 @@ Each step in 1 and 2 records `ok` or `ERR: ...` and never stops the job.
 - **Fantrax down.** If `getLeagueInfo` fails nobody is treated as a free agent: `avail`, `und`, `risers` and unowned goalies are empty, and `errors.Fantrax` and `notes.Fantrax` say why. If next period's rosters cannot be read, ownership falls back to the current period and `fantrax.nextPeriod` / `notes.Fantrax` say so.
 - **Stale sites.** A league whose total games played has not changed over 4 or more daily points while at least three other leagues moved is listed under `stale`. It is a hint, not a failure: leagues with few game days trip it.
 - **Debug runs.** A scan of named leagues (`node src/scan.js KHL VHL`, or the workflow's `leagues` box) writes only `data/status-debug.json`.
-- **health.json** says whether each step ran, and carries the date and time of last night's `alert.json`, so a reader can tell that the 11:40 PM alert job did not run.
+- **health.json** says whether each step ran, and carries the date and time of last night's `alert.json`, so a reader can tell that the 10:00 PM alert job did not run.
 
 ## League rules the code applies
 

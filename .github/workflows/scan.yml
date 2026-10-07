@@ -79,7 +79,7 @@ jobs:
         if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
         continue-on-error: true
         run: node src/ci/step.js box src/tools/box.js
-      - name: Night alert, late pass (yesterday's games that were still on at 11:40 PM)
+      - name: Night alert, late pass (yesterday's games that were still on when the night alert ran)
         if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
         continue-on-error: true
         run: node src/ci/step.js alertLate src/tools/nightalert.js late

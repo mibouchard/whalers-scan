@@ -5,7 +5,7 @@
 // data/health.json: { at, d, mode, steps: { scan, form, pool, league, box, alertLate, fawatch, week: "ok" | "ERR: ..." },
 //                     leagues: <status map from status.json>, errors: { <league or "Fantrax">: reason }, fantrax, stale,
 //                     alert: { date, at } }   (alert = last night's data/adhoc/alert.json, so a reader can tell whether the
-//                                              11:40 PM alert job ran)
+//                                              10:00 PM alert job ran)
 import fs from 'node:fs';
 import path from 'node:path';
 import { torontoDate, readJSON, writeJSON } from '../lib/config.js';
