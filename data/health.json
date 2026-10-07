@@ -1,8 +1,18 @@
 {
+ "at": "2026-10-07T16:36:05.348Z",
  "d": "2026-10-07",
- "at": "2026-10-07T16:33:54.085Z",
  "mode": "full",
- "status": {
+ "steps": {
+  "scan": "ok",
+  "form": "ok",
+  "pool": "ok",
+  "league": "ok",
+  "box": "ok",
+  "alertLate": "ok",
+  "fawatch": "ok",
+  "week": "ok"
+ },
+ "leagues": {
   "AHL": "ok",
   "ECHL": "no games yet",
   "OHL": "ok",
@@ -31,5 +41,8 @@
  "stale": {
   "Allsvenskan": "no change in games played over the last 5 daily points (since 2026-10-03): the site may be serving old numbers"
  },
- "subset": []
+ "alert": {
+  "date": "2026-10-06",
+  "at": "2026-10-07T03:40:32.622Z"
+ }
 }
