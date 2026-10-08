@@ -1,16 +1,37 @@
 {
- "at": "2026-10-07T16:35:51.473Z",
- "date": "2026-10-06",
+ "at": "2026-10-08T09:16:44.777Z",
+ "date": "2026-10-07",
  "late": true,
  "lateGames": [
-  "VGK@SEA",
-  "FLA@LAK"
+  "PIT@WSH",
+  "COL@WPG",
+  "EDM@ANA"
  ],
- "gamesFinal": 2,
+ "gamesFinal": 3,
  "gamesPending": [],
- "candidates": [],
+ "candidates": [
+  {
+   "name": "Dylan Samberg",
+   "team": "WPG",
+   "pos": "D",
+   "age": 27,
+   "fx": "04f0u",
+   "status": "FA",
+   "fp": 6.4,
+   "line": "0G 2A, 2 SOG, 5 hits, 1 blk",
+   "toi": "25:25",
+   "avgToi": "21:13",
+   "gpBefore": 3,
+   "reasons": [
+    "25:25 TOI",
+    "+4:12 over his 21:13 average"
+   ],
+   "why": "role change"
+  }
+ ],
  "nearMisses": [
-  "Victor Olofsson (VGK, 31): 6.7 FP, no usage signal, 10:48 TOI"
+  "Fedor Svechkov (COL, 23): 6.9 FP, no usage signal, 12:55 TOI",
+  "Jaden Schwartz (COL, 34): 6.6 FP, no usage signal, 13:17 TOI"
  ],
  "unmatched": []
 }
