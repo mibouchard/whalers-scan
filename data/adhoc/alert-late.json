@@ -1,37 +1,39 @@
 {
- "at": "2026-10-08T09:16:44.777Z",
- "date": "2026-10-07",
+ "at": "2026-10-09T09:16:39.600Z",
+ "date": "2026-10-08",
  "late": true,
  "lateGames": [
-  "PIT@WSH",
-  "COL@WPG",
-  "EDM@ANA"
+  "CHI@NYI",
+  "SJS@STL",
+  "COL@CGY",
+  "TOR@VGK"
  ],
- "gamesFinal": 3,
+ "gamesFinal": 4,
  "gamesPending": [],
  "candidates": [
   {
-   "name": "Dylan Samberg",
-   "team": "WPG",
+   "name": "Logan Stanley",
+   "team": "NYI",
    "pos": "D",
-   "age": 27,
-   "fx": "04f0u",
+   "age": 28,
+   "fx": "042t2",
    "status": "FA",
-   "fp": 6.4,
-   "line": "0G 2A, 2 SOG, 5 hits, 1 blk",
-   "toi": "25:25",
-   "avgToi": "21:13",
+   "fp": 8.5,
+   "line": "0G 2A, 0 SOG, 2 hits, 3 blk",
+   "toi": "23:51",
+   "avgToi": "17:52",
    "gpBefore": 3,
    "reasons": [
-    "25:25 TOI",
-    "+4:12 over his 21:13 average"
+    "23:51 TOI",
+    "+5:59 over his 17:52 average"
    ],
    "why": "role change"
   }
  ],
  "nearMisses": [
-  "Fedor Svechkov (COL, 23): 6.9 FP, no usage signal, 12:55 TOI",
-  "Jaden Schwartz (COL, 34): 6.6 FP, no usage signal, 13:17 TOI"
+  "Tyler Toffoli (SJS, 34): 6.1 FP, +3:11 over his 12:40 average, 15:51 TOI",
+  "Jaden Schwartz (COL, 34): 7.2 FP, no usage signal, 13:51 TOI",
+  "Devon Toews (COL, 32): 8.3 FP, no usage signal, 18:54 TOI"
  ],
  "unmatched": []
 }

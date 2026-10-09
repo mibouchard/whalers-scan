@@ -1,6 +1,6 @@
 {
- "at": "2026-10-08T09:16:56.685Z",
- "d": "2026-10-08",
+ "at": "2026-10-09T09:16:53.313Z",
+ "d": "2026-10-09",
  "mode": "full",
  "steps": {
   "scan": "ok",
@@ -39,12 +39,10 @@
   "leagueInfo": "ok"
  },
  "stale": {
-  "AHL": "no change in games played over the last 4 daily points (since 2026-10-05): the site may be serving old numbers",
-  "SHL": "no change in games played over the last 4 daily points (since 2026-10-05): the site may be serving old numbers",
-  "Czech": "no change in games played over the last 4 daily points (since 2026-10-05): the site may be serving old numbers"
+  "AHL": "no change in games played over the last 5 daily points (since 2026-10-05): the site may be serving old numbers"
  },
  "alert": {
-  "date": "2026-10-07",
-  "at": "2026-10-08T02:00:31.148Z"
+  "date": "2026-10-08",
+  "at": "2026-10-09T02:00:34.083Z"
  }
 }
