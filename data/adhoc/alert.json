@@ -1,13 +1,19 @@
 {
- "at": "2026-10-08T02:00:31.148Z",
- "date": "2026-10-07",
- "gamesFinal": 0,
+ "at": "2026-10-09T02:00:34.083Z",
+ "date": "2026-10-08",
+ "gamesFinal": 6,
  "gamesPending": [
-  "PIT@WSH",
-  "COL@WPG",
-  "EDM@ANA"
+  "CHI@NYI",
+  "SJS@STL",
+  "COL@CGY",
+  "TOR@VGK"
  ],
  "candidates": [],
- "nearMisses": [],
+ "nearMisses": [
+  "Matthew Poitras (BOS, 22): 6.4 FP, no usage signal, 9:51 TOI",
+  "Alexander Kerfoot (NSH, 32): 6.1 FP, no usage signal, 14:46 TOI",
+  "Adam Edstrom (NSH, 25): 8 FP, no usage signal, 10:19 TOI",
+  "Jake DeBrusk (VAN, 29): 7.1 FP, 18:44 TOI"
+ ],
  "unmatched": []
 }
