@@ -1,5 +1,5 @@
 {
- "at": "2026-10-09T09:16:09.737Z",
+ "at": "2026-10-10T09:16:14.355Z",
  "window": 5,
  "scoring": "league",
  "players": {
@@ -30,9 +30,13 @@
   "05rjd": {
    "name": "Cutter Gauthier",
    "nhlId": 8483445,
-   "gp": 3,
-   "fpg": 5.67,
+   "gp": 4,
+   "fpg": 4.2,
    "games": [
+    [
+     "2026-10-09",
+     -0.2
+    ],
     [
      "2026-10-07",
      0.2
@@ -202,9 +206,13 @@
   "05rj3": {
    "name": "Tristan Luneau",
    "nhlId": 8483482,
-   "gp": 3,
-   "fpg": 0.83,
+   "gp": 4,
+   "fpg": 0.93,
    "games": [
+    [
+     "2026-10-09",
+     1.2
+    ],
     [
      "2026-10-07",
      -1.5
@@ -370,9 +378,13 @@
   "051xf": {
    "name": "Egor Chinakhov",
    "nhlId": 8482475,
-   "gp": 4,
-   "fpg": 1.95,
+   "gp": 5,
+   "fpg": 1.56,
    "games": [
+    [
+     "2026-10-09",
+     0
+    ],
     [
      "2026-10-07",
      0.7
@@ -718,15 +730,15 @@
    "LAK",
    "RW"
   ],
-  "04qve": [
-   "KAndre Miller",
-   "CAR",
-   "D"
-  ],
   "06ydv": [
    "Matias Vanhanen",
    "NJD",
    "LW"
+  ],
+  "04qve": [
+   "KAndre Miller",
+   "CAR",
+   "D"
   ],
   "03yh8": [
    "Owen Tippett",
@@ -842,6 +854,11 @@
    "Dmitri Gamzin",
    "NYI",
    "G"
+  ],
+  "079wh": [
+   "Semyon Simonov",
+   "(N/A)",
+   "W"
   ]
  }
 }

@@ -1,6 +1,6 @@
 {
- "at": "2026-10-09T09:16:53.313Z",
- "d": "2026-10-09",
+ "at": "2026-10-10T09:16:57.576Z",
+ "d": "2026-10-10",
  "mode": "full",
  "steps": {
   "scan": "ok",
@@ -38,11 +38,9 @@
   "nextPeriod": "ok",
   "leagueInfo": "ok"
  },
- "stale": {
-  "AHL": "no change in games played over the last 5 daily points (since 2026-10-05): the site may be serving old numbers"
- },
+ "stale": {},
  "alert": {
-  "date": "2026-10-08",
-  "at": "2026-10-09T02:00:34.083Z"
+  "date": "2026-10-09",
+  "at": "2026-10-10T02:00:32.702Z"
  }
 }
