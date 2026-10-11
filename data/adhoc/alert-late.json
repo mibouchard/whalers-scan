@@ -1,16 +1,19 @@
 {
- "at": "2026-10-10T09:16:42.358Z",
- "date": "2026-10-09",
+ "at": "2026-10-11T09:16:32.884Z",
+ "date": "2026-10-10",
  "late": true,
  "lateGames": [
-  "ANA@WPG"
+  "DET@MTL",
+  "NSH@OTT",
+  "TBL@NYI",
+  "ANA@CGY",
+  "LAK@VGK"
  ],
- "gamesFinal": 1,
+ "gamesFinal": 5,
  "gamesPending": [],
  "candidates": [],
  "nearMisses": [
-  "Judd Caulfield (ANA, 25): 7.1 FP, no usage signal, 9:34 TOI",
-  "Tim Washe (ANA, 25): 8.3 FP, no usage signal, 15:14 TOI"
+  "Ryan Poehling (ANA, 27): 9.8 FP, no usage signal, 11:49 TOI"
  ],
  "unmatched": []
 }
