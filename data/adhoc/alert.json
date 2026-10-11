@@ -1,16 +1,20 @@
 {
- "at": "2026-10-10T02:00:32.702Z",
- "date": "2026-10-09",
- "gamesFinal": 3,
+ "at": "2026-10-11T02:00:35.197Z",
+ "date": "2026-10-10",
+ "gamesFinal": 9,
  "gamesPending": [
-  "ANA@WPG"
+  "DET@MTL",
+  "NSH@OTT",
+  "TBL@NYI",
+  "ANA@CGY",
+  "LAK@VGK"
  ],
  "candidates": [],
  "nearMisses": [
-  "Ben Meyers (SEA, 27): 10.1 FP, no usage signal, 13:37 TOI",
-  "Frederick Gaudreau (SEA, 33): 8.6 FP, no usage signal, 15:36 TOI",
-  "Philipp Grubauer (SEA, 34): 11.25 FP, no usage signal",
-  "Damon Severson (CBJ, 32): 6 FP, 22:20 TOI"
+  "Barrett Hayton (UTA, 26): 6.7 FP, power-play point, 12:30 TOI",
+  "Kailer Yamamoto (UTA, 28): 6.8 FP, no usage signal, 12:28 TOI",
+  "John Marino (UTA, 29): 6.7 FP, power-play point, 19:06 TOI",
+  "Jordan Martinook (CAR, 34): 6.8 FP, no usage signal, 12:52 TOI"
  ],
  "unmatched": []
 }
