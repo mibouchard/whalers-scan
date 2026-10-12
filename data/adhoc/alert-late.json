@@ -1,19 +1,11 @@
 {
- "at": "2026-10-11T09:16:32.884Z",
- "date": "2026-10-10",
+ "at": "2026-10-12T09:16:50.658Z",
+ "date": "2026-10-11",
  "late": true,
- "lateGames": [
-  "DET@MTL",
-  "NSH@OTT",
-  "TBL@NYI",
-  "ANA@CGY",
-  "LAK@VGK"
- ],
- "gamesFinal": 5,
+ "lateGames": [],
+ "gamesFinal": 0,
  "gamesPending": [],
  "candidates": [],
- "nearMisses": [
-  "Ryan Poehling (ANA, 27): 9.8 FP, no usage signal, 11:49 TOI"
- ],
+ "nearMisses": [],
  "unmatched": []
 }
