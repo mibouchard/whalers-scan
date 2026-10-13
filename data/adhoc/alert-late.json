@@ -1,9 +1,11 @@
 {
- "at": "2026-10-12T09:16:50.658Z",
- "date": "2026-10-11",
+ "at": "2026-10-13T09:16:23.925Z",
+ "date": "2026-10-12",
  "late": true,
- "lateGames": [],
- "gamesFinal": 0,
+ "lateGames": [
+  "VGK@MIN"
+ ],
+ "gamesFinal": 1,
  "gamesPending": [],
  "candidates": [],
  "nearMisses": [],
