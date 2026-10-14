@@ -1,13 +1,44 @@
 {
- "at": "2026-10-13T02:00:38.424Z",
- "date": "2026-10-12",
- "gamesFinal": 2,
+ "at": "2026-10-14T02:00:32.559Z",
+ "date": "2026-10-13",
+ "gamesFinal": 5,
  "gamesPending": [
-  "VGK@MIN"
+  "SEA@PHI",
+  "STL@OTT",
+  "VAN@NYI",
+  "PIT@CHI",
+  "MIN@WPG",
+  "COL@DAL",
+  "VGK@NSH",
+  "TOR@UTA",
+  "CGY@ANA",
+  "EDM@LAK",
+  "BOS@SJS"
  ],
- "candidates": [],
+ "candidates": [
+  {
+   "name": "Tye Kartye",
+   "team": "NYR",
+   "pos": "L",
+   "age": 25,
+   "fx": "05x9t",
+   "status": "FA",
+   "fp": 6.2,
+   "line": "0G 2A, 1 SOG, 2 hits, 1 blk",
+   "toi": "16:21",
+   "avgToi": "14:59",
+   "gpBefore": 7,
+   "reasons": [
+    "16:21 TOI"
+   ],
+   "why": "young + usage"
+  }
+ ],
  "nearMisses": [
-  "Seth Jones (FLA, 32): 6.3 FP, 23:55 TOI, power-play point"
+  "Evan Rodrigues (NJD, 33): 6.8 FP, no usage signal, 14:31 TOI",
+  "Seth Jones (FLA, 32): 11.6 FP, 23:14 TOI, power-play point",
+  "Damon Severson (CBJ, 32): 7.1 FP, 22:36 TOI",
+  "Beck Malenstyn (BUF, 28): 6.2 FP, no usage signal, 11:55 TOI"
  ],
  "unmatched": []
 }
