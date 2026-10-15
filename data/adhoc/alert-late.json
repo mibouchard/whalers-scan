@@ -1,67 +1,17 @@
 {
- "at": "2026-10-14T09:16:43.799Z",
- "date": "2026-10-13",
+ "at": "2026-10-15T09:17:21.455Z",
+ "date": "2026-10-14",
  "late": true,
  "lateGames": [
-  "SEA@PHI",
-  "STL@OTT",
-  "VAN@NYI",
-  "PIT@CHI",
-  "MIN@WPG",
-  "COL@DAL",
-  "VGK@NSH",
-  "TOR@UTA",
-  "CGY@ANA",
-  "EDM@LAK",
-  "BOS@SJS"
+  "MTL@WSH",
+  "DAL@COL"
  ],
- "gamesFinal": 11,
+ "gamesFinal": 2,
  "gamesPending": [],
- "candidates": [
-  {
-   "name": "Teuvo Teravainen",
-   "team": "CHI",
-   "pos": "C",
-   "age": 32,
-   "fx": "02nol",
-   "status": "FA",
-   "fp": 10.3,
-   "line": "2G 1A, 3 SOG, 0 hits, 0 blk",
-   "toi": "16:44",
-   "avgToi": "12:45",
-   "gpBefore": 4,
-   "reasons": [
-    "16:44 TOI",
-    "+3:60 over his 12:45 average"
-   ],
-   "why": "role change"
-  },
-  {
-   "name": "Will Borgen",
-   "team": "BOS",
-   "pos": "D",
-   "age": 29,
-   "fx": "03rg2",
-   "status": "FA",
-   "fp": 6.5,
-   "line": "1G 0A, 1 SOG, 5 hits, 2 blk",
-   "toi": "21:47",
-   "avgToi": "18:40",
-   "gpBefore": 6,
-   "reasons": [
-    "21:47 TOI",
-    "+3:07 over his 18:40 average"
-   ],
-   "why": "role change"
-  }
- ],
+ "candidates": [],
  "nearMisses": [
-  "Pius Suter (STL, 30): 12.5 FP, no usage signal, 15:21 TOI",
-  "Pavel Buchnevich (STL, 31): 8.5 FP, 18:23 TOI, power-play point",
-  "Kyle Palmieri (NYI, 35): 8.9 FP, 16:44 TOI",
-  "Tyler Seguin (DAL, 34): 7.6 FP, 17:17 TOI, power-play point",
-  "Brett Howden (VGK, 28): 7.2 FP, no usage signal, 15:29 TOI",
-  "Rasmus Andersson (VGK, 29): 6.1 FP, no usage signal, 19:24 TOI"
+  "Josh Anderson (MTL, 32): 8 FP, no usage signal, 13:49 TOI",
+  "Arttu Hyry (DAL, 25): 6.1 FP, no usage signal, 14:40 TOI"
  ],
  "unmatched": []
 }
