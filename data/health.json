@@ -1,5 +1,5 @@
 {
- "at": "2026-10-15T14:14:23.604Z",
+ "at": "2026-10-15T14:25:54.127Z",
  "d": "2026-10-15",
  "mode": "retry",
  "steps": {
@@ -27,12 +27,10 @@
   "Allsvenskan": "ok",
   "J20": "ok",
   "NCAA": "ok",
-  "Czech": "carried 2026-10-14",
+  "Czech": "ok",
   "NHL": "ok"
  },
- "errors": {
-  "Czech": "500 www.hokej.cz [server nginx] <!DOCTYPE html><!-- \"' --></script></style></noscript></xmp> <meta charset=\"utf-8\"> <meta name=robots content=noindex> <meta name=generator content=\"Tracy\"> <ti"
- },
+ "errors": {},
  "fantrax": {
   "rosters": "ok",
   "period": 3,
@@ -41,7 +39,8 @@
   "leagueInfo": "ok"
  },
  "stale": {
-  "SHL": "no change in games played over the last 5 daily points (since 2026-10-11): the site may be serving old numbers"
+  "SHL": "no change in games played over the last 5 daily points (since 2026-10-11): the site may be serving old numbers",
+  "Czech": "no change in games played over the last 4 daily points (since 2026-10-12): the site may be serving old numbers"
  },
  "alert": {
   "date": "2026-10-14",
