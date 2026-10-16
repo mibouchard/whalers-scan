@@ -1,17 +1,22 @@
 {
- "at": "2026-10-15T09:17:21.455Z",
- "date": "2026-10-14",
+ "at": "2026-10-16T09:17:00.851Z",
+ "date": "2026-10-15",
  "late": true,
  "lateGames": [
-  "MTL@WSH",
-  "DAL@COL"
+  "PHI@DET",
+  "WPG@CHI",
+  "SJS@NSH",
+  "STL@MIN",
+  "UTA@EDM",
+  "CGY@VGK"
  ],
- "gamesFinal": 2,
+ "gamesFinal": 6,
  "gamesPending": [],
  "candidates": [],
  "nearMisses": [
-  "Josh Anderson (MTL, 32): 8 FP, no usage signal, 13:49 TOI",
-  "Arttu Hyry (DAL, 25): 6.1 FP, no usage signal, 14:40 TOI"
+  "Alex Nedeljkovic (SJS, 30): 11 FP, no usage signal",
+  "Cam Fowler (STL, 34): 6.8 FP, 20:13 TOI, power-play point",
+  "Jake Middleton (CGY, 30): 8.3 FP, no usage signal, 19:14 TOI"
  ],
  "unmatched": []
 }
