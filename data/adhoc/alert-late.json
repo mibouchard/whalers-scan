@@ -1,22 +1,16 @@
 {
- "at": "2026-10-16T09:17:00.851Z",
- "date": "2026-10-15",
+ "at": "2026-10-17T09:17:09.313Z",
+ "date": "2026-10-16",
  "late": true,
  "lateGames": [
-  "PHI@DET",
-  "WPG@CHI",
-  "SJS@NSH",
-  "STL@MIN",
-  "UTA@EDM",
-  "CGY@VGK"
+  "PIT@COL",
+  "BOS@ANA"
  ],
- "gamesFinal": 6,
+ "gamesFinal": 2,
  "gamesPending": [],
  "candidates": [],
  "nearMisses": [
-  "Alex Nedeljkovic (SJS, 30): 11 FP, no usage signal",
-  "Cam Fowler (STL, 34): 6.8 FP, 20:13 TOI, power-play point",
-  "Jake Middleton (CGY, 30): 8.3 FP, no usage signal, 19:14 TOI"
+  "Elias Lindholm (BOS, 31): 8.1 FP, 18:30 TOI, power-play point"
  ],
  "unmatched": []
 }

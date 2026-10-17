@@ -1,5 +1,5 @@
 {
- "at": "2026-10-16T09:17:03.647Z",
+ "at": "2026-10-17T09:17:10.620Z",
  "week": "2026-10-12",
  "period": 3,
  "scoring": "G 3, A 2, PPP 1, SHG 2, GWG 1, +/- 0.5, BLK 0.2, HIT 0.2, PIM 0.25, SOG 0.1; G: W 5, SO 5, SV 0.25, GA -1",
@@ -1189,7 +1189,7 @@
    "nhlTeam": "ANA",
    "pos": "LW",
    "elig": "LW",
-   "status": "INJURED_RESERVE",
+   "status": "ACTIVE",
    "salary": 13.5,
    "games": 2,
    "days": [
@@ -1385,7 +1385,7 @@
    "nhlTeam": "ANA",
    "pos": "D",
    "elig": "D",
-   "status": "INJURED_RESERVE",
+   "status": "RESERVE",
    "salary": 1.1,
    "games": 2,
    "days": [
@@ -1528,9 +1528,9 @@
    "id": "05ltt",
    "name": "Alex Laferriere",
    "nhlTeam": "LAK",
-   "pos": "RW",
+   "pos": "LW",
    "elig": "RW",
-   "status": "RESERVE",
+   "status": "ACTIVE",
    "salary": 4.1,
    "games": 2,
    "days": [
@@ -1575,7 +1575,7 @@
    "nhlTeam": "PHI",
    "pos": "RW",
    "elig": "LW",
-   "status": "ACTIVE",
+   "status": "RESERVE",
    "salary": 6.2,
    "games": 3,
    "days": [
@@ -1620,7 +1620,7 @@
    "nhlTeam": "PIT",
    "pos": "LW",
    "elig": "LW",
-   "status": "ACTIVE",
+   "status": "INJURED_RESERVE",
    "salary": 6.25,
    "games": 3,
    "days": [
@@ -1697,7 +1697,7 @@
    "nhlTeam": "SJS",
    "pos": "C",
    "elig": "C",
-   "status": "RESERVE",
+   "status": "MINORS",
    "salary": 0.986,
    "games": 3,
    "days": [
@@ -1742,7 +1742,7 @@
    "nhlTeam": "WPG",
    "pos": "D",
    "elig": "D",
-   "status": "RESERVE",
+   "status": "INJURED_RESERVE",
    "salary": 6.25,
    "games": 3,
    "days": [
@@ -1787,7 +1787,7 @@
    "nhlTeam": "NYI",
    "pos": "LW",
    "elig": "LW",
-   "status": "ACTIVE",
+   "status": "RESERVE",
    "salary": 0.974,
    "games": 3,
    "days": [
@@ -1862,11 +1862,12 @@
   "06sqo": null,
   "05rjd": {
    "nhlId": 8483445,
-   "gp": 5,
-   "fp": 16.8,
-   "hit": 5,
+   "gp": 6,
+   "fp": 19.9,
+   "hit": 6,
    "blk": 3,
    "toi": [
+    "21:20",
     "2:18",
     "18:20",
     "24:10",
@@ -1903,11 +1904,12 @@
   "076q8": null,
   "04zp2": {
    "nhlId": 8481563,
-   "gp": 1,
-   "fp": 0.2,
-   "hit": 0,
-   "blk": 3,
+   "gp": 2,
+   "fp": 1,
+   "hit": 2,
+   "blk": 4,
    "toi": [
+    "20:12",
     "17:05"
    ],
    "note": "includes hits and blocks (NHL season report)"
@@ -2098,11 +2100,12 @@
   "06lkx": null,
   "067xd": {
    "nhlId": 8486171,
-   "gp": 7,
-   "fp": 6.2,
+   "gp": 8,
+   "fp": 9.4,
    "hit": 8,
    "blk": 3,
    "toi": [
+    "12:27",
     "14:27",
     "13:05",
     "14:00",
@@ -2138,11 +2141,12 @@
   },
   "05rj3": {
    "nhlId": 8483482,
-   "gp": 6,
-   "fp": 4,
+   "gp": 7,
+   "fp": 6.1,
    "hit": 1,
    "blk": 10,
    "toi": [
+    "18:17",
     "18:08",
     "23:42",
     "14:22",
