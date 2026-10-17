@@ -1,20 +1,12 @@
 {
- "at": "2026-10-16T02:00:33.855Z",
- "date": "2026-10-15",
- "gamesFinal": 5,
+ "at": "2026-10-17T02:00:30.586Z",
+ "date": "2026-10-16",
+ "gamesFinal": 0,
  "gamesPending": [
-  "PHI@DET",
-  "WPG@CHI",
-  "SJS@NSH",
-  "STL@MIN",
-  "UTA@EDM",
-  "CGY@VGK"
+  "PIT@COL",
+  "BOS@ANA"
  ],
  "candidates": [],
- "nearMisses": [
-  "Cody Glass (NJD, 27): 6.1 FP, no usage signal, 14:47 TOI",
-  "Evan Rodrigues (NJD, 33): 6.4 FP, 17:23 TOI",
-  "Brett Pesce (NJD, 31): 6.3 FP, 21:30 TOI"
- ],
+ "nearMisses": [],
  "unmatched": []
 }
