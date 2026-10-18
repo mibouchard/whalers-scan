@@ -1,16 +1,53 @@
 {
- "at": "2026-10-17T09:17:09.313Z",
- "date": "2026-10-16",
+ "at": "2026-10-18T09:17:03.788Z",
+ "date": "2026-10-17",
  "late": true,
  "lateGames": [
-  "PIT@COL",
-  "BOS@ANA"
+  "STL@NSH",
+  "BOS@LAK",
+  "EDM@UTA",
+  "PIT@VGK"
  ],
- "gamesFinal": 2,
+ "gamesFinal": 4,
  "gamesPending": [],
- "candidates": [],
- "nearMisses": [
-  "Elias Lindholm (BOS, 31): 8.1 FP, 18:30 TOI, power-play point"
+ "candidates": [
+  {
+   "name": "Adam Edstrom",
+   "team": "NSH",
+   "pos": "C",
+   "age": 26,
+   "fx": "051v9",
+   "status": "FA",
+   "fp": 8.6,
+   "line": "1G 0A, 3 SOG, 8 hits, 1 blk",
+   "toi": "17:25",
+   "avgToi": "13:10",
+   "gpBefore": 7,
+   "reasons": [
+    "17:25 TOI",
+    "+4:15 over his 13:10 average"
+   ],
+   "why": "role change"
+  },
+  {
+   "name": "Adam Wilsby",
+   "team": "NSH",
+   "pos": "D",
+   "age": 26,
+   "fx": "05g2s",
+   "status": "FA",
+   "fp": 6.2,
+   "line": "0G 2A, 0 SOG, 0 hits, 1 blk",
+   "toi": "22:06",
+   "avgToi": "18:15",
+   "gpBefore": 7,
+   "reasons": [
+    "22:06 TOI",
+    "+3:51 over his 18:15 average"
+   ],
+   "why": "role change"
+  }
  ],
+ "nearMisses": [],
  "unmatched": []
 }
