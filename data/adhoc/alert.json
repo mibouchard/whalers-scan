@@ -1,12 +1,17 @@
 {
- "at": "2026-10-17T02:00:30.586Z",
- "date": "2026-10-16",
- "gamesFinal": 0,
+ "at": "2026-10-18T02:00:30.362Z",
+ "date": "2026-10-17",
+ "gamesFinal": 10,
  "gamesPending": [
-  "PIT@COL",
-  "BOS@ANA"
+  "STL@NSH",
+  "BOS@LAK",
+  "EDM@UTA",
+  "PIT@VGK"
  ],
  "candidates": [],
- "nearMisses": [],
+ "nearMisses": [
+  "Niko Mikkola (FLA, 30): 7.2 FP, 20:12 TOI",
+  "Arttu Hyry (DAL, 25): 8.3 FP, no usage signal, 12:00 TOI"
+ ],
  "unmatched": []
 }
