@@ -40,7 +40,7 @@ for (const g of games) {
     const fx = m ? m.id : null; const o = fx ? own[fx] : null, nx = fx ? ownNext[fx] : null;
     const line = r.goalie ? { dec: r.dec, sv: r.sv, sa: r.sa, ga: r.ga, so: r.so, g: r.g, a: r.a, toi: r.toi }
       : { g: r.g, a: r.a, ppp: r.ppp, shg: r.shg, gwg: r.gwg, pm: r.pm, sog: r.sog, hit: r.hit, blk: r.blk, pim: r.pim, toi: r.toi };
-    rows.push({ fxStatus: fx && pinfo ? (pinfo[fx]?.status || null) : null, name: n ? first + ' ' + last : fx && ids[fx]?.name ? fxDisplay(ids[fx].name) : r.name, team: r.team, opp: r.opp, pos: r.pos, fp: r.fp, ...line, fx,
+    rows.push({ fxStatus: fx && pinfo ? (pinfo[fx]?.status || null) : null, name: n ? first + ' ' + last : fx && ids[fx]?.name ? fxDisplay(ids[fx].name) : r.name, team: r.team, opp: r.opp, pos: r.pos, fp: r.fp, ...line, fx, nid: r.pid,
       own: o ? o.team : null, st: o ? o.st : null, ownNext: nx ? nx.team + ':' + nx.st : null, sal: (nx || o)?.sal ?? null, period: p });
   }
 }

@@ -108,7 +108,7 @@ test('retry and deadline', async () => {
   assert.equal(await withDeadline(async () => 7, 1000), 7);
 });
 test('workflow guard: skip, retry or full', () => {
-  const now = new Date('2026-10-07T09:47:00Z'); const ok = Object.fromEntries(['form', 'pool', 'league', 'box', 'alertLate', 'fawatch', 'week'].map(s => [s, 'ok']));
+  const now = new Date('2026-10-07T09:47:00Z'); const ok = Object.fromEntries(['form', 'pool', 'league', 'box', 'stats', 'alertLate', 'fawatch', 'week'].map(s => [s, 'ok']));
   const st = (o = {}) => ({ d: '2026-10-07', at: '2026-10-07T09:20:00Z', status: { AHL: 'ok' }, errors: {}, subset: [], ...o }); const h = (o = {}) => ({ d: '2026-10-07', steps: { scan: 'ok', ...ok, ...o } });
   assert.equal(plan({ event: 'workflow_dispatch', leagues: '', status: st(), health: h(), now }).mode, 'full', 'the outside timer always runs everything');
   assert.deepEqual(plan({ event: 'workflow_dispatch', leagues: 'KHL VHL', status: st(), health: h(), now }), { mode: 'debug', steps: ['scan'] });

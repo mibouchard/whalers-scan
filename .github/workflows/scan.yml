@@ -79,6 +79,10 @@ jobs:
         if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
         continue-on-error: true
         run: node src/ci/step.js box src/tools/box.js
+      - name: Front Office player card (this season's NHL totals, each player's last games)
+        if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
+        continue-on-error: true
+        run: node src/ci/step.js stats src/tools/stats.js
       - name: Night alert, late pass (yesterday's games that were still on when the night alert ran)
         if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
         continue-on-error: true

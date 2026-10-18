@@ -20,7 +20,7 @@ Both workflows share one concurrency group (`repo-write`), so two runs never pus
 ### The daily job, in order
 
 1. `src/scan.js`: the 16-league scan.
-2. `form`, `pool`, `league`, `box` (yesterday), `nightalert late` (yesterday), `fawatch`, `week`.
+2. `form`, `pool`, `league`, `box` (yesterday), `stats` (Front Office player card), `nightalert late` (yesterday), `fawatch`, `week`.
 3. `src/ci/health.js` writes `data/health.json`.
 4. Commit and push (three tries: `git pull --rebase -X theirs`, push, a jittered wait).
 5. Last, after the push: the job fails if any league or step failed, so GitHub emails the owner. A red job never costs data.
@@ -111,6 +111,13 @@ Column values worth knowing: `dr` = `post` / `pre` / blank (draft status, above)
 
 `asOf` is an ISO time with the Toronto offset.
 
+The player card on the dashboard (Overview and Stats tabs) reads three more sets of files here, all keyed by Fantrax id:
+- `season.json` (from `stats.js`, every morning): this season's NHL regular-season totals from the NHL's season reports. `{ at, season, cols: { sk, g }, sk: { <fxId>: [gp, g, a, pm, pim, sog, ppp, shg, gwg, hit, blk, toi] }, g: { <fxId>: [gp, gs, w, l, otl, ga, sa, so, toi] }, unmatched }`. Skater `toi` is seconds per game, goalie `toi` total seconds.
+- `games.json` (from `stats.js`, every morning): each player's last games, newest first, from the dated box files. `{ at, d, n, cols: { sk, g }, p: { <fxId>: [[date, opp, ha, res, fp, ...stat line, toi], ...] } }`. `ha` is `@` or `vs`; `res` is his club's result, e.g. `W 4-1` or `L 2-3 OT`. Five games a player, fewer if the file would pass 230,000 bytes (the dashboard's database caps a document at 256 KB).
+- `careers-0.json` .. `careers-7.json` (from `careers.js`, by hand once a season): past seasons. `{ at, through, chunk, of, cols: { sk, g }, p: { <fxId>: { nid, n, g?, r: [[year, league, team, ...], ...] } } }`, newest first. Every NHL regular season (hits and blocks from 2005-06), and other leagues from 2019-20 (no youth or international hockey). A player's file is the sum of his Fantrax id's character codes modulo 8 (`chunkOf` in `src/lib/fostats.js`; the dashboard uses the same sum). Covers every rostered player with an NHL id and every free agent with NHL games in the last three seasons.
+
+The morning report copies `season.json` and `games.json` to the dashboard's `snapshot` collection. The careers files are copied by hand to its `careers` collection (docs `c0` .. `c7`) after a rebuild.
+
 ### `data/form.json` (from `form.js`)
 `{ at, window: 5, scoring, players: { <fxId>: { name, nhlId, gp, fpg, games: [[date, fp]] } }, roster: { <fxId>: [name, nhlTeam, positions] } }`: fantasy points per game over each HFD NHL player's last 5 regular-season games, hits and blocks included.
 
@@ -118,7 +125,7 @@ Column values worth knowing: `dr` = `post` / `pre` / blank (draft status, above)
 `{ at, status: { asOf, src, rows: { <fxId>: "WW" } } | null, injuries: { asOf, src, rows: { <fxId>: [injury, status text, updated, expected return or ""] } } | null, notes }`. If the injury report cannot be read, the last one (up to 4 days old) is kept and a note says so.
 
 ### `data/adhoc/`
-- `box.json`, `box-YYYY-MM-DD.json` (dated copies kept 14 days), from `box.js`: `{ d, at, period, periods, currentPeriod, nextPeriod, games, gamesPending, gameType: [2], hfdCapRoomNext, hfdCap, nPlayerInfo, fa, unmatched, notes, rows }`. Each row: `{ fxStatus, name, team, opp, pos, fp, <stat line>, fx, own, st, ownNext, sal, period }`. `own` / `st` are from the period in effect for that game, `ownNext` from next period, `fxStatus` is Fantrax's FA / WW / T. `fa` lists the night's free agents, or null if Fantrax's status feed failed.
+- `box.json`, `box-YYYY-MM-DD.json` (dated copies kept 14 days), from `box.js`: `{ d, at, period, periods, currentPeriod, nextPeriod, games, gamesPending, gameType: [2], hfdCapRoomNext, hfdCap, nPlayerInfo, fa, unmatched, notes, rows }`. Each row: `{ fxStatus, name, team, opp, pos, fp, <stat line>, fx, nid, own, st, ownNext, sal, period }` (`nid` is the NHL player id). `own` / `st` are from the period in effect for that game, `ownNext` from next period, `fxStatus` is Fantrax's FA / WW / T. `fa` lists the night's free agents, or null if Fantrax's status feed failed.
 - `alert.json`, from `nightalert.js`: `{ at, date, gamesFinal, gamesPending, candidates: [{ name, team, pos, age, fx, status, fp, line, toi, avgToi, gpBefore, reasons, why }], nearMisses, unmatched }`.
 - `alert-late.json`, from `nightalert.js late`: the same plus `late: true` and `lateGames` (the games `alert.json` listed as pending for that date, or all games if `alert.json` is for another date). Candidates come only from those games.
 - `fawatch.json`, from `fawatch.js`: `{ at, src, status, errors, skaters: [{ lg, <sk columns>, ageKnown, rights, fxStatus, elig, gem }], goalies: [...] }`. Free agents across all leagues, rows with a known age first.
@@ -138,6 +145,8 @@ Run with the "One-off tool" workflow (`tool` = file name without `.js`, `args` o
 | `form` | | `data/form.json` |
 | `pool` | | `data/pool.json` |
 | `week` | Monday date (default: this week) | `data/adhoc/week.json` |
+| `stats` | | `data/fo/season.json`, `data/fo/games.json` (also a daily step) |
+| `careers` | | `data/fo/careers-0.json` .. `careers-7.json` |
 | `roster` | | `data/adhoc/hfd-roster.json` |
 | `team` | team name, short code or id, e.g. `Ottawa Senators` | `data/adhoc/team.json` |
 | `lookup` | reads `data/adhoc/lookup-in.json` (array of Fantrax ids) | `data/adhoc/lookup.json` |
