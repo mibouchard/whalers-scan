@@ -1,5 +1,5 @@
 {
- "at": "2026-10-19T09:17:02.023Z",
+ "at": "2026-10-20T09:17:11.229Z",
  "week": "2026-10-19",
  "period": 4,
  "scoring": "G 3, A 2, PPP 1, SHG 2, GWG 1, +/- 0.5, BLK 0.2, HIT 0.2, PIM 0.25, SOG 0.1; G: W 5, SO 5, SV 0.25, GA -1",
@@ -1134,21 +1134,6 @@
    ]
   },
   {
-   "id": "05rfa",
-   "name": "Isaac Howard",
-   "nhlTeam": "EDM",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "MINORS",
-   "salary": 0.973,
-   "games": 3,
-   "days": [
-    "10-20",
-    "10-22",
-    "10-24"
-   ]
-  },
-  {
    "id": "05rjd",
    "name": "Cutter Gauthier",
    "nhlTeam": "ANA",
@@ -1240,6 +1225,21 @@
    ]
   },
   {
+   "id": "0243f",
+   "name": "Seth Jones",
+   "nhlTeam": "FLA",
+   "pos": "D",
+   "elig": "D",
+   "status": "RESERVE",
+   "salary": 9.5,
+   "games": 3,
+   "days": [
+    "10-21",
+    "10-22",
+    "10-25"
+   ]
+  },
+  {
    "id": "05ymj",
    "name": "Jimmy Snuggerud",
    "nhlTeam": "STL",
@@ -1326,6 +1326,21 @@
     "10-20",
     "10-23",
     "10-25"
+   ]
+  },
+  {
+   "id": "06clb",
+   "name": "Mikhail Ilyin",
+   "nhlTeam": "PIT",
+   "pos": "LW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0.952,
+   "games": 3,
+   "days": [
+    "10-19",
+    "10-22",
+    "10-24"
    ]
   },
   {
@@ -1451,17 +1466,6 @@
    ]
   },
   {
-   "id": "079wh",
-   "name": "Semyon Simonov",
-   "nhlTeam": "(N/A)",
-   "pos": "LW",
-   "elig": "W",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 0,
-   "days": []
-  },
-  {
    "id": "06tb5",
    "name": "Owen Griffin",
    "nhlTeam": "CBJ",
@@ -1473,6 +1477,22 @@
    "days": [
     "10-20",
     "10-24"
+   ]
+  },
+  {
+   "id": "06hcs",
+   "name": "Ryder Ritchie",
+   "nhlTeam": "MIN",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0,
+   "games": 4,
+   "days": [
+    "10-20",
+    "10-22",
+    "10-24",
+    "10-25"
    ]
   },
   {
@@ -1828,11 +1848,12 @@
   },
   "05rjd": {
    "nhlId": 8483445,
-   "gp": 6,
-   "fp": 19.9,
-   "hit": 6,
+   "gp": 7,
+   "fp": 19.6,
+   "hit": 7,
    "blk": 3,
    "toi": [
+    "16:12",
     "21:20",
     "2:18",
     "18:20",
@@ -1870,11 +1891,12 @@
   },
   "0644c": {
    "nhlId": 8484388,
-   "gp": 9,
-   "fp": 14.9,
+   "gp": 10,
+   "fp": 18.1,
    "hit": 18,
-   "blk": 4,
+   "blk": 7,
    "toi": [
+    "12:06",
     "13:04",
     "10:47",
     "10:00",
@@ -1910,18 +1932,19 @@
   "05xct": {
    "nhlId": 8482982,
    "gp": 5,
-   "fp": 30.25,
+   "fp": 30.75,
    "toi": []
   },
   "076q8": null,
   "06lkx": null,
   "067xd": {
    "nhlId": 8486171,
-   "gp": 8,
-   "fp": 9.4,
-   "hit": 8,
+   "gp": 9,
+   "fp": 13.3,
+   "hit": 9,
    "blk": 3,
    "toi": [
+    "16:54",
     "12:27",
     "14:27",
     "13:05",
@@ -1947,11 +1970,12 @@
   },
   "05riz": {
    "nhlId": 8483460,
-   "gp": 8,
-   "fp": 5.9,
-   "hit": 8,
-   "blk": 11,
+   "gp": 9,
+   "fp": 6.9,
+   "hit": 11,
+   "blk": 13,
    "toi": [
+    "9:20",
     "14:08",
     "15:29",
     "13:02",
@@ -1990,11 +2014,12 @@
   "07693": null,
   "06ay2": {
    "nhlId": 8484152,
-   "gp": 7,
-   "fp": 8.9,
+   "gp": 8,
+   "fp": 10.6,
    "hit": 1,
-   "blk": 8,
+   "blk": 11,
    "toi": [
+    "12:52",
     "16:35",
     "15:41",
     "20:21",
@@ -2050,11 +2075,12 @@
   "075w6": null,
   "051xf": {
    "nhlId": 8482475,
-   "gp": 7,
-   "fp": 9,
-   "hit": 3,
+   "gp": 8,
+   "fp": 11.8,
+   "hit": 4,
    "blk": 3,
    "toi": [
+    "15:32",
     "16:20",
     "15:54",
     "14:36",
@@ -2137,11 +2163,12 @@
   },
   "061im": {
    "nhlId": 8485402,
-   "gp": 8,
-   "fp": 6.3,
-   "hit": 4,
+   "gp": 9,
+   "fp": 7.1,
+   "hit": 5,
    "blk": 2,
    "toi": [
+    "14:30",
     "11:29",
     "13:02",
     "12:30",
@@ -2248,6 +2275,27 @@
    "note": "includes hits and blocks (NHL season report)"
   },
   "05ui5": null,
-  "06ims": null
+  "06ims": null,
+  "0243f": {
+   "nhlId": 8477495,
+   "gp": 9,
+   "fp": 33.2,
+   "hit": 8,
+   "blk": 8,
+   "toi": [
+    "22:15",
+    "26:16",
+    "23:14",
+    "23:55",
+    "23:06",
+    "25:33",
+    "28:35",
+    "27:43",
+    "28:59"
+   ],
+   "note": "includes hits and blocks (NHL season report)"
+  },
+  "06clb": null,
+  "06hcs": null
  }
 }

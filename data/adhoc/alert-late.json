@@ -1,15 +1,17 @@
 {
- "at": "2026-10-19T09:17:00.022Z",
- "date": "2026-10-18",
+ "at": "2026-10-20T09:17:09.374Z",
+ "date": "2026-10-19",
  "late": true,
  "lateGames": [
-  "CAR@CGY"
+  "SJS@TOR",
+  "PIT@UTA"
  ],
- "gamesFinal": 1,
+ "gamesFinal": 2,
  "gamesPending": [],
  "candidates": [],
  "nearMisses": [
-  "Morgan Frost (CGY, 27): 6.8 FP, power-play point, 15:52 TOI"
+  "Kevin Stenlund (UTA, 30): 6.5 FP, no usage signal, 13:43 TOI",
+  "Nate Schmidt (UTA, 35): 6.5 FP, no usage signal, 18:31 TOI"
  ],
  "unmatched": []
 }
