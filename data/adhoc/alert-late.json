@@ -1,17 +1,20 @@
 {
- "at": "2026-10-20T09:17:09.374Z",
- "date": "2026-10-19",
+ "at": "2026-10-21T09:16:55.964Z",
+ "date": "2026-10-20",
  "late": true,
  "lateGames": [
-  "SJS@TOR",
-  "PIT@UTA"
+  "WPG@STL",
+  "BOS@DAL",
+  "MIN@EDM",
+  "DET@SEA",
+  "CAR@VAN",
+  "TBL@VGK"
  ],
- "gamesFinal": 2,
+ "gamesFinal": 6,
  "gamesPending": [],
  "candidates": [],
  "nearMisses": [
-  "Kevin Stenlund (UTA, 30): 6.5 FP, no usage signal, 13:43 TOI",
-  "Nate Schmidt (UTA, 35): 6.5 FP, no usage signal, 18:31 TOI"
+  "Nicolas Deslauriers (CAR, 35): 8.6 FP, no usage signal, 10:44 TOI"
  ],
  "unmatched": []
 }
