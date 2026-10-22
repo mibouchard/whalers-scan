@@ -1,20 +1,16 @@
 {
- "at": "2026-10-21T09:16:55.964Z",
- "date": "2026-10-20",
+ "at": "2026-10-22T09:16:57.037Z",
+ "date": "2026-10-21",
  "late": true,
  "lateGames": [
-  "WPG@STL",
-  "BOS@DAL",
-  "MIN@EDM",
-  "DET@SEA",
-  "CAR@VAN",
-  "TBL@VGK"
+  "PHI@BUF",
+  "FLA@OTT"
  ],
- "gamesFinal": 6,
+ "gamesFinal": 2,
  "gamesPending": [],
  "candidates": [],
  "nearMisses": [
-  "Nicolas Deslauriers (CAR, 35): 8.6 FP, no usage signal, 10:44 TOI"
+  "Cole Knuble (PHI, 22): 7.4 FP, no usage signal, 10:24 TOI"
  ],
  "unmatched": []
 }

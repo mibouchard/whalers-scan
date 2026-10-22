@@ -1,5 +1,5 @@
 {
- "at": "2026-10-21T09:16:57.178Z",
+ "at": "2026-10-22T09:16:58.687Z",
  "week": "2026-10-19",
  "period": 4,
  "scoring": "G 3, A 2, PPP 1, SHG 2, GWG 1, +/- 0.5, BLK 0.2, HIT 0.2, PIM 0.25, SOG 0.1; G: W 5, SO 5, SV 0.25, GA -1",
@@ -1165,6 +1165,22 @@
    ]
   },
   {
+   "id": "0769h",
+   "name": "Alexander Bilecki",
+   "nhlTeam": "TOR",
+   "pos": "D",
+   "elig": "D",
+   "status": "RESERVE",
+   "salary": 0,
+   "games": 4,
+   "days": [
+    "10-19",
+    "10-20",
+    "10-22",
+    "10-24"
+   ]
+  },
+  {
    "id": "06ll0",
    "name": "Linus Eriksson",
    "nhlTeam": "FLA",
@@ -1734,36 +1750,6 @@
    ]
   },
   {
-   "id": "064r2",
-   "name": "Ivan Demidov",
-   "nhlTeam": "MTL",
-   "pos": "RW",
-   "elig": "RW",
-   "status": "INJURED_RESERVE",
-   "salary": 0.941,
-   "games": 3,
-   "days": [
-    "10-20",
-    "10-23",
-    "10-25"
-   ]
-  },
-  {
-   "id": "05ymq",
-   "name": "Matthew Poitras",
-   "nhlTeam": "BOS",
-   "pos": "C",
-   "elig": "C",
-   "status": "RESERVE",
-   "salary": 0.85,
-   "games": 3,
-   "days": [
-    "10-20",
-    "10-22",
-    "10-24"
-   ]
-  },
-  {
    "id": "042vx",
    "name": "Filip Hronek",
    "nhlTeam": "VAN",
@@ -1801,6 +1787,22 @@
    "elig": "LW",
    "status": "MINORS",
    "salary": 0.909,
+   "games": 4,
+   "days": [
+    "10-19",
+    "10-20",
+    "10-22",
+    "10-24"
+   ]
+  },
+  {
+   "id": "06hcw",
+   "name": "Beckett Sennecke",
+   "nhlTeam": "ANA",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "RESERVE",
+   "salary": 0.954,
    "games": 4,
    "days": [
     "10-19",
@@ -1867,11 +1869,12 @@
   },
   "05kuc": {
    "nhlId": 8482095,
-   "gp": 9,
-   "fp": 17.2,
-   "hit": 19,
-   "blk": 25,
+   "gp": 10,
+   "fp": 19.2,
+   "hit": 22,
+   "blk": 29,
    "toi": [
+    "22:08",
     "22:29",
     "21:20",
     "19:34",
@@ -2013,8 +2016,8 @@
   },
   "03rfo": {
    "nhlId": 8478435,
-   "gp": 5,
-   "fp": 25,
+   "gp": 6,
+   "fp": 35.75,
    "toi": []
   },
   "07693": null,
@@ -2039,11 +2042,12 @@
   "076q3": null,
   "04mtp": {
    "nhlId": 8481528,
-   "gp": 9,
-   "fp": 13.9,
-   "hit": 23,
+   "gp": 10,
+   "fp": 18.2,
+   "hit": 25,
    "blk": 5,
    "toi": [
+    "18:24",
     "14:51",
     "17:52",
     "17:21",
@@ -2151,11 +2155,12 @@
   "076r8": null,
   "04kyh": {
    "nhlId": 8480801,
-   "gp": 9,
-   "fp": 45.15,
-   "hit": 30,
+   "gp": 10,
+   "fp": 51.15,
+   "hit": 36,
    "blk": 1,
    "toi": [
+    "13:13",
     "13:31",
     "19:59",
     "16:19",
@@ -2288,13 +2293,15 @@
   },
   "05ui5": null,
   "06ims": null,
+  "0769h": null,
   "0243f": {
    "nhlId": 8477495,
-   "gp": 9,
-   "fp": 33.2,
-   "hit": 8,
-   "blk": 8,
+   "gp": 10,
+   "fp": 36.6,
+   "hit": 10,
+   "blk": 9,
    "toi": [
+    "21:09",
     "22:15",
     "26:16",
     "23:14",
@@ -2308,6 +2315,25 @@
    "note": "includes hits and blocks (NHL season report)"
   },
   "06clb": null,
-  "06hcs": null
+  "06hcs": null,
+  "06hcw": {
+   "nhlId": 8484762,
+   "gp": 9,
+   "fp": 32.9,
+   "hit": 12,
+   "blk": 5,
+   "toi": [
+    "24:44",
+    "15:37",
+    "23:12",
+    "22:52",
+    "20:37",
+    "17:03",
+    "24:58",
+    "21:44",
+    "18:04"
+   ],
+   "note": "includes hits and blocks (NHL season report)"
+  }
  }
 }
