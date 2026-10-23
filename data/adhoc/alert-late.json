@@ -1,16 +1,74 @@
 {
- "at": "2026-10-22T09:16:57.037Z",
- "date": "2026-10-21",
+ "at": "2026-10-23T09:17:26.885Z",
+ "date": "2026-10-22",
  "late": true,
  "lateGames": [
-  "PHI@BUF",
-  "FLA@OTT"
+  "LAK@NYI",
+  "VGK@STL",
+  "WPG@DAL",
+  "MIN@CGY",
+  "CAR@EDM",
+  "UTA@SEA",
+  "DET@VAN"
  ],
- "gamesFinal": 2,
+ "gamesFinal": 7,
  "gamesPending": [],
- "candidates": [],
+ "candidates": [
+  {
+   "name": "Darcy Kuemper",
+   "team": "LAK",
+   "pos": "G",
+   "age": 36,
+   "fx": "0222k",
+   "status": "FA",
+   "fp": 13.25,
+   "line": "W, 41 saves on 43",
+   "toi": null,
+   "avgToi": null,
+   "gpBefore": 5,
+   "reasons": [
+    "2 starts in his team's last 3 games"
+   ],
+   "why": "role change"
+  },
+  {
+   "name": "Justin Barron",
+   "team": "STL",
+   "pos": "D",
+   "age": 24,
+   "fx": "051z1",
+   "status": "FA",
+   "fp": 11.4,
+   "line": "1G 3A, 4 SOG, 0 hits, 0 blk",
+   "toi": "20:23",
+   "avgToi": "15:49",
+   "gpBefore": 6,
+   "reasons": [
+    "20:23 TOI",
+    "+4:34 over his 15:49 average"
+   ],
+   "why": "young + role change"
+  },
+  {
+   "name": "Philipp Grubauer",
+   "team": "SEA",
+   "pos": "G",
+   "age": 34,
+   "fx": "01zs7",
+   "status": "FA",
+   "fp": 10.25,
+   "line": "W, 33 saves on 36",
+   "toi": null,
+   "avgToi": null,
+   "gpBefore": 6,
+   "reasons": [
+    "2 starts in his team's last 3 games"
+   ],
+   "why": "role change"
+  }
+ ],
  "nearMisses": [
-  "Cole Knuble (PHI, 22): 7.4 FP, no usage signal, 10:24 TOI"
+  "Jordan Eberle (SEA, 36): 7.4 FP, 18:19 TOI, power-play point"
  ],
  "unmatched": []
 }
