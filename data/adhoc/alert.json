@@ -1,12 +1,21 @@
 {
- "at": "2026-10-22T02:00:32.634Z",
- "date": "2026-10-21",
- "gamesFinal": 0,
+ "at": "2026-10-23T02:00:33.707Z",
+ "date": "2026-10-22",
+ "gamesFinal": 5,
  "gamesPending": [
-  "PHI@BUF",
-  "FLA@OTT"
+  "LAK@NYI",
+  "VGK@STL",
+  "WPG@DAL",
+  "MIN@CGY",
+  "CAR@EDM",
+  "UTA@SEA",
+  "DET@VAN"
  ],
  "candidates": [],
- "nearMisses": [],
+ "nearMisses": [
+  "Brandon Duhaime (TOR, 29): 9.2 FP, no usage signal, 14:14 TOI",
+  "Zack Ostapchuk (SJS, 23): 6.1 FP, no usage signal, 11:00 TOI",
+  "Nick Robertson (PIT, 25): 8.2 FP, no usage signal, 14:06 TOI"
+ ],
  "unmatched": []
 }
