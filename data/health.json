@@ -1,7 +1,7 @@
 {
- "at": "2026-10-23T15:15:10.892Z",
- "d": "2026-10-23",
- "mode": "retry",
+ "at": "2026-10-24T09:17:41.032Z",
+ "d": "2026-10-24",
+ "mode": "full",
  "steps": {
   "scan": "ok",
   "form": "ok",
@@ -28,7 +28,7 @@
   "Allsvenskan": "ok",
   "J20": "ok",
   "NCAA": "ok",
-  "Czech": "carried 2026-10-16",
+  "Czech": "ERR 403 www.hokej.cz [server nginx] <html> <head><title>403 Forbidden</title></head> <body> <center><h1>403 Forbidden</h1></center> <hr><center>nginx</center> </body> </html> <!-- a padding to dis",
   "NHL": "ok"
  },
  "errors": {
@@ -43,7 +43,7 @@
  },
  "stale": {},
  "alert": {
-  "date": "2026-10-22",
-  "at": "2026-10-23T02:00:33.707Z"
+  "date": "2026-10-23",
+  "at": "2026-10-24T02:00:31.640Z"
  }
 }

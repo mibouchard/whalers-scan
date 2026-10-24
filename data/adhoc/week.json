@@ -1,5 +1,5 @@
 {
- "at": "2026-10-23T09:17:28.832Z",
+ "at": "2026-10-24T09:17:23.049Z",
  "week": "2026-10-19",
  "period": 4,
  "scoring": "G 3, A 2, PPP 1, SHG 2, GWG 1, +/- 0.5, BLK 0.2, HIT 0.2, PIM 0.25, SOG 0.1; G: W 5, SO 5, SV 0.25, GA -1",
@@ -1452,18 +1452,18 @@
    ]
   },
   {
-   "id": "04mtp",
-   "name": "Dylan Cozens",
-   "nhlTeam": "OTT",
-   "pos": "C",
-   "elig": "C",
-   "status": "ACTIVE",
-   "salary": 7.1,
+   "id": "06md8",
+   "name": "Kieron Walton",
+   "nhlTeam": "WPG",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "RESERVE",
+   "salary": 0.956,
    "games": 3,
    "days": [
-    "10-21",
+    "10-20",
     "10-22",
-    "10-24"
+    "10-25"
    ]
   },
   {
@@ -1635,7 +1635,7 @@
    "nhlTeam": "SJS",
    "pos": "C",
    "elig": "C",
-   "status": "MINORS",
+   "status": "ACTIVE",
    "salary": 0.986,
    "games": 4,
    "days": [
@@ -1673,6 +1673,21 @@
     "10-20",
     "10-22",
     "10-25"
+   ]
+  },
+  {
+   "id": "06nkc",
+   "name": "Jake OBrien",
+   "nhlTeam": "SEA",
+   "pos": "C",
+   "elig": "C",
+   "status": "INJURED_RESERVE",
+   "salary": 0.974,
+   "games": 3,
+   "days": [
+    "10-20",
+    "10-22",
+    "10-24"
    ]
   },
   {
@@ -1740,7 +1755,7 @@
    "nhlTeam": "SJS",
    "pos": "LW",
    "elig": "LW",
-   "status": "RESERVE",
+   "status": "MINORS",
    "salary": 0.909,
    "games": 4,
    "days": [
@@ -1920,11 +1935,12 @@
   "06lkx": null,
   "067xd": {
    "nhlId": 8486171,
-   "gp": 10,
-   "fp": 13.7,
+   "gp": 11,
+   "fp": 17.6,
    "hit": 9,
    "blk": 4,
    "toi": [
+    "13:10",
     "15:41",
     "16:54",
     "12:27",
@@ -2082,11 +2098,12 @@
   },
   "0644e": {
    "nhlId": 8484197,
-   "gp": 9,
+   "gp": 10,
    "fp": 11.7,
    "hit": 5,
    "blk": 2,
    "toi": [
+    "11:07",
     "11:16",
     "13:19",
     "9:34",
@@ -2305,7 +2322,14 @@
    "note": "includes hits and blocks (NHL season report)"
   },
   "06clb": null,
+  "06md8": null,
   "06loc": null,
+  "06nkc": {
+   "nhlId": 8485383,
+   "gp": 0,
+   "fp": 0,
+   "toi": []
+  },
   "06b7c": null,
   "06hcw": {
    "nhlId": 8484762,
