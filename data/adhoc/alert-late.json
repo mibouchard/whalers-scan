@@ -1,52 +1,17 @@
 {
- "at": "2026-10-24T09:17:20.928Z",
- "date": "2026-10-23",
+ "at": "2026-10-25T09:16:43.428Z",
+ "date": "2026-10-24",
  "late": true,
  "lateGames": [
-  "MTL@CHI",
-  "TBL@COL"
+  "TBL@UTA",
+  "DET@CGY",
+  "MIN@SEA"
  ],
- "gamesFinal": 2,
+ "gamesFinal": 3,
  "gamesPending": [],
- "candidates": [
-  {
-   "name": "Jake Evans",
-   "team": "MTL",
-   "pos": "C",
-   "age": 30,
-   "fx": "03eeo",
-   "status": "FA",
-   "fp": 13.2,
-   "line": "2G 1A, 2 SOG, 0 hits, 0 blk",
-   "toi": "17:12",
-   "avgToi": "13:33",
-   "gpBefore": 9,
-   "reasons": [
-    "17:12 TOI",
-    "+3:39 over his 13:33 average"
-   ],
-   "why": "role change"
-  },
-  {
-   "name": "Kaiden Guhle",
-   "team": "MTL",
-   "pos": "D",
-   "age": 24,
-   "fx": "04mx6",
-   "status": "FA",
-   "fp": 7.2,
-   "line": "1G 1A, 2 SOG, 3 hits, 2 blk",
-   "toi": "23:30",
-   "avgToi": "21:54",
-   "gpBefore": 5,
-   "reasons": [
-    "23:30 TOI"
-   ],
-   "why": "young + usage"
-  }
- ],
+ "candidates": [],
  "nearMisses": [
-  "Devon Toews (COL, 32): 7.2 FP, no usage signal, 17:41 TOI"
+  "Joel Farabee (CGY, 26): 10.2 FP, 18:52 TOI, power-play point"
  ],
  "unmatched": []
 }
