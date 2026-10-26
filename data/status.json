@@ -1,7 +1,7 @@
 {
- "d": "2026-10-25",
- "at": "2026-10-25T14:27:52.396Z",
- "mode": "retry-failed",
+ "d": "2026-10-26",
+ "at": "2026-10-26T09:15:23.573Z",
+ "mode": "full",
  "status": {
   "AHL": "ok",
   "ECHL": "ok",
@@ -25,14 +25,11 @@
  },
  "fantrax": {
   "rosters": "ok",
-  "period": 4,
-  "ownPeriod": 5,
+  "period": 5,
+  "ownPeriod": 6,
   "nextPeriod": "ok",
   "leagueInfo": "ok"
  },
  "stale": {},
- "subset": [],
- "retried": [
-  "Czech"
- ]
+ "subset": []
 }
