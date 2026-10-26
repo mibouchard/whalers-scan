@@ -129,6 +129,7 @@ The morning report copies `season.json` and `games.json` to the dashboard's `sna
 - `alert.json`, from `nightalert.js`: `{ at, date, gamesFinal, gamesPending, candidates: [{ name, team, pos, age, fx, status, fp, line, toi, avgToi, gpBefore, reasons, why }], nearMisses, unmatched }`.
 - `alert-late.json`, from `nightalert.js late`: the same plus `late: true` and `lateGames` (the games `alert.json` listed as pending for that date, or all games if `alert.json` is for another date). Candidates come only from those games.
 - `fawatch.json`, from `fawatch.js`: `{ at, src, status, errors, skaters: [{ lg, <sk columns>, ageKnown, rights, fxStatus, elig, gem }], goalies: [...] }`. Free agents across all leagues, rows with a known age first.
+- `draftees.json`, from `draftees.js` (a daily step): every pick of the last four NHL drafts who is FA or WW in our league, with the lines the minors review prices him on. `{ at, d, years, coverage: { picks, free, nhlId, fx, pages, missingNhlId, noFx, noPage }, czech, notes, rows: [{ y, pk, rd, tm, pos, nid, fx, n, dob, ageModel, half, slot, st, d1: { gp, pts, lg, main, ppg, chlEq, n }, cur: { gp, g, a, pts, lg }, nhl: { gp, pts }, seasons: [[season, league, gp, g, a, pts], ...] }] }`. `d1` is the first full season after the draft (null for the draft just past), `chlEq` its CHL-equivalent points per game through the NHLe table (OHL = 1.0, inferred), `ageModel` the age on Feb 1 of the season's second year, `half` the younger or older half of the draft class, `slot` the pick bucket (1-10 .. 161+). `coverage` is the guard: a review that uses the file quotes `pages`/`free` and names the players in `noPage` and `missingNhlId` as unscored. The step fails when fewer than 95% of the free draftees have a fresh page. NHL ids are kept for good in `state/ws.draftids.json`; picks still without one are searched for in the NHL id blocks on each run. Czech-league lines come from the NHL player pages, so drafted players in Czechia are covered while hokej.cz blocks the scan (`czech` counts them); undrafted Czech players are not.
 - `week.json`, from `week.js`: `{ at, week, period, scoring, hitsBlocks, games, byDay, nextWeek { week, games, byDay } (the following Monday-Sunday week), current, next, stats }`.
 - `hfd-roster.json`, `team.json`, `lookup.json`, `names.json`: the one-off lookups below.
 
@@ -142,6 +143,7 @@ Run with the "One-off tool" workflow (`tool` = file name without `.js`, `args` o
 | `box` | date (default: yesterday) | `data/adhoc/box.json`, `box-<date>.json` |
 | `nightalert` | date; `late` | `data/adhoc/alert.json` or `alert-late.json` |
 | `fawatch` | | `data/adhoc/fawatch.json` |
+| `draftees` | `rescan` widens the NHL id search | `data/adhoc/draftees.json`, `state/ws.draftids.json` |
 | `form` | | `data/form.json` |
 | `pool` | | `data/pool.json` |
 | `week` | Monday date (default: this week) | `data/adhoc/week.json` |

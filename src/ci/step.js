@@ -16,7 +16,7 @@ if (!wanted.includes('all') && !wanted.includes(name)) { console.log(`${name}: n
 const dir = healthDirOf(); fs.mkdirSync(dir, { recursive: true });
 const record = text => fs.writeFileSync(path.join(dir, name + '.txt'), text);
 record('ERR: started but did not finish'); // overwritten below; stays if the runner kills the job mid-step
-const limitMin = +process.env.STEP_TIMEOUT_MIN || ({ scan: 32, fawatch: 16 }[name] || 6);
+const limitMin = +process.env.STEP_TIMEOUT_MIN || ({ scan: 32, fawatch: 16, draftees: 16 }[name] || 6);
 const child = spawn(process.execPath, [script, ...args], { stdio: ['ignore', 'inherit', 'pipe'] });
 let tail = ''; child.stderr.on('data', d => { process.stderr.write(d); tail = (tail + d).slice(-4000); });
 const timer = setTimeout(() => { tail += `\nError: step timed out after ${limitMin} minutes`; child.kill('SIGKILL'); }, limitMin * 60000);
