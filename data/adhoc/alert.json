@@ -1,36 +1,12 @@
 {
- "at": "2026-10-25T02:00:35.849Z",
- "date": "2026-10-24",
- "gamesFinal": 9,
+ "at": "2026-10-26T02:00:36.826Z",
+ "date": "2026-10-25",
+ "gamesFinal": 3,
  "gamesPending": [
-  "TBL@UTA",
-  "DET@CGY",
-  "MIN@SEA"
+  "COL@NSH",
+  "MIN@VAN"
  ],
- "candidates": [
-  {
-   "name": "Troy Stecher",
-   "team": "TOR",
-   "pos": "D",
-   "age": 32,
-   "fx": "03m3m",
-   "status": "FA",
-   "fp": 6,
-   "line": "1G 0A, 3 SOG, 0 hits, 1 blk",
-   "toi": "24:21",
-   "avgToi": "18:55",
-   "gpBefore": 12,
-   "reasons": [
-    "24:21 TOI",
-    "+5:26 over his 18:55 average"
-   ],
-   "why": "role change"
-  }
- ],
- "nearMisses": [
-  "A.J. Greer (ANA, 29): 8.65 FP, no usage signal, 11:00 TOI",
-  "Casey Mittelstadt (BOS, 27): 7.8 FP, power-play point, 15:18 TOI",
-  "Cam Talbot (CBJ, 39): 10.5 FP, no usage signal"
- ],
+ "candidates": [],
+ "nearMisses": [],
  "unmatched": []
 }
