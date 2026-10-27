@@ -1,12 +1,33 @@
 {
- "at": "2026-10-26T02:00:36.826Z",
- "date": "2026-10-25",
- "gamesFinal": 3,
+ "at": "2026-10-27T02:00:36.438Z",
+ "date": "2026-10-26",
+ "gamesFinal": 1,
  "gamesPending": [
-  "COL@NSH",
-  "MIN@VAN"
+  "TOR@CGY",
+  "DET@EDM"
  ],
- "candidates": [],
- "nearMisses": [],
+ "candidates": [
+  {
+   "name": "Joel Edmundson",
+   "team": "LAK",
+   "pos": "D",
+   "age": 33,
+   "fx": "02b42",
+   "status": "FA",
+   "fp": 6.9,
+   "line": "1G 1A, 2 SOG, 0 hits, 1 blk",
+   "toi": "20:00",
+   "avgToi": "16:25",
+   "gpBefore": 9,
+   "reasons": [
+    "20:00 TOI",
+    "+3:35 over his 16:25 average"
+   ],
+   "why": "role change"
+  }
+ ],
+ "nearMisses": [
+  "Drew Doughty (LAK, 36): 9.5 FP, 21:37 TOI"
+ ],
  "unmatched": []
 }
