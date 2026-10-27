@@ -1,16 +1,35 @@
 {
- "at": "2026-10-26T09:16:25.414Z",
- "date": "2026-10-25",
+ "at": "2026-10-27T09:16:27.457Z",
+ "date": "2026-10-26",
  "late": true,
  "lateGames": [
-  "COL@NSH",
-  "MIN@VAN"
+  "TOR@CGY",
+  "DET@EDM"
  ],
  "gamesFinal": 2,
  "gamesPending": [],
- "candidates": [],
+ "candidates": [
+  {
+   "name": "Colton Dach",
+   "team": "EDM",
+   "pos": "C",
+   "age": 23,
+   "fx": "05td3",
+   "status": "FA",
+   "fp": 7.3,
+   "line": "1G 1A, 1 PPP, 2 SOG, 2 hits, 1 blk",
+   "toi": "14:38",
+   "avgToi": "13:25",
+   "gpBefore": 7,
+   "reasons": [
+    "power-play point"
+   ],
+   "why": "young + usage"
+  }
+ ],
  "nearMisses": [
-  "Maxim Shabanov (MIN, 26): 6.3 FP, 16:04 TOI, power-play point"
+  "Martin Pospisil (CGY, 26): 7.5 FP, no usage signal, 12:20 TOI",
+  "Viktor Arvidsson (DET, 33): 7.4 FP, 18:11 TOI, power-play point"
  ],
  "unmatched": []
 }

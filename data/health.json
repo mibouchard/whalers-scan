@@ -1,7 +1,7 @@
 {
- "at": "2026-10-26T16:51:14.543Z",
- "d": "2026-10-26",
- "mode": "retry",
+ "at": "2026-10-27T09:16:54.443Z",
+ "d": "2026-10-27",
+ "mode": "full",
  "steps": {
   "scan": "ok",
   "form": "ok",
@@ -11,6 +11,7 @@
   "stats": "ok",
   "alertLate": "ok",
   "fawatch": "ok",
+  "draftees": "ok",
   "week": "ok"
  },
  "leagues": {
@@ -28,11 +29,11 @@
   "Allsvenskan": "ok",
   "J20": "ok",
   "NCAA": "ok",
-  "Czech": "ERR 403 www.hokej.cz [server nginx] <html> <head><title>403 Forbidden</title></head> <body> <center><h1>403 Forbidden</h1></center> <hr><center>nginx</center> </body> </html> <!-- a padding to dis",
+  "Czech": "ERR 403 www.hokej.cz [server cloudflare] <html> <head><title>403 Forbidden</title></head> <body> <center><h1>403 Forbidden</h1></center> <hr><center>nginx</center> <script type=\"module\" src=\"https://st",
   "NHL": "ok"
  },
  "errors": {
-  "Czech": "403 www.hokej.cz [server nginx] <html> <head><title>403 Forbidden</title></head> <body> <center><h1>403 Forbidden</h1></center> <hr><center>nginx</center> </body> </html> <!-- a padding to dis"
+  "Czech": "403 www.hokej.cz [server cloudflare] <html> <head><title>403 Forbidden</title></head> <body> <center><h1>403 Forbidden</h1></center> <hr><center>nginx</center> <script type=\"module\" src=\"https://st"
  },
  "fantrax": {
   "rosters": "ok",
@@ -41,9 +42,11 @@
   "nextPeriod": "ok",
   "leagueInfo": "ok"
  },
- "stale": {},
+ "stale": {
+  "Allsvenskan": "no change in games played over the last 4 daily points (since 2026-10-24): the site may be serving old numbers"
+ },
  "alert": {
-  "date": "2026-10-25",
-  "at": "2026-10-26T02:00:36.826Z"
+  "date": "2026-10-26",
+  "at": "2026-10-27T02:00:36.438Z"
  }
 }
