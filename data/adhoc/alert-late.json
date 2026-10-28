@@ -1,35 +1,44 @@
 {
- "at": "2026-10-27T09:16:27.457Z",
- "date": "2026-10-26",
+ "at": "2026-10-28T09:17:09.515Z",
+ "date": "2026-10-27",
  "late": true,
  "lateGames": [
-  "TOR@CGY",
-  "DET@EDM"
+  "BOS@CAR",
+  "LAK@CHI",
+  "MTL@STL",
+  "NYI@NSH",
+  "NJD@DAL",
+  "FLA@WPG",
+  "MIN@UTA",
+  "OTT@VGK",
+  "VAN@ANA",
+  "BUF@SJS"
  ],
- "gamesFinal": 2,
+ "gamesFinal": 10,
  "gamesPending": [],
  "candidates": [
   {
-   "name": "Colton Dach",
-   "team": "EDM",
-   "pos": "C",
-   "age": 23,
-   "fx": "05td3",
+   "name": "Akira Schmid",
+   "team": "FLA",
+   "pos": "G",
+   "age": 26,
+   "fx": "04r01",
    "status": "FA",
-   "fp": 7.3,
-   "line": "1G 1A, 1 PPP, 2 SOG, 2 hits, 1 blk",
-   "toi": "14:38",
-   "avgToi": "13:25",
-   "gpBefore": 7,
+   "fp": 10,
+   "line": "W, 24 saves on 25",
+   "toi": null,
+   "avgToi": null,
+   "gpBefore": 6,
    "reasons": [
-    "power-play point"
+    "2 starts in his team's last 3 games"
    ],
-   "why": "young + usage"
+   "why": "role change"
   }
  ],
  "nearMisses": [
-  "Martin Pospisil (CGY, 26): 7.5 FP, no usage signal, 12:20 TOI",
-  "Viktor Arvidsson (DET, 33): 7.4 FP, 18:11 TOI, power-play point"
+  "Niko Mikkola (FLA, 30): 8.2 FP, no usage signal, 19:16 TOI",
+  "A.J. Greer (ANA, 29): 7.5 FP, no usage signal, 15:02 TOI",
+  "Jeff Malott (ANA, 30): 8.9 FP, no usage signal, 10:30 TOI"
  ],
  "unmatched": []
 }

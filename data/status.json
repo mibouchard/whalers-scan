@@ -1,7 +1,7 @@
 {
- "d": "2026-10-27",
- "at": "2026-10-27T15:55:39.190Z",
- "mode": "retry-failed",
+ "d": "2026-10-28",
+ "at": "2026-10-28T09:15:31.700Z",
+ "mode": "full",
  "status": {
   "AHL": "ok",
   "ECHL": "ok",
@@ -31,10 +31,7 @@
   "leagueInfo": "ok"
  },
  "stale": {
-  "Allsvenskan": "no change in games played over the last 4 daily points (since 2026-10-24): the site may be serving old numbers"
+  "Allsvenskan": "no change in games played over the last 5 daily points (since 2026-10-24): the site may be serving old numbers"
  },
- "subset": [],
- "retried": [
-  "Czech"
- ]
+ "subset": []
 }
