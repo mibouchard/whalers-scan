@@ -1,5 +1,5 @@
 {
- "at": "2026-10-28T09:17:36.033Z",
+ "at": "2026-10-29T09:17:25.684Z",
  "week": "2026-10-26",
  "period": 5,
  "scoring": "G 3, A 2, PPP 1, SHG 2, GWG 1, +/- 0.5, BLK 0.2, HIT 0.2, PIM 0.25, SOG 0.1; G: W 5, SO 5, SV 0.25, GA -1",
@@ -1241,21 +1241,6 @@
    ]
   },
   {
-   "id": "06sq9",
-   "name": "Cooper Simpson",
-   "nhlTeam": "BOS",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 3,
-   "days": [
-    "10-27",
-    "10-29",
-    "10-31"
-   ]
-  },
-  {
    "id": "0243f",
    "name": "Seth Jones",
    "nhlTeam": "FLA",
@@ -1409,6 +1394,21 @@
    "elig": "G",
    "status": "RESERVE",
    "salary": 3.35,
+   "games": 3,
+   "days": [
+    "10-27",
+    "10-28",
+    "11-01"
+   ]
+  },
+  {
+   "id": "06bao",
+   "name": "Denver Barkey",
+   "nhlTeam": "PHI",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 0.926,
    "games": 3,
    "days": [
     "10-27",
@@ -1939,11 +1939,12 @@
   "06lkx": null,
   "067xd": {
    "nhlId": 8486171,
-   "gp": 12,
-   "fp": 17.8,
+   "gp": 13,
+   "fp": 18.4,
    "hit": 11,
-   "blk": 5,
+   "blk": 7,
    "toi": [
+    "13:09",
     "17:18",
     "13:10",
     "15:41",
@@ -2002,7 +2003,7 @@
    "hit": 24,
    "blk": 19,
    "toi": [
-    "19:47",
+    "19:54",
     "20:51",
     "20:02",
     "20:00",
@@ -2025,25 +2026,7 @@
   },
   "07693": null,
   "0760p": null,
-  "06ay2": {
-   "nhlId": 8484152,
-   "gp": 9,
-   "fp": 10.2,
-   "hit": 1,
-   "blk": 11,
-   "toi": [
-    "14:05",
-    "12:52",
-    "16:35",
-    "15:41",
-    "20:21",
-    "16:06",
-    "19:01",
-    "21:21",
-    "21:17"
-   ],
-   "note": "includes hits and blocks (NHL season report)"
-  },
+  "06ay2": null,
   "06md8": null,
   "06tb5": null,
   "06loc": null,
@@ -2283,6 +2266,28 @@
   },
   "0760t": null,
   "06ims": null,
-  "076r5": null
+  "076r5": null,
+  "06bao": {
+   "nhlId": 8484142,
+   "gp": 12,
+   "fp": 13.9,
+   "hit": 7,
+   "blk": 1,
+   "toi": [
+    "14:42",
+    "15:27",
+    "15:10",
+    "12:19",
+    "16:41",
+    "15:39",
+    "15:28",
+    "15:32",
+    "15:19",
+    "13:51",
+    "11:50",
+    "13:06"
+   ],
+   "note": "includes hits and blocks (NHL season report)"
+  }
  }
 }

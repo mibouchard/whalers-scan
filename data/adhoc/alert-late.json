@@ -1,44 +1,56 @@
 {
- "at": "2026-10-28T09:17:09.515Z",
- "date": "2026-10-27",
+ "at": "2026-10-29T09:17:05.953Z",
+ "date": "2026-10-28",
  "late": true,
  "lateGames": [
-  "BOS@CAR",
-  "LAK@CHI",
-  "MTL@STL",
-  "NYI@NSH",
-  "NJD@DAL",
-  "FLA@WPG",
-  "MIN@UTA",
-  "OTT@VGK",
-  "VAN@ANA",
-  "BUF@SJS"
+  "PHI@WSH",
+  "CGY@EDM",
+  "NJD@COL",
+  "TOR@SEA"
  ],
- "gamesFinal": 10,
+ "gamesFinal": 4,
  "gamesPending": [],
  "candidates": [
   {
-   "name": "Akira Schmid",
-   "team": "FLA",
+   "name": "Tristan Jarry",
+   "team": "EDM",
    "pos": "G",
-   "age": 26,
-   "fx": "04r01",
+   "age": 31,
+   "fx": "02yjw",
    "status": "FA",
-   "fp": 10,
-   "line": "W, 24 saves on 25",
+   "fp": 16,
+   "line": "W, 24 saves on 24, shutout",
    "toi": null,
    "avgToi": null,
-   "gpBefore": 6,
+   "gpBefore": 5,
    "reasons": [
-    "2 starts in his team's last 3 games"
+    "3 starts in his team's last 3 games"
+   ],
+   "why": "role change"
+  },
+  {
+   "name": "Sam Malinski",
+   "team": "COL",
+   "pos": "D",
+   "age": 28,
+   "fx": "06age",
+   "status": "FA",
+   "fp": 6,
+   "line": "0G 2A, 3 SOG, 0 hits, 1 blk",
+   "toi": "21:11",
+   "avgToi": "16:58",
+   "gpBefore": 11,
+   "reasons": [
+    "21:11 TOI",
+    "+4:13 over his 16:58 average"
    ],
    "why": "role change"
   }
  ],
  "nearMisses": [
-  "Niko Mikkola (FLA, 30): 8.2 FP, no usage signal, 19:16 TOI",
-  "A.J. Greer (ANA, 29): 7.5 FP, no usage signal, 15:02 TOI",
-  "Jeff Malott (ANA, 30): 8.9 FP, no usage signal, 10:30 TOI"
+  "Mathieu Joseph (EDM, 29): 6.2 FP, no usage signal, 13:12 TOI",
+  "Connor Brown (NJD, 32): 8.7 FP, no usage signal, 14:10 TOI",
+  "Chandler Stephenson (SEA, 32): 6.3 FP, 19:08 TOI, power-play point"
  ],
  "unmatched": []
 }
