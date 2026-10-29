@@ -1,7 +1,7 @@
 {
  "d": "2026-10-29",
- "at": "2026-10-29T09:15:23.573Z",
- "mode": "full",
+ "at": "2026-10-29T16:14:44.957Z",
+ "mode": "retry-failed",
  "status": {
   "AHL": "ok",
   "ECHL": "ok",
@@ -34,5 +34,8 @@
   "QMJHL": "no change in games played over the last 4 daily points (since 2026-10-26): the site may be serving old numbers",
   "NCAA": "no change in games played over the last 4 daily points (since 2026-10-26): the site may be serving old numbers"
  },
- "subset": []
+ "subset": [],
+ "retried": [
+  "Czech"
+ ]
 }
