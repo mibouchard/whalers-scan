@@ -1,18 +1,12 @@
 {
- "at": "2026-10-28T02:00:31.946Z",
- "date": "2026-10-27",
- "gamesFinal": 1,
+ "at": "2026-10-29T02:00:34.807Z",
+ "date": "2026-10-28",
+ "gamesFinal": 0,
  "gamesPending": [
-  "BOS@CAR",
-  "LAK@CHI",
-  "MTL@STL",
-  "NYI@NSH",
-  "NJD@DAL",
-  "FLA@WPG",
-  "MIN@UTA",
-  "OTT@VGK",
-  "VAN@ANA",
-  "BUF@SJS"
+  "PHI@WSH",
+  "CGY@EDM",
+  "NJD@COL",
+  "TOR@SEA"
  ],
  "candidates": [],
  "nearMisses": [],
