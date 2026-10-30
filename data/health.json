@@ -1,7 +1,7 @@
 {
- "at": "2026-10-30T09:17:19.642Z",
+ "at": "2026-10-30T15:59:52.735Z",
  "d": "2026-10-30",
- "mode": "full",
+ "mode": "retry",
  "steps": {
   "scan": "ok",
   "form": "ok",
@@ -12,6 +12,7 @@
   "alertLate": "ok",
   "fawatch": "ok",
   "draftees": "ok",
+  "draft": "ok",
   "week": "ok"
  },
  "leagues": {
