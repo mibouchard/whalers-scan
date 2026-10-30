@@ -133,3 +133,11 @@ test('arguments and dates', () => {
   assert.equal(torontoDate(new Date('2026-10-07T03:40:00Z')), '2026-10-06', '11:40 PM in Toronto is still the 6th'); assert.equal(torontoDate(new Date('2026-12-07T04:40:00Z')), '2026-12-06');
   assert.equal(isoToronto(new Date('2026-10-07T09:16:23Z')), '2026-10-07T05:16:23-04:00'); assert.equal(isoToronto(new Date('2026-12-07T09:16:23Z')), '2026-12-07T04:16:23-05:00');
 });
+
+test('Czech team names: UTF-8 read as Windows-1252 is turned back', async () => {
+  const { fixMoji } = await import('../src/leagues.js');
+  assert.equal(fixMoji('HC PlzeÅˆ'), 'HC Plzeň');
+  assert.equal(fixMoji('HC Motor ÄŒeskÃ© BudÄ›jovice'), 'HC Motor České Budějovice');
+  assert.equal(fixMoji('HC Sparta Praha'), 'HC Sparta Praha');
+  assert.equal(fixMoji('HC Oceláři Třinec'), 'HC Oceláři Třinec');
+});

@@ -8,9 +8,16 @@ import { setLeagueSignal } from '../env.js';
 import * as L from '../leagues.js';
 import { retry, withDeadline, errText } from './util.js';
 import { fxGroup } from './names.js';
+import { readJSON } from './config.js';
 import { recFromRow, learnCohort, makeCohort, crossCheck } from './plausible.js';
 
 const MIN = 60000;
+// what the Czech adapter needs from other daily steps: the permanent draft-id map and yesterday's draftee pages
+const czechInputs = () => {
+  const careers = [];
+  for (let i = 0; i < 8; i++) for (const p of Object.values(readJSON(`data/fo/careers-${i}.json`)?.p || {})) if (p?.nid && (p.r || []).slice(0, 2).some(x => /Czech/.test(String(x[1])))) careers.push(p.nid);
+  return { draftIds: readJSON('state/ws.draftids.json'), draftees: readJSON('data/adhoc/draftees.json')?.rows || [], careers };
+};
 // [league, adapter factory, per-league deadline]. The deadline covers all three tries.
 export function leagueJobs(WS) {
   const alts = lg => async () => pickName(WS, await L[lg.toLowerCase()](), lg);
@@ -24,7 +31,7 @@ export function leagueJobs(WS) {
     ['Allsvenskan', () => L.swe('Allsvenskan'), 3 * MIN],
     ['J20', () => L.swe('J20'), 3 * MIN],
     ['NCAA', () => L.ncaa(WS.ls), 5 * MIN],
-    ['Czech', () => L.czech(), 3 * MIN],
+    ['Czech', () => L.czech(WS.ls, czechInputs()), 4 * MIN],
     ['NHL', () => WS.nhl()(), 4 * MIN],
   ];
 }

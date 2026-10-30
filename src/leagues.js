@@ -6,12 +6,12 @@
 import vm from 'node:vm';
 import { realFetch, UA, sleep, parseHTML, cookieHeader, timeoutSignal } from './env.js';
 import { retry } from './lib/util.js';
+import { NHL_TEAMS } from './lib/config.js';
 
 export const SEASON = {
   KHL: { season: 's19', tour: '1436' },          // en.khl.ru/stat/players/1436/
   SHL: 'qa98unlbd6',                              // ssgtUuid on shl.se/game-stats/players
   SWE: { Allsvenskan: [20962], J20: [20963, 20964] }, // stats.swehockey.se event ids
-  CZ: { season: 2026, comp: 7562 },               // hokej.cz Tipsport extraliga
 };
 
 const num = x => { const v = parseFloat(String(x ?? '').replace(',', '.')); return isNaN(v) ? 0 : v; };
@@ -217,16 +217,87 @@ export async function ncaa(ls) {
   return rows;
 }
 
-// Czech Extraliga (hokej.cz). Age bands from the site's U20/U24 filters: 19 / 22 / 25 (= 24+).
-export async function czech() {
-  const { season, comp } = SEASON.CZ;
-  await fetch('https://www.hokej.cz/', { headers: { 'Accept-Language': 'cs-CZ,cs;q=0.9,en;q=0.8' } }).catch(() => { }); // pick up the site's cookies first
-  const base = `https://www.hokej.cz/tipsport-extraliga/player-stats/detailni?stats-filter-season=${season}&stats-filter-competition=${comp}`;
-  const trs = async u => { const d = parseHTML(await text(u)); const t = [...d.querySelectorAll('table')].pop(); return [...t.querySelectorAll('tbody tr')].map(trr => { const a = trr.querySelector('a[href*="/hrac/"]'); return { c: [...trr.children].map(x => x.textContent.trim()), id: a ? (a.getAttribute('href').match(/\/hrac\/[^/]+\/(\d+)/) || [])[1] : null }; }).filter(r => r.id); };
-  const ids = async age => new Set((await trs(base + `&stats-playerFilter-age=${age}&do=stats-view-pager-all`)).map(r => r.id));
-  const [all, u20, u24, gk] = await Promise.all([trs(base + '&do=stats-view-pager-all'), ids(20), ids(24), trs(`https://www.hokej.cz/tipsport-extraliga/stats-center?season=${season}&competition=${comp}&stranger=0&stats-section=goalkeeper`)]);
-  const age = id => u20.has(id) ? 19 : u24.has(id) ? 22 : 25;
-  const rows = all.map(r => { const [first, last] = splitFirst(r.c[1]); return { sid: 'CZ' + r.id, first, last, pos: r.c[3] === 'O' ? 'D' : 'F', team: r.c[2], age: age(r.id), gp: num(r.c[4]), g: num(r.c[5]), a: num(r.c[6]), pts: num(r.c[7]), ppp: null }; });
-  gk.forEach(r => { const [first, last] = splitFirst(r.c[1]); rows.push({ goalie: 1, sid: 'CZ' + r.id, first, last, pos: 'G', team: r.c[2], age: age(r.id), gp: num(r.c[4]), min: r.c[5], w: num(r.c[9]), gaa: r.c[11], svp: r.c[12] ? (num(r.c[12]) / 100).toFixed(3) : '' }); });
+// Czech Extraliga, from the NHL's own player pages (api-web.nhle.com player/<id>/landing, seasonTotals league "Czechia").
+// hokej.cz shut out automated readers (nginx 403s from Oct 24, a Cloudflare challenge from Oct 27, 2026), so the league is
+// read player by player instead: every player the NHL has an id for who is, or recently was, in the Extraliga. Undrafted
+// players with no NHL id are not covered (they are never claimable before a draft has passed them over anyway).
+// The id pool, re-read every run:
+//   1. picks of the last four drafts (state/ws.draftids.json) from Czechia or Slovakia (country or amateur league), and
+//      Czech and Slovak picks of the 2014 to older drafts from records.nhl.com (which lists each pick's NHL id),
+//   2. free draftees whose page showed a Czech line (data/adhoc/draftees.json, any nationality),
+//   3. the 32 clubs' prospect lists (api-web.nhle.com prospects/<club>), players born in Czechia or Slovakia,
+//   4. players with an NHL id in the Front Office career files (data/fo/careers-*.json: every rostered player and every
+//      free agent with recent NHL games) whose last two seasons include Czechia,
+//   5. state ws.czech.ids: every id that has had a Czechia line, kept while it was seen in the last 60 days.
+// Rows carry the real birthdate (ak = dob) and sid "CZN<nhl id>".
+const CZ_LG = 'Czechia';
+// team names on some NHL pages are UTF-8 read as Windows-1252 ("HC PlzeÅˆ"): turn them back into "HC Plzeň"
+const CP1252 = { 0x20ac: 0x80, 0x201a: 0x82, 0x0192: 0x83, 0x201e: 0x84, 0x2026: 0x85, 0x2020: 0x86, 0x2021: 0x87, 0x02c6: 0x88, 0x2030: 0x89, 0x0160: 0x8a, 0x2039: 0x8b, 0x0152: 0x8c, 0x017d: 0x8e, 0x2018: 0x91, 0x2019: 0x92, 0x201c: 0x93, 0x201d: 0x94, 0x2022: 0x95, 0x2013: 0x96, 0x2014: 0x97, 0x02dc: 0x98, 0x2122: 0x99, 0x0161: 0x9a, 0x203a: 0x9b, 0x0153: 0x9c, 0x017e: 0x9e, 0x0178: 0x9f };
+export const fixMoji = s => {
+  if (!/[ÃÄÅÆ]/.test(s)) return s;
+  const bytes = []; for (const ch of s) { const c = ch.codePointAt(0); if (c < 0x100) bytes.push(c); else if (CP1252[c] != null) bytes.push(CP1252[c]); else return s; }
+  const t = Buffer.from(bytes).toString('utf8'); return t.includes('�') ? s : t;
+};
+export async function czech(ls, opts = {}) {
+  const getJ = async u => { const r = await fetch(u, { headers: { 'User-Agent': 'curl/8.5.0', Accept: 'application/json' } }); if (!r.ok) { const e = new Error(`${r.status} ${new URL(u).host}${new URL(u).pathname}`); if (r.status === 404) e.noRetry = true; throw e; } return r.json(); };
+  const now = new Date(); const y0 = now.getUTCMonth() >= 7 ? now.getUTCFullYear() : now.getUTCFullYear() - 1; const season = +`${y0}${y0 + 1}`;
+  const today = now.toISOString().slice(0, 10);
+  const notes = [];
+  const pool = new Map(); // nid -> how
+  const add = (nid, how) => { nid = +nid; if (nid && !pool.has(nid)) pool.set(nid, how); };
+  // 1. Czech / Slovak picks of the last four drafts
+  const ids = opts.draftIds || ls.get('ws.draftids', null) || {};
+  const byPick = ids.ids || {};
+  for (const y of [y0 - 3, y0 - 2, y0 - 1, y0]) {
+    try {
+      const j = await retry(() => getJ(`https://api-web.nhle.com/v1/draft/picks/${y}/all`), 3);
+      for (const p of j.picks || []) if (['CZE', 'SVK'].includes(p.countryCode) || /CZECH|SLOVAK/i.test(p.amateurLeague || '')) { const m = byPick[`${y}-${p.overallPick}`]; if (m?.nid) add(m.nid, 'draft'); }
+    } catch (e) { notes.push(`draft ${y}: ${e.message}`); }
+  }
+  // 1b. older drafts (2014 on) from the NHL records site, which carries each pick's NHL id; Czech or Slovak picks only
+  for (let y = 2014; y < y0 - 3; y++) {
+    try {
+      const j = await retry(() => getJ(`https://records.nhl.com/site/api/draft?cayenneExp=${encodeURIComponent(`draftYear=${y}`)}`), 2, { base: 1500 });
+      for (const r of j.data || []) if (r.playerId && (['CZE', 'SVK'].includes(r.countryCode || r.birthCountry || r.nationalityCode) || /CZECH|SLOVAK/i.test(r.amateurLeague?.name || r.amateurLeague || ''))) add(r.playerId, 'records');
+    } catch (e) { notes.push(`records ${y}: ${e.message}`); break; }
+  }
+  // 2. free draftees with a Czech line on yesterday's page
+  for (const r of opts.draftees || []) if (r.nid && /Czech/.test(r.cur?.lg || '')) add(r.nid, 'draftees');
+  // 3. Czech and Slovak prospects of the 32 clubs
+  let pros = 0;
+  for (const t of NHL_TEAMS) {
+    try { const j = await retry(() => getJ(`https://api-web.nhle.com/v1/prospects/${t}`), 2, { base: 800 }); for (const grp of ['forwards', 'defensemen', 'goalies']) for (const q of j[grp] || []) if (['CZE', 'SVK'].includes(q.birthCountry)) { add(q.id, 'prospects'); pros++; } }
+    catch (e) { notes.push(`prospects ${t}: ${e.message}`); }
+  }
+  // 4. career files
+  for (const nid of opts.careers || []) add(nid, 'careers');
+  // 5. ids seen in Czechia before
+  const S = ls.get('ws.czech.ids', { m: {} }); // m: { nid: { n, seen: date | null, how } }
+  for (const [nid, v] of Object.entries(S.m)) add(nid, v.how || 'kept');
+  // player pages, six at a time
+  const list = [...pool.keys()]; const rows = []; let k = 0, fails = 0;
+  await Promise.all(Array.from({ length: 6 }, async () => {
+    while (k < list.length) {
+      const nid = list[k++];
+      let d; try { d = await retry(() => getJ(`https://api-web.nhle.com/v1/player/${nid}/landing`), 3, { base: 800 }); } catch (e) { if (!e.noRetry) fails++; continue; }
+      const cz = (d.seasonTotals || []).filter(s => s.season === season && s.gameTypeId === 2 && s.leagueAbbrev === CZ_LG);
+      const name = `${d.firstName?.default || ''} ${d.lastName?.default || ''}`.trim();
+      if (!cz.length) { if (S.m[nid] && !S.m[nid].seen) S.m[nid].n = name; continue; }
+      S.m[nid] = { n: name, seen: today, how: S.m[nid]?.how || pool.get(nid) };
+      const sum = f => cz.reduce((a, s) => a + (+s[f] || 0), 0);
+      const team = fixMoji(cz[cz.length - 1].teamName?.default || '');
+      const base = { sid: 'CZN' + nid, first: d.firstName?.default || '', last: d.lastName?.default || '', team, dob: d.birthDate || undefined, gp: sum('gamesPlayed') };
+      if (d.position === 'G') {
+        const gp = base.gp; const ga = cz.reduce((a, s) => a + (+s.goalsAgainstAvg || 0) * (+s.gamesPlayed || 0), 0); const sv = cz.reduce((a, s) => a + (+s.savePctg || 0) * (+s.gamesPlayed || 0), 0);
+        rows.push({ goalie: 1, ...base, pos: 'G', w: sum('wins'), gaa: gp ? (ga / gp).toFixed(2) : '', svp: gp && sv ? (sv / gp).toFixed(3) : '', min: '' });
+      } else rows.push({ ...base, pos: d.position === 'D' ? 'D' : 'F', g: sum('goals'), a: sum('assists'), pts: sum('points'), ppp: null });
+    }
+  }));
+  // forget ids not seen in Czechia for 60 days (seeds that never showed a line are kept 60 days from when they were added)
+  for (const [nid, v] of Object.entries(S.m)) { const ref = v.seen || v.added; if (ref && (Date.parse(today) - Date.parse(ref)) / 864e5 > 60) delete S.m[nid]; else if (!ref) v.added = today; }
+  ls.set('ws.czech.ids', { d: today, m: S.m });
+  if (fails > list.length * 0.2) throw new Error(`Czech: ${fails} of ${list.length} NHL player pages failed`);
+  notes.push(`from NHL player pages: ${rows.length} players in Czechia among ${list.length} NHL ids checked${fails ? `, ${fails} pages failed` : ''}; players without an NHL id (undrafted) are not covered`);
+  rows.notes = notes;
   return rows;
 }
