@@ -1,7 +1,7 @@
 {
- "at": "2026-10-29T17:00:21.309Z",
- "d": "2026-10-29",
- "mode": "retry",
+ "at": "2026-10-30T09:17:19.642Z",
+ "d": "2026-10-30",
+ "mode": "full",
  "steps": {
   "scan": "ok",
   "form": "ok",
@@ -29,12 +29,10 @@
   "Allsvenskan": "ok",
   "J20": "ok",
   "NCAA": "ok",
-  "Czech": "ERR 403 www.hokej.cz [server cloudflare] <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA",
+  "Czech": "ok",
   "NHL": "ok"
  },
- "errors": {
-  "Czech": "403 www.hokej.cz [server cloudflare] <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA"
- },
+ "errors": {},
  "fantrax": {
   "rosters": "ok",
   "period": 5,
@@ -42,12 +40,9 @@
   "nextPeriod": "ok",
   "leagueInfo": "ok"
  },
- "stale": {
-  "QMJHL": "no change in games played over the last 4 daily points (since 2026-10-26): the site may be serving old numbers",
-  "NCAA": "no change in games played over the last 4 daily points (since 2026-10-26): the site may be serving old numbers"
- },
+ "stale": {},
  "alert": {
-  "date": "2026-10-28",
-  "at": "2026-10-29T02:00:34.807Z"
+  "date": "2026-10-29",
+  "at": "2026-10-30T02:00:34.984Z"
  }
 }

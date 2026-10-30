@@ -1,56 +1,25 @@
 {
- "at": "2026-10-29T09:17:05.953Z",
- "date": "2026-10-28",
+ "at": "2026-10-30T09:16:42.574Z",
+ "date": "2026-10-29",
  "late": true,
  "lateGames": [
-  "PHI@WSH",
-  "CGY@EDM",
-  "NJD@COL",
-  "TOR@SEA"
+  "CHI@DET",
+  "BOS@STL",
+  "WSH@NSH",
+  "MTL@DAL",
+  "NYI@MIN",
+  "BUF@ANA",
+  "OTT@LAK",
+  "VAN@SJS"
  ],
- "gamesFinal": 4,
+ "gamesFinal": 8,
  "gamesPending": [],
- "candidates": [
-  {
-   "name": "Tristan Jarry",
-   "team": "EDM",
-   "pos": "G",
-   "age": 31,
-   "fx": "02yjw",
-   "status": "FA",
-   "fp": 16,
-   "line": "W, 24 saves on 24, shutout",
-   "toi": null,
-   "avgToi": null,
-   "gpBefore": 5,
-   "reasons": [
-    "3 starts in his team's last 3 games"
-   ],
-   "why": "role change"
-  },
-  {
-   "name": "Sam Malinski",
-   "team": "COL",
-   "pos": "D",
-   "age": 28,
-   "fx": "06age",
-   "status": "FA",
-   "fp": 6,
-   "line": "0G 2A, 3 SOG, 0 hits, 1 blk",
-   "toi": "21:11",
-   "avgToi": "16:58",
-   "gpBefore": 11,
-   "reasons": [
-    "21:11 TOI",
-    "+4:13 over his 16:58 average"
-   ],
-   "why": "role change"
-  }
- ],
+ "candidates": [],
  "nearMisses": [
-  "Mathieu Joseph (EDM, 29): 6.2 FP, no usage signal, 13:12 TOI",
-  "Connor Brown (NJD, 32): 8.7 FP, no usage signal, 14:10 TOI",
-  "Chandler Stephenson (SEA, 32): 6.3 FP, 19:08 TOI, power-play point"
+  "Viktor Arvidsson (DET, 33): 14.3 FP, 17:07 TOI, power-play point",
+  "Phillip Danault (MTL, 33): 6.2 FP, 19:26 TOI",
+  "Drew Doughty (LAK, 36): 8.2 FP, 22:54 TOI, power-play point",
+  "Mason Marchment (SJS, 31): 7.3 FP, 17:36 TOI, power-play point"
  ],
  "unmatched": []
 }
