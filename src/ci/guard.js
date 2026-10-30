@@ -9,7 +9,7 @@ import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { torontoDate, readJSON } from '../lib/config.js';
 
-export const TOOL_STEPS = ['form', 'pool', 'league', 'box', 'stats', 'alertLate', 'fawatch', 'draftees', 'week'];
+export const TOOL_STEPS = ['form', 'pool', 'league', 'box', 'stats', 'alertLate', 'fawatch', 'draftees', 'draft', 'week'];
 export function plan({ event, leagues, retry, status, health, now = new Date() }) {
   if (event === 'workflow_dispatch' && (leagues || '').trim()) return { mode: 'debug', steps: ['scan'] };
   if (event !== 'schedule' && !retry) return { mode: 'full', steps: ['all'] };

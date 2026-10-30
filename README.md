@@ -114,9 +114,10 @@ Column values worth knowing: `dr` = `post` / `pre` / blank (draft status, above)
 The player card on the dashboard (Overview and Stats tabs) reads three more sets of files here, all keyed by Fantrax id:
 - `season.json` (from `stats.js`, every morning): this season's NHL regular-season totals from the NHL's season reports. `{ at, season, cols: { sk, g }, sk: { <fxId>: [gp, g, a, pm, pim, sog, ppp, shg, gwg, hit, blk, toi] }, g: { <fxId>: [gp, gs, w, l, otl, ga, sa, so, toi] }, unmatched }`. Skater `toi` is seconds per game, goalie `toi` total seconds.
 - `games.json` (from `stats.js`, every morning): each player's last games, newest first, from the dated box files. `{ at, d, n, cols: { sk, g }, p: { <fxId>: [[date, opp, ha, res, fp, ...stat line, toi], ...] } }`. `ha` is `@` or `vs`; `res` is his club's result, e.g. `W 4-1` or `L 2-3 OT`. Five games a player, fewer if the file would pass 230,000 bytes (the dashboard's database caps a document at 256 KB).
+- `draft.json` (from `draft.js`, every morning): NHL draft record per player. `{ at, d, n, cols: ['year', 'round', 'pick', 'team'], p: { <fxId>: [year, round, overall, club] }, u: [<fxId>, ...], how: { draftees, page, picks }, unknown, notes }`. `p` covers every rostered player, every free agent in `fawatch.json` and `draftees.json`, and everyone with an NHL id in the careers files; `u` lists the players whose NHL page carries no draft record (verified undrafted); a player in neither is unknown (no NHL id and no strict name match on the pick lists), never undrafted. Answers are kept for good by NHL id in `state/ws.draft.json`; an undrafted answer is re-read each new season while the player is under 21 (`ARGS=recheck` re-reads them all). The dashboard's player banner reads it as `snapshot/draft`.
 - `careers-0.json` .. `careers-7.json` (from `careers.js`, by hand once a season): past seasons. `{ at, through, chunk, of, cols: { sk, g }, p: { <fxId>: { nid, n, g?, r: [[year, league, team, ...], ...] } } }`, newest first. Every NHL regular season (hits and blocks from 2005-06), and other leagues from 2019-20 (no youth or international hockey). A player's file is the sum of his Fantrax id's character codes modulo 8 (`chunkOf` in `src/lib/fostats.js`; the dashboard uses the same sum). Covers every rostered player with an NHL id and every free agent with NHL games in the last three seasons.
 
-The morning report copies `season.json` and `games.json` to the dashboard's `snapshot` collection. The careers files are copied by hand to its `careers` collection (docs `c0` .. `c7`) after a rebuild.
+The morning report copies `season.json`, `games.json` and `draft.json` to the dashboard's `snapshot` collection. The careers files are copied by hand to its `careers` collection (docs `c0` .. `c7`) after a rebuild.
 
 ### `data/form.json` (from `form.js`)
 `{ at, window: 5, scoring, players: { <fxId>: { name, nhlId, gp, fpg, games: [[date, fp]] } }, roster: { <fxId>: [name, nhlTeam, positions] } }`: fantasy points per game over each HFD NHL player's last 5 regular-season games, hits and blocks included.
@@ -144,6 +145,7 @@ Run with the "One-off tool" workflow (`tool` = file name without `.js`, `args` o
 | `nightalert` | date; `late` | `data/adhoc/alert.json` or `alert-late.json` |
 | `fawatch` | | `data/adhoc/fawatch.json` |
 | `draftees` | `rescan` widens the NHL id search | `data/adhoc/draftees.json`, `state/ws.draftids.json` |
+| `draft` | `recheck` re-reads every undrafted player's NHL page | `data/fo/draft.json`, `state/ws.draft.json` |
 | `form` | | `data/form.json` |
 | `pool` | | `data/pool.json` |
 | `week` | Monday date (default: this week) | `data/adhoc/week.json` |

@@ -46,7 +46,7 @@ jobs:
         continue-on-error: true
         run: node "src/tools/$TOOL.js"
       - name: Save results
-        run: bash src/ci/push.sh "tool $TOOL $(date -u +%F)" data/adhoc data/form.json data/pool.json data/league.json data/fo data/health.json
+        run: bash src/ci/push.sh "tool $TOOL $(date -u +%F)" data/adhoc data/form.json data/pool.json data/league.json data/fo data/health.json state
       - name: Fail the job if the tool failed
         if: steps.tool.outcome == 'failure'
         run: exit 1

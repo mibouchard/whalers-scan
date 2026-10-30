@@ -95,6 +95,10 @@ jobs:
         if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
         continue-on-error: true
         run: node src/ci/step.js draftees src/tools/draftees.js
+      - name: Draft records (year, round, pick, club for every player the card can show)
+        if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
+        continue-on-error: true
+        run: node src/ci/step.js draft src/tools/draft.js
       - name: Week (lineup check)
         if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
         continue-on-error: true
