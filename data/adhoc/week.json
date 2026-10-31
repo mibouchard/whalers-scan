@@ -1,5 +1,5 @@
 {
- "at": "2026-10-30T09:17:08.864Z",
+ "at": "2026-10-31T09:17:05.002Z",
  "week": "2026-10-26",
  "period": 5,
  "scoring": "G 3, A 2, PPP 1, SHG 2, GWG 1, +/- 0.5, BLK 0.2, HIT 0.2, PIM 0.25, SOG 0.1; G: W 5, SO 5, SV 0.25, GA -1",
@@ -1137,21 +1137,6 @@
    ]
   },
   {
-   "id": "06sqo",
-   "name": "Haoxi Wang",
-   "nhlTeam": "SJS",
-   "pos": "D",
-   "elig": "D",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 3,
-   "days": [
-    "10-27",
-    "10-29",
-    "10-31"
-   ]
-  },
-  {
    "id": "05rjd",
    "name": "Cutter Gauthier",
    "nhlTeam": "ANA",
@@ -1335,7 +1320,7 @@
    "nhlTeam": "COL",
    "pos": "RW",
    "elig": "RW",
-   "status": "RESERVE",
+   "status": "ACTIVE",
    "salary": 0.953,
    "games": 2,
    "days": [
@@ -1643,12 +1628,27 @@
    ]
   },
   {
+   "id": "06m7l",
+   "name": "Riley Patterson",
+   "nhlTeam": "VAN",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 0.957,
+   "games": 3,
+   "days": [
+    "10-27",
+    "10-29",
+    "10-31"
+   ]
+  },
+  {
    "id": "01ztp",
    "name": "Zach Hyman",
    "nhlTeam": "EDM",
    "pos": "RW",
    "elig": "RW",
-   "status": "ACTIVE",
+   "status": "INJURED_RESERVE",
    "salary": 5.5,
    "games": 4,
    "days": [
@@ -1877,7 +1877,7 @@
   "0322w": {
    "nhlId": 8478009,
    "gp": 9,
-   "fp": 70.25,
+   "fp": 70.5,
    "toi": []
   },
   "0644c": {
@@ -1906,11 +1906,12 @@
   "06sq9": null,
   "0243f": {
    "nhlId": 8477495,
-   "gp": 13,
-   "fp": 50.1,
+   "gp": 14,
+   "fp": 61.8,
    "hit": 15,
-   "blk": 10,
+   "blk": 13,
    "toi": [
+    "24:16",
     "25:02",
     "24:55",
     "23:03",
@@ -2102,11 +2103,12 @@
   "06mcw": null,
   "04uql": {
    "nhlId": 8482149,
-   "gp": 13,
-   "fp": 45.7,
+   "gp": 14,
+   "fp": 45.9,
    "hit": 22,
    "blk": 5,
    "toi": [
+    "18:38",
     "17:26",
     "16:07",
     "24:01",
@@ -2137,11 +2139,12 @@
   },
   "04kyh": {
    "nhlId": 8480801,
-   "gp": 13,
-   "fp": 65.25,
-   "hit": 48,
+   "gp": 14,
+   "fp": 66.45,
+   "hit": 51,
    "blk": 2,
    "toi": [
+    "14:58",
     "16:17",
     "14:48",
     "17:22",
@@ -2318,6 +2321,7 @@
    ],
    "note": "includes hits and blocks (NHL season report)"
   },
+  "06m7l": null,
   "06b7a": null
  }
 }

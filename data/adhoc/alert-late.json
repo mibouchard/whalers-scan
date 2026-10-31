@@ -1,25 +1,15 @@
 {
- "at": "2026-10-30T09:16:42.574Z",
- "date": "2026-10-29",
+ "at": "2026-10-31T09:16:43.071Z",
+ "date": "2026-10-30",
  "late": true,
  "lateGames": [
-  "CHI@DET",
-  "BOS@STL",
-  "WSH@NSH",
-  "MTL@DAL",
-  "NYI@MIN",
-  "BUF@ANA",
-  "OTT@LAK",
-  "VAN@SJS"
+  "SEA@CGY"
  ],
- "gamesFinal": 8,
+ "gamesFinal": 1,
  "gamesPending": [],
  "candidates": [],
  "nearMisses": [
-  "Viktor Arvidsson (DET, 33): 14.3 FP, 17:07 TOI, power-play point",
-  "Phillip Danault (MTL, 33): 6.2 FP, 19:26 TOI",
-  "Drew Doughty (LAK, 36): 8.2 FP, 22:54 TOI, power-play point",
-  "Mason Marchment (SJS, 31): 7.3 FP, 17:36 TOI, power-play point"
+  "Morgan Frost (CGY, 27): 7 FP, 16:55 TOI, power-play point"
  ],
  "unmatched": []
 }
