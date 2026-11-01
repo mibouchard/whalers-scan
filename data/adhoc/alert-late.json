@@ -1,15 +1,14 @@
 {
- "at": "2026-10-31T09:16:43.071Z",
- "date": "2026-10-30",
+ "at": "2026-11-01T10:16:05.685Z",
+ "date": "2026-10-31",
  "late": true,
  "lateGames": [
-  "SEA@CGY"
+  "CBJ@DAL",
+  "CGY@COL"
  ],
- "gamesFinal": 1,
+ "gamesFinal": 2,
  "gamesPending": [],
  "candidates": [],
- "nearMisses": [
-  "Morgan Frost (CGY, 27): 7 FP, 16:55 TOI, power-play point"
- ],
+ "nearMisses": [],
  "unmatched": []
 }
