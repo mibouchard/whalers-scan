@@ -1,14 +1,33 @@
 {
- "at": "2026-11-01T10:16:05.685Z",
- "date": "2026-10-31",
+ "at": "2026-11-02T10:16:44.092Z",
+ "date": "2026-11-01",
  "late": true,
  "lateGames": [
-  "CBJ@DAL",
-  "CGY@COL"
+  "OTT@ANA"
  ],
- "gamesFinal": 2,
+ "gamesFinal": 1,
  "gamesPending": [],
- "candidates": [],
- "nearMisses": [],
+ "candidates": [
+  {
+   "name": "Judd Caulfield",
+   "team": "ANA",
+   "pos": "R",
+   "age": 25,
+   "fx": "051uw",
+   "status": "FA",
+   "fp": 10.7,
+   "line": "2G 1A, 2 PPP, 3 SOG, 2 hits, 0 blk",
+   "toi": "13:21",
+   "avgToi": "12:50",
+   "gpBefore": 11,
+   "reasons": [
+    "power-play point"
+   ],
+   "why": "young + usage"
+  }
+ ],
+ "nearMisses": [
+  "Claude Giroux (OTT, 38): 6.7 FP, no usage signal, 14:02 TOI"
+ ],
  "unmatched": []
 }
