@@ -1,14 +1,36 @@
 {
- "at": "2026-11-01T02:00:36.236Z",
- "date": "2026-10-31",
- "gamesFinal": 8,
+ "at": "2026-11-02T03:00:48.799Z",
+ "date": "2026-11-01",
+ "gamesFinal": 4,
  "gamesPending": [
-  "CBJ@DAL",
-  "CGY@COL"
+  "OTT@ANA"
  ],
- "candidates": [],
+ "candidates": [
+  {
+   "name": "Bobby Brink",
+   "team": "MIN",
+   "pos": "R",
+   "age": 25,
+   "fx": "04zj8",
+   "status": "FA",
+   "fp": 7,
+   "line": "0G 2A, 1 PPP, 4 SOG, 2 hits, 1 blk",
+   "toi": "16:11",
+   "avgToi": "13:10",
+   "gpBefore": 15,
+   "reasons": [
+    "16:11 TOI",
+    "power-play point",
+    "+3:01 over his 13:10 average"
+   ],
+   "why": "young + role change"
+  }
+ ],
  "nearMisses": [
-  "Teddy Blueger (TOR, 32): 7 FP, no usage signal, 15:24 TOI"
+  "Christian Dvorak (PHI, 30): 7.9 FP, 17:03 TOI",
+  "Noah Cates (PHI, 27): 7.2 FP, no usage signal, 13:02 TOI",
+  "Colton Dach (EDM, 23): 8.1 FP, no usage signal, 14:53 TOI",
+  "Matt Tomkins (EDM, 32): 10.75 FP, no usage signal"
  ],
  "unmatched": []
 }
