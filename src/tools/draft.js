@@ -20,7 +20,7 @@ import { torontoDate, readJSON, writeJSON } from '../lib/config.js';
 import { getPlayerIds } from '../lib/fantrax.js';
 import { nhl, seasonId } from '../lib/nhl.js';
 import { getJSONr } from '../lib/util.js';
-import { makeMatcher, fxSplit, fxGroup, posGroup, fold } from '../lib/names.js';
+import { makeMatcher, fxSplit, fxGroup, posGroup, fold, rusCanon } from '../lib/names.js';
 import { careersNid, boxNid } from '../lib/fostats.js';
 
 const t0 = Date.now();
@@ -89,17 +89,33 @@ if (noId.length) {
   const sub = {}; for (const fx of noId) sub[fx] = ids[fx];
   const M = makeMatcher(sub);
   const FROM = Math.max(2008, NOW - 18);
+  const skipped = [];
+  // first names agree when equal after folding (and the Russian spelling fold), or one is a short form of the other
+  // (Dan / Daniel, Alex / Alexander); anything else stays unknown rather than wrong
+  const firstOk = (a, b) => { const x = rusCanon(fold(a).replace(/ /g, '')), z = rusCanon(fold(b).replace(/ /g, '')); return !!x && !!z && (x === z || (Math.min(x.length, z.length) >= 3 && (x.startsWith(z) || z.startsWith(x)))); };
+  // scan ages (real birthdates only) for the age check: the free-agent watch and the minors scan
+  const ageOf = {};
+  for (const r of [...(FW.skaters || []), ...(FW.goalies || [])]) if (r.fx && r.age != null && r.ageKnown !== false && r.ak !== 'est') ageOf[r.fx] = +r.age;
+  const LT = readJSON('data/latest.json');
+  if (LT?.cols?.sk) { const c = LT.cols.sk, iFx = c.indexOf('fx'), iAge = c.indexOf('age'), iAk = c.indexOf('ak');
+    for (const k of ['owned', 'avail', 'und', 'risers']) for (const s of LT[k] || []) { const a = String(s).split('|'); if (a[iFx] && a[iAge] !== '' && a[iAge] != null && (iAk < 0 || a[iAk] === 'dob')) ageOf[a[iFx]] = +a[iAge]; } }
   for (let y = FROM; y <= NOW; y++) {
     const j = await getJSONr(`https://api-web.nhle.com/v1/draft/picks/${y}/all`, UA).catch(e => { notes.push(`picks ${y}: ${e.message}`); return null; });
     for (const p of j?.picks || []) {
       if (!p.firstName?.default) continue;
       const m = M.find({ first: p.firstName.default, last: p.lastName.default, team: p.teamAbbrev, pos: p.positionCode, goalie: p.positionCode === 'G' }, { strict: true });
       if (!m || out.p[m.id]) continue;
+      // the matcher can fall back to last name + club, which tied Gavin Hayes to Kevin Hayes (CHI 2010), Jean-Christoph
+      // Lemieux to Brendan Lemieux (BUF 2014) and Victor Plante to Max Plante (DET 2024) (Nov 2, 2026): the first names
+      // have to agree, and so does his age when the scan has one (17 to 21 on draft day)
+      if (!firstOk(fxSplit(ids[m.id].name)[0], p.firstName.default)) { skipped.push(`${ids[m.id].name} vs ${p.firstName.default} ${p.lastName.default} ${y} ${p.teamAbbrev}`); continue; }
+      const age = ageOf[m.id]; if (age != null && ((age - (NOW - y)) < 17 || (age - (NOW - y)) > 22)) { skipped.push(`${ids[m.id].name} (age ${age}) vs ${y} ${p.teamAbbrev} #${p.overallPick}`); continue; }
       // the position group has to agree when Fantrax has one
       const g = fxGroup(ids[m.id].position); if (g && posGroup(p.positionCode) && g !== posGroup(p.positionCode)) continue;
       out.p[m.id] = [y, p.round, p.overallPick, p.teamAbbrev || '']; out.how.picks++;
     }
   }
+  if (skipped.length) notes.push(`${skipped.length} pick-list name match(es) refused (first name or age disagrees): ${skipped.slice(0, 8).join('; ')}${skipped.length > 8 ? '; ...' : ''}`);
 }
 
 out.n = Object.keys(out.p).length;
