@@ -91,8 +91,8 @@ if (noId.length) {
   const FROM = Math.max(2008, NOW - 18);
   const skipped = [];
   // first names agree when equal after folding (and the Russian spelling fold), or one is a short form of the other
-  // (Dan / Daniel, Alex / Alexander); anything else stays unknown rather than wrong
-  const firstOk = (a, b) => { const x = rusCanon(fold(a).replace(/ /g, '')), z = rusCanon(fold(b).replace(/ /g, '')); return !!x && !!z && (x === z || (Math.min(x.length, z.length) >= 3 && (x.startsWith(z) || z.startsWith(x)))); };
+  // (Dan / Daniel, Alex / Alexander), or the same consonants (Alexander / Aleksandr); anything else stays unknown rather than wrong
+  const firstOk = (a, b) => { const x = rusCanon(fold(a).replace(/ /g, '')), z = rusCanon(fold(b).replace(/ /g, '')); const sk = t => t.replace(/[aeiouy]/g, ''); return !!x && !!z && (x === z || sk(x) === sk(z) || (Math.min(x.length, z.length) >= 3 && (x.startsWith(z) || z.startsWith(x)))); };
   // scan ages (real birthdates only) for the age check: the free-agent watch and the minors scan
   const ageOf = {};
   for (const r of [...(FW.skaters || []), ...(FW.goalies || [])]) if (r.fx && r.age != null && r.ageKnown !== false && r.ak !== 'est') ageOf[r.fx] = +r.age;
