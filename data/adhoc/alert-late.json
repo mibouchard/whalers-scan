@@ -1,33 +1,17 @@
 {
- "at": "2026-11-02T10:16:44.092Z",
- "date": "2026-11-01",
+ "at": "2026-11-03T10:16:47.892Z",
+ "date": "2026-11-02",
  "late": true,
  "lateGames": [
-  "OTT@ANA"
+  "COL@CHI",
+  "CGY@SJS"
  ],
- "gamesFinal": 1,
+ "gamesFinal": 2,
  "gamesPending": [],
- "candidates": [
-  {
-   "name": "Judd Caulfield",
-   "team": "ANA",
-   "pos": "R",
-   "age": 25,
-   "fx": "051uw",
-   "status": "FA",
-   "fp": 10.7,
-   "line": "2G 1A, 2 PPP, 3 SOG, 2 hits, 0 blk",
-   "toi": "13:21",
-   "avgToi": "12:50",
-   "gpBefore": 11,
-   "reasons": [
-    "power-play point"
-   ],
-   "why": "young + usage"
-  }
- ],
+ "candidates": [],
  "nearMisses": [
-  "Claude Giroux (OTT, 38): 6.7 FP, no usage signal, 14:02 TOI"
+  "Nazem Kadri (COL, 36): 8.9 FP, power-play point, 15:51 TOI",
+  "Adam Klapka (CGY, 26): 7.8 FP, no usage signal, 11:36 TOI"
  ],
  "unmatched": []
 }
