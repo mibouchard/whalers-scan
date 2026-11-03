@@ -1,36 +1,12 @@
 {
- "at": "2026-11-02T03:00:48.799Z",
- "date": "2026-11-01",
- "gamesFinal": 4,
+ "at": "2026-11-03T03:00:46.397Z",
+ "date": "2026-11-02",
+ "gamesFinal": 2,
  "gamesPending": [
-  "OTT@ANA"
+  "COL@CHI",
+  "CGY@SJS"
  ],
- "candidates": [
-  {
-   "name": "Bobby Brink",
-   "team": "MIN",
-   "pos": "R",
-   "age": 25,
-   "fx": "04zj8",
-   "status": "FA",
-   "fp": 7,
-   "line": "0G 2A, 1 PPP, 4 SOG, 2 hits, 1 blk",
-   "toi": "16:11",
-   "avgToi": "13:10",
-   "gpBefore": 15,
-   "reasons": [
-    "16:11 TOI",
-    "power-play point",
-    "+3:01 over his 13:10 average"
-   ],
-   "why": "young + role change"
-  }
- ],
- "nearMisses": [
-  "Christian Dvorak (PHI, 30): 7.9 FP, 17:03 TOI",
-  "Noah Cates (PHI, 27): 7.2 FP, no usage signal, 13:02 TOI",
-  "Colton Dach (EDM, 23): 8.1 FP, no usage signal, 14:53 TOI",
-  "Matt Tomkins (EDM, 32): 10.75 FP, no usage signal"
- ],
+ "candidates": [],
+ "nearMisses": [],
  "unmatched": []
 }
