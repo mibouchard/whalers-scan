@@ -1,6 +1,6 @@
 {
- "at": "2026-11-03T10:17:28.341Z",
- "d": "2026-11-03",
+ "at": "2026-11-04T10:17:43.252Z",
+ "d": "2026-11-04",
  "mode": "full",
  "steps": {
   "scan": "ok",
@@ -41,9 +41,11 @@
   "nextPeriod": "ok",
   "leagueInfo": "ok"
  },
- "stale": {},
+ "stale": {
+  "SHL": "no change in games played over the last 4 daily points (since 2026-11-01): the site may be serving old numbers"
+ },
  "alert": {
-  "date": "2026-11-02",
-  "at": "2026-11-03T03:00:46.397Z"
+  "date": "2026-11-03",
+  "at": "2026-11-04T03:00:36.534Z"
  }
 }

@@ -1,17 +1,41 @@
 {
- "at": "2026-11-03T10:16:47.892Z",
- "date": "2026-11-02",
+ "at": "2026-11-04T10:17:05.713Z",
+ "date": "2026-11-03",
  "late": true,
  "lateGames": [
-  "COL@CHI",
-  "CGY@SJS"
+  "WPG@MTL",
+  "EDM@NJD",
+  "CAR@NSH",
+  "ANA@VAN"
  ],
- "gamesFinal": 2,
+ "gamesFinal": 4,
  "gamesPending": [],
- "candidates": [],
+ "candidates": [
+  {
+   "name": "Connor Brown",
+   "team": "NJD",
+   "pos": "R",
+   "age": 32,
+   "fx": "02oak",
+   "status": "FA",
+   "fp": 7.7,
+   "line": "1G 1A, 2 PPP, 3 SOG, 1 hits, 1 blk",
+   "toi": "16:37",
+   "avgToi": "13:13",
+   "gpBefore": 6,
+   "reasons": [
+    "16:37 TOI",
+    "power-play point",
+    "+3:25 over his 13:13 average"
+   ],
+   "why": "role change"
+  }
+ ],
  "nearMisses": [
-  "Nazem Kadri (COL, 36): 8.9 FP, power-play point, 15:51 TOI",
-  "Adam Klapka (CGY, 26): 7.8 FP, no usage signal, 11:36 TOI"
+  "Morgan Barron (WPG, 27): 8.3 FP, power-play point, 15:25 TOI",
+  "Tyrel Bauer (WPG, 24): 7.85 FP, no usage signal, 10:44 TOI",
+  "Ross Colton (NSH, 30): 6.3 FP, no usage signal, 14:20 TOI",
+  "Jake DeBrusk (VAN, 30): 7.7 FP, 19:26 TOI, power-play point"
  ],
  "unmatched": []
 }
