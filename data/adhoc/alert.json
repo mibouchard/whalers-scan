@@ -1,36 +1,14 @@
 {
- "at": "2026-11-04T03:00:36.534Z",
- "date": "2026-11-03",
- "gamesFinal": 7,
+ "at": "2026-11-05T03:00:29.631Z",
+ "date": "2026-11-04",
+ "gamesFinal": 0,
  "gamesPending": [
-  "WPG@MTL",
-  "EDM@NJD",
-  "CAR@NSH",
-  "ANA@VAN"
+  "OTT@BUF",
+  "CHI@FLA",
+  "SJS@LAK",
+  "CGY@SEA"
  ],
- "candidates": [
-  {
-   "name": "Cole Sillinger",
-   "team": "CBJ",
-   "pos": "C",
-   "age": 23,
-   "fx": "05gd7",
-   "status": "FA",
-   "fp": 7.6,
-   "line": "1G 1A, 2 SOG, 1 hits, 1 blk",
-   "toi": "17:43",
-   "avgToi": "15:16",
-   "gpBefore": 12,
-   "reasons": [
-    "17:43 TOI"
-   ],
-   "why": "young + usage"
-  }
- ],
- "nearMisses": [
-  "J.T. Compher (DET, 31): 6.2 FP, 16:06 TOI, power-play point",
-  "Charlie Coyle (CBJ, 34): 14.2 FP, 20:18 TOI, power-play point",
-  "Valeri Nichushkin (CBJ, 31): 7.7 FP, 16:43 TOI, power-play point"
- ],
+ "candidates": [],
+ "nearMisses": [],
  "unmatched": []
 }
