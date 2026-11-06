@@ -1,37 +1,16 @@
 {
- "at": "2026-11-05T10:17:24.560Z",
- "date": "2026-11-04",
+ "at": "2026-11-06T10:16:54.611Z",
+ "date": "2026-11-05",
  "late": true,
  "lateGames": [
-  "OTT@BUF",
-  "CHI@FLA",
-  "SJS@LAK",
-  "CGY@SEA"
+  "ANA@EDM",
+  "NSH@COL"
  ],
- "gamesFinal": 4,
+ "gamesFinal": 2,
  "gamesPending": [],
- "candidates": [
-  {
-   "name": "Darcy Kuemper",
-   "team": "LAK",
-   "pos": "G",
-   "age": 36,
-   "fx": "0222k",
-   "status": "FA",
-   "fp": 10.5,
-   "line": "W, 30 saves on 32",
-   "toi": null,
-   "avgToi": null,
-   "gpBefore": 8,
-   "reasons": [
-    "2 starts in his team's last 3 games"
-   ],
-   "why": "role change"
-  }
- ],
+ "candidates": [],
  "nearMisses": [
-  "Erik Haula (LAK, 35): 7.8 FP, no usage signal, 14:29 TOI",
-  "Erik Gustafsson (LAK, 34): 7.4 FP, 20:04 TOI, power-play point"
+  "Pavel Mintyukov (ANA, 22): 10.85 FP, no usage signal, 16:01 TOI"
  ],
  "unmatched": []
 }
