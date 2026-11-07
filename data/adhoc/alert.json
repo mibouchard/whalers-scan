@@ -1,19 +1,14 @@
 {
- "at": "2026-11-06T03:00:37.133Z",
- "date": "2026-11-05",
- "gamesFinal": 9,
+ "at": "2026-11-07T03:00:33.105Z",
+ "date": "2026-11-06",
+ "gamesFinal": 1,
  "gamesPending": [
-  "ANA@EDM",
-  "NSH@COL"
+  "SJS@MIN",
+  "ANA@CGY"
  ],
  "candidates": [],
  "nearMisses": [
-  "Ilya Mikheyev (TBL, 32): 8 FP, 16:26 TOI",
-  "Erik Cernak (TBL, 29): 6.2 FP, no usage signal, 16:05 TOI",
-  "William Carrier (CAR, 31): 7.7 FP, no usage signal, 13:53 TOI",
-  "Brayden Schenn (NYI, 35): 6.9 FP, 18:17 TOI",
-  "Cam Talbot (CBJ, 39): 10.75 FP, no usage signal",
-  "Dylan DeMelo (WPG, 33): 6.6 FP, no usage signal, 19:30 TOI"
+  "Josh Norris (BUF, 27): 8.4 FP, no usage signal, 13:03 TOI"
  ],
  "unmatched": []
 }
