@@ -1,16 +1,14 @@
 {
- "at": "2026-11-06T10:16:54.611Z",
- "date": "2026-11-05",
+ "at": "2026-11-07T10:16:30.532Z",
+ "date": "2026-11-06",
  "late": true,
  "lateGames": [
-  "ANA@EDM",
-  "NSH@COL"
+  "SJS@MIN",
+  "ANA@CGY"
  ],
  "gamesFinal": 2,
  "gamesPending": [],
  "candidates": [],
- "nearMisses": [
-  "Pavel Mintyukov (ANA, 22): 10.85 FP, no usage signal, 16:01 TOI"
- ],
+ "nearMisses": [],
  "unmatched": []
 }
