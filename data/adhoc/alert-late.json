@@ -1,14 +1,38 @@
 {
- "at": "2026-11-07T10:16:30.532Z",
- "date": "2026-11-06",
+ "at": "2026-11-08T10:16:47.434Z",
+ "date": "2026-11-07",
  "late": true,
  "lateGames": [
-  "SJS@MIN",
-  "ANA@CGY"
+  "CHI@CAR",
+  "SJS@DAL",
+  "TBL@MIN",
+  "DET@COL",
+  "PIT@LAK",
+  "VAN@EDM"
  ],
- "gamesFinal": 2,
+ "gamesFinal": 6,
  "gamesPending": [],
- "candidates": [],
- "nearMisses": [],
+ "candidates": [
+  {
+   "name": "Egor Chinakhov",
+   "team": "PIT",
+   "pos": "R",
+   "age": 25,
+   "fx": "051xf",
+   "status": "FA",
+   "fp": 6.1,
+   "line": "1G 0A, 1 PPP, 1 SOG, 0 hits, 0 blk",
+   "toi": "12:47",
+   "avgToi": "15:22",
+   "gpBefore": 12,
+   "reasons": [
+    "power-play point"
+   ],
+   "why": "young + usage"
+  }
+ ],
+ "nearMisses": [
+  "Jordan Martinook (CAR, 34): 9 FP, no usage signal, 14:25 TOI"
+ ],
  "unmatched": []
 }
