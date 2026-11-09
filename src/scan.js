@@ -18,6 +18,7 @@ import { getLeagueInfo } from './lib/fantrax.js';
 import { errText } from './lib/util.js';
 import { LEAGUES, collectLeagues, checkRows, saveRows } from './lib/pipeline.js';
 import { recsFromDoc, applyToDoc, akFor } from './lib/plausible.js';
+import { minorsEligible } from './lib/minors.js';
 
 const WS = loadEngine();
 const argv = [...process.argv.slice(2), ...splitArgs(process.env.LEAGUES)];
@@ -97,11 +98,21 @@ if (fx) {
 }
 
 const OPTS = { minGP: 1, maxAge: 24, nAvail: 12, nUnd: 6, nNotInFx: 4 };
+// NHL free agents older than the NHL list's ceiling (23) stay in the list when the league has badged them minors-eligible
+// (src/lib/minors.js; the Shabanov miss of Oct 2026). The badge comes from a 14-day cache, so this is cheap on most days.
+let minors = () => undefined;
+if (pinfo && run.collected.NHL && !debug) {
+  try {
+    const ask = run.collected.NHL.rows.filter(r => r.fx && !r.own && r.gp >= 1 && free(r.fx) && r.mq !== 'amb' && r.age != null && r.age > 23).map(r => r.fx);
+    const badge = await minorsEligible(ask, { log: console.log, budgetMs: 90000 });
+    minors = id => badge[id];
+  } catch (e) { res.errors.minors = 'minors badge lookup failed: ' + errText(e); }
+}
 const section = {}; // lg -> { owned, avail, und, risers, goalies, notInFx, cov, status, leaders, ppp, notes }
 for (const [lg, c] of Object.entries(run.collected)) {
   const nDays = debug ? 0 : WS.trend(lg, c.rows);
   // trend fields are set by WS.trend, so summarise after it
-  const r = WS.summarize(lg, c.rows, { ...OPTS, ...(lg === 'NHL' ? { ownedSt: ['MINORS'], maxAge: 23 } : {}), free });
+  const r = WS.summarize(lg, c.rows, { ...OPTS, ...(lg === 'NHL' ? { ownedSt: ['MINORS'], maxAge: 23, minors } : {}), free });
   // leaders: [name, team, value, gp, owner, fantraxId, nhlRights, fantraxStatus, pos, age, dr]; status FA or WW = an unclaimed free agent
   for (const x of Object.values(r.leaders)) if (x) x[7] = x[5] && pinfo ? (pinfo[x[5]]?.status || '') : '';
   section[lg] = { owned: r.owned, avail: r.avail, und: r.undrafted, risers: r.risers, goalies: r.goalies, notInFx: r.notInFx, cov: [r.nSk, r.nG, r.matched, r.owned.length, nDays],

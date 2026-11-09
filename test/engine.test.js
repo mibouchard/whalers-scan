@@ -82,6 +82,20 @@ test('lists: free agents only, unknown ages last, no Fantrax id = not a free age
   const zero = c.rows.find(r => r.last === 'DuPont'); assert.equal(zero.nhle, null); assert.equal(zero.gem, null);
   assert.equal(col(WS.summarize('AHL', c.rows, { minGP: 0, undMaxAge: 24, free: () => true }).undrafted.find(s => /DuPont/.test(s)), 'nhle'), '');
 });
+test('age ceiling yields to the minors badge: a badged 26-year-old free agent stays in the list (Shabanov, Oct 2026)', async () => {
+  // POOL: aaaa8 Known Young (DET), aaaa9 Noage Age (DET); Known Young is made 26 here
+  const rows = [sk('Known', 'Young', { age: 26, dob: '2000-10-07', pts: 13, gp: 18 }), sk('Noage', 'Age', { age: 20, dob: '2006-01-01', pts: 3 })];
+  const c = await collect('NHL', rows);
+  const noBadge = WS.summarize('NHL', c.rows, { minGP: 1, maxAge: 23, free: () => true });
+  assert.deepEqual(noBadge.avail.map(s => col(s, 'name')), ['Noage Age'], 'without a badge lookup the 26-year-old is dropped by the ceiling');
+  const badge = WS.summarize('NHL', c.rows, { minGP: 1, maxAge: 23, free: () => true, minors: id => id === 'aaaa8' });
+  assert.ok(badge.avail.map(s => col(s, 'name')).includes('Known Young'), 'with the M badge the 26-year-old is a target whatever the ceiling');
+  const notBadged = WS.summarize('NHL', c.rows, { minGP: 1, maxAge: 23, free: () => true, minors: () => false });
+  assert.deepEqual(notBadged.avail.map(s => col(s, 'name')), ['Noage Age'], 'a "Not Eligible" answer keeps the ceiling');
+  const unchecked = WS.summarize('NHL', c.rows, { minGP: 1, maxAge: 23, free: () => true, minors: () => undefined });
+  assert.deepEqual(unchecked.avail.map(s => col(s, 'name')), ['Noage Age'], 'an unchecked badge never counts as eligible');
+});
+
 test('goalies: every owned goalie is kept, only the unowned list is cut', async () => {
   const rows = [...Array.from({ length: 20 }, (_, i) => ({ goalie: 1, sid: 'o' + i, first: 'Owned', last: 'Goalie' + L(i), pos: 'G', team: 'X', gp: 3, svp: (0.8 + i / 1000).toFixed(3), dob: '2004-01-01' })),
     ...Array.from({ length: 30 }, (_, i) => ({ goalie: 1, sid: 'u' + i, first: 'Free', last: 'Goalie' + L(i), pos: 'G', team: 'X', gp: 3, svp: (0.9 + i / 1000).toFixed(3), dob: '2004-01-01' }))];

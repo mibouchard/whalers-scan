@@ -15,11 +15,14 @@
 //               (the average only counts once he has 3 earlier games; with fewer, `why` says "average of N games")
 //   goalie      2+ starts within his team's last three games
 //   who         25 or younger with a big night and any usage signal, or any age with a clear role change
-//               (3:00+ above his average AND 16:00+ for F / 20:00+ for D; or the goalie test)
+//               (3:00+ above his average AND 16:00+ for F / 20:00+ for D; or the goalie test), or any age with a big
+//               night, a usage signal and the league's minors-eligible badge (src/lib/minors.js): the badge, not age,
+//               makes a player a minors target, and 25-26-year-olds carry it (Shabanov, Caulfield, Oct-Nov 2026)
 import { torontoDate, torontoHour, addDays, isDate, cliArgs, readJSON, writeJSON } from '../lib/config.js';
 import { getLeagueInfo, getPlayerIds } from '../lib/fantrax.js';
 import { nhl, gamesOn, gameRows, gameLabel, isFinal, isRegularSeasonId, sec, mmss, ageFrom } from '../lib/nhl.js';
 import { makeMatcher } from '../lib/names.js';
+import { minorsEligible } from '../lib/minors.js';
 
 const args = cliArgs();
 const late = args.includes('late') || /^(1|true|yes)$/i.test(process.env.LATE || '');
@@ -87,9 +90,15 @@ for (const r of rows) {
     } catch (e) { }
   }
   const young = r.age != null && r.age <= 25;
-  if (!reasons.length || (!young && !roleChange)) { near.push(`${r.full} (${r.team}, ${r.age ?? '?'}): ${r.fp} FP, ${reasons.join(', ') || 'no usage signal'}${r.toiTxt && !reasons.some(x => x.endsWith(' TOI')) ? ', ' + r.toiTxt + ' TOI' : ''}`); continue; }
+  // older than 25 with a usage signal but no role change: before he is dismissed, read his M badge. A minors-eligible
+  // NHL player of any age is a minors target (Shabanov, 26, scored 2 PPP on Oct 25, 2026 while unowned and sat here).
+  let badged = false;
+  if (reasons.length && !young && !roleChange) {
+    try { const b = await minorsEligible([fx], { budgetMs: 20000, log: console.log }); badged = b[fx] === true; r.minorsChecked = b[fx] !== undefined; } catch (e) { r.minorsChecked = false; }
+  }
+  if (!reasons.length || (!young && !roleChange && !badged)) { near.push(`${r.full} (${r.team}, ${r.age ?? '?'}): ${r.fp} FP, ${reasons.join(', ') || 'no usage signal'}${r.toiTxt && !reasons.some(x => x.endsWith(' TOI')) ? ', ' + r.toiTxt + ' TOI' : ''}${reasons.length && !young && !roleChange ? (r.minorsChecked ? ', no M badge' : ', M badge unchecked') : ''}`); continue; }
   out.push({ name: r.full, team: r.team, pos: r.pos, age: r.age, fx, status: st, fp: r.fp, line: r.line, toi: r.toiTxt || null, avgToi: r.avgToi || null, gpBefore: r.gpBefore,
-    reasons, why: (young ? (roleChange ? 'young + role change' : 'young + usage') : 'role change') + (thin != null ? ` (TOI is above his average of ${thin} game${thin === 1 ? '' : 's'}, too few to count)` : '') });
+    reasons, ...(badged ? { minors: true } : {}), why: (young ? (roleChange ? 'young + role change' : 'young + usage') : roleChange ? 'role change' : 'minors-eligible + usage') + (thin != null ? ` (TOI is above his average of ${thin} game${thin === 1 ? '' : 's'}, too few to count)` : '') });
 }
 out.sort((a, b) => (b.why.includes('role') - a.why.includes('role')) || b.fp - a.fp);
 const res = { at: new Date().toISOString(), date, ...(late ? { late: true, lateGames } : {}), gamesFinal: games.length, gamesPending: (late ? pending.filter(g => lateGames.includes(gameLabel(g))) : pending).map(gameLabel),

@@ -184,7 +184,10 @@ window.WS = (() => {
     const target = r => !r.own && r.fx && r.mq !== 'amb' && !r.vet && r.gp >= minGP && (!opts.free || opts.free(r.fx));
     const known = r => r.ak ? 1 : 0; // rows with no age at all rank below rows with one
     const byGem = (a, b) => known(b) - known(a) || (b.gem ?? -1) - (a.gem ?? -1);
-    const young = (r, max) => r.age == null || r.age <= max;
+    // an age ceiling never drops a player the league has badged minors-eligible: opts.minors(fx) -> true says the
+    // Fantrax profile carries the M badge (src/lib/minors.js), and that, not age, is what makes him a minors target
+    const badged = r => !!(opts.minors && r.fx && opts.minors(r.fx) === true);
+    const young = (r, max) => r.age == null || r.age <= max || badged(r);
     const owned = sk.filter(ownedOK).map(S);
     const avail = sk.filter(r => target(r) && hasOrg(r) && young(r, maxAge)).sort(byGem).slice(0, opts.nAvail ?? 15).map(S);
     const undrafted = sk.filter(r => target(r) && !hasOrg(r) && r.age != null && r.age <= (opts.undMaxAge ?? 20)).sort(byGem).slice(0, opts.nUnd ?? 8).map(S);
