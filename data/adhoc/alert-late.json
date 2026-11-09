@@ -1,38 +1,31 @@
 {
- "at": "2026-11-08T10:16:47.434Z",
- "date": "2026-11-07",
+ "at": "2026-11-09T10:16:47.409Z",
+ "date": "2026-11-08",
  "late": true,
  "lateGames": [
-  "CHI@CAR",
-  "SJS@DAL",
-  "TBL@MIN",
-  "DET@COL",
-  "PIT@LAK",
-  "VAN@EDM"
+  "PIT@ANA"
  ],
- "gamesFinal": 6,
+ "gamesFinal": 1,
  "gamesPending": [],
  "candidates": [
   {
-   "name": "Egor Chinakhov",
-   "team": "PIT",
-   "pos": "R",
-   "age": 25,
-   "fx": "051xf",
+   "name": "Laurent Brossoit",
+   "team": "ANA",
+   "pos": "G",
+   "age": 33,
+   "fx": "02fnj",
    "status": "FA",
-   "fp": 6.1,
-   "line": "1G 0A, 1 PPP, 1 SOG, 0 hits, 0 blk",
-   "toi": "12:47",
-   "avgToi": "15:22",
-   "gpBefore": 12,
+   "fp": 10.75,
+   "line": "W, 31 saves on 33",
+   "toi": null,
+   "avgToi": null,
+   "gpBefore": 3,
    "reasons": [
-    "power-play point"
+    "2 starts in his team's last 3 games"
    ],
-   "why": "young + usage"
+   "why": "role change"
   }
  ],
- "nearMisses": [
-  "Jordan Martinook (CAR, 34): 9 FP, no usage signal, 14:25 TOI"
- ],
+ "nearMisses": [],
  "unmatched": []
 }

@@ -1,6 +1,6 @@
 {
- "d": "2026-11-08",
- "at": "2026-11-08T10:15:23.900Z",
+ "d": "2026-11-09",
+ "at": "2026-11-09T10:15:29.220Z",
  "mode": "full",
  "status": {
   "AHL": "ok",
@@ -23,15 +23,14 @@
  "errors": {},
  "fantrax": {
   "rosters": "ok",
-  "period": 6,
-  "ownPeriod": 7,
+  "period": 7,
+  "ownPeriod": 8,
   "nextPeriod": "ok",
   "leagueInfo": "ok"
  },
  "stale": {
-  "Liiga": "no change in games played over the last 7 daily points (since 2026-11-02): the site may be serving old numbers",
-  "J20": "no change in games played over the last 7 daily points (since 2026-11-02): the site may be serving old numbers",
-  "Czech": "no change in games played over the last 7 daily points (since 2026-11-02): the site may be serving old numbers"
+  "J20": "no change in games played over the last 8 daily points (since 2026-11-02): the site may be serving old numbers",
+  "Czech": "no change in games played over the last 8 daily points (since 2026-11-02): the site may be serving old numbers"
  },
  "subset": []
 }
