@@ -45,7 +45,7 @@ const obj = (cols, s) => Object.fromEntries(s.split('|').map((v, i) => [cols[i],
 const MAX_AGE = 24;
 const overAge = r => r.fx && !r.own && r.gp >= 1 && free(r.fx) && r.mq !== 'amb' && r.age != null && r.age > MAX_AGE;
 const askIds = [];
-for (const lg of LEAGUES) for (const r of rowsBy[lg] || []) if (overAge(r) && (lg === 'NHL' || (r.age <= 27 && (r.nhle || 0) >= 20))) askIds.push(r.fx);
+for (const lg of ['NHL', ...LEAGUES.filter(l => l !== 'NHL')]) for (const r of rowsBy[lg] || []) if (overAge(r) && (lg === 'NHL' || (r.age <= 27 && (r.nhle || 0) >= 20))) askIds.push(r.fx); // NHL first: those are the ones the screens missed
 const badge = await minorsEligible(askIds, { log: console.log, budgetMs: 3 * 60000 });
 const minors = id => badge[id];
 const out = { at: new Date().toISOString(), src, status, errors, badge: { asked: askIds.length, eligible: askIds.filter(id => badge[id] === true).length, unchecked: askIds.filter(id => badge[id] === undefined).length }, skaters: [], goalies: [] };

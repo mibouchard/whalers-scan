@@ -25,24 +25,32 @@ export async function readProfile(id) {
 }
 
 // ids -> { [id]: true | false | null }. Cached answers are used as they are; missing or stale ones are fetched, at most
-// opts.max new lookups (default 400) and within opts.budgetMs (default 4 minutes), three at a time. Anything the budget
-// leaves unfetched comes back as undefined (not null), so a caller can tell "not eligible" from "not checked".
+// opts.max new lookups (default 400) and within opts.budgetMs (default 4 minutes), one at a time with a short pause:
+// Fantrax answers a burst from GitHub's runner with a thinned profile (no miscData), which the first CI run on Nov 8,
+// 2026 saw for 370 of 400 calls. A failed lookup is never cached, so it is asked again next run; after 6 failures in a
+// row the run pauses 10 s, and after 12 it stops asking. Anything left unasked comes back as undefined (not null), so a
+// caller can tell "not eligible" from "not checked". ids are asked in the order given: put the ones that matter first.
 export async function minorsEligible(ids, opts = {}) {
   const today = torontoDate();
   const C = readJSON(FILE, {}) || {};
+  for (const [id, e] of Object.entries(C)) if (e && e.err) delete C[id]; // entries from before failures stopped being cached
   const fresh = e => e && e.d && days(today, e.d) <= (e.m == null ? KEEP_UNKNOWN_DAYS : KEEP_DAYS);
   const want = [...new Set(ids)].filter(Boolean);
   const todo = want.filter(id => !fresh(C[id])).slice(0, opts.max ?? 400);
-  const t0 = Date.now(), budget = opts.budgetMs ?? 4 * 60000; let n = 0, fails = 0;
-  for (let i = 0; i < todo.length && Date.now() - t0 < budget; i += 3) {
-    await Promise.all(todo.slice(i, i + 3).map(async id => {
-      try { const p = await readProfile(id); C[id] = { m: p.minors, d: today }; n++; }
-      catch (e) { fails++; if (!C[id]) C[id] = { m: null, d: today, err: String(e.message || e).slice(0, 80) }; }
-    }));
-    await sleep(150);
+  const t0 = Date.now(), budget = opts.budgetMs ?? 4 * 60000; let n = 0, fails = 0, streak = 0, stopped = false;
+  for (const id of todo) {
+    if (Date.now() - t0 >= budget) break;
+    try { const p = await readProfile(id); C[id] = { m: p.minors, d: today }; n++; streak = 0; }
+    catch (e) {
+      fails++; streak++;
+      if (streak === 6) { opts.log?.('minors badge: 6 failures in a row, pausing 10 s'); await sleep(10000); }
+      if (streak >= 12) { stopped = true; opts.log?.('minors badge: 12 failures in a row, stopping for this run (' + String(e.message || e).slice(0, 80) + ')'); break; }
+    }
+    await sleep(opts.pauseMs ?? 400);
   }
-  if (n || fails) { writeJSON(FILE, C); opts.log?.(`minors badge: ${n} looked up, ${fails} failed, ${todo.length - Math.min(todo.length, n + fails)} left for next run, ${Object.keys(C).length} cached`); }
+  if (n) writeJSON(FILE, C);
+  if (n || fails) opts.log?.(`minors badge: ${n} looked up, ${fails} failed${stopped ? ' (stopped early)' : ''}, ${todo.length - n} left for next run, ${Object.keys(C).length} cached`);
   const out = {};
-  for (const id of want) { const e = C[id]; out[id] = e && fresh(e) ? e.m : e ? e.m : undefined; }
+  for (const id of want) { const e = C[id]; out[id] = e ? e.m : undefined; }
   return out;
 }
