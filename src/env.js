@@ -31,6 +31,9 @@ window.name = '';
 
 export const UA = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36', 'Accept-Language': 'en-US,en;q=0.9', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,application/json;q=0.8,*/*;q=0.7', 'Sec-Fetch-Mode': 'navigate', 'Upgrade-Insecure-Requests': '1' };
 const nodeFetch = globalThis.fetch;
+// the untouched Node fetch: no browser headers, no cookie jar. Fantrax's fxpa profile endpoint thins its answer (no miscData)
+// after about 30 calls with the browser-like fetch above, and answers the plain one every time (checked Nov 8, 2026).
+export const plainFetch = nodeFetch;
 // Cookie jar per host + manual redirects: some sites (khl.ru) set a cookie and redirect back to the same page, which loops
 // forever unless the cookie is sent on the next hop.
 const jar = new Map();

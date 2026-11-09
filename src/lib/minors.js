@@ -7,9 +7,12 @@
 // age; Judd Caulfield, 25, Nov 2). So every screen now asks the badge for any free agent an age filter would drop.
 //
 // The badge is league-managed and changes rarely: an answer is kept 14 days, "unknown" (profile unreadable) 2 days.
+// Calls go through the plain Node fetch (env.js plainFetch): with the browser-like fetch Fantrax thins the profile
+// (no miscData) after about 30 calls in a run, with the plain one it answers every call.
 import { torontoDate, readJSON, writeJSON } from './config.js';
 import { LEAGUE_ID } from './config.js';
 import { retry, sleep } from './util.js';
+import { plainFetch } from '../env.js';
 
 const FILE = 'state/ws.minors.json';
 const KEEP_DAYS = 14, KEEP_UNKNOWN_DAYS = 2;
@@ -17,7 +20,7 @@ const days = (a, b) => (Date.parse(a) - Date.parse(b)) / 864e5;
 
 export async function readProfile(id) {
   const body = JSON.stringify({ msgs: [{ method: 'getPlayerProfile', data: { leagueId: LEAGUE_ID, playerId: id } }] });
-  const j = await retry(() => fetch(`https://www.fantrax.com/fxpa/req?leagueId=${LEAGUE_ID}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body }).then(r => { if (!r.ok) throw new Error(r.status + ' getPlayerProfile'); return r.json(); }), 3);
+  const j = await retry(() => plainFetch(`https://www.fantrax.com/fxpa/req?leagueId=${LEAGUE_ID}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body, signal: AbortSignal.timeout(30000) }).then(r => { if (!r.ok) throw new Error(r.status + ' getPlayerProfile'); return r.json(); }), 3);
   const md = j?.responses?.[0]?.data?.miscData; if (!md) throw new Error('getPlayerProfile: no miscData for ' + id);
   const ld = Object.fromEntries((md.leagueData || []).map(x => [x.name, x.value]));
   const m = ld.Minors; // "Eligible" | "Not Eligible" | undefined
