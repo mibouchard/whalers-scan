@@ -1,31 +1,18 @@
 {
- "at": "2026-11-09T10:16:47.409Z",
- "date": "2026-11-08",
+ "at": "2026-11-10T10:17:07.748Z",
+ "date": "2026-11-09",
  "late": true,
  "lateGames": [
-  "PIT@ANA"
+  "NYR@EDM",
+  "PHI@VAN",
+  "NYI@SJS"
  ],
- "gamesFinal": 1,
+ "gamesFinal": 3,
  "gamesPending": [],
- "candidates": [
-  {
-   "name": "Laurent Brossoit",
-   "team": "ANA",
-   "pos": "G",
-   "age": 33,
-   "fx": "02fnj",
-   "status": "FA",
-   "fp": 10.75,
-   "line": "W, 31 saves on 33",
-   "toi": null,
-   "avgToi": null,
-   "gpBefore": 3,
-   "reasons": [
-    "2 starts in his team's last 3 games"
-   ],
-   "why": "role change"
-  }
+ "candidates": [],
+ "nearMisses": [
+  "Christian Dvorak (PHI, 30): 6.2 FP, power-play point, 15:09 TOI, no M badge",
+  "Tyler Toffoli (SJS, 34): 6.3 FP, no usage signal, 10:57 TOI"
  ],
- "nearMisses": [],
  "unmatched": []
 }

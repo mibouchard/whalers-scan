@@ -1,6 +1,6 @@
 {
- "at": "2026-11-09T10:17:55.068Z",
- "d": "2026-11-09",
+ "at": "2026-11-10T10:17:46.570Z",
+ "d": "2026-11-10",
  "mode": "full",
  "steps": {
   "scan": "ok",
@@ -42,11 +42,12 @@
   "leagueInfo": "ok"
  },
  "stale": {
-  "J20": "no change in games played over the last 8 daily points (since 2026-11-02): the site may be serving old numbers",
-  "Czech": "no change in games played over the last 8 daily points (since 2026-11-02): the site may be serving old numbers"
+  "SHL": "no change in games played over the last 4 daily points (since 2026-11-07): the site may be serving old numbers",
+  "J20": "no change in games played over the last 9 daily points (since 2026-11-02): the site may be serving old numbers",
+  "Czech": "no change in games played over the last 9 daily points (since 2026-11-02): the site may be serving old numbers"
  },
  "alert": {
-  "date": "2026-11-08",
-  "at": "2026-11-09T03:00:35.567Z"
+  "date": "2026-11-09",
+  "at": "2026-11-10T03:00:31.926Z"
  }
 }
