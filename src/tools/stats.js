@@ -1,7 +1,8 @@
 // This season's NHL numbers for the Front Office player card, rebuilt every morning after the box scores (step "stats").
 //
 // data/fo/season.json  every NHL player's regular-season totals so far, from the NHL's season reports
-//   { at, season, cols: { sk: [...], g: [...] }, sk: { <fantraxId>: [...] }, g: { <fantraxId>: [...] }, unmatched }
+//   { at, season, cols: { sk: [...], g: [...] }, sk: { <fantraxId>: [...] }, g: { <fantraxId>: [...] }, unmatched, rookies: [<fantraxId>, ...] }
+//   rookies = this season's NHL rookies (the NHL's isRookie flag), skaters and goalies
 //   skater: [gp, g, a, pm, pim, sog, ppp, shg, gwg, hit, blk, toi]   (toi = seconds per game)
 //   goalie: [gp, gs, w, l, otl, ga, sa, so, toi]                       (toi = seconds, total)
 // data/fo/games.json   each player's last games (newest first) from the dated box files (data/adhoc/box-*.json, 14 days)
@@ -77,6 +78,15 @@ for (const [, x] of Object.entries(G)) {
   const fx = fxOf(x._r, x._r.goalieFullName || '', true); if (!fx) { out.unmatched++; continue; }
   out.g[fx] = [x.gp, x.gs, x.w, x.l, x.otl, x.ga, x.sa, x.so, Math.round(x.toi)];
 }
+// NHL rookies this season (the NHL's own isRookie flag), as Fantrax ids, for the Front Office rookie leaderboard.
+// A failed rookie report leaves the list out rather than failing the step.
+try {
+  const [rs, rg] = await Promise.all([report('skater/summary', season, "isRookie='1'"), report('goalie/summary', season, "isRookie='1'")]);
+  const rk = new Set();
+  for (const r of rs) { const fx = fxOf(r, r.skaterFullName || '', false); if (fx) rk.add(fx); }
+  for (const r of rg) { const fx = fxOf(r, r.goalieFullName || '', true); if (fx) rk.add(fx); }
+  out.rookies = [...rk];
+} catch (e) { console.log('rookie report failed:', e.message); }
 writeJSON('data/fo/season.json', out);
 console.log(`games: ${Object.keys(games).length} players, ${n} games each, ${JSON.stringify(gamesOut).length} bytes, through ${lastDay} | season ${out.season}: ${Object.keys(out.sk).length} skaters, ${Object.keys(out.g).length} goalies, ${out.unmatched} not matched to Fantrax, ${JSON.stringify(out).length} bytes`);
 if (JSON.stringify(out).length > LIMIT) throw new Error('season.json is too big for the board');

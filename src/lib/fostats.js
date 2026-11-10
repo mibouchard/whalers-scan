@@ -28,8 +28,9 @@ export function boxNid() {
 // NHL stats REST reports (api.nhle.com): every player in one call per season.
 //   report: 'skater/summary', 'skater/realtime', 'goalie/summary'; season: '20262027'
 const REST = 'https://api.nhle.com/stats/rest/en/';
-export async function report(kind, season) {
-  const j = await getJSONr(`${REST}${kind}?limit=-1&cayenneExp=${encodeURIComponent(`seasonId=${season} and gameTypeId=2`)}`);
+// extra: one more filter for the NHL report, e.g. "isRookie='1'"
+export async function report(kind, season, extra) {
+  const j = await getJSONr(`${REST}${kind}?limit=-1&cayenneExp=${encodeURIComponent(`seasonId=${season} and gameTypeId=2${extra ? ' and ' + extra : ''}`)}`);
   if (!Array.isArray(j.data)) throw new Error(`${kind} ${season}: no data`);
   return j.data;
 }
