@@ -180,6 +180,6 @@ Players from league sites are matched to Fantrax by name (`src/lib/names.js`, `m
 ## Yearly maintenance
 
 - **Season ids** at the top of `src/leagues.js`: KHL season and tournament, SHL `ssgtUuid`, swehockey event ids (Allsvenskan, J20). The same KHL defaults are in `khl()` in `engine/engine.js`.
-- **`config.json`**: cap and dead cap, when they change.
+- **`config.json`**: cap and dead cap, when they change. `deadCap` is a list of `[player, $M]` drop penalties per team (the numbers Fantrax lists on the cap page; its public feed does not carry them): add a line for each main-roster drop, remove one when the commissioner deletes it.
 - **Nothing to do** for the draft cutoff (automatic), the NHL season id (worked out from the date) and the HockeyTech and Liiga seasons (read from the sites).
 - New leagues: add an adapter, a line in `leagueJobs` and `LEAGUES` in `src/lib/pipeline.js`, an NHLe factor in the engine and, if its ages are real birthdates, the league in `DOB_LEAGUES` in `src/lib/plausible.js`.

@@ -13,12 +13,14 @@ const SPECIAL = { ø: 'o', Ø: 'O', æ: 'ae', Æ: 'AE', ł: 'l', Ł: 'L', đ: 'd
 export const fold = s => String(s ?? '').replace(/[øØæÆłŁđĐß]/g, c => SPECIAL[c]).normalize('NFD').replace(/[̀-ͯ]/g, '')
   .replace(/['’‘`.]/g, '').toLowerCase().replace(/[^a-z ]+/g, ' ').replace(/\s+/g, ' ').trim();
 export const nameKey = (first, last) => fold((first || '') + ' ' + (last || '')).replace(/ /g, '');
-export const rusCanon = t => t.replace(/x/g, 'ks').replace(/^ye/, 'e').replace(/yo/g, 'e').replace(/(ey|ei|ii|iy|yi|ij|y)$/, 'i');
+export const rusCanon = t => t.replace(/x/g, 'ks').replace(/^ye/, 'e').replace(/yo/g, 'e').replace(/(ey|ei|ii|iy|yi|ij|y)$/, 'i').replace(/ia/g, 'ya').replace(/iu/g, 'yu');
 export const rusKey = (first, last) => fold((first || '') + ' ' + (last || '')).split(' ').filter(Boolean).map(rusCanon).sort().join(' ');
 
 export const rusOrderedKey = (first, last) => fold((first || '') + ' ' + (last || '')).split(' ').filter(Boolean).map(rusCanon).join('');
 // Russian given names whose Latin spelling varies from site to site (in their folded form)
-const RUS_FIRST = new Set(['dmitri', 'aleksei', 'andrei', 'sergei', 'matvei', 'timofei', 'nikolai', 'vasili', 'arseni', 'evgeni', 'egor', 'artem', 'semen', 'fedor', 'petr', 'grigori', 'georgi', 'anatoli', 'vitali', 'valeri', 'yuri', 'gennadi', 'arkadi', 'maksim', 'aleksi', 'savveli', 'saveli']);
+const RUS_FIRST = new Set(['dmitri', 'aleksei', 'andrei', 'sergei', 'matvei', 'timofei', 'nikolai', 'vasili', 'arseni', 'evgeni', 'egor', 'artem', 'semen', 'fedor', 'petr', 'grigori', 'georgi', 'anatoli', 'vitali', 'valeri', 'yuri', 'gennadi', 'arkadi', 'maksim', 'aleksi', 'savveli', 'saveli',
+  // given names spelled one way whose surnames are not (Halifax's "Oleg Kulebiakin" is Fantrax's "Oleg Kulebyakin")
+  'oleg', 'ivan', 'nikita', 'kirill', 'ilya', 'daniil', 'danil', 'mikhail', 'vladimir', 'pavel', 'igor', 'vladislav', 'yaroslav', 'gleb', 'timur']);
 export const isRussianFirst = first => RUS_FIRST.has(rusCanon(fold(first).split(' ')[0] || ''));
 export const lastTeamKey = (last, team) => fold(last).replace(/ /g, '') + '|' + (team || '');
 

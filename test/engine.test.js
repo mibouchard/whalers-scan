@@ -58,6 +58,7 @@ test('name matching: exact outside Russia, folded inside', async () => {
   assert.equal(id('OHL', 'James', 'Ryan'), 'aaaa2'); assert.equal(id('OHL', 'Ryan', 'James'), null);              // word order matters
   assert.equal(id('KHL', 'Dmitri', 'Isayev'), 'aaaa3'); assert.equal(id('MHL', 'Dmitriy', 'Isayev'), 'aaaa3');    // Russian spellings fold
   assert.equal(id('OHL', 'Dmitriy', 'Isayev'), 'aaaa3'); assert.equal(id('OHL', 'Isayev', 'Dmitriy'), null);      // elsewhere a Russian given name still folds, but word order is kept
+  assert.equal(rusOrderedKey('Oleg', 'Kulebiakin'), rusOrderedKey('Oleg', 'Kulebyakin')); assert.equal(rusKey('Ilia', 'Nazarov'), rusKey('Ilya', 'Nazarov')); // ia = ya
   assert.equal(id('OHL', 'Artem', 'Duda', 'D'), 'aaab4'); assert.equal(id('AHL', 'Egor', 'Shilov'), 'aaab5');           // Artem = Artyom, Egor = Yegor
   assert.equal(id('NHL', 'Zachary', 'Bolduc', 'R', 'MTL'), 'aaab6'); assert.equal(id('AHL', 'Zachary', 'Bolduc', 'R', 'MTL'), null); // NHL rows: last name + club + initial
   assert.equal(id('NHL', 'Zachary', 'Bolduc', 'R', 'BOS'), null);

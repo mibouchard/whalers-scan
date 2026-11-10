@@ -28,7 +28,8 @@ test('league scoring', () => {
 test('cap: active + reserve + dead cap; minors and IR do not count', () => {
   const list = [{ status: 'ACTIVE', salary: 80e6 }, { status: 'RESERVE', salary: 10e6 }, { status: 'MINORS', salary: 5e6 }, { status: 'INJURED_RESERVE', salary: 12e6 }];
   const c = capOf(list, 'HFD');
-  assert.deepEqual(c, { cap: 114.4, active: 80, reserve: 10, dead: 0.588, ir: 12, used: 90.588, room: 23.812, roomAfterIR: 11.812 });
+  const dead = +JSON.parse(fs.readFileSync(new URL('../config.json', import.meta.url), 'utf8')).deadCap.HFD.reduce((s, x) => s + x[1], 0).toFixed(3); // the itemised list in config.json
+  assert.ok(dead > 0); assert.deepEqual(c, { cap: 114.4, active: 80, reserve: 10, dead, ir: 12, used: +(90 + dead).toFixed(3), room: +(24.4 - dead).toFixed(3), roomAfterIR: +(12.4 - dead).toFixed(3) });
   assert.equal(capOf(list, 'CGY').dead, 0); assert.equal(capOf(list, 'CGY').room, 24.4);
   const n = counts([...Array(14).fill({ status: 'ACTIVE' }), ...Array(7).fill({ status: 'RESERVE' }), ...Array(26).fill({ status: 'MINORS' }), { status: 'INJURED_RESERVE' }]);
   assert.deepEqual(n, { active: 14, reserve: 7, ir: 1, minors: 26, main: 21 });
@@ -108,7 +109,7 @@ test('retry and deadline', async () => {
   assert.equal(await withDeadline(async () => 7, 1000), 7);
 });
 test('workflow guard: skip, retry or full', () => {
-  const now = new Date('2026-10-07T09:47:00Z'); const ok = Object.fromEntries(['form', 'pool', 'league', 'box', 'stats', 'alertLate', 'fawatch', 'draftees', 'week'].map(s => [s, 'ok']));
+  const now = new Date('2026-10-07T09:47:00Z'); const ok = Object.fromEntries(['form', 'pool', 'league', 'box', 'stats', 'alertLate', 'fawatch', 'draftees', 'draft', 'week'].map(s => [s, 'ok']));
   const st = (o = {}) => ({ d: '2026-10-07', at: '2026-10-07T09:20:00Z', status: { AHL: 'ok' }, errors: {}, subset: [], ...o }); const h = (o = {}) => ({ d: '2026-10-07', steps: { scan: 'ok', ...ok, ...o } });
   assert.equal(plan({ event: 'workflow_dispatch', leagues: '', status: st(), health: h(), now }).mode, 'full', 'the outside timer always runs everything');
   assert.deepEqual(plan({ event: 'workflow_dispatch', leagues: 'KHL VHL', status: st(), health: h(), now }), { mode: 'debug', steps: ['scan'] });

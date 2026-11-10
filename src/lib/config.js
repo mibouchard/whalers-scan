@@ -9,7 +9,8 @@ export const CONFIG = JSON.parse(fs.readFileSync(path.join(ROOT, 'config.json'),
 export const LEAGUE_ID = CONFIG.leagueId;
 export const TEAM_ID = CONFIG.teamId;
 export const CAP = CONFIG.cap;
-export const DEAD_CAP = CONFIG.deadCap || {};
+// config.json deadCap: per team, either one number ($M) or a list of [player, $M] drop penalties, summed here
+export const DEAD_CAP = Object.fromEntries(Object.entries(CONFIG.deadCap || {}).map(([t, v]) => [t, +(Array.isArray(v) ? v.reduce((s, x) => s + (+x[1] || 0), 0) : +v || 0).toFixed(3)]));
 export const TZ = 'America/Toronto';
 
 // Fantrax team id -> short code (the one TEAMS map; the engine gets it injected by src/env.js)

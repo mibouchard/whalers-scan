@@ -2,5 +2,5 @@
   "leagueId": "fs61ldkdmow7aw2h",
   "teamId": "m1hfr04lmow7aw2v",
   "cap": 114.4,
-  "deadCap": { "HFD": 0.588 }
+  "deadCap": { "HFD": [["Jiricek", 0.375], ["Jonsson", 0.214], ["Helleson", 0.275]] }
 }
