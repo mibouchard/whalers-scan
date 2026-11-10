@@ -1,13 +1,13 @@
 {
- "at": "2026-11-09T03:00:35.567Z",
- "date": "2026-11-08",
- "gamesFinal": 5,
+ "at": "2026-11-10T03:00:31.926Z",
+ "date": "2026-11-09",
+ "gamesFinal": 0,
  "gamesPending": [
-  "PIT@ANA"
+  "NYR@EDM",
+  "PHI@VAN",
+  "NYI@SJS"
  ],
  "candidates": [],
- "nearMisses": [
-  "Pontus Holmberg (TBL, 27): 7.9 FP, no usage signal, 13:23 TOI"
- ],
+ "nearMisses": [],
  "unmatched": []
 }
