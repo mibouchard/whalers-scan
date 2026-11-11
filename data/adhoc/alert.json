@@ -1,13 +1,15 @@
 {
- "at": "2026-11-10T03:00:31.926Z",
- "date": "2026-11-09",
- "gamesFinal": 0,
+ "at": "2026-11-11T03:00:33.186Z",
+ "date": "2026-11-10",
+ "gamesFinal": 4,
  "gamesPending": [
-  "NYR@EDM",
-  "PHI@VAN",
-  "NYI@SJS"
+  "FLA@CBJ",
+  "DET@STL",
+  "NSH@LAK"
  ],
  "candidates": [],
- "nearMisses": [],
+ "nearMisses": [
+  "Gabriel Landeskog (COL, 33): 7.6 FP, no usage signal, 15:16 TOI"
+ ],
  "unmatched": []
 }
