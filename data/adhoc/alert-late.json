@@ -1,18 +1,17 @@
 {
- "at": "2026-11-10T10:17:07.748Z",
- "date": "2026-11-09",
+ "at": "2026-11-11T10:16:24.348Z",
+ "date": "2026-11-10",
  "late": true,
  "lateGames": [
-  "NYR@EDM",
-  "PHI@VAN",
-  "NYI@SJS"
+  "FLA@CBJ",
+  "DET@STL",
+  "NSH@LAK"
  ],
  "gamesFinal": 3,
  "gamesPending": [],
  "candidates": [],
  "nearMisses": [
-  "Christian Dvorak (PHI, 30): 6.2 FP, power-play point, 15:09 TOI, no M badge",
-  "Tyler Toffoli (SJS, 34): 6.3 FP, no usage signal, 10:57 TOI"
+  "Andrew Copp (DET, 32): 6.9 FP, 19:11 TOI, no M badge"
  ],
  "unmatched": []
 }
