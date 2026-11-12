@@ -1,17 +1,59 @@
 {
- "at": "2026-11-11T10:16:24.348Z",
- "date": "2026-11-10",
+ "at": "2026-11-12T10:16:29.217Z",
+ "date": "2026-11-11",
  "late": true,
  "lateGames": [
-  "FLA@CBJ",
-  "DET@STL",
-  "NSH@LAK"
+  "NYR@CGY",
+  "PHI@EDM",
+  "UTA@VGK",
+  "NSH@ANA",
+  "PIT@SJS"
  ],
- "gamesFinal": 3,
+ "gamesFinal": 5,
  "gamesPending": [],
- "candidates": [],
+ "candidates": [
+  {
+   "name": "Joonas Korpisalo",
+   "team": "NYR",
+   "pos": "G",
+   "age": 32,
+   "fx": "02npn",
+   "status": "FA",
+   "fp": 11.25,
+   "line": "W, 29 saves on 30",
+   "toi": null,
+   "avgToi": null,
+   "gpBefore": 1,
+   "reasons": [
+    "2 starts in his team's last 3 games"
+   ],
+   "why": "role change"
+  },
+  {
+   "name": "Adam Klapka",
+   "team": "CGY",
+   "pos": "R",
+   "age": 26,
+   "fx": "05o4f",
+   "status": "FA",
+   "fp": 6.1,
+   "line": "1G 0A, 1 PPP, 4 SOG, 6 hits, 0 blk",
+   "toi": "16:07",
+   "avgToi": "11:37",
+   "gpBefore": 18,
+   "reasons": [
+    "16:07 TOI",
+    "power-play point",
+    "+4:30 over his 11:37 average"
+   ],
+   "why": "role change"
+  }
+ ],
  "nearMisses": [
-  "Andrew Copp (DET, 32): 6.9 FP, 19:11 TOI, no M badge"
+  "Tristan Jarry (EDM, 31): 10.5 FP, no usage signal",
+  "Jack McBain (UTA, 26): 9.6 FP, no usage signal, 14:21 TOI",
+  "Nils Hoglander (NSH, 25): 7 FP, no usage signal, 13:00 TOI",
+  "Jayden Struble (NSH, 25): 6.5 FP, no usage signal, 15:36 TOI"
  ],
  "unmatched": []
 }

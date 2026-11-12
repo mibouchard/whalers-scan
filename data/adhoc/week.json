@@ -1,5 +1,5 @@
 {
- "at": "2026-11-11T10:16:45.078Z",
+ "at": "2026-11-12T10:16:48.845Z",
  "week": "2026-11-09",
  "period": 7,
  "scoring": "G 3, A 2, PPP 1, SHG 2, GWG 1, +/- 0.5, BLK 0.2, HIT 0.2, PIM 0.25, SOG 0.1; G: W 5, SO 5, SV 0.25, GA -1",
@@ -1103,36 +1103,6 @@
  ],
  "next": [
   {
-   "id": "06mb6",
-   "name": "EJ Emery",
-   "nhlTeam": "NYR",
-   "pos": "D",
-   "elig": "D",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 3,
-   "days": [
-    "11-09",
-    "11-11",
-    "11-13"
-   ]
-  },
-  {
-   "id": "06uy3",
-   "name": "Jacob Kvasnicka",
-   "nhlTeam": "NYI",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 3,
-   "days": [
-    "11-09",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
    "id": "05rjd",
    "name": "Cutter Gauthier",
    "nhlTeam": "ANA",
@@ -1498,6 +1468,37 @@
    ]
   },
   {
+   "id": "0765k",
+   "name": "Brek Liske",
+   "nhlTeam": "PHI",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0,
+   "games": 4,
+   "days": [
+    "11-09",
+    "11-11",
+    "11-14",
+    "11-15"
+   ]
+  },
+  {
+   "id": "0769i",
+   "name": "Blake Zielinski",
+   "nhlTeam": "LAK",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0,
+   "games": 3,
+   "days": [
+    "11-10",
+    "11-12",
+    "11-14"
+   ]
+  },
+  {
    "id": "06ydv",
    "name": "Matias Vanhanen",
    "nhlTeam": "NJD",
@@ -1810,11 +1811,12 @@
   "06uy3": null,
   "05rjd": {
    "nhlId": 8483445,
-   "gp": 17,
-   "fp": 89,
-   "hit": 13,
+   "gp": 18,
+   "fp": 93.6,
+   "hit": 15,
    "blk": 6,
    "toi": [
+    "19:35",
     "18:24",
     "22:20",
     "17:57",
@@ -1900,7 +1902,30 @@
    "fp": 86.75,
    "toi": []
   },
-  "0644c": null,
+  "0644c": {
+   "nhlId": 8484388,
+   "gp": 14,
+   "fp": 18.4,
+   "hit": 21,
+   "blk": 9,
+   "toi": [
+    "12:36",
+    "8:59",
+    "6:54",
+    "9:34",
+    "12:06",
+    "13:04",
+    "10:47",
+    "10:00",
+    "10:29",
+    "10:01",
+    "10:56",
+    "10:26",
+    "11:11",
+    "12:08"
+   ],
+   "note": "includes hits and blocks (NHL season report)"
+  },
   "075ko": null,
   "0243f": {
    "nhlId": 8477495,
@@ -2027,17 +2052,18 @@
   },
   "03rfo": {
    "nhlId": 8478435,
-   "gp": 10,
-   "fp": 44.25,
+   "gp": 11,
+   "fp": 46.5,
    "toi": []
   },
   "06bao": {
    "nhlId": 8484142,
-   "gp": 17,
-   "fp": 29.1,
-   "hit": 18,
+   "gp": 18,
+   "fp": 29,
+   "hit": 19,
    "blk": 3,
    "toi": [
+    "18:06",
     "12:34",
     "14:04",
     "14:54",
@@ -2067,11 +2093,12 @@
   "06mcs": null,
   "01f6d": {
    "nhlId": 8475158,
-   "gp": 18,
-   "fp": 60.6,
-   "hit": 8,
+   "gp": 19,
+   "fp": 60.8,
+   "hit": 9,
    "blk": 22,
    "toi": [
+    "20:36",
     "18:18",
     "19:48",
     "24:31",
@@ -2193,11 +2220,12 @@
   },
   "061im": {
    "nhlId": 8485402,
-   "gp": 20,
-   "fp": 33.5,
+   "gp": 21,
+   "fp": 34,
    "hit": 11,
    "blk": 7,
    "toi": [
+    "18:12",
     "19:55",
     "15:35",
     "20:18",
@@ -2224,11 +2252,12 @@
   "06m7l": null,
   "01ztp": {
    "nhlId": 8475786,
-   "gp": 8,
-   "fp": 7.5,
+   "gp": 9,
+   "fp": 15.4,
    "hit": 5,
    "blk": 0,
    "toi": [
+    "15:50",
     "18:24",
     "20:56",
     "8:25",
@@ -2257,9 +2286,14 @@
   },
   "06kr3": {
    "nhlId": 8484770,
-   "gp": 0,
-   "fp": 0,
-   "toi": []
+   "gp": 1,
+   "fp": 3.6,
+   "hit": 2,
+   "blk": 1,
+   "toi": [
+    "12:56"
+   ],
+   "note": "includes hits and blocks (NHL season report)"
   },
   "06b7c": null,
   "06b7a": null,
@@ -2323,11 +2357,12 @@
   "05ui5": null,
   "06hcw": {
    "nhlId": 8484762,
-   "gp": 18,
-   "fp": 84.7,
+   "gp": 19,
+   "fp": 87.4,
    "hit": 19,
    "blk": 7,
    "toi": [
+    "21:34",
     "18:29",
     "23:16",
     "16:36",
@@ -2349,6 +2384,8 @@
    ],
    "note": "includes hits and blocks (NHL season report)"
   },
-  "06ims": null
+  "06ims": null,
+  "0765k": null,
+  "0769i": null
  }
 }
