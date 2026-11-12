@@ -1,15 +1,17 @@
 {
- "at": "2026-11-11T03:00:33.186Z",
- "date": "2026-11-10",
- "gamesFinal": 4,
+ "at": "2026-11-12T03:00:34.958Z",
+ "date": "2026-11-11",
+ "gamesFinal": 1,
  "gamesPending": [
-  "FLA@CBJ",
-  "DET@STL",
-  "NSH@LAK"
+  "NYR@CGY",
+  "PHI@EDM",
+  "UTA@VGK",
+  "NSH@ANA",
+  "PIT@SJS"
  ],
  "candidates": [],
  "nearMisses": [
-  "Gabriel Landeskog (COL, 33): 7.6 FP, no usage signal, 15:16 TOI"
+  "Anthony Cirelli (TBL, 29): 7.3 FP, no usage signal, 15:11 TOI"
  ],
  "unmatched": []
 }
