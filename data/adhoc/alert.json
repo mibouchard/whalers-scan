@@ -1,17 +1,21 @@
 {
- "at": "2026-11-12T03:00:34.958Z",
- "date": "2026-11-11",
- "gamesFinal": 1,
+ "at": "2026-11-13T03:00:36.246Z",
+ "date": "2026-11-12",
+ "gamesFinal": 6,
  "gamesPending": [
-  "NYR@CGY",
-  "PHI@EDM",
-  "UTA@VGK",
-  "NSH@ANA",
-  "PIT@SJS"
+  "DET@FLA",
+  "BUF@CHI",
+  "WPG@DAL",
+  "STL@UTA",
+  "NYI@LAK"
  ],
  "candidates": [],
  "nearMisses": [
-  "Anthony Cirelli (TBL, 29): 7.3 FP, no usage signal, 15:11 TOI"
+  "Josh Anderson (MTL, 32): 6.4 FP, no usage signal, 12:43 TOI",
+  "Jake Evans (MTL, 30): 6.7 FP, 16:48 TOI, no M badge",
+  "Casey Mittelstadt (BOS, 27): 7.8 FP, no usage signal, 14:21 TOI",
+  "Zack MacEwen (TOR, 30): 6 FP, no usage signal, 10:08 TOI",
+  "Evan Rodrigues (NJD, 33): 7.4 FP, 16:02 TOI, power-play point, no M badge"
  ],
  "unmatched": []
 }
