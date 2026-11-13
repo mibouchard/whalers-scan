@@ -1,59 +1,40 @@
 {
- "at": "2026-11-12T10:16:29.217Z",
- "date": "2026-11-11",
+ "at": "2026-11-13T10:16:34.907Z",
+ "date": "2026-11-12",
  "late": true,
  "lateGames": [
-  "NYR@CGY",
-  "PHI@EDM",
-  "UTA@VGK",
-  "NSH@ANA",
-  "PIT@SJS"
+  "DET@FLA",
+  "BUF@CHI",
+  "WPG@DAL",
+  "STL@UTA",
+  "NYI@LAK"
  ],
  "gamesFinal": 5,
  "gamesPending": [],
  "candidates": [
   {
-   "name": "Joonas Korpisalo",
-   "team": "NYR",
-   "pos": "G",
-   "age": 32,
-   "fx": "02npn",
+   "name": "Brayden Schenn",
+   "team": "NYI",
+   "pos": "C",
+   "age": 35,
+   "fx": "01c32",
    "status": "FA",
-   "fp": 11.25,
-   "line": "W, 29 saves on 30",
-   "toi": null,
-   "avgToi": null,
-   "gpBefore": 1,
+   "fp": 8.9,
+   "line": "1G 2A, 1 PPP, 2 SOG, 1 hits, 0 blk",
+   "toi": "19:41",
+   "avgToi": "16:40",
+   "gpBefore": 17,
    "reasons": [
-    "2 starts in his team's last 3 games"
-   ],
-   "why": "role change"
-  },
-  {
-   "name": "Adam Klapka",
-   "team": "CGY",
-   "pos": "R",
-   "age": 26,
-   "fx": "05o4f",
-   "status": "FA",
-   "fp": 6.1,
-   "line": "1G 0A, 1 PPP, 4 SOG, 6 hits, 0 blk",
-   "toi": "16:07",
-   "avgToi": "11:37",
-   "gpBefore": 18,
-   "reasons": [
-    "16:07 TOI",
+    "19:41 TOI",
     "power-play point",
-    "+4:30 over his 11:37 average"
+    "+3:01 over his 16:40 average"
    ],
    "why": "role change"
   }
  ],
  "nearMisses": [
-  "Tristan Jarry (EDM, 31): 10.5 FP, no usage signal",
-  "Jack McBain (UTA, 26): 9.6 FP, no usage signal, 14:21 TOI",
-  "Nils Hoglander (NSH, 25): 7 FP, no usage signal, 13:00 TOI",
-  "Jayden Struble (NSH, 25): 6.5 FP, no usage signal, 15:36 TOI"
+  "Dylan Samberg (WPG, 27): 7.4 FP, 24:01 TOI, no M badge",
+  "Ryan Pulock (NYI, 32): 6.6 FP, no usage signal, 19:22 TOI"
  ],
  "unmatched": []
 }
