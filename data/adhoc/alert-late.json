@@ -1,40 +1,16 @@
 {
- "at": "2026-11-13T10:16:34.907Z",
- "date": "2026-11-12",
+ "at": "2026-11-14T10:17:10.301Z",
+ "date": "2026-11-13",
  "late": true,
  "lateGames": [
-  "DET@FLA",
-  "BUF@CHI",
-  "WPG@DAL",
-  "STL@UTA",
-  "NYI@LAK"
+  "NYR@VAN",
+  "NSH@VGK"
  ],
- "gamesFinal": 5,
+ "gamesFinal": 2,
  "gamesPending": [],
- "candidates": [
-  {
-   "name": "Brayden Schenn",
-   "team": "NYI",
-   "pos": "C",
-   "age": 35,
-   "fx": "01c32",
-   "status": "FA",
-   "fp": 8.9,
-   "line": "1G 2A, 1 PPP, 2 SOG, 1 hits, 0 blk",
-   "toi": "19:41",
-   "avgToi": "16:40",
-   "gpBefore": 17,
-   "reasons": [
-    "19:41 TOI",
-    "power-play point",
-    "+3:01 over his 16:40 average"
-   ],
-   "why": "role change"
-  }
- ],
+ "candidates": [],
  "nearMisses": [
-  "Dylan Samberg (WPG, 27): 7.4 FP, 24:01 TOI, no M badge",
-  "Ryan Pulock (NYI, 32): 6.6 FP, no usage signal, 19:22 TOI"
+  "Glenn Gawdin (NYR, 29): 7.4 FP, no usage signal, 7:59 TOI"
  ],
  "unmatched": []
 }
