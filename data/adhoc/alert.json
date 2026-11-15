@@ -1,12 +1,42 @@
 {
- "at": "2026-11-14T03:00:37.339Z",
- "date": "2026-11-13",
- "gamesFinal": 0,
+ "at": "2026-11-15T03:00:50.047Z",
+ "date": "2026-11-14",
+ "gamesFinal": 10,
  "gamesPending": [
-  "NYR@VAN",
-  "NSH@VGK"
+  "BUF@DAL",
+  "SJS@UTA",
+  "NYI@ANA",
+  "CGY@LAK"
  ],
- "candidates": [],
- "nearMisses": [],
+ "candidates": [
+  {
+   "name": "Connor Brown",
+   "team": "NJD",
+   "pos": "R",
+   "age": 32,
+   "fx": "02oak",
+   "status": "FA",
+   "fp": 9.8,
+   "line": "1G 2A, 1 PPP, 2 SOG, 2 hits, 1 blk",
+   "toi": "19:48",
+   "avgToi": "15:02",
+   "gpBefore": 12,
+   "reasons": [
+    "19:48 TOI",
+    "power-play point",
+    "+4:46 over his 15:02 average"
+   ],
+   "why": "role change"
+  }
+ ],
+ "nearMisses": [
+  "Mark Jankowski (CAR, 32): 8.6 FP, no usage signal, 14:35 TOI",
+  "Ryan Hartman (MIN, 32): 8.1 FP, no usage signal, 14:14 TOI",
+  "Daniil Tarasov (DET, 27): 17.75 FP, no usage signal",
+  "Michael Amadio (OTT, 30): 6 FP, 19:08 TOI, no M badge",
+  "Claude Giroux (OTT, 38): 6.1 FP, 17:55 TOI, no M badge",
+  "Evan Rodrigues (NJD, 33): 7.9 FP, 18:13 TOI, no M badge",
+  "Jesper Boqvist (NJD, 28): 7.9 FP, no usage signal, 9:29 TOI"
+ ],
  "unmatched": []
 }
