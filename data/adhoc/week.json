@@ -1,431 +1,424 @@
 {
- "at": "2026-11-15T10:19:44.910Z",
- "week": "2026-11-09",
- "period": 7,
+ "at": "2026-11-16T10:17:56.216Z",
+ "week": "2026-11-16",
+ "period": 8,
  "scoring": "G 3, A 2, PPP 1, SHG 2, GWG 1, +/- 0.5, BLK 0.2, HIT 0.2, PIM 0.25, SOG 0.1; G: W 5, SO 5, SV 0.25, GA -1",
  "hitsBlocks": "included",
  "games": {
-  "NYR": 3,
-  "EDM": 4,
-  "PHI": 4,
-  "VAN": 3,
-  "NYI": 3,
-  "SJS": 4,
-  "COL": 3,
-  "TOR": 3,
-  "MIN": 3,
-  "MTL": 3,
-  "WSH": 3,
-  "OTT": 3,
-  "NJD": 3,
-  "WPG": 3,
-  "FLA": 4,
-  "CBJ": 3,
-  "DET": 3,
-  "STL": 3,
-  "NSH": 4,
-  "LAK": 3,
-  "TBL": 3,
-  "BUF": 3,
-  "CGY": 3,
+  "MTL": 4,
+  "NYR": 2,
+  "VAN": 4,
   "UTA": 3,
-  "VGK": 3,
+  "LAK": 3,
+  "BOS": 3,
+  "EDM": 4,
+  "FLA": 2,
+  "CBJ": 3,
+  "NYI": 3,
+  "BUF": 4,
+  "PHI": 3,
+  "OTT": 3,
+  "WPG": 3,
+  "WSH": 3,
+  "TBL": 3,
+  "TOR": 3,
+  "CHI": 4,
   "ANA": 3,
-  "PIT": 2,
-  "CAR": 2,
-  "SEA": 2,
-  "BOS": 2,
-  "CHI": 2,
-  "DAL": 3
+  "STL": 4,
+  "NSH": 2,
+  "MIN": 3,
+  "DAL": 3,
+  "VGK": 3,
+  "CGY": 3,
+  "SJS": 2,
+  "DET": 2,
+  "NJD": 2,
+  "COL": 2,
+  "PIT": 3,
+  "CAR": 3,
+  "SEA": 2
  },
  "byDay": {
+  "MTL": [
+   "11-16",
+   "11-18",
+   "11-19",
+   "11-21"
+  ],
   "NYR": [
-   "11-09",
-   "11-11",
-   "11-13"
-  ],
-  "EDM": [
-   "11-09",
-   "11-11",
-   "11-14",
-   "11-15"
-  ],
-  "PHI": [
-   "11-09",
-   "11-11",
-   "11-14",
-   "11-15"
+   "11-16",
+   "11-22"
   ],
   "VAN": [
-   "11-09",
-   "11-13",
-   "11-15"
-  ],
-  "NYI": [
-   "11-09",
-   "11-12",
-   "11-14"
-  ],
-  "SJS": [
-   "11-09",
-   "11-11",
-   "11-14",
-   "11-15"
-  ],
-  "COL": [
-   "11-10",
-   "11-12",
-   "11-14"
-  ],
-  "TOR": [
-   "11-10",
-   "11-12",
-   "11-14"
-  ],
-  "MIN": [
-   "11-10",
-   "11-12",
-   "11-14"
-  ],
-  "MTL": [
-   "11-10",
-   "11-12",
-   "11-14"
-  ],
-  "WSH": [
-   "11-10",
-   "11-12",
-   "11-14"
-  ],
-  "OTT": [
-   "11-10",
-   "11-12",
-   "11-14"
-  ],
-  "NJD": [
-   "11-10",
-   "11-12",
-   "11-14"
-  ],
-  "WPG": [
-   "11-10",
-   "11-12",
-   "11-14"
-  ],
-  "FLA": [
-   "11-10",
-   "11-12",
-   "11-14",
-   "11-15"
-  ],
-  "CBJ": [
-   "11-10",
-   "11-12",
-   "11-14"
-  ],
-  "DET": [
-   "11-10",
-   "11-12",
-   "11-14"
-  ],
-  "STL": [
-   "11-10",
-   "11-12",
-   "11-14"
-  ],
-  "NSH": [
-   "11-10",
-   "11-11",
-   "11-13",
-   "11-15"
-  ],
-  "LAK": [
-   "11-10",
-   "11-12",
-   "11-14"
-  ],
-  "TBL": [
-   "11-11",
-   "11-12",
-   "11-14"
-  ],
-  "BUF": [
-   "11-11",
-   "11-12",
-   "11-14"
-  ],
-  "CGY": [
-   "11-11",
-   "11-14",
-   "11-15"
+   "11-16",
+   "11-19",
+   "11-21",
+   "11-22"
   ],
   "UTA": [
-   "11-11",
-   "11-12",
-   "11-14"
+   "11-16",
+   "11-18",
+   "11-21"
   ],
-  "VGK": [
-   "11-11",
-   "11-13",
-   "11-15"
-  ],
-  "ANA": [
-   "11-11",
-   "11-14",
-   "11-15"
-  ],
-  "PIT": [
-   "11-11",
-   "11-14"
-  ],
-  "CAR": [
-   "11-12",
-   "11-14"
-  ],
-  "SEA": [
-   "11-12",
-   "11-14"
+  "LAK": [
+   "11-17",
+   "11-19",
+   "11-21"
   ],
   "BOS": [
-   "11-12",
-   "11-14"
+   "11-17",
+   "11-18",
+   "11-21"
+  ],
+  "EDM": [
+   "11-17",
+   "11-19",
+   "11-21",
+   "11-22"
+  ],
+  "FLA": [
+   "11-17",
+   "11-21"
+  ],
+  "CBJ": [
+   "11-17",
+   "11-19",
+   "11-21"
+  ],
+  "NYI": [
+   "11-17",
+   "11-19",
+   "11-21"
+  ],
+  "BUF": [
+   "11-17",
+   "11-19",
+   "11-21",
+   "11-22"
+  ],
+  "PHI": [
+   "11-17",
+   "11-19",
+   "11-21"
+  ],
+  "OTT": [
+   "11-17",
+   "11-19",
+   "11-21"
+  ],
+  "WPG": [
+   "11-17",
+   "11-19",
+   "11-21"
+  ],
+  "WSH": [
+   "11-17",
+   "11-19",
+   "11-21"
+  ],
+  "TBL": [
+   "11-17",
+   "11-19",
+   "11-22"
+  ],
+  "TOR": [
+   "11-17",
+   "11-19",
+   "11-21"
   ],
   "CHI": [
-   "11-12",
-   "11-14"
+   "11-17",
+   "11-19",
+   "11-21",
+   "11-22"
+  ],
+  "ANA": [
+   "11-17",
+   "11-19",
+   "11-21"
+  ],
+  "STL": [
+   "11-17",
+   "11-19",
+   "11-21",
+   "11-22"
+  ],
+  "NSH": [
+   "11-17",
+   "11-21"
+  ],
+  "MIN": [
+   "11-17",
+   "11-19",
+   "11-21"
   ],
   "DAL": [
-   "11-12",
-   "11-14",
-   "11-15"
+   "11-17",
+   "11-19",
+   "11-22"
+  ],
+  "VGK": [
+   "11-17",
+   "11-19",
+   "11-21"
+  ],
+  "CGY": [
+   "11-17",
+   "11-19",
+   "11-21"
+  ],
+  "SJS": [
+   "11-17",
+   "11-21"
+  ],
+  "DET": [
+   "11-18",
+   "11-21"
+  ],
+  "NJD": [
+   "11-18",
+   "11-21"
+  ],
+  "COL": [
+   "11-18",
+   "11-19"
+  ],
+  "PIT": [
+   "11-19",
+   "11-21",
+   "11-22"
+  ],
+  "CAR": [
+   "11-19",
+   "11-21",
+   "11-22"
+  ],
+  "SEA": [
+   "11-19",
+   "11-21"
   ]
  },
  "nextWeek": {
-  "week": "2026-11-16",
+  "week": "2026-11-23",
   "games": {
-   "MTL": 4,
-   "NYR": 2,
-   "VAN": 4,
-   "UTA": 3,
-   "LAK": 3,
-   "BOS": 3,
-   "EDM": 4,
-   "FLA": 2,
    "CBJ": 3,
-   "NYI": 3,
-   "BUF": 4,
-   "PHI": 3,
-   "OTT": 3,
-   "WPG": 3,
-   "WSH": 3,
-   "TBL": 3,
+   "NJD": 4,
+   "LAK": 3,
+   "MTL": 3,
+   "CGY": 4,
+   "OTT": 4,
    "TOR": 3,
-   "CHI": 4,
-   "ANA": 3,
-   "STL": 4,
-   "NSH": 2,
-   "MIN": 3,
-   "DAL": 3,
+   "NYI": 4,
+   "UTA": 4,
+   "WPG": 4,
+   "ANA": 4,
+   "SEA": 4,
+   "MIN": 4,
+   "SJS": 4,
    "VGK": 3,
-   "CGY": 3,
-   "SJS": 2,
-   "DET": 2,
-   "NJD": 2,
-   "COL": 2,
+   "EDM": 3,
+   "BOS": 3,
+   "NYR": 3,
+   "BUF": 2,
+   "CAR": 2,
+   "TBL": 3,
+   "FLA": 3,
+   "STL": 3,
    "PIT": 3,
-   "CAR": 3,
-   "SEA": 2
+   "PHI": 3,
+   "WSH": 3,
+   "VAN": 3,
+   "DET": 3,
+   "NSH": 3,
+   "DAL": 3,
+   "COL": 3,
+   "CHI": 3
   },
   "byDay": {
-   "MTL": [
-    "11-16",
-    "11-18",
-    "11-19",
-    "11-21"
-   ],
-   "NYR": [
-    "11-16",
-    "11-22"
-   ],
-   "VAN": [
-    "11-16",
-    "11-19",
-    "11-21",
-    "11-22"
-   ],
-   "UTA": [
-    "11-16",
-    "11-18",
-    "11-21"
-   ],
-   "LAK": [
-    "11-17",
-    "11-19",
-    "11-21"
-   ],
-   "BOS": [
-    "11-17",
-    "11-18",
-    "11-21"
-   ],
-   "EDM": [
-    "11-17",
-    "11-19",
-    "11-21",
-    "11-22"
-   ],
-   "FLA": [
-    "11-17",
-    "11-21"
-   ],
    "CBJ": [
-    "11-17",
-    "11-19",
-    "11-21"
-   ],
-   "NYI": [
-    "11-17",
-    "11-19",
-    "11-21"
-   ],
-   "BUF": [
-    "11-17",
-    "11-19",
-    "11-21",
-    "11-22"
-   ],
-   "PHI": [
-    "11-17",
-    "11-19",
-    "11-21"
-   ],
-   "OTT": [
-    "11-17",
-    "11-19",
-    "11-21"
-   ],
-   "WPG": [
-    "11-17",
-    "11-19",
-    "11-21"
-   ],
-   "WSH": [
-    "11-17",
-    "11-19",
-    "11-21"
-   ],
-   "TBL": [
-    "11-17",
-    "11-19",
-    "11-22"
-   ],
-   "TOR": [
-    "11-17",
-    "11-19",
-    "11-21"
-   ],
-   "CHI": [
-    "11-17",
-    "11-19",
-    "11-21",
-    "11-22"
-   ],
-   "ANA": [
-    "11-17",
-    "11-19",
-    "11-21"
-   ],
-   "STL": [
-    "11-17",
-    "11-19",
-    "11-21",
-    "11-22"
-   ],
-   "NSH": [
-    "11-17",
-    "11-21"
-   ],
-   "MIN": [
-    "11-17",
-    "11-19",
-    "11-21"
-   ],
-   "DAL": [
-    "11-17",
-    "11-19",
-    "11-22"
-   ],
-   "VGK": [
-    "11-17",
-    "11-19",
-    "11-21"
-   ],
-   "CGY": [
-    "11-17",
-    "11-19",
-    "11-21"
-   ],
-   "SJS": [
-    "11-17",
-    "11-21"
-   ],
-   "DET": [
-    "11-18",
-    "11-21"
+    "11-23",
+    "11-25",
+    "11-27"
    ],
    "NJD": [
-    "11-18",
-    "11-21"
+    "11-23",
+    "11-25",
+    "11-27",
+    "11-28"
    ],
-   "COL": [
-    "11-18",
-    "11-19"
+   "LAK": [
+    "11-23",
+    "11-27",
+    "11-28"
    ],
-   "PIT": [
-    "11-19",
-    "11-21",
-    "11-22"
+   "MTL": [
+    "11-23",
+    "11-25",
+    "11-28"
    ],
-   "CAR": [
-    "11-19",
-    "11-21",
-    "11-22"
+   "CGY": [
+    "11-23",
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "OTT": [
+    "11-23",
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "TOR": [
+    "11-23",
+    "11-27",
+    "11-28"
+   ],
+   "NYI": [
+    "11-23",
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "UTA": [
+    "11-23",
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "WPG": [
+    "11-23",
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "ANA": [
+    "11-23",
+    "11-25",
+    "11-27",
+    "11-28"
    ],
    "SEA": [
-    "11-19",
-    "11-21"
+    "11-23",
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "MIN": [
+    "11-23",
+    "11-25",
+    "11-27",
+    "11-29"
+   ],
+   "SJS": [
+    "11-23",
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "VGK": [
+    "11-24",
+    "11-27",
+    "11-28"
+   ],
+   "EDM": [
+    "11-24",
+    "11-27",
+    "11-28"
+   ],
+   "BOS": [
+    "11-25",
+    "11-27",
+    "11-29"
+   ],
+   "NYR": [
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "BUF": [
+    "11-25",
+    "11-27"
+   ],
+   "CAR": [
+    "11-25",
+    "11-28"
+   ],
+   "TBL": [
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "FLA": [
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "STL": [
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "PIT": [
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "PHI": [
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "WSH": [
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "VAN": [
+    "11-25",
+    "11-27",
+    "11-29"
+   ],
+   "DET": [
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "NSH": [
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "DAL": [
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "COL": [
+    "11-25",
+    "11-27",
+    "11-28"
+   ],
+   "CHI": [
+    "11-25",
+    "11-27",
+    "11-29"
    ]
   }
  },
  "current": [
   {
-   "id": "06mb6",
-   "name": "EJ Emery",
-   "nhlTeam": "NYR",
-   "pos": "D",
-   "elig": "D",
-   "status": "MINORS",
+   "id": "0769f",
+   "name": "Evan Jardine",
+   "nhlTeam": "CBJ",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "RESERVE",
    "salary": 0,
    "games": 3,
    "days": [
-    "11-09",
-    "11-11",
-    "11-13"
-   ]
-  },
-  {
-   "id": "06uy3",
-   "name": "Jacob Kvasnicka",
-   "nhlTeam": "NYI",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 3,
-   "days": [
-    "11-09",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -438,9 +431,9 @@
    "salary": 13.5,
    "games": 3,
    "days": [
-    "11-11",
-    "11-14",
-    "11-15"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -449,13 +442,13 @@
    "nhlTeam": "OTT",
    "pos": "D",
    "elig": "D",
-   "status": "RESERVE",
+   "status": "ACTIVE",
    "salary": 1.6,
    "games": 3,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -468,9 +461,9 @@
    "salary": 0,
    "games": 3,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -483,24 +476,23 @@
    "salary": 0,
    "games": 3,
    "days": [
-    "11-11",
-    "11-13",
-    "11-15"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
    "id": "02zpp",
    "name": "Viktor Arvidsson",
    "nhlTeam": "DET",
-   "pos": "RW",
+   "pos": "LW",
    "elig": "RW",
    "status": "RESERVE",
    "salary": 5,
-   "games": 3,
+   "games": 2,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14"
+    "11-18",
+    "11-21"
    ]
   },
   {
@@ -513,9 +505,9 @@
    "salary": 8.25,
    "games": 3,
    "days": [
-    "11-09",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -528,9 +520,9 @@
    "salary": 0.973,
    "games": 3,
    "days": [
-    "11-11",
-    "11-12",
-    "11-14"
+    "11-16",
+    "11-18",
+    "11-21"
    ]
   },
   {
@@ -541,12 +533,10 @@
    "elig": "LW",
    "status": "MINORS",
    "salary": 0,
-   "games": 4,
+   "games": 2,
    "days": [
-    "11-10",
-    "11-11",
-    "11-13",
-    "11-15"
+    "11-17",
+    "11-21"
    ]
   },
   {
@@ -557,12 +547,10 @@
    "elig": "D",
    "status": "ACTIVE",
    "salary": 9.5,
-   "games": 4,
+   "games": 2,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14",
-    "11-15"
+    "11-17",
+    "11-21"
    ]
   },
   {
@@ -575,9 +563,9 @@
    "salary": 0,
    "games": 3,
    "days": [
-    "11-11",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-22"
    ]
   },
   {
@@ -588,11 +576,12 @@
    "elig": "RW",
    "status": "ACTIVE",
    "salary": 0.95,
-   "games": 3,
+   "games": 4,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21",
+    "11-22"
    ]
   },
   {
@@ -605,9 +594,9 @@
    "salary": 5,
    "games": 3,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -620,9 +609,9 @@
    "salary": 0.942,
    "games": 3,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -633,11 +622,10 @@
    "elig": "RW",
    "status": "RESERVE",
    "salary": 0.953,
-   "games": 3,
+   "games": 2,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14"
+    "11-18",
+    "11-19"
    ]
   },
   {
@@ -648,11 +636,12 @@
    "elig": "LW",
    "status": "MINORS",
    "salary": 0,
-   "games": 3,
+   "games": 4,
    "days": [
-    "11-11",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21",
+    "11-22"
    ]
   },
   {
@@ -663,684 +652,11 @@
    "elig": "RW",
    "status": "MINORS",
    "salary": 0.952,
-   "games": 2,
-   "days": [
-    "11-11",
-    "11-14"
-   ]
-  },
-  {
-   "id": "042t2",
-   "name": "Logan Stanley",
-   "nhlTeam": "NYI",
-   "pos": "D",
-   "elig": "D",
-   "status": "ACTIVE",
-   "salary": 1.5,
    "games": 3,
    "days": [
-    "11-09",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "03rfo",
-   "name": "Daniel Vladar",
-   "nhlTeam": "PHI",
-   "pos": "G",
-   "elig": "G",
-   "status": "RESERVE",
-   "salary": 3.35,
-   "games": 4,
-   "days": [
-    "11-09",
-    "11-11",
-    "11-14",
-    "11-15"
-   ]
-  },
-  {
-   "id": "06bao",
-   "name": "Denver Barkey",
-   "nhlTeam": "PHI",
-   "pos": "C",
-   "elig": "C",
-   "status": "RESERVE",
-   "salary": 0.926,
-   "games": 4,
-   "days": [
-    "11-09",
-    "11-11",
-    "11-14",
-    "11-15"
-   ]
-  },
-  {
-   "id": "0760p",
-   "name": "Victor Plante",
-   "nhlTeam": "DET",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 3,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "06ay2",
-   "name": "Luca Cagnoni",
-   "nhlTeam": "SJS",
-   "pos": "D",
-   "elig": "D",
-   "status": "MINORS",
-   "salary": 0.92,
-   "games": 4,
-   "days": [
-    "11-09",
-    "11-11",
-    "11-14",
-    "11-15"
-   ]
-  },
-  {
-   "id": "076q3",
-   "name": "Vladimir Dravecky",
-   "nhlTeam": "NYI",
-   "pos": "D",
-   "elig": "D",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 3,
-   "days": [
-    "11-09",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "06md8",
-   "name": "Kieron Walton",
-   "nhlTeam": "WPG",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "MINORS",
-   "salary": 0.956,
-   "games": 3,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "06loc",
-   "name": "Yegor Surin",
-   "nhlTeam": "NSH",
-   "pos": "RW",
-   "elig": "RW",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 4,
-   "days": [
-    "11-10",
-    "11-11",
-    "11-13",
-    "11-15"
-   ]
-  },
-  {
-   "id": "06ydv",
-   "name": "Matias Vanhanen",
-   "nhlTeam": "NJD",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 3,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "06mcs",
-   "name": "Matvei Korotky",
-   "nhlTeam": "STL",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 3,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "01f6d",
-   "name": "Ryan OReilly",
-   "nhlTeam": "NSH",
-   "pos": "C",
-   "elig": "C",
-   "status": "ACTIVE",
-   "salary": 4.5,
-   "games": 4,
-   "days": [
-    "11-10",
-    "11-11",
-    "11-13",
-    "11-15"
-   ]
-  },
-  {
-   "id": "0644e",
-   "name": "Oliver Moore",
-   "nhlTeam": "CHI",
-   "pos": "LW",
-   "elig": "C",
-   "status": "RESERVE",
-   "salary": 0.942,
-   "games": 2,
-   "days": [
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "06mcw",
-   "name": "Jack Berglund",
-   "nhlTeam": "PHI",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 1.075,
-   "games": 4,
-   "days": [
-    "11-09",
-    "11-11",
-    "11-14",
-    "11-15"
-   ]
-  },
-  {
-   "id": "04uql",
-   "name": "Cole Perfetti",
-   "nhlTeam": "WPG",
-   "pos": "LW",
-   "elig": "RW",
-   "status": "ACTIVE",
-   "salary": 6,
-   "games": 3,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "02un7",
-   "name": "Aleksander Barkov",
-   "nhlTeam": "FLA",
-   "pos": "C",
-   "elig": "C",
-   "status": "INJURED_RESERVE",
-   "salary": 10,
-   "games": 4,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14",
-    "11-15"
-   ]
-  },
-  {
-   "id": "04kyh",
-   "name": "Brady Tkachuk",
-   "nhlTeam": "FLA",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "ACTIVE",
-   "salary": 8.206,
-   "games": 4,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14",
-    "11-15"
-   ]
-  },
-  {
-   "id": "061im",
-   "name": "Michael Misa",
-   "nhlTeam": "SJS",
-   "pos": "C",
-   "elig": "C",
-   "status": "ACTIVE",
-   "salary": 0.986,
-   "games": 4,
-   "days": [
-    "11-09",
-    "11-11",
-    "11-14",
-    "11-15"
-   ]
-  },
-  {
-   "id": "06m7l",
-   "name": "Riley Patterson",
-   "nhlTeam": "VAN",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 0.957,
-   "games": 3,
-   "days": [
-    "11-09",
-    "11-13",
-    "11-15"
-   ]
-  },
-  {
-   "id": "01ztp",
-   "name": "Zach Hyman",
-   "nhlTeam": "EDM",
-   "pos": "RW",
-   "elig": "RW",
-   "status": "ACTIVE",
-   "salary": 5.5,
-   "games": 4,
-   "days": [
-    "11-09",
-    "11-11",
-    "11-14",
-    "11-15"
-   ]
-  },
-  {
-   "id": "02ybn",
-   "name": "Josh Morrissey",
-   "nhlTeam": "WPG",
-   "pos": "D",
-   "elig": "D",
-   "status": "ACTIVE",
-   "salary": 6.25,
-   "games": 3,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "06kr3",
-   "name": "Sam OReilly",
-   "nhlTeam": "TBL",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 0.936,
-   "games": 3,
-   "days": [
-    "11-11",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "06b7c",
-   "name": "Luca Pinelli",
-   "nhlTeam": "CBJ",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 0.934,
-   "games": 3,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "06b7a",
-   "name": "Felix Nilsson",
-   "nhlTeam": "NSH",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 1.028,
-   "games": 4,
-   "days": [
-    "11-10",
-    "11-11",
-    "11-13",
-    "11-15"
-   ]
-  },
-  {
-   "id": "042vx",
-   "name": "Filip Hronek",
-   "nhlTeam": "VAN",
-   "pos": "D",
-   "elig": "D",
-   "status": "ACTIVE",
-   "salary": 7.25,
-   "games": 3,
-   "days": [
-    "11-09",
-    "11-13",
-    "11-15"
-   ]
-  },
-  {
-   "id": "03167",
-   "name": "Bo Horvat",
-   "nhlTeam": "NYI",
-   "pos": "C",
-   "elig": "C",
-   "status": "ACTIVE",
-   "salary": 8.5,
-   "games": 3,
-   "days": [
-    "11-09",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "05ui5",
-   "name": "Quentin Musty",
-   "nhlTeam": "SJS",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "MINORS",
-   "salary": 0.909,
-   "games": 4,
-   "days": [
-    "11-09",
-    "11-11",
-    "11-14",
-    "11-15"
-   ]
-  },
-  {
-   "id": "06hcw",
-   "name": "Beckett Sennecke",
-   "nhlTeam": "ANA",
-   "pos": "RW",
-   "elig": "RW",
-   "status": "ACTIVE",
-   "salary": 0.954,
-   "games": 3,
-   "days": [
-    "11-11",
-    "11-14",
-    "11-15"
-   ]
-  },
-  {
-   "id": "06ims",
-   "name": "Dmitri Gamzin",
-   "nhlTeam": "NYI",
-   "pos": "G",
-   "elig": "G",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 3,
-   "days": [
-    "11-09",
-    "11-12",
-    "11-14"
-   ]
-  }
- ],
- "next": [
-  {
-   "id": "05rjd",
-   "name": "Cutter Gauthier",
-   "nhlTeam": "ANA",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "ACTIVE",
-   "salary": 13.5,
-   "games": 3,
-   "days": [
-    "11-11",
-    "11-14",
-    "11-15"
-   ]
-  },
-  {
-   "id": "05kuc",
-   "name": "Tyler Kleven",
-   "nhlTeam": "OTT",
-   "pos": "D",
-   "elig": "D",
-   "status": "RESERVE",
-   "salary": 1.6,
-   "games": 3,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "0769h",
-   "name": "Alexander Bilecki",
-   "nhlTeam": "TOR",
-   "pos": "D",
-   "elig": "D",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 3,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "06tmv",
-   "name": "Mateo Nobert",
-   "nhlTeam": "VGK",
-   "pos": "C",
-   "elig": "C",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 3,
-   "days": [
-    "11-11",
-    "11-13",
-    "11-15"
-   ]
-  },
-  {
-   "id": "02zpp",
-   "name": "Viktor Arvidsson",
-   "nhlTeam": "DET",
-   "pos": "LW",
-   "elig": "RW",
-   "status": "ACTIVE",
-   "salary": 5,
-   "games": 3,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "0322w",
-   "name": "Ilya Sorokin",
-   "nhlTeam": "NYI",
-   "pos": "G",
-   "elig": "G",
-   "status": "ACTIVE",
-   "salary": 8.25,
-   "games": 3,
-   "days": [
-    "11-09",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "0644c",
-   "name": "Daniil But",
-   "nhlTeam": "UTA",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "MINORS",
-   "salary": 0.973,
-   "games": 3,
-   "days": [
-    "11-11",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "075ko",
-   "name": "Wyatt Cullen",
-   "nhlTeam": "NSH",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 4,
-   "days": [
-    "11-10",
-    "11-11",
-    "11-13",
-    "11-15"
-   ]
-  },
-  {
-   "id": "0243f",
-   "name": "Seth Jones",
-   "nhlTeam": "FLA",
-   "pos": "D",
-   "elig": "D",
-   "status": "ACTIVE",
-   "salary": 9.5,
-   "games": 4,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14",
-    "11-15"
-   ]
-  },
-  {
-   "id": "076r5",
-   "name": "Oleg Kulebyakin",
-   "nhlTeam": "TBL",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 3,
-   "days": [
-    "11-11",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "05ymj",
-   "name": "Jimmy Snuggerud",
-   "nhlTeam": "STL",
-   "pos": "RW",
-   "elig": "RW",
-   "status": "ACTIVE",
-   "salary": 0.95,
-   "games": 3,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "05xct",
-   "name": "Jet Greaves",
-   "nhlTeam": "CBJ",
-   "pos": "G",
-   "elig": "G",
-   "status": "MINORS",
-   "salary": 5,
-   "games": 3,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "06lkx",
-   "name": "Terik Parascak",
-   "nhlTeam": "WSH",
-   "pos": "RW",
-   "elig": "RW",
-   "status": "MINORS",
-   "salary": 0.942,
-   "games": 3,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "067xd",
-   "name": "T.J. Hughes",
-   "nhlTeam": "COL",
-   "pos": "RW",
-   "elig": "RW",
-   "status": "RESERVE",
-   "salary": 0.953,
-   "games": 3,
-   "days": [
-    "11-10",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "06r61",
-   "name": "Ilia Morozov",
-   "nhlTeam": "BUF",
-   "pos": "LW",
-   "elig": "LW",
-   "status": "MINORS",
-   "salary": 0,
-   "games": 3,
-   "days": [
-    "11-11",
-    "11-12",
-    "11-14"
-   ]
-  },
-  {
-   "id": "06clb",
-   "name": "Mikhail Ilyin",
-   "nhlTeam": "PIT",
-   "pos": "LW",
-   "elig": "RW",
-   "status": "MINORS",
-   "salary": 0.952,
-   "games": 2,
-   "days": [
-    "11-11",
-    "11-14"
+    "11-19",
+    "11-21",
+    "11-22"
    ]
   },
   {
@@ -1353,9 +669,9 @@
    "salary": 8.4,
    "games": 3,
    "days": [
-    "11-12",
-    "11-14",
-    "11-15"
+    "11-17",
+    "11-19",
+    "11-22"
    ]
   },
   {
@@ -1364,13 +680,13 @@
    "nhlTeam": "NYI",
    "pos": "D",
    "elig": "D",
-   "status": "ACTIVE",
+   "status": "INJURED_RESERVE",
    "salary": 1.5,
    "games": 3,
    "days": [
-    "11-09",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -1381,12 +697,11 @@
    "elig": "G",
    "status": "RESERVE",
    "salary": 3.35,
-   "games": 4,
+   "games": 3,
    "days": [
-    "11-09",
-    "11-11",
-    "11-14",
-    "11-15"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -1395,14 +710,13 @@
    "nhlTeam": "PHI",
    "pos": "C",
    "elig": "C",
-   "status": "RESERVE",
+   "status": "INJURED_RESERVE",
    "salary": 0.926,
-   "games": 4,
+   "games": 3,
    "days": [
-    "11-09",
-    "11-11",
-    "11-14",
-    "11-15"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -1413,11 +727,10 @@
    "elig": "LW",
    "status": "MINORS",
    "salary": 0,
-   "games": 3,
+   "games": 2,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14"
+    "11-18",
+    "11-21"
    ]
   },
   {
@@ -1428,12 +741,10 @@
    "elig": "D",
    "status": "MINORS",
    "salary": 0.92,
-   "games": 4,
+   "games": 2,
    "days": [
-    "11-09",
-    "11-11",
-    "11-14",
-    "11-15"
+    "11-17",
+    "11-21"
    ]
   },
   {
@@ -1446,9 +757,9 @@
    "salary": 0,
    "games": 3,
    "days": [
-    "11-09",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -1461,9 +772,9 @@
    "salary": 0.956,
    "games": 3,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -1474,12 +785,10 @@
    "elig": "RW",
    "status": "MINORS",
    "salary": 0,
-   "games": 4,
+   "games": 2,
    "days": [
-    "11-10",
-    "11-11",
-    "11-13",
-    "11-15"
+    "11-17",
+    "11-21"
    ]
   },
   {
@@ -1490,12 +799,11 @@
    "elig": "D",
    "status": "MINORS",
    "salary": 0,
-   "games": 4,
+   "games": 3,
    "days": [
-    "11-09",
-    "11-11",
-    "11-14",
-    "11-15"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -1508,9 +816,9 @@
    "salary": 0,
    "games": 3,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -1521,11 +829,10 @@
    "elig": "LW",
    "status": "MINORS",
    "salary": 0,
-   "games": 3,
+   "games": 2,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14"
+    "11-18",
+    "11-21"
    ]
   },
   {
@@ -1536,11 +843,12 @@
    "elig": "C",
    "status": "MINORS",
    "salary": 0,
-   "games": 3,
+   "games": 4,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21",
+    "11-22"
    ]
   },
   {
@@ -1551,12 +859,10 @@
    "elig": "C",
    "status": "ACTIVE",
    "salary": 4.5,
-   "games": 4,
+   "games": 2,
    "days": [
-    "11-10",
-    "11-11",
-    "11-13",
-    "11-15"
+    "11-17",
+    "11-21"
    ]
   },
   {
@@ -1567,10 +873,12 @@
    "elig": "RW",
    "status": "INJURED_RESERVE",
    "salary": 5.5,
-   "games": 2,
+   "games": 4,
    "days": [
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21",
+    "11-22"
    ]
   },
   {
@@ -1579,12 +887,14 @@
    "nhlTeam": "CHI",
    "pos": "LW",
    "elig": "C",
-   "status": "RESERVE",
+   "status": "ACTIVE",
    "salary": 0.942,
-   "games": 2,
+   "games": 4,
    "days": [
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21",
+    "11-22"
    ]
   },
   {
@@ -1595,12 +905,11 @@
    "elig": "C",
    "status": "MINORS",
    "salary": 1.075,
-   "games": 4,
+   "games": 3,
    "days": [
-    "11-09",
-    "11-11",
-    "11-14",
-    "11-15"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -1611,12 +920,10 @@
    "elig": "C",
    "status": "INJURED_RESERVE",
    "salary": 10,
-   "games": 4,
+   "games": 2,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14",
-    "11-15"
+    "11-17",
+    "11-21"
    ]
   },
   {
@@ -1627,12 +934,10 @@
    "elig": "LW",
    "status": "ACTIVE",
    "salary": 8.206,
-   "games": 4,
+   "games": 2,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14",
-    "11-15"
+    "11-17",
+    "11-21"
    ]
   },
   {
@@ -1643,12 +948,10 @@
    "elig": "C",
    "status": "ACTIVE",
    "salary": 0.986,
-   "games": 4,
+   "games": 2,
    "days": [
-    "11-09",
-    "11-11",
-    "11-14",
-    "11-15"
+    "11-17",
+    "11-21"
    ]
   },
   {
@@ -1659,11 +962,12 @@
    "elig": "C",
    "status": "MINORS",
    "salary": 0.957,
-   "games": 3,
+   "games": 4,
    "days": [
-    "11-09",
-    "11-13",
-    "11-15"
+    "11-16",
+    "11-19",
+    "11-21",
+    "11-22"
    ]
   },
   {
@@ -1676,10 +980,10 @@
    "salary": 5.5,
    "games": 4,
    "days": [
-    "11-09",
-    "11-11",
-    "11-14",
-    "11-15"
+    "11-17",
+    "11-19",
+    "11-21",
+    "11-22"
    ]
   },
   {
@@ -1692,9 +996,9 @@
    "salary": 6.25,
    "games": 3,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -1707,9 +1011,9 @@
    "salary": 0.936,
    "games": 3,
    "days": [
-    "11-11",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-22"
    ]
   },
   {
@@ -1722,9 +1026,9 @@
    "salary": 0.934,
    "games": 3,
    "days": [
-    "11-10",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -1735,11 +1039,12 @@
    "elig": "LW",
    "status": "RESERVE",
    "salary": 4.75,
-   "games": 3,
+   "games": 4,
    "days": [
-    "11-11",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21",
+    "11-22"
    ]
   },
   {
@@ -1750,12 +1055,10 @@
    "elig": "C",
    "status": "MINORS",
    "salary": 1.028,
-   "games": 4,
+   "games": 2,
    "days": [
-    "11-10",
-    "11-11",
-    "11-13",
-    "11-15"
+    "11-17",
+    "11-21"
    ]
   },
   {
@@ -1766,11 +1069,12 @@
    "elig": "D",
    "status": "ACTIVE",
    "salary": 7.25,
-   "games": 3,
+   "games": 4,
    "days": [
-    "11-09",
-    "11-13",
-    "11-15"
+    "11-16",
+    "11-19",
+    "11-21",
+    "11-22"
    ]
   },
   {
@@ -1781,12 +1085,10 @@
    "elig": "LW",
    "status": "MINORS",
    "salary": 0.909,
-   "games": 4,
+   "games": 2,
    "days": [
-    "11-09",
-    "11-11",
-    "11-14",
-    "11-15"
+    "11-17",
+    "11-21"
    ]
   },
   {
@@ -1799,9 +1101,9 @@
    "salary": 0.954,
    "games": 3,
    "days": [
-    "11-11",
-    "11-14",
-    "11-15"
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   },
   {
@@ -1814,22 +1116,739 @@
    "salary": 0,
    "games": 3,
    "days": [
-    "11-09",
-    "11-12",
-    "11-14"
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  }
+ ],
+ "next": [
+  {
+   "id": "0769f",
+   "name": "Evan Jardine",
+   "nhlTeam": "CBJ",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "RESERVE",
+   "salary": 0,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "05rjd",
+   "name": "Cutter Gauthier",
+   "nhlTeam": "ANA",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "ACTIVE",
+   "salary": 13.5,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "05kuc",
+   "name": "Tyler Kleven",
+   "nhlTeam": "OTT",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 1.6,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "0769h",
+   "name": "Alexander Bilecki",
+   "nhlTeam": "TOR",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "06tmv",
+   "name": "Mateo Nobert",
+   "nhlTeam": "VGK",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 0,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "02zpp",
+   "name": "Viktor Arvidsson",
+   "nhlTeam": "DET",
+   "pos": "LW",
+   "elig": "RW",
+   "status": "RESERVE",
+   "salary": 5,
+   "games": 2,
+   "days": [
+    "11-18",
+    "11-21"
+   ]
+  },
+  {
+   "id": "0322w",
+   "name": "Ilya Sorokin",
+   "nhlTeam": "NYI",
+   "pos": "G",
+   "elig": "G",
+   "status": "ACTIVE",
+   "salary": 8.25,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "0644c",
+   "name": "Daniil But",
+   "nhlTeam": "UTA",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0.973,
+   "games": 3,
+   "days": [
+    "11-16",
+    "11-18",
+    "11-21"
+   ]
+  },
+  {
+   "id": "075ko",
+   "name": "Wyatt Cullen",
+   "nhlTeam": "NSH",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0,
+   "games": 2,
+   "days": [
+    "11-17",
+    "11-21"
+   ]
+  },
+  {
+   "id": "0243f",
+   "name": "Seth Jones",
+   "nhlTeam": "FLA",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 9.5,
+   "games": 2,
+   "days": [
+    "11-17",
+    "11-21"
+   ]
+  },
+  {
+   "id": "076r5",
+   "name": "Oleg Kulebyakin",
+   "nhlTeam": "TBL",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-22"
+   ]
+  },
+  {
+   "id": "05ymj",
+   "name": "Jimmy Snuggerud",
+   "nhlTeam": "STL",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 0.95,
+   "games": 4,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21",
+    "11-22"
+   ]
+  },
+  {
+   "id": "05xct",
+   "name": "Jet Greaves",
+   "nhlTeam": "CBJ",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 5,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "06lkx",
+   "name": "Terik Parascak",
+   "nhlTeam": "WSH",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0.942,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "067xd",
+   "name": "T.J. Hughes",
+   "nhlTeam": "COL",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "RESERVE",
+   "salary": 0.953,
+   "games": 2,
+   "days": [
+    "11-18",
+    "11-19"
+   ]
+  },
+  {
+   "id": "06r61",
+   "name": "Ilia Morozov",
+   "nhlTeam": "BUF",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0,
+   "games": 4,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21",
+    "11-22"
+   ]
+  },
+  {
+   "id": "06clb",
+   "name": "Mikhail Ilyin",
+   "nhlTeam": "PIT",
+   "pos": "LW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0.952,
+   "games": 3,
+   "days": [
+    "11-19",
+    "11-21",
+    "11-22"
+   ]
+  },
+  {
+   "id": "05tqt",
+   "name": "Wyatt Johnston",
+   "nhlTeam": "DAL",
+   "pos": "C",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 8.4,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-22"
+   ]
+  },
+  {
+   "id": "042t2",
+   "name": "Logan Stanley",
+   "nhlTeam": "NYI",
+   "pos": "D",
+   "elig": "D",
+   "status": "INJURED_RESERVE",
+   "salary": 1.5,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "03rfo",
+   "name": "Daniel Vladar",
+   "nhlTeam": "PHI",
+   "pos": "G",
+   "elig": "G",
+   "status": "RESERVE",
+   "salary": 3.35,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "06bao",
+   "name": "Denver Barkey",
+   "nhlTeam": "PHI",
+   "pos": "C",
+   "elig": "C",
+   "status": "INJURED_RESERVE",
+   "salary": 0.926,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "0760p",
+   "name": "Victor Plante",
+   "nhlTeam": "DET",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0,
+   "games": 2,
+   "days": [
+    "11-18",
+    "11-21"
+   ]
+  },
+  {
+   "id": "06ay2",
+   "name": "Luca Cagnoni",
+   "nhlTeam": "SJS",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0.92,
+   "games": 2,
+   "days": [
+    "11-17",
+    "11-21"
+   ]
+  },
+  {
+   "id": "076q3",
+   "name": "Vladimir Dravecky",
+   "nhlTeam": "NYI",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "06md8",
+   "name": "Kieron Walton",
+   "nhlTeam": "WPG",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0.956,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "06loc",
+   "name": "Yegor Surin",
+   "nhlTeam": "NSH",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0,
+   "games": 2,
+   "days": [
+    "11-17",
+    "11-21"
+   ]
+  },
+  {
+   "id": "0765k",
+   "name": "Brek Liske",
+   "nhlTeam": "PHI",
+   "pos": "D",
+   "elig": "D",
+   "status": "MINORS",
+   "salary": 0,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "0769i",
+   "name": "Blake Zielinski",
+   "nhlTeam": "LAK",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "MINORS",
+   "salary": 0,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "06ydv",
+   "name": "Matias Vanhanen",
+   "nhlTeam": "NJD",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0,
+   "games": 2,
+   "days": [
+    "11-18",
+    "11-21"
+   ]
+  },
+  {
+   "id": "06mcs",
+   "name": "Matvei Korotky",
+   "nhlTeam": "STL",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 0,
+   "games": 4,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21",
+    "11-22"
+   ]
+  },
+  {
+   "id": "01f6d",
+   "name": "Ryan OReilly",
+   "nhlTeam": "NSH",
+   "pos": "C",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 4.5,
+   "games": 2,
+   "days": [
+    "11-17",
+    "11-21"
+   ]
+  },
+  {
+   "id": "031og",
+   "name": "Tyler Bertuzzi",
+   "nhlTeam": "CHI",
+   "pos": "LW",
+   "elig": "RW",
+   "status": "INJURED_RESERVE",
+   "salary": 5.5,
+   "games": 4,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21",
+    "11-22"
+   ]
+  },
+  {
+   "id": "0644e",
+   "name": "Oliver Moore",
+   "nhlTeam": "CHI",
+   "pos": "LW",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 0.942,
+   "games": 4,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21",
+    "11-22"
+   ]
+  },
+  {
+   "id": "06mcw",
+   "name": "Jack Berglund",
+   "nhlTeam": "PHI",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 1.075,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "02un7",
+   "name": "Aleksander Barkov",
+   "nhlTeam": "FLA",
+   "pos": "C",
+   "elig": "C",
+   "status": "INJURED_RESERVE",
+   "salary": 10,
+   "games": 2,
+   "days": [
+    "11-17",
+    "11-21"
+   ]
+  },
+  {
+   "id": "04kyh",
+   "name": "Brady Tkachuk",
+   "nhlTeam": "FLA",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "ACTIVE",
+   "salary": 8.206,
+   "games": 2,
+   "days": [
+    "11-17",
+    "11-21"
+   ]
+  },
+  {
+   "id": "061im",
+   "name": "Michael Misa",
+   "nhlTeam": "SJS",
+   "pos": "C",
+   "elig": "C",
+   "status": "ACTIVE",
+   "salary": 0.986,
+   "games": 2,
+   "days": [
+    "11-17",
+    "11-21"
+   ]
+  },
+  {
+   "id": "06m7l",
+   "name": "Riley Patterson",
+   "nhlTeam": "VAN",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 0.957,
+   "games": 4,
+   "days": [
+    "11-16",
+    "11-19",
+    "11-21",
+    "11-22"
+   ]
+  },
+  {
+   "id": "01ztp",
+   "name": "Zach Hyman",
+   "nhlTeam": "EDM",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 5.5,
+   "games": 4,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21",
+    "11-22"
+   ]
+  },
+  {
+   "id": "02ybn",
+   "name": "Josh Morrissey",
+   "nhlTeam": "WPG",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 6.25,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "06kr3",
+   "name": "Sam OReilly",
+   "nhlTeam": "TBL",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 0.936,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-22"
+   ]
+  },
+  {
+   "id": "06b7c",
+   "name": "Luca Pinelli",
+   "nhlTeam": "CBJ",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 0.934,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "01zt0",
+   "name": "Jason Zucker",
+   "nhlTeam": "BUF",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "RESERVE",
+   "salary": 4.75,
+   "games": 4,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21",
+    "11-22"
+   ]
+  },
+  {
+   "id": "06b7a",
+   "name": "Felix Nilsson",
+   "nhlTeam": "NSH",
+   "pos": "C",
+   "elig": "C",
+   "status": "MINORS",
+   "salary": 1.028,
+   "games": 2,
+   "days": [
+    "11-17",
+    "11-21"
+   ]
+  },
+  {
+   "id": "042vx",
+   "name": "Filip Hronek",
+   "nhlTeam": "VAN",
+   "pos": "D",
+   "elig": "D",
+   "status": "ACTIVE",
+   "salary": 7.25,
+   "games": 4,
+   "days": [
+    "11-16",
+    "11-19",
+    "11-21",
+    "11-22"
+   ]
+  },
+  {
+   "id": "05ui5",
+   "name": "Quentin Musty",
+   "nhlTeam": "SJS",
+   "pos": "LW",
+   "elig": "LW",
+   "status": "MINORS",
+   "salary": 0.909,
+   "games": 2,
+   "days": [
+    "11-17",
+    "11-21"
+   ]
+  },
+  {
+   "id": "06hcw",
+   "name": "Beckett Sennecke",
+   "nhlTeam": "ANA",
+   "pos": "RW",
+   "elig": "RW",
+   "status": "ACTIVE",
+   "salary": 0.954,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
+   ]
+  },
+  {
+   "id": "06ims",
+   "name": "Dmitri Gamzin",
+   "nhlTeam": "NYI",
+   "pos": "G",
+   "elig": "G",
+   "status": "MINORS",
+   "salary": 0,
+   "games": 3,
+   "days": [
+    "11-17",
+    "11-19",
+    "11-21"
    ]
   }
  ],
  "stats": {
-  "06mb6": null,
-  "06uy3": null,
+  "0769f": null,
   "05rjd": {
    "nhlId": 8483445,
-   "gp": 19,
-   "fp": 97.1,
+   "gp": 20,
+   "fp": 102.1,
    "hit": 16,
    "blk": 6,
    "toi": [
+    "19:58",
     "17:32",
     "19:35",
     "18:24",
@@ -1950,11 +1969,12 @@
   "075ko": null,
   "0243f": {
    "nhlId": 8477495,
-   "gp": 21,
-   "fp": 77.1,
+   "gp": 22,
+   "fp": 80.3,
    "hit": 23,
    "blk": 27,
    "toi": [
+    "23:54",
     "22:30",
     "22:32",
     "21:48",
@@ -2050,6 +2070,34 @@
   },
   "06r61": null,
   "06clb": null,
+  "05tqt": {
+   "nhlId": 8482740,
+   "gp": 18,
+   "fp": 61.4,
+   "hit": 15,
+   "blk": 12,
+   "toi": [
+    "21:04",
+    "17:05",
+    "17:13",
+    "19:09",
+    "19:15",
+    "16:13",
+    "19:48",
+    "21:41",
+    "20:44",
+    "20:15",
+    "19:55",
+    "20:41",
+    "20:25",
+    "21:47",
+    "16:40",
+    "16:45",
+    "22:50",
+    "21:49"
+   ],
+   "note": "includes hits and blocks (NHL season report)"
+  },
   "042t2": {
    "nhlId": 8479378,
    "gp": 19,
@@ -2081,8 +2129,8 @@
   },
   "03rfo": {
    "nhlId": 8478435,
-   "gp": 11,
-   "fp": 46.5,
+   "gp": 12,
+   "fp": 46.25,
    "toi": []
   },
   "06bao": {
@@ -2119,15 +2167,18 @@
   "076q3": null,
   "06md8": null,
   "06loc": null,
+  "0765k": null,
+  "0769i": null,
   "06ydv": null,
   "06mcs": null,
   "01f6d": {
    "nhlId": 8475158,
-   "gp": 20,
-   "fp": 68.7,
-   "hit": 9,
+   "gp": 21,
+   "fp": 70.8,
+   "hit": 10,
    "blk": 22,
    "toi": [
+    "19:19",
     "21:13",
     "20:36",
     "18:18",
@@ -2148,6 +2199,36 @@
     "23:40",
     "19:53",
     "21:31"
+   ],
+   "note": "includes hits and blocks (NHL season report)"
+  },
+  "031og": {
+   "nhlId": 8477479,
+   "gp": 20,
+   "fp": 21.5,
+   "hit": 10,
+   "blk": 4,
+   "toi": [
+    "13:30",
+    "16:30",
+    "17:30",
+    "16:56",
+    "18:55",
+    "18:02",
+    "13:22",
+    "14:02",
+    "15:39",
+    "22:22",
+    "16:46",
+    "17:22",
+    "16:32",
+    "16:06",
+    "17:16",
+    "20:46",
+    "17:50",
+    "16:18",
+    "18:15",
+    "16:51"
    ],
    "note": "includes hits and blocks (NHL season report)"
   },
@@ -2181,37 +2262,6 @@
    "note": "includes hits and blocks (NHL season report)"
   },
   "06mcw": null,
-  "04uql": {
-   "nhlId": 8482149,
-   "gp": 21,
-   "fp": 73.8,
-   "hit": 27,
-   "blk": 9,
-   "toi": [
-    "20:35",
-    "17:30",
-    "15:43",
-    "15:41",
-    "15:26",
-    "21:03",
-    "15:34",
-    "18:38",
-    "17:26",
-    "16:07",
-    "24:01",
-    "19:00",
-    "19:47",
-    "16:42",
-    "18:57",
-    "16:13",
-    "22:20",
-    "19:02",
-    "19:59",
-    "17:10",
-    "17:06"
-   ],
-   "note": "includes hits and blocks (NHL season report)"
-  },
   "02un7": {
    "nhlId": 8477493,
    "gp": 2,
@@ -2226,11 +2276,12 @@
   },
   "04kyh": {
    "nhlId": 8480801,
-   "gp": 21,
-   "fp": 108.5,
-   "hit": 83,
+   "gp": 22,
+   "fp": 110.4,
+   "hit": 93,
    "blk": 2,
    "toi": [
+    "16:53",
     "13:41",
     "15:47",
     "16:51",
@@ -2257,11 +2308,12 @@
   },
   "061im": {
    "nhlId": 8485402,
-   "gp": 22,
-   "fp": 35,
+   "gp": 23,
+   "fp": 38.1,
    "hit": 12,
-   "blk": 8,
+   "blk": 10,
    "toi": [
+    "15:59",
     "17:34",
     "18:12",
     "19:55",
@@ -2290,11 +2342,12 @@
   "06m7l": null,
   "01ztp": {
    "nhlId": 8475786,
-   "gp": 10,
-   "fp": 15.6,
-   "hit": 5,
-   "blk": 0,
+   "gp": 11,
+   "fp": 20.8,
+   "hit": 6,
+   "blk": 1,
    "toi": [
+    "14:04",
     "17:55",
     "15:50",
     "18:24",
@@ -2339,14 +2392,36 @@
    "note": "includes hits and blocks (NHL season report)"
   },
   "06b7c": null,
+  "01zt0": {
+   "nhlId": 8475722,
+   "gp": 11,
+   "fp": 9.1,
+   "hit": 10,
+   "blk": 4,
+   "toi": [
+    "10:14",
+    "13:43",
+    "14:37",
+    "13:52",
+    "13:49",
+    "13:16",
+    "8:47",
+    "11:04",
+    "12:04",
+    "13:52",
+    "12:16"
+   ],
+   "note": "includes hits and blocks (NHL season report)"
+  },
   "06b7a": null,
   "042vx": {
    "nhlId": 8479425,
-   "gp": 21,
-   "fp": 43.2,
-   "hit": 30,
-   "blk": 42,
+   "gp": 22,
+   "fp": 46.7,
+   "hit": 31,
+   "blk": 43,
    "toi": [
+    "27:57",
     "25:38",
     "31:11",
     "29:50",
@@ -2371,43 +2446,15 @@
    ],
    "note": "includes hits and blocks (NHL season report)"
   },
-  "03167": {
-   "nhlId": 8477500,
-   "gp": 19,
-   "fp": 73.3,
-   "hit": 31,
-   "blk": 10,
-   "toi": [
-    "18:00",
-    "25:41",
-    "22:42",
-    "20:32",
-    "20:56",
-    "20:29",
-    "20:57",
-    "26:04",
-    "19:18",
-    "21:33",
-    "21:35",
-    "24:21",
-    "23:22",
-    "19:49",
-    "20:09",
-    "17:53",
-    "17:49",
-    "18:31",
-    "22:31"
-   ],
-   "note": "includes hits and blocks (NHL season report)"
-  },
   "05ui5": null,
   "06hcw": {
    "nhlId": 8484762,
-   "gp": 20,
-   "fp": 86.1,
+   "gp": 21,
+   "fp": 96,
    "hit": 19,
    "blk": 7,
    "toi": [
+    "20:54",
     "18:22",
     "21:34",
     "18:29",
@@ -2431,86 +2478,6 @@
    ],
    "note": "includes hits and blocks (NHL season report)"
   },
-  "06ims": null,
-  "05tqt": {
-   "nhlId": 8482740,
-   "gp": 17,
-   "fp": 57.6,
-   "hit": 15,
-   "blk": 12,
-   "toi": [
-    "17:05",
-    "17:13",
-    "19:09",
-    "19:15",
-    "16:13",
-    "19:48",
-    "21:41",
-    "20:44",
-    "20:15",
-    "19:55",
-    "20:41",
-    "20:25",
-    "21:47",
-    "16:40",
-    "16:45",
-    "22:50",
-    "21:49"
-   ],
-   "note": "includes hits and blocks (NHL season report)"
-  },
-  "0765k": null,
-  "0769i": null,
-  "031og": {
-   "nhlId": 8477479,
-   "gp": 20,
-   "fp": 21.5,
-   "hit": 10,
-   "blk": 4,
-   "toi": [
-    "13:30",
-    "16:30",
-    "17:30",
-    "16:56",
-    "18:55",
-    "18:02",
-    "13:22",
-    "14:02",
-    "15:39",
-    "22:22",
-    "16:46",
-    "17:22",
-    "16:32",
-    "16:06",
-    "17:16",
-    "20:46",
-    "17:50",
-    "16:18",
-    "18:15",
-    "16:51"
-   ],
-   "note": "includes hits and blocks (NHL season report)"
-  },
-  "01zt0": {
-   "nhlId": 8475722,
-   "gp": 11,
-   "fp": 9.1,
-   "hit": 10,
-   "blk": 4,
-   "toi": [
-    "10:14",
-    "13:43",
-    "14:37",
-    "13:52",
-    "13:49",
-    "13:16",
-    "8:47",
-    "11:04",
-    "12:04",
-    "13:52",
-    "12:16"
-   ],
-   "note": "includes hits and blocks (NHL season report)"
-  }
+  "06ims": null
  }
 }

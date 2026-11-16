@@ -1,21 +1,42 @@
 {
- "at": "2026-11-15T10:19:26.006Z",
- "date": "2026-11-14",
+ "at": "2026-11-16T10:17:31.403Z",
+ "date": "2026-11-15",
  "late": true,
  "lateGames": [
-  "BUF@DAL",
-  "SJS@UTA",
-  "NYI@ANA",
-  "CGY@LAK"
+  "EDM@PHI",
+  "FLA@DAL",
+  "CGY@ANA",
+  "VAN@VGK",
+  "NSH@SJS"
  ],
- "gamesFinal": 4,
+ "gamesFinal": 5,
  "gamesPending": [],
- "candidates": [],
+ "candidates": [
+  {
+   "name": "Jeff Malott",
+   "team": "ANA",
+   "pos": "L",
+   "age": 30,
+   "fx": "05tau",
+   "status": "FA",
+   "fp": 6.1,
+   "line": "1G 0A, 4 SOG, 5 hits, 1 blk",
+   "toi": "14:28",
+   "avgToi": "10:04",
+   "gpBefore": 19,
+   "reasons": [
+    "+4:24 over his 10:04 average"
+   ],
+   "minors": true,
+   "why": "minors-eligible + usage"
+  }
+ ],
  "nearMisses": [
-  "Tyler Toffoli (SJS, 34): 7 FP, power-play point, 11:56 TOI, no M badge",
-  "Dmitry Orlov (SJS, 35): 11.9 FP, power-play point, 18:51 TOI, no M badge",
-  "Zac Jones (UTA, 26): 7 FP, no usage signal, 14:38 TOI",
-  "Yegor Sharangovich (CGY, 28): 7.1 FP, 17:27 TOI, no M badge"
+  "Casey DeSmith (DAL, 35): 10.25 FP, no usage signal",
+  "Drew O'Connor (VAN, 28): 7.9 FP, no usage signal, 12:25 TOI",
+  "Filip Chytil (VAN, 27): 10.7 FP, 17:22 TOI, no M badge",
+  "Linus Karlsson (VAN, 27): 8.4 FP, no usage signal, 14:36 TOI",
+  "Alex Nedeljkovic (SJS, 30): 11 FP, no usage signal"
  ],
  "unmatched": []
 }

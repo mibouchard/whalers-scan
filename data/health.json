@@ -1,6 +1,6 @@
 {
- "at": "2026-11-15T10:19:50.230Z",
- "d": "2026-11-15",
+ "at": "2026-11-16T10:18:04.026Z",
+ "d": "2026-11-16",
  "mode": "full",
  "steps": {
   "scan": "ok",
@@ -36,14 +36,14 @@
  "errors": {},
  "fantrax": {
   "rosters": "ok",
-  "period": 7,
-  "ownPeriod": 8,
+  "period": 8,
+  "ownPeriod": 9,
   "nextPeriod": "ok",
   "leagueInfo": "ok"
  },
  "stale": {},
  "alert": {
-  "date": "2026-11-14",
-  "at": "2026-11-15T03:00:50.047Z"
+  "date": "2026-11-15",
+  "at": "2026-11-16T03:00:39.384Z"
  }
 }
