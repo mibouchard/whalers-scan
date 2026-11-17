@@ -1,42 +1,17 @@
 {
- "at": "2026-11-16T10:17:31.403Z",
- "date": "2026-11-15",
+ "at": "2026-11-17T10:16:48.017Z",
+ "date": "2026-11-16",
  "late": true,
  "lateGames": [
-  "EDM@PHI",
-  "FLA@DAL",
-  "CGY@ANA",
-  "VAN@VGK",
-  "NSH@SJS"
+  "MTL@NYR",
+  "VAN@UTA"
  ],
- "gamesFinal": 5,
+ "gamesFinal": 2,
  "gamesPending": [],
- "candidates": [
-  {
-   "name": "Jeff Malott",
-   "team": "ANA",
-   "pos": "L",
-   "age": 30,
-   "fx": "05tau",
-   "status": "FA",
-   "fp": 6.1,
-   "line": "1G 0A, 4 SOG, 5 hits, 1 blk",
-   "toi": "14:28",
-   "avgToi": "10:04",
-   "gpBefore": 19,
-   "reasons": [
-    "+4:24 over his 10:04 average"
-   ],
-   "minors": true,
-   "why": "minors-eligible + usage"
-  }
- ],
+ "candidates": [],
  "nearMisses": [
-  "Casey DeSmith (DAL, 35): 10.25 FP, no usage signal",
-  "Drew O'Connor (VAN, 28): 7.9 FP, no usage signal, 12:25 TOI",
-  "Filip Chytil (VAN, 27): 10.7 FP, 17:22 TOI, no M badge",
-  "Linus Karlsson (VAN, 27): 8.4 FP, no usage signal, 14:36 TOI",
-  "Alex Nedeljkovic (SJS, 30): 11 FP, no usage signal"
+  "Jake DeBrusk (VAN, 30): 8.4 FP, power-play point, 13:24 TOI, no M badge",
+  "Nikita Tolopilo (VAN, 26): 11.5 FP, no usage signal"
  ],
  "unmatched": []
 }
