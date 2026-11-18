@@ -1,6 +1,6 @@
 {
- "d": "2026-11-17",
- "at": "2026-11-17T10:15:24.435Z",
+ "d": "2026-11-18",
+ "at": "2026-11-18T10:15:24.264Z",
  "mode": "full",
  "status": {
   "AHL": "ok",
@@ -28,6 +28,8 @@
   "nextPeriod": "ok",
   "leagueInfo": "ok"
  },
- "stale": {},
+ "stale": {
+  "SHL": "no change in games played over the last 4 daily points (since 2026-11-15): the site may be serving old numbers"
+ },
  "subset": []
 }
