@@ -1,22 +1,13 @@
 {
- "at": "2026-11-18T03:00:38.413Z",
- "date": "2026-11-17",
- "gamesFinal": 5,
+ "at": "2026-11-19T03:00:35.161Z",
+ "date": "2026-11-18",
+ "gamesFinal": 0,
  "gamesPending": [
-  "WSH@TBL",
-  "TOR@CHI",
-  "ANA@STL",
-  "NSH@MIN",
-  "DAL@VGK",
-  "CGY@SJS"
+  "BOS@DET",
+  "MTL@NJD",
+  "COL@UTA"
  ],
  "candidates": [],
- "nearMisses": [
-  "Erik Gustafsson (LAK, 34): 6.2 FP, 20:49 TOI, no M badge",
-  "Darcy Kuemper (LAK, 36): 17.25 FP, no usage signal",
-  "Anthony Duclair (NYI, 31): 6.9 FP, power-play point, 14:18 TOI, no M badge",
-  "Tony DeAngelo (NYI, 31): 6.7 FP, power-play point, 19:41 TOI, no M badge",
-  "Christian Dvorak (PHI, 30): 8.3 FP, 16:37 TOI, no M badge"
- ],
+ "nearMisses": [],
  "unmatched": []
 }
