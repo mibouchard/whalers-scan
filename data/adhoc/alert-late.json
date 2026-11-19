@@ -1,44 +1,17 @@
 {
- "at": "2026-11-18T10:16:23.617Z",
- "date": "2026-11-17",
+ "at": "2026-11-19T10:16:39.602Z",
+ "date": "2026-11-18",
  "late": true,
  "lateGames": [
-  "WSH@TBL",
-  "TOR@CHI",
-  "ANA@STL",
-  "NSH@MIN",
-  "DAL@VGK",
-  "CGY@SJS"
+  "BOS@DET",
+  "MTL@NJD",
+  "COL@UTA"
  ],
- "gamesFinal": 6,
+ "gamesFinal": 3,
  "gamesPending": [],
- "candidates": [
-  {
-   "name": "Mason Marchment",
-   "team": "SJS",
-   "pos": "L",
-   "age": 31,
-   "fx": "03wor",
-   "status": "FA",
-   "fp": 6.2,
-   "line": "1G 1A, 1 PPP, 2 SOG, 0 hits, 0 blk",
-   "toi": "20:19",
-   "avgToi": "16:34",
-   "gpBefore": 23,
-   "reasons": [
-    "20:19 TOI",
-    "power-play point",
-    "+3:45 over his 16:34 average"
-   ],
-   "why": "role change"
-  }
- ],
+ "candidates": [],
  "nearMisses": [
-  "Nicolas Hague (NSH, 27): 6.9 FP, no usage signal, 17:28 TOI",
-  "Jared Spurgeon (MIN, 36): 6.2 FP, no usage signal, 17:59 TOI",
-  "William Karlsson (VGK, 33): 7.8 FP, 19:18 TOI, no M badge",
-  "Ryan Strome (CGY, 33): 6 FP, power-play point, 14:18 TOI, no M badge",
-  "Martin Pospisil (CGY, 26): 8.5 FP, no usage signal, 12:41 TOI"
+  "Casey Mittelstadt (BOS, 27): 6.5 FP, no usage signal, 13:25 TOI"
  ],
  "unmatched": []
 }
