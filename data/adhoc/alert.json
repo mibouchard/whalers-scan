@@ -1,13 +1,37 @@
 {
- "at": "2026-11-19T03:00:35.161Z",
- "date": "2026-11-18",
- "gamesFinal": 0,
+ "at": "2026-11-20T03:00:37.719Z",
+ "date": "2026-11-19",
+ "gamesFinal": 6,
  "gamesPending": [
-  "BOS@DET",
-  "MTL@NJD",
-  "COL@UTA"
+  "EDM@TBL",
+  "CBJ@CHI",
+  "MIN@CGY",
+  "ANA@COL",
+  "VAN@SEA",
+  "DAL@VGK"
  ],
- "candidates": [],
- "nearMisses": [],
+ "candidates": [
+  {
+   "name": "Cam York",
+   "team": "PHI",
+   "pos": "D",
+   "age": 25,
+   "fx": "04ye7",
+   "status": "FA",
+   "fp": 8.8,
+   "line": "2G 0A, 1 PPP, 3 SOG, 2 hits, 3 blk",
+   "toi": "22:12",
+   "avgToi": "19:33",
+   "gpBefore": 16,
+   "reasons": [
+    "22:12 TOI",
+    "power-play point"
+   ],
+   "why": "young + usage"
+  }
+ ],
+ "nearMisses": [
+  "Ukko-Pekka Luukkonen (BUF, 27): 10.25 FP, no usage signal"
+ ],
  "unmatched": []
 }
