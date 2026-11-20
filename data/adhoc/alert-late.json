@@ -1,17 +1,20 @@
 {
- "at": "2026-11-19T10:16:39.602Z",
- "date": "2026-11-18",
+ "at": "2026-11-20T10:16:53.937Z",
+ "date": "2026-11-19",
  "late": true,
  "lateGames": [
-  "BOS@DET",
-  "MTL@NJD",
-  "COL@UTA"
+  "EDM@TBL",
+  "CBJ@CHI",
+  "MIN@CGY",
+  "ANA@COL",
+  "VAN@SEA",
+  "DAL@VGK"
  ],
- "gamesFinal": 3,
+ "gamesFinal": 6,
  "gamesPending": [],
  "candidates": [],
  "nearMisses": [
-  "Casey Mittelstadt (BOS, 27): 6.5 FP, no usage signal, 13:25 TOI"
+  "Scott Wedgewood (COL, 34): 16.25 FP, no usage signal"
  ],
  "unmatched": []
 }
