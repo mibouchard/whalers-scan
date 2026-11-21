@@ -1,20 +1,11 @@
 {
- "at": "2026-11-20T10:16:53.937Z",
- "date": "2026-11-19",
+ "at": "2026-11-21T10:17:02.025Z",
+ "date": "2026-11-20",
  "late": true,
- "lateGames": [
-  "EDM@TBL",
-  "CBJ@CHI",
-  "MIN@CGY",
-  "ANA@COL",
-  "VAN@SEA",
-  "DAL@VGK"
- ],
- "gamesFinal": 6,
+ "lateGames": [],
+ "gamesFinal": 0,
  "gamesPending": [],
  "candidates": [],
- "nearMisses": [
-  "Scott Wedgewood (COL, 34): 16.25 FP, no usage signal"
- ],
+ "nearMisses": [],
  "unmatched": []
 }
