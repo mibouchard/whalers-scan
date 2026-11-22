@@ -1,6 +1,6 @@
 {
- "at": "2026-11-21T10:17:28.036Z",
- "d": "2026-11-21",
+ "at": "2026-11-22T10:17:58.273Z",
+ "d": "2026-11-22",
  "mode": "full",
  "steps": {
   "scan": "ok",
@@ -23,7 +23,7 @@
   "QMJHL": "ok",
   "USHL": "ok",
   "Liiga": "ok",
-  "KHL": "ok",
+  "KHL": "carried 2026-11-21",
   "VHL": "ok",
   "MHL": "ok",
   "SHL": "ok",
@@ -33,7 +33,9 @@
   "Czech": "ok",
   "NHL": "ok"
  },
- "errors": {},
+ "errors": {
+  "KHL": "KHL: no session token on the stats page (HTTP 200)"
+ },
  "fantrax": {
   "rosters": "ok",
   "period": 8,
@@ -43,7 +45,7 @@
  },
  "stale": {},
  "alert": {
-  "date": "2026-11-20",
-  "at": "2026-11-21T03:00:37.582Z"
+  "date": "2026-11-21",
+  "at": "2026-11-22T03:00:35.921Z"
  }
 }

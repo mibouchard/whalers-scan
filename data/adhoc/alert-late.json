@@ -1,11 +1,38 @@
 {
- "at": "2026-11-21T10:17:02.025Z",
- "date": "2026-11-20",
+ "at": "2026-11-22T10:17:17.269Z",
+ "date": "2026-11-21",
  "late": true,
- "lateGames": [],
- "gamesFinal": 0,
+ "lateGames": [
+  "VGK@WPG",
+  "ANA@UTA",
+  "MIN@VAN",
+  "SEA@SJS"
+ ],
+ "gamesFinal": 4,
  "gamesPending": [],
- "candidates": [],
- "nearMisses": [],
+ "candidates": [
+  {
+   "name": "Marco Rossi",
+   "team": "VAN",
+   "pos": "C",
+   "age": 25,
+   "fx": "04o0g",
+   "status": "FA",
+   "fp": 7.5,
+   "line": "2G 0A, 1 PPP, 3 SOG, 1 hits, 0 blk",
+   "toi": "19:30",
+   "avgToi": "15:05",
+   "gpBefore": 22,
+   "reasons": [
+    "19:30 TOI",
+    "power-play point",
+    "+4:25 over his 15:05 average"
+   ],
+   "why": "young + role change"
+  }
+ ],
+ "nearMisses": [
+  "Dmitry Orlov (SJS, 35): 8.1 FP, power-play point, 17:20 TOI, no M badge"
+ ],
  "unmatched": []
 }
