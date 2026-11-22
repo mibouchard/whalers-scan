@@ -1,9 +1,41 @@
 {
- "at": "2026-11-21T03:00:37.582Z",
- "date": "2026-11-20",
- "gamesFinal": 0,
- "gamesPending": [],
- "candidates": [],
- "nearMisses": [],
+ "at": "2026-11-22T03:00:35.921Z",
+ "date": "2026-11-21",
+ "gamesFinal": 10,
+ "gamesPending": [
+  "VGK@WPG",
+  "ANA@UTA",
+  "MIN@VAN",
+  "SEA@SJS"
+ ],
+ "candidates": [
+  {
+   "name": "Ryan Strome",
+   "team": "CGY",
+   "pos": "C",
+   "age": 33,
+   "fx": "02aza",
+   "status": "FA",
+   "fp": 7.4,
+   "line": "1G 1A, 1 PPP, 2 SOG, 0 hits, 1 blk",
+   "toi": "18:37",
+   "avgToi": "14:16",
+   "gpBefore": 23,
+   "reasons": [
+    "18:37 TOI",
+    "power-play point",
+    "+4:21 over his 14:16 average"
+   ],
+   "why": "role change"
+  }
+ ],
+ "nearMisses": [
+  "Patrick Kane (CHI, 38): 9.7 FP, 19:26 TOI, power-play point, no M badge",
+  "Jonathan Marchessault (NSH, 35): 6.9 FP, no usage signal, 15:19 TOI",
+  "Jayden Struble (NSH, 25): 8.2 FP, no usage signal, 16:14 TOI",
+  "Elias Lindholm (BOS, 31): 18.3 FP, 19:42 TOI, power-play point, no M badge",
+  "Ondrej Palat (NYI, 35): 8.8 FP, no usage signal, 11:49 TOI",
+  "Jesper Boqvist (NJD, 28): 6.9 FP, no usage signal, 12:14 TOI"
+ ],
  "unmatched": []
 }
