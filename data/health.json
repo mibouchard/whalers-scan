@@ -1,7 +1,7 @@
 {
- "at": "2026-11-23T10:20:57.989Z",
+ "at": "2026-11-23T21:31:33.599Z",
  "d": "2026-11-23",
- "mode": "full",
+ "mode": "retry",
  "steps": {
   "scan": "ok",
   "form": "ok",
@@ -24,7 +24,7 @@
   "USHL": "ok",
   "Liiga": "ok",
   "KHL": "ok",
-  "VHL": "carried 2026-11-22",
+  "VHL": "ok",
   "MHL": "ok",
   "SHL": "ok",
   "Allsvenskan": "ok",
@@ -33,9 +33,7 @@
   "Czech": "ok",
   "NHL": "ok"
  },
- "errors": {
-  "VHL": "VHL: deadline of 180s exceeded"
- },
+ "errors": {},
  "fantrax": {
   "rosters": "ok",
   "period": 9,
