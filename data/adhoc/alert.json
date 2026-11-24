@@ -1,31 +1,35 @@
 {
- "at": "2026-11-23T03:00:30.690Z",
- "date": "2026-11-22",
- "gamesFinal": 4,
+ "at": "2026-11-24T03:00:33.909Z",
+ "date": "2026-11-23",
+ "gamesFinal": 1,
  "gamesPending": [
-  "CHI@VAN"
+  "LAK@MTL",
+  "CGY@OTT",
+  "TOR@NYI",
+  "UTA@WPG",
+  "ANA@SEA",
+  "MIN@SJS"
  ],
  "candidates": [
   {
-   "name": "Ukko-Pekka Luukkonen",
-   "team": "BUF",
-   "pos": "G",
-   "age": 27,
-   "fx": "0457i",
+   "name": "Connor Brown",
+   "team": "NJD",
+   "pos": "R",
+   "age": 32,
+   "fx": "02oak",
    "status": "FA",
-   "fp": 10.25,
-   "line": "W, 29 saves on 31",
-   "toi": null,
-   "avgToi": null,
-   "gpBefore": 13,
+   "fp": 7.4,
+   "line": "1G 1A, 4 SOG, 0 hits, 0 blk",
+   "toi": "20:20",
+   "avgToi": "15:28",
+   "gpBefore": 15,
    "reasons": [
-    "2 starts in his team's last 3 games"
+    "20:20 TOI",
+    "+4:52 over his 15:28 average"
    ],
    "why": "role change"
   }
  ],
- "nearMisses": [
-  "Eric Robinson (CAR, 31): 8.9 FP, no usage signal, 12:38 TOI"
- ],
+ "nearMisses": [],
  "unmatched": []
 }
