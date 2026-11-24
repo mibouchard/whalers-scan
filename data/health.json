@@ -1,7 +1,7 @@
 {
- "at": "2026-11-23T21:31:33.599Z",
- "d": "2026-11-23",
- "mode": "retry",
+ "at": "2026-11-24T10:18:41.917Z",
+ "d": "2026-11-24",
+ "mode": "full",
  "steps": {
   "scan": "ok",
   "form": "ok",
@@ -41,9 +41,11 @@
   "nextPeriod": "ok",
   "leagueInfo": "ok"
  },
- "stale": {},
+ "stale": {
+  "Allsvenskan": "no change in games played over the last 4 daily points (since 2026-11-21): the site may be serving old numbers"
+ },
  "alert": {
-  "date": "2026-11-22",
-  "at": "2026-11-23T03:00:30.690Z"
+  "date": "2026-11-23",
+  "at": "2026-11-24T03:00:33.909Z"
  }
 }

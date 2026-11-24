@@ -1,15 +1,36 @@
 {
- "at": "2026-11-23T10:19:49.938Z",
- "date": "2026-11-22",
+ "at": "2026-11-24T10:17:31.657Z",
+ "date": "2026-11-23",
  "late": true,
  "lateGames": [
-  "CHI@VAN"
+  "LAK@MTL",
+  "CGY@OTT",
+  "TOR@NYI",
+  "UTA@WPG",
+  "ANA@SEA",
+  "MIN@SJS"
  ],
- "gamesFinal": 1,
+ "gamesFinal": 6,
  "gamesPending": [],
- "candidates": [],
- "nearMisses": [
-  "Patrick Kane (CHI, 38): 6.8 FP, 16:14 TOI, power-play point, no M badge"
+ "candidates": [
+  {
+   "name": "Darcy Kuemper",
+   "team": "LAK",
+   "pos": "G",
+   "age": 36,
+   "fx": "0222k",
+   "status": "FA",
+   "fp": 11.25,
+   "line": "W, 29 saves on 30",
+   "toi": null,
+   "avgToi": null,
+   "gpBefore": 13,
+   "reasons": [
+    "2 starts in his team's last 3 games"
+   ],
+   "why": "role change"
+  }
  ],
+ "nearMisses": [],
  "unmatched": []
 }
