@@ -1,35 +1,11 @@
 {
- "at": "2026-11-24T03:00:33.909Z",
- "date": "2026-11-23",
- "gamesFinal": 1,
+ "at": "2026-11-25T03:00:32.015Z",
+ "date": "2026-11-24",
+ "gamesFinal": 0,
  "gamesPending": [
-  "LAK@MTL",
-  "CGY@OTT",
-  "TOR@NYI",
-  "UTA@WPG",
-  "ANA@SEA",
-  "MIN@SJS"
+  "VGK@EDM"
  ],
- "candidates": [
-  {
-   "name": "Connor Brown",
-   "team": "NJD",
-   "pos": "R",
-   "age": 32,
-   "fx": "02oak",
-   "status": "FA",
-   "fp": 7.4,
-   "line": "1G 1A, 4 SOG, 0 hits, 0 blk",
-   "toi": "20:20",
-   "avgToi": "15:28",
-   "gpBefore": 15,
-   "reasons": [
-    "20:20 TOI",
-    "+4:52 over his 15:28 average"
-   ],
-   "why": "role change"
-  }
- ],
+ "candidates": [],
  "nearMisses": [],
  "unmatched": []
 }
