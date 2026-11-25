@@ -1,36 +1,13 @@
 {
- "at": "2026-11-24T10:17:31.657Z",
- "date": "2026-11-23",
+ "at": "2026-11-25T10:17:19.553Z",
+ "date": "2026-11-24",
  "late": true,
  "lateGames": [
-  "LAK@MTL",
-  "CGY@OTT",
-  "TOR@NYI",
-  "UTA@WPG",
-  "ANA@SEA",
-  "MIN@SJS"
+  "VGK@EDM"
  ],
- "gamesFinal": 6,
+ "gamesFinal": 1,
  "gamesPending": [],
- "candidates": [
-  {
-   "name": "Darcy Kuemper",
-   "team": "LAK",
-   "pos": "G",
-   "age": 36,
-   "fx": "0222k",
-   "status": "FA",
-   "fp": 11.25,
-   "line": "W, 29 saves on 30",
-   "toi": null,
-   "avgToi": null,
-   "gpBefore": 13,
-   "reasons": [
-    "2 starts in his team's last 3 games"
-   ],
-   "why": "role change"
-  }
- ],
+ "candidates": [],
  "nearMisses": [],
  "unmatched": []
 }

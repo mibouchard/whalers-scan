@@ -1,6 +1,6 @@
 {
- "at": "2026-11-24T10:18:41.917Z",
- "d": "2026-11-24",
+ "at": "2026-11-25T10:18:23.658Z",
+ "d": "2026-11-25",
  "mode": "full",
  "steps": {
   "scan": "ok",
@@ -42,10 +42,11 @@
   "leagueInfo": "ok"
  },
  "stale": {
-  "Allsvenskan": "no change in games played over the last 4 daily points (since 2026-11-21): the site may be serving old numbers"
+  "USHL": "no change in games played over the last 4 daily points (since 2026-11-22): the site may be serving old numbers",
+  "Allsvenskan": "no change in games played over the last 5 daily points (since 2026-11-21): the site may be serving old numbers"
  },
  "alert": {
-  "date": "2026-11-23",
-  "at": "2026-11-24T03:00:33.909Z"
+  "date": "2026-11-24",
+  "at": "2026-11-25T03:00:32.015Z"
  }
 }
