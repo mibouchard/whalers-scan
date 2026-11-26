@@ -87,6 +87,11 @@ try {
   for (const r of rg) { const fx = fxOf(r, r.goalieFullName || '', true); if (fx) rk.add(fx); }
   out.rookies = [...rk];
 } catch (e) { console.log('rookie report failed:', e.message); }
+// Skaters only ever join this list during a season, so a list that shrinks is a broken read and is not saved: the step
+// fails and yesterday's file stays (Nov 20-25, 2026: 780 skaters fell to 100 when the NHL feed began capping rows).
+const before = readJSON('data/fo/season.json');
+const was = before?.season === out.season ? Object.keys(before.sk || {}).length : 0, now = Object.keys(out.sk).length;
+if (was >= 200 && now < was * 0.8) throw new Error(`season stats shrank from ${was} skaters to ${now}: not saved`);
 writeJSON('data/fo/season.json', out);
 console.log(`games: ${Object.keys(games).length} players, ${n} games each, ${JSON.stringify(gamesOut).length} bytes, through ${lastDay} | season ${out.season}: ${Object.keys(out.sk).length} skaters, ${Object.keys(out.g).length} goalies, ${out.unmatched} not matched to Fantrax, ${JSON.stringify(out).length} bytes`);
 if (JSON.stringify(out).length > LIMIT) throw new Error('season.json is too big for the board');

@@ -1,7 +1,7 @@
 // NHL API helpers (api-web.nhle.com) shared by box.js, nightalert.js, form.js and week.js: one place that turns a
 // finished game into per-player fantasy lines, so every tool scores shutouts, game-winners and goalie points the same way.
 import '../env.js';
-import { getJSONr } from './util.js';
+import { getJSONr, nhlReportRows } from './util.js';
 import { skaterFP, goalieFP } from './scoring.js';
 import { nameKey, fold } from './names.js';
 
@@ -100,9 +100,9 @@ export async function findNhlId(team, first, last) {
 // Returns { playerId: { hit, blk, gp } }, or null when the report cannot be read.
 export async function seasonHitsBlocks(season = seasonId()) {
   try {
-    const j = await getJSONr(`https://api.nhle.com/stats/rest/en/skater/realtime?limit=-1&cayenneExp=${encodeURIComponent(`seasonId=${season} and gameTypeId=2`)}`);
-    if (!Array.isArray(j.data) || !j.data.length || j.data[0].hits === undefined || j.data[0].blockedShots === undefined) return null;
-    const m = {}; for (const s of j.data) { const o = m[s.playerId] ||= { hit: 0, blk: 0, gp: 0 }; o.hit += s.hits || 0; o.blk += s.blockedShots || 0; o.gp += s.gamesPlayed || 0; }
+    const rows = await nhlReportRows(`https://api.nhle.com/stats/rest/en/skater/realtime?cayenneExp=${encodeURIComponent(`seasonId=${season} and gameTypeId=2`)}`);
+    if (!rows.length || rows[0].hits === undefined || rows[0].blockedShots === undefined) return null;
+    const m = {}; for (const s of rows) { const o = m[s.playerId] ||= { hit: 0, blk: 0, gp: 0 }; o.hit += s.hits || 0; o.blk += s.blockedShots || 0; o.gp += s.gamesPlayed || 0; }
     return m;
   } catch { return null; }
 }

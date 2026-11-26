@@ -35,3 +35,23 @@ export async function getJSON(u, o) {
 }
 // getJSON with three tries
 export const getJSONr = (u, o) => retry(() => getJSON(u, o), 3);
+
+// The NHL stats reports (api.nhle.com/stats/rest) return at most 100 rows a request since Nov 20, 2026, whatever limit is
+// asked (limit=-1 no longer returns everyone); the answer's "total" still gives the true row count. Read a report in
+// pages of 100, in one fixed order, and treat a short or doubled read as a failure, so that a part of a report is never
+// used as if it were the whole of it (data/fo/season.json held 100 skaters of 780 for six days while its step said ok).
+//   url: the report's address with its cayenneExp filter and no limit, start or sort
+export async function nhlReportRows(url, get = getJSONr) {
+  const sep = url.includes('?') ? '&' : '?'; const what = String(url).split('?')[0].split('/').slice(-2).join('/');
+  const rows = []; let total = null;
+  for (let start = 0; total === null || start < total; start += 100) {
+    const j = await get(`${url}${sep}limit=100&start=${start}&sort=playerId`);
+    if (!Array.isArray(j?.data)) throw new Error(`NHL report ${what}: no data`);
+    rows.push(...j.data);
+    if (typeof j.total === 'number') total = j.total; else if (j.data.length < 100) total = rows.length;
+    if (!j.data.length) break;
+  }
+  if (rows.length !== total) throw new Error(`NHL report ${what}: short read, ${rows.length} of ${total} rows`);
+  if (new Set(rows.map(r => JSON.stringify(r))).size !== rows.length) throw new Error(`NHL report ${what}: a row came back twice`);
+  return rows;
+}

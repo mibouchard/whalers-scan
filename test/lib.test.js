@@ -10,7 +10,7 @@ const { skaterFP, goalieFP, gameLogFP } = await import('../src/lib/scoring.js');
 const { capOf, counts, rosterWarnings, periodForDate, periodDates, diffMoves, freeMap, namer } = await import('../src/lib/fantrax.js');
 const { makeMatcher, nameKey } = await import('../src/lib/names.js');
 const { rowsFromGame } = await import('../src/lib/nhl.js');
-const { retry, withDeadline } = await import('../src/lib/util.js');
+const { retry, withDeadline, nhlReportRows } = await import('../src/lib/util.js');
 const { plan } = await import('../src/ci/guard.js');
 const { mergeByUuid, parseBirth, rosterBirths } = await import('../src/leagues.js');
 const { parseHTML } = await import('../src/env.js');
@@ -107,6 +107,23 @@ test('retry and deadline', async () => {
   await assert.rejects(withDeadline(signal => new Promise((_, rej) => signal.addEventListener('abort', () => { aborted = true; rej(new Error('stopped')); })), 50, 'KHL'), /KHL: deadline of 0s exceeded/);
   assert.ok(aborted, 'the work is told to stop'); assert.ok(Date.now() - t0 < 2000);
   assert.equal(await withDeadline(async () => 7, 1000), 7);
+});
+test('NHL stats reports are read in pages of 100, and a short or doubled read fails (Nov 20, 2026 row cap)', async () => {
+  const all = Array.from({ length: 789 }, (_, i) => ({ playerId: 8470000 + i, goals: i % 7 }));
+  const asked = [];
+  // the feed as it has behaved since Nov 20, 2026: at most 100 rows whatever limit is asked, with the true total
+  const feed = rows => async u => { asked.push(u); const q = new URL(u).searchParams; const start = +q.get('start') || 0; return { data: rows.slice(start, start + 100), total: rows.length }; };
+  const got = await nhlReportRows('https://api.nhle.com/stats/rest/en/skater/summary?cayenneExp=x', feed(all));
+  assert.equal(got.length, 789); assert.equal(asked.length, 8);
+  assert.ok(asked.every(u => /limit=100&start=\d+&sort=playerId/.test(u)) && !asked.some(u => u.includes('limit=-1')));
+  assert.equal((await nhlReportRows('https://x/y/goalie/summary?cayenneExp=x', feed(all.slice(0, 79)))).length, 79);
+  assert.deepEqual(await nhlReportRows('https://x/y/z?cayenneExp=x', feed([])), []);
+  // a page that comes back short of the feed's own total is an error, never a full result
+  const short = async u => ({ data: all.slice(0, 100), total: 789, ...(new URL(u).searchParams.get('start') !== '0' ? { data: [] } : {}) });
+  await assert.rejects(nhlReportRows('https://x/y/skater/summary?cayenneExp=x', short), /short read, 100 of 789/);
+  const twice = async u => ({ data: all.slice(0, 100), total: 200 });
+  await assert.rejects(nhlReportRows('https://x/y/skater/summary?cayenneExp=x', twice), /came back twice/);
+  await assert.rejects(nhlReportRows('https://x/y/skater/summary?cayenneExp=x', async () => ({ message: 'error' })), /no data/);
 });
 test('workflow guard: skip, retry or full', () => {
   const now = new Date('2026-10-07T09:47:00Z'); const ok = Object.fromEntries(['form', 'pool', 'league', 'box', 'stats', 'alertLate', 'fawatch', 'draftees', 'draft', 'week'].map(s => [s, 'ok']));
