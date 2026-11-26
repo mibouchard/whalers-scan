@@ -5,7 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT, readJSON } from './config.js';
-import { getJSONr } from './util.js';
+import { nhlReportRows } from './util.js';
 
 export const CHUNKS = 8;
 // Which careers file holds a Fantrax id: the sum of its character codes, modulo CHUNKS (the page does the same sum).
@@ -25,14 +25,13 @@ export function boxNid() {
   return m;
 }
 
-// NHL stats REST reports (api.nhle.com): every player in one call per season.
+// NHL stats REST reports (api.nhle.com): every player of a season, read in pages of 100 (see nhlReportRows in util.js).
 //   report: 'skater/summary', 'skater/realtime', 'goalie/summary'; season: '20262027'
 const REST = 'https://api.nhle.com/stats/rest/en/';
 // extra: one more filter for the NHL report, e.g. "isRookie='1'"
 export async function report(kind, season, extra) {
-  const j = await getJSONr(`${REST}${kind}?limit=-1&cayenneExp=${encodeURIComponent(`seasonId=${season} and gameTypeId=2${extra ? ' and ' + extra : ''}`)}`);
-  if (!Array.isArray(j.data)) throw new Error(`${kind} ${season}: no data`);
-  return j.data;
+  try { return await nhlReportRows(`${REST}${kind}?cayenneExp=${encodeURIComponent(`seasonId=${season} and gameTypeId=2${extra ? ' and ' + extra : ''}`)}`); }
+  catch (e) { throw new Error(`${kind} ${season}: ${e.message}`); }
 }
 // The same player can have one row per club in a season: add them up per player id
 export function byPlayer(rows, pick) {

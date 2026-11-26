@@ -292,8 +292,16 @@ window.WS = (() => {
       let ppPts = null;
       try {
         const now = new Date(), y = now.getUTCMonth() >= 7 ? now.getUTCFullYear() : now.getUTCFullYear() - 1;
-        const r = await fetch(`https://api.nhle.com/stats/rest/en/skater/summary?limit=-1&cayenneExp=${encodeURIComponent(`seasonId=${y}${y + 1} and gameTypeId=2`)}`);
-        if (r.ok) { const j = await r.json(); if (Array.isArray(j.data) && j.data.length && j.data[0].ppPoints !== undefined) { ppPts = {}; j.data.forEach(s => { ppPts[s.playerId] = s.ppPoints; }); } }
+        // the report returns at most 100 rows a request (since Nov 20, 2026): read it in pages, and use it only when whole
+        const rows = []; let total = null;
+        for (let start = 0; total === null || start < total; start += 100) {
+          const j = await J(`https://api.nhle.com/stats/rest/en/skater/summary?limit=100&start=${start}&sort=playerId&cayenneExp=${encodeURIComponent(`seasonId=${y}${y + 1} and gameTypeId=2`)}`);
+          if (!Array.isArray(j.data)) break;
+          rows.push(...j.data);
+          if (typeof j.total === 'number') total = j.total; else if (j.data.length < 100) total = rows.length;
+          if (!j.data.length) break;
+        }
+        if (rows.length && rows.length === total && rows[0].ppPoints !== undefined) { ppPts = {}; rows.forEach(s => { ppPts[s.playerId] = s.ppPoints; }); }
       } catch (e) { }
       for (let i = 0; i < T.length; i += 4) await Promise.all(T.slice(i, i + 4).map(async t => {
         try {
