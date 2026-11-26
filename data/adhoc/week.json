@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25T10:18:17.516Z",
+ "at": "2026-11-26T10:20:43.327Z",
  "week": "2026-11-23",
  "period": 9,
  "scoring": "G 3, A 2, PPP 1, SHG 2, GWG 1, +/- 0.5, BLK 0.2, HIT 0.2, PIM 0.25, SOG 0.1; G: W 5, SO 5, SV 0.25, GA -1",
@@ -1644,7 +1644,7 @@
    "nhlTeam": "FLA",
    "pos": "C",
    "elig": "C",
-   "status": "INJURED_RESERVE",
+   "status": "ACTIVE",
    "salary": 10,
    "games": 3,
    "days": [
@@ -1674,7 +1674,7 @@
    "nhlTeam": "SJS",
    "pos": "C",
    "elig": "C",
-   "status": "ACTIVE",
+   "status": "RESERVE",
    "salary": 0.986,
    "games": 4,
    "days": [
@@ -1705,7 +1705,7 @@
    "nhlTeam": "EDM",
    "pos": "RW",
    "elig": "RW",
-   "status": "RESERVE",
+   "status": "INJURED_RESERVE",
    "salary": 5.5,
    "games": 3,
    "days": [
@@ -1857,11 +1857,12 @@
   "0769f": null,
   "05rjd": {
    "nhlId": 8483445,
-   "gp": 24,
-   "fp": 122.9,
-   "hit": 25,
+   "gp": 25,
+   "fp": 127.8,
+   "hit": 26,
    "blk": 8,
    "toi": [
+    "19:13",
     "20:21",
     "18:11",
     "21:03",
@@ -1891,9 +1892,12 @@
   },
   "05kuc": {
    "nhlId": 8482095,
-   "gp": 24,
-   "fp": 22.5,
+   "gp": 25,
+   "fp": 42,
+   "hit": 44,
+   "blk": 53,
    "toi": [
+    "14:21",
     "13:09",
     "17:46",
     "17:33",
@@ -1919,16 +1923,17 @@
     "23:21",
     "21:43"
    ],
-   "note": "hits/blocks not in game log"
+   "note": "includes hits and blocks (NHL season report)"
   },
   "0769h": null,
   "02zpp": {
    "nhlId": 8478042,
-   "gp": 23,
-   "fp": 53.1,
-   "hit": 6,
+   "gp": 24,
+   "fp": 63,
+   "hit": 7,
    "blk": 10,
    "toi": [
+    "11:36",
     "16:46",
     "18:54",
     "17:21",
@@ -1957,15 +1962,18 @@
   },
   "0322w": {
    "nhlId": 8478009,
-   "gp": 16,
-   "fp": 119,
+   "gp": 17,
+   "fp": 127.25,
    "toi": []
   },
   "0644c": {
    "nhlId": 8484388,
-   "gp": 20,
-   "fp": 18,
+   "gp": 21,
+   "fp": 28.5,
+   "hit": 29,
+   "blk": 11,
    "toi": [
+    "8:44",
     "11:02",
     "12:18",
     "7:10",
@@ -1987,16 +1995,17 @@
     "11:11",
     "12:08"
    ],
-   "note": "hits/blocks not in game log"
+   "note": "includes hits and blocks (NHL season report)"
   },
   "075ko": null,
   "0243f": {
    "nhlId": 8477495,
-   "gp": 24,
-   "fp": 87.1,
+   "gp": 25,
+   "fp": 90.8,
    "hit": 26,
-   "blk": 30,
+   "blk": 32,
    "toi": [
+    "27:08",
     "22:16",
     "24:27",
     "23:54",
@@ -2028,7 +2037,9 @@
   "05ymj": {
    "nhlId": 8483516,
    "gp": 24,
-   "fp": 72.3,
+   "fp": 76.9,
+   "hit": 17,
+   "blk": 6,
    "toi": [
     "19:16",
     "14:20",
@@ -2055,7 +2066,7 @@
     "14:51",
     "18:59"
    ],
-   "note": "hits/blocks not in game log"
+   "note": "includes hits and blocks (NHL season report)"
   },
   "05xct": {
    "nhlId": 8482982,
@@ -2066,11 +2077,12 @@
   "06lkx": null,
   "067xd": {
    "nhlId": 8486171,
-   "gp": 23,
-   "fp": 40.5,
+   "gp": 24,
+   "fp": 46.3,
    "hit": 25,
    "blk": 9,
    "toi": [
+    "15:29",
     "15:37",
     "16:03",
     "15:28",
@@ -2101,9 +2113,12 @@
   "06clb": null,
   "05tqt": {
    "nhlId": 8482740,
-   "gp": 21,
-   "fp": 67.4,
+   "gp": 22,
+   "fp": 76.3,
+   "hit": 18,
+   "blk": 13,
    "toi": [
+    "20:53",
     "18:59",
     "19:25",
     "20:40",
@@ -2126,13 +2141,16 @@
     "22:50",
     "21:49"
    ],
-   "note": "hits/blocks not in game log"
+   "note": "includes hits and blocks (NHL season report)"
   },
   "042t2": {
    "nhlId": 8479378,
-   "gp": 21,
-   "fp": 21.3,
+   "gp": 22,
+   "fp": 36.1,
+   "hit": 34,
+   "blk": 39,
    "toi": [
+    "19:53",
     "24:31",
     "20:47",
     "9:25",
@@ -2155,7 +2173,7 @@
     "19:10",
     "15:06"
    ],
-   "note": "hits/blocks not in game log"
+   "note": "includes hits and blocks (NHL season report)"
   },
   "03rfo": {
    "nhlId": 8478435,
@@ -2165,9 +2183,12 @@
   },
   "06bao": {
    "nhlId": 8484142,
-   "gp": 22,
-   "fp": 42.1,
+   "gp": 23,
+   "fp": 46.9,
+   "hit": 24,
+   "blk": 4,
    "toi": [
+    "15:41",
     "15:19",
     "13:16",
     "14:19",
@@ -2191,7 +2212,7 @@
     "11:50",
     "13:06"
    ],
-   "note": "hits/blocks not in game log"
+   "note": "includes hits and blocks (NHL season report)"
   },
   "0760p": null,
   "06ay2": null,
@@ -2204,9 +2225,12 @@
   "06mcs": null,
   "01f6d": {
    "nhlId": 8475158,
-   "gp": 23,
-   "fp": 65.1,
+   "gp": 24,
+   "fp": 76.8,
+   "hit": 10,
+   "blk": 23,
    "toi": [
+    "19:53",
     "17:32",
     "18:28",
     "19:19",
@@ -2231,7 +2255,7 @@
     "19:53",
     "21:31"
    ],
-   "note": "hits/blocks not in game log"
+   "note": "includes hits and blocks (NHL season report)"
   },
   "031og": {
    "nhlId": 8477479,
@@ -2269,9 +2293,12 @@
   },
   "0644e": {
    "nhlId": 8484197,
-   "gp": 23,
-   "fp": 18.4,
+   "gp": 24,
+   "fp": 23.6,
+   "hit": 18,
+   "blk": 8,
    "toi": [
+    "14:17",
     "14:08",
     "14:51",
     "12:15",
@@ -2296,24 +2323,30 @@
     "11:25",
     "13:57"
    ],
-   "note": "hits/blocks not in game log"
+   "note": "includes hits and blocks (NHL season report)"
   },
   "06mcw": null,
   "02un7": {
    "nhlId": 8477493,
-   "gp": 2,
-   "fp": 0.2,
+   "gp": 3,
+   "fp": 5.2,
+   "hit": 1,
+   "blk": 3,
    "toi": [
+    "18:19",
     "9:15",
     "20:32"
    ],
-   "note": "hits/blocks not in game log"
+   "note": "includes hits and blocks (NHL season report)"
   },
   "04kyh": {
    "nhlId": 8480801,
-   "gp": 24,
-   "fp": 93.8,
+   "gp": 25,
+   "fp": 115.7,
+   "hit": 104,
+   "blk": 3,
    "toi": [
+    "12:15",
     "17:12",
     "16:58",
     "16:53",
@@ -2339,13 +2372,16 @@
     "19:37",
     "16:33"
    ],
-   "note": "hits/blocks not in game log"
+   "note": "includes hits and blocks (NHL season report)"
   },
   "061im": {
    "nhlId": 8485402,
-   "gp": 26,
-   "fp": 42.6,
+   "gp": 27,
+   "fp": 47.2,
+   "hit": 15,
+   "blk": 10,
    "toi": [
+    "13:43",
     "14:22",
     "14:00",
     "17:14",
@@ -2373,13 +2409,15 @@
     "14:14",
     "11:34"
    ],
-   "note": "hits/blocks not in game log"
+   "note": "includes hits and blocks (NHL season report)"
   },
   "06m7l": null,
   "01ztp": {
    "nhlId": 8475786,
    "gp": 14,
-   "fp": 22.4,
+   "fp": 24.2,
+   "hit": 7,
+   "blk": 2,
    "toi": [
     "8:48",
     "19:03",
@@ -2396,13 +2434,16 @@
     "16:32",
     "20:33"
    ],
-   "note": "hits/blocks not in game log"
+   "note": "includes hits and blocks (NHL season report)"
   },
   "02ybn": {
    "nhlId": 8477504,
-   "gp": 11,
-   "fp": 28.4,
+   "gp": 12,
+   "fp": 39,
+   "hit": 11,
+   "blk": 21,
    "toi": [
+    "21:34",
     "23:55",
     "26:56",
     "25:30",
@@ -2415,15 +2456,16 @@
     "21:33",
     "25:22"
    ],
-   "note": "hits/blocks not in game log"
+   "note": "includes hits and blocks (NHL season report)"
   },
   "06kr3": {
    "nhlId": 8484770,
-   "gp": 6,
-   "fp": 10.5,
-   "hit": 16,
-   "blk": 4,
+   "gp": 7,
+   "fp": 10.9,
+   "hit": 19,
+   "blk": 5,
    "toi": [
+    "14:13",
     "15:29",
     "8:46",
     "13:23",
@@ -2435,9 +2477,12 @@
   },
   "01zt0": {
    "nhlId": 8475722,
-   "gp": 15,
-   "fp": 4.7,
+   "gp": 16,
+   "fp": 11.3,
+   "hit": 13,
+   "blk": 6,
    "toi": [
+    "13:00",
     "13:33",
     "11:14",
     "9:42",
@@ -2454,14 +2499,17 @@
     "13:52",
     "12:16"
    ],
-   "note": "hits/blocks not in game log"
+   "note": "includes hits and blocks (NHL season report)"
   },
   "06b7a": null,
   "042vx": {
    "nhlId": 8479425,
-   "gp": 26,
-   "fp": 41.7,
+   "gp": 27,
+   "fp": 58.6,
+   "hit": 38,
+   "blk": 48,
    "toi": [
+    "26:49",
     "24:34",
     "30:32",
     "30:11",
@@ -2489,13 +2537,15 @@
     "23:02",
     "25:08"
    ],
-   "note": "hits/blocks not in game log"
+   "note": "includes hits and blocks (NHL season report)"
   },
   "05ui5": null,
   "06hcw": {
    "nhlId": 8484762,
    "gp": 22,
-   "fp": 89.8,
+   "fp": 95,
+   "hit": 19,
+   "blk": 7,
    "toi": [
     "17:51",
     "20:54",
@@ -2520,7 +2570,7 @@
     "21:44",
     "18:04"
    ],
-   "note": "hits/blocks not in game log"
+   "note": "includes hits and blocks (NHL season report)"
   },
   "0760t": null,
   "06ims": null
