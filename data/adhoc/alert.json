@@ -1,11 +1,59 @@
 {
- "at": "2026-11-25T03:00:32.015Z",
- "date": "2026-11-24",
- "gamesFinal": 0,
+ "at": "2026-11-26T03:00:45.362Z",
+ "date": "2026-11-25",
+ "gamesFinal": 8,
  "gamesPending": [
-  "VGK@EDM"
+  "VAN@DET",
+  "NSH@DAL",
+  "UTA@MIN",
+  "MTL@COL",
+  "CHI@SEA",
+  "SJS@ANA"
  ],
- "candidates": [],
- "nearMisses": [],
+ "candidates": [
+  {
+   "name": "Jaccob Slavin",
+   "team": "CAR",
+   "pos": "D",
+   "age": 32,
+   "fx": "02o7l",
+   "status": "FA",
+   "fp": 7.4,
+   "line": "1G 1A, 2 SOG, 0 hits, 1 blk",
+   "toi": "24:48",
+   "avgToi": "21:19",
+   "gpBefore": 24,
+   "reasons": [
+    "24:48 TOI",
+    "+3:29 over his 21:19 average"
+   ],
+   "why": "role change"
+  },
+  {
+   "name": "Matt Roy",
+   "team": "WSH",
+   "pos": "D",
+   "age": 31,
+   "fx": "03rjq",
+   "status": "FA",
+   "fp": 7,
+   "line": "1G 1A, 2 SOG, 0 hits, 4 blk",
+   "toi": "25:23",
+   "avgToi": "21:03",
+   "gpBefore": 15,
+   "reasons": [
+    "25:23 TOI",
+    "+4:20 over his 21:03 average"
+   ],
+   "why": "role change"
+  }
+ ],
+ "nearMisses": [
+  "Ukko-Pekka Luukkonen (BUF, 27): 11.25 FP, no usage signal",
+  "Niko Mikkola (FLA, 30): 7.6 FP, 22:21 TOI, no M badge",
+  "Maxim Tsyplakov (CGY, 28): 6 FP, no usage signal, 11:42 TOI",
+  "Brennan Othmann (CGY, 23): 7.1 FP, no usage signal, 9:40 TOI",
+  "Zach Whitecloud (CGY, 29): 6.1 FP, 21:47 TOI, no M badge"
+ ],
  "unmatched": []
 }
