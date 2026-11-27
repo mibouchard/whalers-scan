@@ -20,7 +20,7 @@ Both workflows share one concurrency group (`repo-write`), so two runs never pus
 ### The daily job, in order
 
 1. `src/scan.js`: the 16-league scan.
-2. `form`, `pool`, `league`, `box` (yesterday), `stats` (Front Office player card), `nightalert late` (yesterday), `fawatch`, `week`.
+2. `form`, `pool`, `league`, `box` (yesterday), `stats` (Front Office player card), `nightalert late` (yesterday), `fawatch`, `week`, `edge` (once a week).
 3. `src/ci/health.js` writes `data/health.json`.
 4. Commit and push (three tries: `git pull --rebase -X theirs`, push, a jittered wait).
 5. Last, after the push: the job fails if any league or step failed, so GitHub emails the owner. A red job never costs data.
@@ -131,7 +131,7 @@ The morning report copies `season.json`, `games.json` and `draft.json` to the da
 - `alert-late.json`, from `nightalert.js late`: the same plus `late: true` and `lateGames` (the games `alert.json` listed as pending for that date, or all games if `alert.json` is for another date). Candidates come only from those games.
 - `fawatch.json`, from `fawatch.js`: `{ at, src, status, errors, skaters: [{ lg, <sk columns>, ageKnown, rights, fxStatus, elig, gem }], goalies: [...] }`. Free agents across all leagues, rows with a known age first.
 - `draftees.json`, from `draftees.js` (a daily step): every pick of the last four NHL drafts who is FA or WW in our league, with the lines the minors review prices him on. `{ at, d, years, coverage: { picks, free, nhlId, fx, pages, missingNhlId, noFx, noPage }, czech, notes, rows: [{ y, pk, rd, tm, pos, nid, fx, n, dob, ageModel, half, slot, st, d1: { gp, pts, lg, main, ppg, chlEq, n }, cur: { gp, g, a, pts, lg }, nhl: { gp, pts }, seasons: [[season, league, gp, g, a, pts], ...] }] }`. `d1` is the first full season after the draft (null for the draft just past), `chlEq` its CHL-equivalent points per game through the NHLe table (OHL = 1.0, inferred), `ageModel` the age on Feb 1 of the season's second year, `half` the younger or older half of the draft class, `slot` the pick bucket (1-10 .. 161+). `coverage` is the guard: a review that uses the file quotes `pages`/`free` and names the players in `noPage` and `missingNhlId` as unscored. The step fails when fewer than 95% of the free draftees have a fresh page. NHL ids are kept for good in `state/ws.draftids.json`; picks still without one are searched for in the NHL id blocks on each run. `czech` counts the free draftees with a Czech-league line; the scan's Czech adapter reads the same NHL pages (see below).
-- `edge.json`, from `edge.js` (run by hand): NHL EDGE tracking numbers for the HFD roster's NHL players. `{ at, season, cols: { sk, g }, sk: { <fxId>: [...] }, g: { <fxId>: [...] }, none: [[fxId, name, why], ...] }`. Skaters: top speed and 20+ mph bursts, top shot speed, distance, high-danger shots and goals, offensive-zone time; goalies: GAA, share of games above .900, save percentage overall and high-danger. Every number carries the NHL's percentile (0-100) within the position group. The season is always asked for by id, because `/now` answers with a player's last EDGE season; a 404 is a player with no tracked game this season (`none`).
+- `edge.json` and `edge-<date>.json`, from `edge.js` (morning job, once a week: step `edge` does nothing while the newest dated copy is under 7 days old; dated copies are kept 84 days): NHL EDGE tracking numbers for every player on an NHL roster, keyed by Fantrax id (`nhl<id>` when the Fantrax pool has no match). `{ at, d, season, leagueAt, cols: { sk, g }, sk: { <key>: [...] }, g: { <key>: [...] }, none, unmatched, failed }`. Skaters: top speed and 20+ mph bursts, top shot speed, distance, shots and goals, high-danger shots and goals, offensive-zone time; goalies: GAA, share of games above .900, save percentage overall and high-danger. Every number carries the NHL's percentile (0-100) within the position group. `own` is the Fantrax team, FA or WW as `data/league.json` had it at `leagueAt`: a screening convenience, not a live status. The season is always asked for by id, because `/now` answers with a player's last EDGE season; a 404 is a player with no tracked game this season (`none`). A run where more than 5% of requests fail, or that returns under 80% of the last file's rows, is not saved. Subtract an older dated copy from today's for a trend.
 - `week.json`, from `week.js`: `{ at, week, period, scoring, hitsBlocks, games, byDay, nextWeek { week, games, byDay } (the following Monday-Sunday week), current, next, stats }`.
 - `hfd-roster.json`, `team.json`, `lookup.json`, `names.json`: the one-off lookups below.
 
@@ -150,7 +150,7 @@ Run with the "One-off tool" workflow (`tool` = file name without `.js`, `args` o
 | `form` | | `data/form.json` |
 | `pool` | | `data/pool.json` |
 | `week` | Monday date (default: this week) | `data/adhoc/week.json` |
-| `edge` | NHL player ids (default: the HFD roster) | `data/adhoc/edge.json` |
+| `edge` | none (everyone, saved with a dated copy); `weekly` (only if the last copy is 7+ days old); NHL player ids | `data/adhoc/edge.json`, `edge-<date>.json`; ids go to `edge-lookup.json` |
 | `stats` | | `data/fo/season.json`, `data/fo/games.json` (also a daily step) |
 | `careers` | | `data/fo/careers-0.json` .. `careers-7.json` |
 | `roster` | | `data/adhoc/hfd-roster.json` |

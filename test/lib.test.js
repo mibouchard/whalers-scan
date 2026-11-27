@@ -126,7 +126,7 @@ test('NHL stats reports are read in pages of 100, and a short or doubled read fa
   await assert.rejects(nhlReportRows('https://x/y/skater/summary?cayenneExp=x', async () => ({ message: 'error' })), /no data/);
 });
 test('workflow guard: skip, retry or full', () => {
-  const now = new Date('2026-10-07T09:47:00Z'); const ok = Object.fromEntries(['form', 'pool', 'league', 'box', 'stats', 'alertLate', 'fawatch', 'draftees', 'draft', 'week'].map(s => [s, 'ok']));
+  const now = new Date('2026-10-07T09:47:00Z'); const ok = Object.fromEntries(['form', 'pool', 'league', 'box', 'stats', 'alertLate', 'fawatch', 'draftees', 'draft', 'week', 'edge'].map(s => [s, 'ok']));
   const st = (o = {}) => ({ d: '2026-10-07', at: '2026-10-07T09:20:00Z', status: { AHL: 'ok' }, errors: {}, subset: [], ...o }); const h = (o = {}) => ({ d: '2026-10-07', steps: { scan: 'ok', ...ok, ...o } });
   assert.equal(plan({ event: 'workflow_dispatch', leagues: '', status: st(), health: h(), now }).mode, 'full', 'the outside timer always runs everything');
   assert.deepEqual(plan({ event: 'workflow_dispatch', leagues: 'KHL VHL', status: st(), health: h(), now }), { mode: 'debug', steps: ['scan'] });
@@ -158,4 +158,24 @@ test('Czech team names: UTF-8 read as Windows-1252 is turned back', async () => 
   assert.equal(fixMoji('HC Motor ÄŒeskÃ© BudÄ›jovice'), 'HC Motor České Budějovice');
   assert.equal(fixMoji('HC Sparta Praha'), 'HC Sparta Praha');
   assert.equal(fixMoji('HC Oceláři Třinec'), 'HC Oceláři Třinec');
+});
+
+test('edge: rows, the season check and the weekly gate', async () => {
+  const { skaterRow, goalieRow, hasSeason, freshEnough, COLS } = await import('../src/tools/edge.js');
+  const d = { player: { id: 1, team: { abbrev: 'ANA' }, position: 'L', gamesPlayed: 25 }, seasonsWithEdgeStats: [{ id: 20252026, gameTypes: [2, 3] }, { id: 20262027, gameTypes: [2] }],
+    skatingSpeed: { speedMax: { imperial: 23.1124, percentile: 0.9223 }, burstsOver20: { value: 51, percentile: 0.85 } }, topShotSpeed: { imperial: 94.98, percentile: 0.98 },
+    totalDistanceSkated: { imperial: 75.66, percentile: 0.92 }, sogSummary: [{ locationCode: 'all', shots: 105, goals: 23 }, { locationCode: 'high', shots: 16, shotsPercentile: 0.77, goals: 5 }],
+    zoneTimeDetails: { offensiveZonePctg: 0.43, offensiveZonePercentile: 0.6, offensiveZoneEvPctg: 0.39, offensiveZoneEvPercentile: 0.13 } };
+  const r = skaterRow('Cutter Gauthier', 'HFD', d); const at = k => r[COLS.sk.indexOf(k)];
+  assert.equal(r.length, COLS.sk.length);
+  assert.deepEqual([at('own'), at('gp'), at('topSpeed'), at('topSpeedPct'), at('shots'), at('goals'), at('hdShots'), at('hdShotsPct'), at('hdGoals'), at('ozPct'), at('ozEvPctile')], ['HFD', 25, 23.11, 92, 105, 23, 16, 77, 5, 43, 13]);
+  const empty = skaterRow('X', '', { player: { id: 2 } }); assert.equal(empty.length, COLS.sk.length); assert.equal(empty[COLS.sk.indexOf('ozPct')], null, 'a missing block is null, not NaN');
+  const g = goalieRow('G', 'FA', { player: { id: 3, gamesPlayed: 17 }, stats: { goalsAgainstAvg: { value: 2.4, percentile: 0.89 } }, shotLocationSummary: [{ locationCode: 'all', savePctg: 0.9171, savePctgPercentile: 0.91 }, { locationCode: 'high', savePctg: 0.8636, savePctgPercentile: 0.91, saves: 114, goalsAgainst: 18 }] });
+  assert.equal(g.length, COLS.g.length); assert.deepEqual(g.slice(3, 7), ['FA', 17, 2.4, 89]); assert.deepEqual(g.slice(-4), [0.864, 91, 114, 18]);
+  assert.equal(hasSeason(d, '20262027'), true);
+  assert.equal(hasSeason({ seasonsWithEdgeStats: [{ id: 20242025, gameTypes: [2] }] }, '20262027'), false, '/now can answer with an older season');
+  assert.equal(hasSeason({ seasonsWithEdgeStats: [{ id: 20262027, gameTypes: [3] }] }, '20262027'), false);
+  assert.equal(freshEnough(['edge.json', 'box-2026-11-27.json'], '2026-11-27'), false, 'no dated copy yet');
+  assert.equal(freshEnough(['edge-2026-11-20.json', 'edge-2026-11-27.json'], '2026-12-03'), true);
+  assert.equal(freshEnough(['edge-2026-11-27.json'], '2026-12-04'), false, 'a week old: run again');
 });
