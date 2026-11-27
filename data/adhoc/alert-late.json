@@ -1,21 +1,11 @@
 {
- "at": "2026-11-26T10:19:46.135Z",
- "date": "2026-11-25",
+ "at": "2026-11-27T10:17:16.268Z",
+ "date": "2026-11-26",
  "late": true,
- "lateGames": [
-  "VAN@DET",
-  "NSH@DAL",
-  "UTA@MIN",
-  "MTL@COL",
-  "CHI@SEA",
-  "SJS@ANA"
- ],
- "gamesFinal": 6,
+ "lateGames": [],
+ "gamesFinal": 0,
  "gamesPending": [],
  "candidates": [],
- "nearMisses": [
-  "Alex Killorn (ANA, 37): 7.3 FP, 18:34 TOI, no M badge",
-  "Drew Helleson (ANA, 25): 6.1 FP, no usage signal, 19:27 TOI"
- ],
+ "nearMisses": [],
  "unmatched": []
 }

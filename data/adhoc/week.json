@@ -1,5 +1,5 @@
 {
- "at": "2026-11-26T10:20:43.327Z",
+ "at": "2026-11-27T10:18:16.835Z",
  "week": "2026-11-23",
  "period": 9,
  "scoring": "G 3, A 2, PPP 1, SHG 2, GWG 1, +/- 0.5, BLK 0.2, HIT 0.2, PIM 0.25, SOG 0.1; G: W 5, SO 5, SV 0.25, GA -1",
@@ -2215,7 +2215,25 @@
    "note": "includes hits and blocks (NHL season report)"
   },
   "0760p": null,
-  "06ay2": null,
+  "06ay2": {
+   "nhlId": 8484152,
+   "gp": 9,
+   "fp": 10.2,
+   "hit": 1,
+   "blk": 11,
+   "toi": [
+    "14:05",
+    "12:52",
+    "16:35",
+    "15:41",
+    "20:21",
+    "16:06",
+    "19:01",
+    "21:21",
+    "21:17"
+   ],
+   "note": "includes hits and blocks (NHL season report)"
+  },
   "076q3": null,
   "06md8": null,
   "06loc": null,
