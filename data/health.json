@@ -1,7 +1,7 @@
 {
- "at": "2026-11-27T10:18:21.578Z",
+ "at": "2026-11-27T19:03:24.250Z",
  "d": "2026-11-27",
- "mode": "full",
+ "mode": "retry",
  "steps": {
   "scan": "ok",
   "form": "ok",
@@ -13,7 +13,8 @@
   "fawatch": "ok",
   "draftees": "ok",
   "draft": "ok",
-  "week": "ok"
+  "week": "ok",
+  "edge": "ok"
  },
  "leagues": {
   "AHL": "ok",
