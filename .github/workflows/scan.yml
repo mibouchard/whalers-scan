@@ -103,6 +103,10 @@ jobs:
         if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
         continue-on-error: true
         run: node src/ci/step.js week src/tools/week.js
+      - name: NHL EDGE tracking numbers (once a week; a no-op on the other days)
+        if: steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry'
+        continue-on-error: true
+        run: node src/ci/step.js edge src/tools/edge.js weekly
       - name: Health file
         if: always() && (steps.plan.outputs.mode == 'full' || steps.plan.outputs.mode == 'retry')
         run: node src/ci/health.js
