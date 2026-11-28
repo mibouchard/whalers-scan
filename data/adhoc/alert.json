@@ -1,9 +1,59 @@
 {
- "at": "2026-11-27T03:00:32.400Z",
- "date": "2026-11-26",
- "gamesFinal": 0,
- "gamesPending": [],
- "candidates": [],
- "nearMisses": [],
+ "at": "2026-11-28T03:00:40.033Z",
+ "date": "2026-11-27",
+ "gamesFinal": 12,
+ "gamesPending": [
+  "WPG@NYI",
+  "PIT@BUF",
+  "SEA@EDM"
+ ],
+ "candidates": [
+  {
+   "name": "John Gibson",
+   "team": "DET",
+   "pos": "G",
+   "age": 33,
+   "fx": "02b3y",
+   "status": "FA",
+   "fp": 14.5,
+   "line": "W, 18 saves on 18, shutout",
+   "toi": null,
+   "avgToi": null,
+   "gpBefore": 14,
+   "reasons": [
+    "2 starts in his team's last 3 games"
+   ],
+   "why": "role change"
+  },
+  {
+   "name": "Adam Gaudette",
+   "team": "SJS",
+   "pos": "R",
+   "age": 30,
+   "fx": "03ril",
+   "status": "FA",
+   "fp": 7.7,
+   "line": "1G 1A, 3 SOG, 2 hits, 0 blk",
+   "toi": "17:36",
+   "avgToi": "10:29",
+   "gpBefore": 12,
+   "reasons": [
+    "17:36 TOI",
+    "+7:07 over his 10:29 average"
+   ],
+   "why": "role change"
+  }
+ ],
+ "nearMisses": [
+  "Colton Sissons (TOR, 33): 6.9 FP, no usage signal, 15:53 TOI",
+  "Morgan Rielly (TOR, 32): 9.3 FP, no usage signal, 18:56 TOI",
+  "Connor Brown (NJD, 32): 6.6 FP, 18:40 TOI, no M badge",
+  "Aleksanteri Kaskimaki (STL, 22): 7.1 FP, no usage signal, 13:41 TOI",
+  "Michael Amadio (OTT, 30): 10.8 FP, no usage signal, 15:16 TOI",
+  "Claude Giroux (OTT, 38): 6.9 FP, no usage signal, 15:48 TOI",
+  "Max Crozier (TBL, 26): 7 FP, no usage signal, 18:59 TOI",
+  "Drew Doughty (LAK, 36): 6.1 FP, 23:42 TOI, no M badge",
+  "Andrew Mangiapane (CHI, 30): 9.8 FP, power-play point, +3:12 over his 10:46 average, 13:57 TOI, no M badge"
+ ],
  "unmatched": []
 }
