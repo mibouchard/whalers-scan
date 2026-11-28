@@ -1,9 +1,13 @@
 {
- "at": "2026-11-27T10:17:16.268Z",
- "date": "2026-11-26",
+ "at": "2026-11-28T10:17:43.821Z",
+ "date": "2026-11-27",
  "late": true,
- "lateGames": [],
- "gamesFinal": 0,
+ "lateGames": [
+  "WPG@NYI",
+  "PIT@BUF",
+  "SEA@EDM"
+ ],
+ "gamesFinal": 3,
  "gamesPending": [],
  "candidates": [],
  "nearMisses": [],
